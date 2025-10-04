@@ -1,0 +1,62 @@
+<!-- Booking Modal - FareHarbor Integration Placeholder -->
+<div id="booking-modal" class="hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+	<div class="card max-w-lg w-full">
+		<div class="p-8">
+			<div class="flex justify-between items-start mb-6">
+				<h2 class="text-2xl font-bold">Book Your Tour</h2>
+				<button id="close-modal" class="text-muted-foreground hover:text-foreground">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<line x1="18" y1="6" x2="6" y2="18"></line>
+						<line x1="6" y1="6" x2="18" y2="18"></line>
+					</svg>
+				</button>
+			</div>
+
+			<div class="bg-muted/50 rounded-lg p-6 text-center">
+				<p class="text-lg mb-4">FareHarbor booking integration will be added here</p>
+				<p class="text-muted-foreground">The FareHarbor lightbox widget will replace this placeholder</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	function setupModal() {
+		const modal = document.getElementById('booking-modal');
+		const closeBtn = document.getElementById('close-modal');
+		const bookButtons = document.querySelectorAll('[data-booking-modal]');
+
+		// Open modal when any booking button is clicked
+		bookButtons.forEach(button => {
+			button.addEventListener('click', (e) => {
+				e.preventDefault();
+				modal?.classList.remove('hidden');
+			});
+		});
+
+		// Close modal
+		closeBtn?.addEventListener('click', () => {
+			modal?.classList.add('hidden');
+		});
+
+		// Close on backdrop click
+		modal?.addEventListener('click', (e) => {
+			if (e.target === modal) {
+				modal.classList.add('hidden');
+			}
+		});
+
+		// Close on escape key
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+				modal.classList.add('hidden');
+			}
+		});
+	}
+
+	// Run on initial load
+	setupModal();
+
+	// Re-run after view transitions
+	document.addEventListener('astro:page-load', setupModal);
+</script>

@@ -1,22 +1,86 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import BookingModal from '../components/BookingModal.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Walk Santa Cruz - Local Walking Tours',
+	description = 'Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.'
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-full">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+		<ViewTransitions />
 	</head>
-	<body>
-		<slot />
+	<body class="h-full flex flex-col bg-background text-foreground font-sans antialiased">
+		<Header />
+
+		<main class="flex-1">
+			<slot />
+		</main>
+
+		<footer class="bg-pink-500 mt-auto">
+			<div class="container py-8">
+				<p class="text-white">Footer placeholder - will be replaced with actual footer component</p>
+			</div>
+		</footer>
+
+		<BookingModal />
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
+<style is:global>
+	@import "../styles/global.css";
+
+	/* Container utilities */
+	.container {
 		width: 100%;
-		height: 100%;
+		max-width: 1280px;
+		margin-left: auto;
+		margin-right: auto;
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+
+	@media (min-width: 640px) {
+		.container {
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.container {
+			padding-left: 2rem;
+			padding-right: 2rem;
+		}
+	}
+
+	/* Full bleed utility for images/videos */
+	.full-bleed {
+		width: 100vw;
+		margin-left: calc(50% - 50vw);
+		margin-right: calc(50% - 50vw);
+	}
+
+	/* Smooth scrolling */
+	html {
+		scroll-behavior: smooth;
 	}
 </style>

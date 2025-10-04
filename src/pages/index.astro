@@ -1,11 +1,147 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Walk Santa Cruz - Local Walking Tours | Guided Tours in Santa Cruz, CA"
+	description="Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours. Local guides, local stories."
+>
+	<!-- Hero Section - Full Bleed -->
+	<section class="full-bleed relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20">
+		<!-- Placeholder for hero image/video - will be replaced with actual media -->
+		<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
+
+		<div class="container relative z-10 text-center py-24">
+			<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+				Walk Santa Cruz
+			</h1>
+			<p class="text-xl md:text-2xl text-muted-foreground mb-4">
+				Local guides, local stories.
+			</p>
+			<p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+				Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<button data-booking-modal class="btn btn-lg">Book Your Tour Now</button>
+				<a href="/contact" class="btn btn-outline btn-lg">Request Private Tour</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Tour Section -->
+	<section class="container py-16 md:py-24">
+		<div class="max-w-4xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Santa Cruz Walking Tour</h2>
+
+			<h3 class="text-2xl font-semibold text-primary mb-4">Downtown & Mission Hill Historic District Tour</h3>
+
+			<p class="text-lg text-muted-foreground mb-8">
+				Join us for a captivating journey through the heart of Santa Cruz. Our signature walking tour combines the vibrant downtown area with the historic Mission Hill district, offering a perfect blend of past and present.
+			</p>
+
+			<div class="grid md:grid-cols-3 gap-6 my-12">
+				<div class="card">
+					<div class="p-6">
+						<h4 class="font-semibold text-lg mb-2">Fun & Informative</h4>
+						<p class="text-muted-foreground">Our local guides share fascinating stories and little-known facts about Santa Cruz.</p>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="p-6">
+						<h4 class="font-semibold text-lg mb-2">Easy Walking</h4>
+						<p class="text-muted-foreground">Comfortable pace with some stairs. No special equipment needed.</p>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="p-6">
+						<h4 class="font-semibold text-lg mb-2">Small Groups</h4>
+						<p class="text-muted-foreground">Intimate experience with personalized attention.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card bg-muted/50 mb-8">
+				<div class="p-8">
+					<h4 class="text-xl font-semibold mb-6">Tour Information</h4>
+					<div class="grid sm:grid-cols-2 gap-6">
+						<div>
+							<div class="font-semibold mb-2">Duration</div>
+							<div class="text-muted-foreground">2 hours</div>
+						</div>
+						<div>
+							<div class="font-semibold mb-2">Meeting Point</div>
+							<div class="text-muted-foreground">Downtown Clock Tower</div>
+						</div>
+						<div>
+							<div class="font-semibold mb-2">Price</div>
+							<div class="text-muted-foreground">$35 per person</div>
+						</div>
+						<div>
+							<div class="font-semibold mb-2">Schedule</div>
+							<div class="text-muted-foreground">Daily at 10am and 2pm</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center">
+				<button data-booking-modal class="btn btn-lg">Book This Tour</button>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section -->
+	<section class="full-bleed bg-accent/30 py-16 md:py-24">
+		<div class="container">
+			<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Guests Say</h2>
+
+			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+				<div class="card">
+					<div class="p-6">
+						<p class="text-muted-foreground mb-4">
+							"Our guide was incredibly knowledgeable about Santa Cruz history. We discovered so many hidden gems we never would have found on our own. Highly recommend this tour to anyone visiting the area!"
+						</p>
+						<div class="font-semibold">Sarah Johnson</div>
+						<div class="text-sm text-muted-foreground">San Francisco, CA</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="p-6">
+						<p class="text-muted-foreground mb-4">
+							"This walking tour was the highlight of our California coast trip! The stories about Mission Hill were fascinating, and our guide made the history come alive. Perfect pace and very engaging."
+						</p>
+						<div class="font-semibold">Michael Chen</div>
+						<div class="text-sm text-muted-foreground">Seattle, WA</div>
+					</div>
+				</div>
+
+				<div class="card">
+					<div class="p-6">
+						<p class="text-muted-foreground mb-4">
+							"As a California native, I thought I knew Santa Cruz well, but this tour showed me a completely different side of the city. The local insights and historical context made for an unforgettable experience."
+						</p>
+						<div class="font-semibold">Emma Rodriguez</div>
+						<div class="text-sm text-muted-foreground">Los Angeles, CA</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section id="book" class="container py-16 md:py-24">
+		<div class="max-w-2xl mx-auto text-center">
+			<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Explore Santa Cruz?</h2>
+			<p class="text-lg text-muted-foreground mb-8">
+				Join us for a memorable walking tour through the heart of Santa Cruz. Book your spot today or contact us for a private tour experience.
+			</p>
+			<div class="flex flex-col sm:flex-row gap-4 justify-center">
+				<button data-booking-modal class="btn btn-lg">Book Your Tour</button>
+				<a href="/contact" class="btn btn-outline btn-lg">Request Private Tour</a>
+			</div>
+		</div>
+	</section>
 </Layout>
