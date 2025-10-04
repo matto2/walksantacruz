@@ -63,26 +63,37 @@
 	</nav>
 </header>
 
-<script>
+<script is:inline>
 	function setupMobileMenu() {
 		const menuButton = document.getElementById('mobile-menu-button');
 		const mobileMenu = document.getElementById('mobile-menu');
 
-		menuButton?.addEventListener('click', () => {
-			mobileMenu?.classList.toggle('hidden');
+		if (!menuButton || !mobileMenu) return;
+
+		// Remove old listeners by cloning
+		const newMenuButton = menuButton.cloneNode(true);
+		menuButton.parentNode.replaceChild(newMenuButton, menuButton);
+
+		newMenuButton.addEventListener('click', (e) => {
+			e.preventDefault();
+			mobileMenu.classList.toggle('hidden');
 		});
 
 		// Close mobile menu when clicking a link
-		const mobileLinks = mobileMenu?.querySelectorAll('a, button');
-		mobileLinks?.forEach(link => {
+		const mobileLinks = mobileMenu.querySelectorAll('a, button');
+		mobileLinks.forEach(link => {
 			link.addEventListener('click', () => {
-				mobileMenu?.classList.add('hidden');
+				mobileMenu.classList.add('hidden');
 			});
 		});
 	}
 
 	// Run on initial load
-	setupMobileMenu();
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', setupMobileMenu);
+	} else {
+		setupMobileMenu();
+	}
 
 	// Re-run after view transitions
 	document.addEventListener('astro:page-load', setupMobileMenu);
