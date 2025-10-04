@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import heroImage from '../assets/downtown_hero.jpg';
 ---
 
 <Layout
@@ -7,23 +9,41 @@ import Layout from '../layouts/Layout.astro';
 	description="Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours. Local guides, local stories."
 >
 	<!-- Hero Section - Full Bleed -->
-	<section class="full-bleed relative min-h-[600px] flex items-center justify-center bg-gradient-to-br from-primary/20 via-accent/30 to-secondary/20">
-		<!-- Placeholder for hero image/video - will be replaced with actual media -->
-		<div class="absolute inset-0 bg-gradient-to-b from-transparent to-background/80"></div>
+	<section class="full-bleed relative min-h-[600px] flex items-center justify-center">
+		<!-- Hero Video with Image Fallback -->
+		<div class="absolute inset-0">
+			<video
+				autoplay
+				muted
+				loop
+				playsinline
+				class="w-full h-full object-cover"
+				poster={heroImage.src}
+			>
+				<source src="/IMG_9072_web.mp4" type="video/mp4" />
+				<!-- Fallback image for browsers that don't support video -->
+				<Image
+					src={heroImage}
+					alt="Downtown Santa Cruz"
+					class="w-full h-full object-cover"
+					loading="eager"
+					quality={80}
+				/>
+			</video>
+		</div>
+		<!-- Dark gradient overlay -->
+		<div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0"></div>
 
 		<div class="container relative z-10 text-center py-24">
-			<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-				Walk Santa Cruz
-			</h1>
-			<p class="text-xl md:text-2xl text-muted-foreground mb-4">
+			<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md">
 				Local guides, local stories.
-			</p>
-			<p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+			</h1>
+			<p class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-8 drop-shadow-md">
 				Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.
 			</p>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center">
 				<button data-booking-modal class="btn btn-lg">Book Your Tour Now</button>
-				<a href="/contact" class="btn btn-outline btn-lg">Request Private Tour</a>
+				<a href="/contact" class="btn btn-lg bg-secondary text-primary hover:bg-secondary/90">Request Private Tour</a>
 			</div>
 		</div>
 	</section>
