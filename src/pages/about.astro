@@ -1,5 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import aboutPhoto from '../assets/me_surfing.jpg';
+import heroPhoto from '../assets/Matt-by-moore-creek.jpg';
+import pescaderoPhoto from '../assets/walking-pescadero.jpg';
 ---
 
 <Layout
@@ -21,10 +25,16 @@ import Layout from '../layouts/Layout.astro';
 	<!-- About Content -->
 	<section class="container py-16 md:py-24">
 		<div class="max-w-3xl mx-auto">
-			<!-- Guide photo placeholder -->
+			<!-- Hero photo at top -->
 			<div class="mb-12">
-				<div class="aspect-[3/2] max-w-2xl mx-auto bg-gradient-to-br from-primary/20 to-accent/30 rounded-lg flex items-center justify-center">
-					<p class="text-muted-foreground">Matt O'Leary - Photo Coming Soon</p>
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={heroPhoto}
+						alt="Matt O'Leary by Moore Creek"
+						class="w-full h-full object-cover"
+						loading="eager"
+						quality={80}
+					/>
 				</div>
 			</div>
 
@@ -34,12 +44,38 @@ import Layout from '../layouts/Layout.astro';
 				</p>
 
 				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-					When I'm not leading tours, I work as a designer and web developer, and I've also taught surfing lessons — both casually and professionally. I enjoy spending time outdoors with my wife and kids, whether it's hiking local trails or catching waves. That same spirit of sharing what I love inspired me to start Walk Santa Cruz.
+					When I'm not leading tours, I work as a designer and web developer, and I also teach surf lessons — both casually and professionally. I enjoy spending time outdoors with my wife and kids, whether it's hiking local trails or catching waves. That same spirit of sharing what I love inspired me to start Walk Santa Cruz.
 				</p>
+
+				<!-- Guide photo -->
+				<div class="mb-6">
+					<div class="aspect-[3/2] rounded-lg overflow-hidden">
+						<Image
+							src={aboutPhoto}
+							alt="Surfing in the Maldives"
+							class="w-full h-full object-cover"
+							loading="eager"
+							quality={80}
+						/>
+					</div>
+				</div>
 
 				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
 					What began as casual walks with friends has grown into a way to help visitors and locals alike see Santa Cruz through a new lens — discovering the hidden gems this town and its surrounding beaches and mountains have to offer.
 				</p>
+
+				<!-- Pescadero photo -->
+				<div class="mb-6">
+					<div class="aspect-[4/3] rounded-lg overflow-hidden">
+						<Image
+							src={pescaderoPhoto}
+							alt="Walking in Pescadero"
+							class="w-full h-full object-cover object-bottom"
+							loading="lazy"
+							quality={80}
+						/>
+					</div>
+				</div>
 
 				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
 					I believe the best way to experience this place is on foot — it's a healthy, fun way to slow down, take in the scenery, and connect with the stories that make Santa Cruz unique.
