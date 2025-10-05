@@ -1,3 +1,13 @@
 @import "tailwindcss";
 @import "basecoat-css";
 @import "./theme.css";
+
+/* Secondary button styling */
+.btn-secondary {
+	background-color: var(--color-secondary);
+	color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+	background-color: color-mix(in oklch, var(--color-secondary) 90%, black);
+}
