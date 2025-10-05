@@ -1,5 +1,6 @@
 ---
 // Footer Component
+import Logo2 from './Logo2.astro';
 ---
 
 <footer class="bg-primary text-primary-foreground mt-auto">
@@ -7,7 +8,9 @@
 		<div class="grid md:grid-cols-3 gap-8 mb-8">
 			<!-- About -->
 			<div>
-				<h3 class="text-xl font-bold mb-4">Walk Santa Cruz</h3>
+				<div class="mb-4">
+					<Logo2 iconColor="white" textColor="text-white" />
+				</div>
 				<p class="mb-4 opacity-90">
 					Local guides, local stories. Experience the best of Santa Cruz with our expert-led walking tours.
 				</p>
@@ -34,7 +37,7 @@
 					</div>
 					<div>
 						<div class="font-semibold">Email</div>
-						<a href="mailto:info@walksantacruz.com" class="hover:opacity-100 transition-opacity">info@walksantacruz.com</a>
+						<a href="mailto:hello@walksantacruz.com" class="hover:opacity-100 transition-opacity">hello@walksantacruz.com</a>
 					</div>
 					<div>
 						<div class="font-semibold">Location</div>
