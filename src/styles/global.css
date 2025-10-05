@@ -2,6 +2,12 @@
 @import "basecoat-css";
 @import "./theme.css";
 
+/* Headline font */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Noto Sans', sans-serif;
+	font-weight: 800;
+}
+
 /* Secondary button styling */
 .btn-secondary {
 	background-color: var(--color-secondary);

@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import BookingModal from '../components/BookingModal.astro';
 
 interface Props {
@@ -25,7 +26,7 @@ const {
 		<title>{title}</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 		<ViewTransitions />
 	</head>
 	<body class="h-full flex flex-col bg-background text-foreground font-sans antialiased">
@@ -35,11 +36,7 @@ const {
 			<slot />
 		</main>
 
-		<footer class="bg-pink-500 mt-auto">
-			<div class="container py-8">
-				<p class="text-white">Footer placeholder - will be replaced with actual footer component</p>
-			</div>
-		</footer>
+		<Footer />
 
 		<BookingModal />
 	</body>
