@@ -73,9 +73,13 @@ import mapBg from '../assets/map-bg.jpg';
 			<div>
 				<h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
 
-				<form name="contact" method="POST" data-netlify="true" class="form space-y-6">
+				<form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form space-y-6">
 					<input type="hidden" name="form-name" value="contact" />
-					<input type="hidden" name="bot-field" />
+					<p class="hidden">
+						<label>
+							Don't fill this out if you're human: <input name="bot-field" />
+						</label>
+					</p>
 
 					<div>
 						<label for="name" class="block font-semibold mb-2">Name *</label>
