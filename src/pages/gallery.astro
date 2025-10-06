@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import mapBg from '../assets/map-bg.jpg';
 ---
 
 <Layout
@@ -7,10 +8,11 @@ import Layout from '../layouts/Layout.astro';
 	description="Preview the beauty and charm of Santa Cruz through our gallery. See the sights you'll experience on our guided walking tours."
 >
 	<!-- Hero Section -->
-	<section class="full-bleed bg-accent/20 py-16 md:py-24">
-		<div class="container">
+	<section class="full-bleed relative py-8 md:py-12">
+		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+		<div class="container relative">
 			<div class="max-w-3xl mx-auto text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-6">Experience Santa Cruz</h1>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">Experience Santa Cruz</h1>
 				<p class="text-xl text-muted-foreground">
 					Preview the beauty and charm of Santa Cruz through our gallery
 				</p>
@@ -19,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- Gallery Grid -->
-	<section class="container py-16 md:py-24">
+	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
 		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			<!-- Placeholder cards for images - to be replaced with actual photos -->
 			<div class="card overflow-hidden">
@@ -85,8 +87,9 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- CTA Section -->
-	<section class="full-bleed bg-accent/20 py-16 md:py-24">
-		<div class="container">
+	<section class="full-bleed relative py-16 md:py-24">
+		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+		<div class="container relative">
 			<div class="max-w-2xl mx-auto text-center">
 				<h2 class="text-3xl md:text-4xl font-bold mb-6">Experience These Sights and More</h2>
 				<p class="text-lg text-muted-foreground mb-8">

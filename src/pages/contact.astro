@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import mapBg from '../assets/map-bg.jpg';
 ---
 
 <Layout
@@ -7,10 +8,11 @@ import Layout from '../layouts/Layout.astro';
 	description="Get in touch with Walk Santa Cruz. Request a private tour, ask questions, or learn more about our guided walking tours in Santa Cruz, CA."
 >
 	<!-- Hero Section -->
-	<section class="full-bleed bg-accent/20 py-16 md:py-24">
-		<div class="container">
+	<section class="full-bleed relative py-8 md:py-12">
+		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+		<div class="container relative">
 			<div class="max-w-3xl mx-auto text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
 				<p class="text-xl text-muted-foreground">
 					Questions? Want to book a private tour? We'd love to hear from you.
 				</p>
@@ -19,7 +21,7 @@ import Layout from '../layouts/Layout.astro';
 	</section>
 
 	<!-- Contact Content -->
-	<section class="container py-16 md:py-24">
+	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
 		<div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
 			<!-- Contact Info -->
 			<div>

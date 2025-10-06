@@ -13,9 +13,9 @@ import heroImage from '../assets/downtown_hero.jpg';
 		<!-- Hero Video with Image Fallback -->
 		<div class="absolute inset-0">
 			<video
+				id="hero-video"
 				autoplay
 				muted
-				loop
 				playsinline
 				class="w-full h-full object-cover"
 				poster={heroImage.src}
@@ -165,3 +165,34 @@ import heroImage from '../assets/downtown_hero.jpg';
 		</div>
 	</section>
 </Layout>
+
+<script is:inline>
+	function setupVideoPlaylist() {
+		const video = document.getElementById('hero-video');
+		if (!video) return;
+
+		const playlist = [
+			'/IMG_9072_web.mp4',
+			'/output.mp4',
+			'/output2.mp4'
+		];
+		let currentIndex = 0;
+
+		video.addEventListener('ended', function() {
+			currentIndex = (currentIndex + 1) % playlist.length;
+			video.src = playlist[currentIndex];
+			video.load();
+			video.play();
+		});
+	}
+
+	// Run on initial load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', setupVideoPlaylist);
+	} else {
+		setupVideoPlaylist();
+	}
+
+	// Re-run after view transitions
+	document.addEventListener('astro:page-load', setupVideoPlaylist);
+</script>
