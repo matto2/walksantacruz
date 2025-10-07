@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
+import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
 import heroImage from '../assets/downtown_hero.jpg';
+import mapBg from '../assets/map-bg.jpg';
 ---
 
 <Layout
@@ -61,23 +63,26 @@ import heroImage from '../assets/downtown_hero.jpg';
 
 			<div class="grid md:grid-cols-3 gap-6 my-12">
 				<div class="card">
-					<div class="p-6">
+					<div class="p-6 text-center">
+						<Icon name="lucide:sparkles" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
 						<h4 class="font-semibold text-lg mb-2">Fun & Informative</h4>
 						<p class="text-muted-foreground">Our local guides share fascinating stories and little-known facts about Santa Cruz.</p>
 					</div>
 				</div>
 
 				<div class="card">
-					<div class="p-6">
+					<div class="p-6 text-center">
+						<Icon name="lucide:footprints" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
 						<h4 class="font-semibold text-lg mb-2">Easy Walking</h4>
 						<p class="text-muted-foreground">Comfortable pace with some stairs. No special equipment needed.</p>
 					</div>
 				</div>
 
 				<div class="card">
-					<div class="p-6">
+					<div class="p-6 text-center">
+						<Icon name="lucide:users-round" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
 						<h4 class="font-semibold text-lg mb-2">Small Groups</h4>
-						<p class="text-muted-foreground">Intimate experience with personalized attention.</p>
+						<p class="text-muted-foreground">Limited group sizes ensure a personalized experience with plenty of time for questions.</p>
 					</div>
 				</div>
 			</div>
@@ -113,8 +118,9 @@ import heroImage from '../assets/downtown_hero.jpg';
 	</section>
 
 	<!-- Testimonials Section -->
-	<section class="full-bleed bg-accent/30 py-16 md:py-24">
-		<div class="container">
+	<section class="full-bleed relative py-16 md:py-24">
+		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+		<div class="container relative">
 			<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Guests Say</h2>
 
 			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -172,9 +178,8 @@ import heroImage from '../assets/downtown_hero.jpg';
 		if (!video) return;
 
 		const playlist = [
-			'/IMG_9072_web.mp4',
 			'/output.mp4',
-			'/output2.mp4'
+			'/IMG_9072_web.mp4'
 		];
 		let currentIndex = 0;
 
@@ -182,7 +187,12 @@ import heroImage from '../assets/downtown_hero.jpg';
 			currentIndex = (currentIndex + 1) % playlist.length;
 			video.src = playlist[currentIndex];
 			video.load();
-			video.play();
+			video.play().catch(e => {
+				// Ignore AbortError which happens when switching videos
+				if (e.name !== 'AbortError') {
+					console.error('Video playback error:', e);
+				}
+			});
 		});
 	}
 
