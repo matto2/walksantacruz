@@ -1,208 +1,262 @@
 ---
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
-import Layout from '../layouts/Layout.astro';
-import heroImage from '../assets/downtown_hero.jpg';
-import mapBg from '../assets/map-bg.jpg';
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/downtown_hero.jpg";
+import mapBg from "../assets/map-bg.jpg";
 ---
 
 <Layout
-	title="Walk Santa Cruz - Local Walking Tours | Guided Tours in Santa Cruz, CA"
-	description="Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours. Local guides, local stories."
+  title="Walk Santa Cruz - Local Walking Tours | Guided Tours in Santa Cruz, CA"
+  description="Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours. Local guides, local stories."
 >
-	<!-- Hero Section - Full Bleed -->
-	<section class="full-bleed relative min-h-[600px] flex items-center justify-center">
-		<!-- Hero Video with Image Fallback -->
-		<div class="absolute inset-0">
-			<video
-				id="hero-video"
-				autoplay
-				muted
-				playsinline
-				class="w-full h-full object-cover"
-				poster={heroImage.src}
-			>
-				<source src="/IMG_9072_web.mp4" type="video/mp4" />
-				<!-- Fallback image for browsers that don't support video -->
-				<Image
-					src={heroImage}
-					alt="Downtown Santa Cruz"
-					class="w-full h-full object-cover"
-					loading="eager"
-					quality={80}
-				/>
-			</video>
-		</div>
-		<!-- Dark gradient overlay -->
-		<div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0"></div>
+  <!-- Hero Section - Full Bleed -->
+  <section
+    class="full-bleed relative min-h-[600px] flex items-center justify-center"
+  >
+    <!-- Hero Video with Image Fallback -->
+    <div class="absolute inset-0">
+      <video
+        id="hero-video"
+        autoplay
+        muted
+        playsinline
+        class="w-full h-full object-cover"
+        poster={heroImage.src}
+      >
+        <source src="/IMG_9072_web.mp4" type="video/mp4" />
+        <!-- Fallback image for browsers that don't support video -->
+        <Image
+          src={heroImage}
+          alt="Downtown Santa Cruz"
+          class="w-full h-full object-cover"
+          loading="eager"
+          quality={80}
+        />
+      </video>
+    </div>
+    <!-- Dark gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0">
+    </div>
 
-		<div class="container relative z-10 text-center py-24">
-			<h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md">
-				Local guides, local stories.
-			</h1>
-			<p class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-8 drop-shadow-md">
-				Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<button data-booking-modal class="btn btn-lg">Book Your Tour Now</button>
-				<a href="/contact" class="btn btn-lg btn-secondary">Request Private Tour</a>
-			</div>
-		</div>
-	</section>
+    <div class="container relative z-10 text-center py-24">
+      <h1
+        class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md"
+      >
+        Local guides, local stories.
+      </h1>
+      <p
+        class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-8 drop-shadow-md"
+      >
+        Discover the hidden gems and fascinating history of Santa Cruz with our
+        expert-guided walking tours.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button data-booking-modal class="btn btn-lg">Book Your Tour Now</button
+        >
+        <a href="/contact" class="btn btn-lg btn-secondary"
+          >Request Private Tour</a
+        >
+      </div>
+    </div>
+  </section>
 
-	<!-- Tour Section -->
-	<section class="container py-16 md:py-24">
-		<div class="max-w-4xl mx-auto">
-			<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Santa Cruz Walking Tour</h2>
+  <!-- Tour Section -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Our Santa Cruz Walking Tour
+      </h2>
 
-			<h3 class="text-2xl font-semibold text-primary mb-4">Downtown & Mission Hill Historic District Tour</h3>
+      <h3 class="text-2xl font-semibold text-primary mb-4">
+        Downtown & Mission Hill Historic District Tour
+      </h3>
 
-			<p class="text-lg text-muted-foreground mb-8">
-				Join us for a captivating journey through the heart of Santa Cruz. Our signature walking tour combines the vibrant downtown area with the historic Mission Hill district, offering a perfect blend of past and present.
-			</p>
+      <p class="text-lg text-muted-foreground mb-8">
+        Join us for a captivating journey through the heart of Santa Cruz. Our
+        signature walking tour combines the vibrant downtown area with the
+        historic Mission Hill district, offering a perfect blend of past and
+        present.
+      </p>
 
-			<div class="grid md:grid-cols-3 gap-6 my-12">
-				<div class="card">
-					<div class="p-6 text-center">
-						<Icon name="lucide:sparkles" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
-						<h4 class="font-semibold text-lg mb-2">Fun & Informative</h4>
-						<p class="text-muted-foreground">Our local guides share fascinating stories and little-known facts about Santa Cruz.</p>
-					</div>
-				</div>
+      <div class="grid md:grid-cols-3 gap-6 my-12">
+        <div class="card">
+          <div class="p-6 text-center">
+            <Icon
+              name="lucide:sparkles"
+              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
+            />
+            <h4 class="font-semibold text-lg mb-2">Fun & Informative</h4>
+            <p class="text-muted-foreground">
+              Our local guides share fascinating stories and little-known facts
+              about Santa Cruz.
+            </p>
+          </div>
+        </div>
 
-				<div class="card">
-					<div class="p-6 text-center">
-						<Icon name="lucide:footprints" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
-						<h4 class="font-semibold text-lg mb-2">Easy Walking</h4>
-						<p class="text-muted-foreground">Comfortable pace with some stairs. No special equipment needed.</p>
-					</div>
-				</div>
+        <div class="card">
+          <div class="p-6 text-center">
+            <Icon
+              name="lucide:footprints"
+              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
+            />
+            <h4 class="font-semibold text-lg mb-2">Easy Walking</h4>
+            <p class="text-muted-foreground">
+              Comfortable pace with some stairs. No special equipment needed.
+            </p>
+          </div>
+        </div>
 
-				<div class="card">
-					<div class="p-6 text-center">
-						<Icon name="lucide:users-round" class="w-12 h-12 text-[#e26f04] mb-4 mx-auto" />
-						<h4 class="font-semibold text-lg mb-2">Small Groups</h4>
-						<p class="text-muted-foreground">Limited group sizes ensure a personalized experience with plenty of time for questions.</p>
-					</div>
-				</div>
-			</div>
+        <div class="card">
+          <div class="p-6 text-center">
+            <Icon
+              name="lucide:users-round"
+              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
+            />
+            <h4 class="font-semibold text-lg mb-2">Small Groups</h4>
+            <p class="text-muted-foreground">
+              Limited group sizes ensure a personalized experience with plenty
+              of time for questions.
+            </p>
+          </div>
+        </div>
+      </div>
 
-			<div class="card bg-muted/50 mb-8">
-				<div class="p-8">
-					<h4 class="text-xl font-semibold mb-6">Tour Information</h4>
-					<div class="grid sm:grid-cols-2 gap-6">
-						<div>
-							<div class="font-semibold mb-2">Duration</div>
-							<div class="text-muted-foreground">2 hours</div>
-						</div>
-						<div>
-							<div class="font-semibold mb-2">Meeting Point</div>
-							<div class="text-muted-foreground">Abbott Square Market in Downtown Santa Cruz</div>
-						</div>
-						<div>
-							<div class="font-semibold mb-2">Price</div>
-							<div class="text-muted-foreground">$45 per person</div>
-						</div>
-						<div>
-							<div class="font-semibold mb-2">Schedule</div>
-							<div class="text-muted-foreground">Saturday and Sunday at 10am and 2pm</div>
-						</div>
-					</div>
-				</div>
-			</div>
+      <div class="card bg-muted/50 mb-8">
+        <div class="p-8">
+          <h4 class="text-xl font-semibold mb-6">Tour Information</h4>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div>
+              <div class="font-semibold mb-2">Duration</div>
+              <div class="text-muted-foreground">2 hours</div>
+            </div>
+            <div>
+              <div class="font-semibold mb-2">Meeting Point</div>
+              <div class="text-muted-foreground">
+                Abbott Square Market in Downtown Santa Cruz
+              </div>
+            </div>
+            <div>
+              <div class="font-semibold mb-2">Price</div>
+              <div class="text-muted-foreground">$45 per person</div>
+            </div>
+            <div>
+              <div class="font-semibold mb-2">Schedule</div>
+              <div class="text-muted-foreground">
+                Friday, Saturday, and Sunday at 10am and 2pm
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-			<div class="text-center">
-				<button data-booking-modal class="btn btn-lg">Book This Tour</button>
-			</div>
-		</div>
-	</section>
+      <div class="text-center">
+        <button data-booking-modal class="btn btn-lg">Book This Tour</button>
+      </div>
+    </div>
+  </section>
 
-	<!-- Testimonials Section -->
-	<section class="full-bleed relative py-16 md:py-24">
-		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-		<div class="container relative">
-			<h2 class="text-3xl md:text-4xl font-bold text-center mb-12">What Our Guests Say</h2>
+  <!-- Testimonials Section -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        What Our Guests Say
+      </h2>
 
-			<div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-				<div class="card">
-					<div class="p-6">
-						<p class="text-muted-foreground mb-4">
-							"Our guide was incredibly knowledgeable about Santa Cruz history. We discovered so many hidden gems we never would have found on our own. Highly recommend this tour to anyone visiting the area!"
-						</p>
-						<div class="font-semibold">Sarah Johnson</div>
-						<div class="text-sm text-muted-foreground">San Francisco, CA</div>
-					</div>
-				</div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="card">
+          <div class="p-6">
+            <p class="text-muted-foreground mb-4">
+              "Our guide was incredibly knowledgeable about Santa Cruz history.
+              We discovered so many hidden gems we never would have found on our
+              own. Highly recommend this tour to anyone visiting the area!"
+            </p>
+            <div class="font-semibold">Sarah Johnson</div>
+            <div class="text-sm text-muted-foreground">San Francisco, CA</div>
+          </div>
+        </div>
 
-				<div class="card">
-					<div class="p-6">
-						<p class="text-muted-foreground mb-4">
-							"This walking tour was the highlight of our California coast trip! The stories about Mission Hill were fascinating, and our guide made the history come alive. Perfect pace and very engaging."
-						</p>
-						<div class="font-semibold">Michael Chen</div>
-						<div class="text-sm text-muted-foreground">Seattle, WA</div>
-					</div>
-				</div>
+        <div class="card">
+          <div class="p-6">
+            <p class="text-muted-foreground mb-4">
+              "This walking tour was the highlight of our California coast trip!
+              The stories about Mission Hill were fascinating, and our guide
+              made the history come alive. Perfect pace and very engaging."
+            </p>
+            <div class="font-semibold">Michael Chen</div>
+            <div class="text-sm text-muted-foreground">Seattle, WA</div>
+          </div>
+        </div>
 
-				<div class="card">
-					<div class="p-6">
-						<p class="text-muted-foreground mb-4">
-							"As a California native, I thought I knew Santa Cruz well, but this tour showed me a completely different side of the city. The local insights and historical context made for an unforgettable experience."
-						</p>
-						<div class="font-semibold">Emma Rodriguez</div>
-						<div class="text-sm text-muted-foreground">Los Angeles, CA</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="card">
+          <div class="p-6">
+            <p class="text-muted-foreground mb-4">
+              "As a California native, I thought I knew Santa Cruz well, but
+              this tour showed me a completely different side of the city. The
+              local insights and historical context made for an unforgettable
+              experience."
+            </p>
+            <div class="font-semibold">Emma Rodriguez</div>
+            <div class="text-sm text-muted-foreground">Los Angeles, CA</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- CTA Section -->
-	<section id="book" class="container py-16 md:py-24">
-		<div class="max-w-2xl mx-auto text-center">
-			<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Explore Santa Cruz?</h2>
-			<p class="text-lg text-muted-foreground mb-8">
-				Join us for a memorable walking tour through the heart of Santa Cruz. Book your spot today or contact us for a private tour experience.
-			</p>
-			<div class="flex flex-col sm:flex-row gap-4 justify-center">
-				<button data-booking-modal class="btn btn-lg">Book Your Tour</button>
-				<a href="/contact" class="btn btn-lg btn-secondary">Request Private Tour</a>
-			</div>
-		</div>
-	</section>
+  <!-- CTA Section -->
+  <section id="book" class="container py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Ready to Explore Santa Cruz?
+      </h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        Join us for a memorable walking tour through the heart of Santa Cruz.
+        Book your spot today or contact us for a private tour experience.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button data-booking-modal class="btn btn-lg">Book Your Tour</button>
+        <a href="/contact" class="btn btn-lg btn-secondary"
+          >Request Private Tour</a
+        >
+      </div>
+    </div>
+  </section>
 </Layout>
 
 <script is:inline>
-	function setupVideoPlaylist() {
-		const video = document.getElementById('hero-video');
-		if (!video) return;
+  function setupVideoPlaylist() {
+    const video = document.getElementById("hero-video");
+    if (!video) return;
 
-		const playlist = [
-			'/output.mp4',
-			'/IMG_9072_web.mp4'
-		];
-		let currentIndex = 0;
+    const playlist = ["/output.mp4", "/IMG_9072_web.mp4"];
+    let currentIndex = 0;
 
-		video.addEventListener('ended', function() {
-			currentIndex = (currentIndex + 1) % playlist.length;
-			video.src = playlist[currentIndex];
-			video.load();
-			video.play().catch(e => {
-				// Ignore AbortError which happens when switching videos
-				if (e.name !== 'AbortError') {
-					console.error('Video playback error:', e);
-				}
-			});
-		});
-	}
+    video.addEventListener("ended", function () {
+      currentIndex = (currentIndex + 1) % playlist.length;
+      video.src = playlist[currentIndex];
+      video.load();
+      video.play().catch((e) => {
+        // Ignore AbortError which happens when switching videos
+        if (e.name !== "AbortError") {
+          console.error("Video playback error:", e);
+        }
+      });
+    });
+  }
 
-	// Run on initial load
-	if (document.readyState === 'loading') {
-		document.addEventListener('DOMContentLoaded', setupVideoPlaylist);
-	} else {
-		setupVideoPlaylist();
-	}
+  // Run on initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupVideoPlaylist);
+  } else {
+    setupVideoPlaylist();
+  }
 
-	// Re-run after view transitions
-	document.addEventListener('astro:page-load', setupVideoPlaylist);
+  // Re-run after view transitions
+  document.addEventListener("astro:page-load", setupVideoPlaylist);
 </script>
