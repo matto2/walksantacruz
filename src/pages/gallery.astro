@@ -1,6 +1,79 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import Lightbox from '../components/Lightbox.astro';
 import mapBg from '../assets/map-bg.jpg';
+
+// Import gallery images
+import downtownSantaCruz from '../assets/downtown-santa-cruz_wikimedia.jpg';
+import boardwalkJeff from '../assets/boardwalk_jeff-nissen_pexels.jpg';
+import harbor from '../assets/harbor_zetong_ pexels.jpg';
+import lighthouse from '../assets/lighthouse2_Don-DeBold_wikimedia.jpg';
+import mission from '../assets/mission-santa-cruz_wikimedia.jpg';
+import boardwalkSC from '../assets/boardwalk_santa-cruz.jpg';
+import downtownAaron from '../assets/downtown2-aaronbrick_wikimedia.jpg';
+import surfer from '../assets/surfer_david-yao_unsplash.jpg';
+import naturalBridges from '../assets/natural-bridges_simon-hurry_unsplash.jpg';
+import pinkLady from '../assets/pinkLady_Patrick-Tehan_Mercury-News.jpg';
+import downtown3 from '../assets/downtown3_oleary.jpg';
+
+const galleryImages = [
+	{
+		src: downtownSantaCruz,
+		alt: 'Downtown Santa Cruz',
+		caption: 'Downtown Santa Cruz - Photo by Wikimedia'
+	},
+	{
+		src: boardwalkJeff,
+		alt: 'Santa Cruz Beach Boardwalk',
+		caption: 'Santa Cruz Beach Boardwalk - Photo by Jeff Nissen (Pexels)'
+	},
+	{
+		src: harbor,
+		alt: 'Santa Cruz Harbor',
+		caption: 'Santa Cruz Harbor - Photo by Zetong (Pexels)'
+	},
+	{
+		src: lighthouse,
+		alt: 'Santa Cruz Lighthouse',
+		caption: 'Santa Cruz Lighthouse - Photo by Don DeBold (Wikimedia)'
+	},
+	{
+		src: mission,
+		alt: 'Mission Santa Cruz',
+		caption: 'Mission Santa Cruz - Photo by Wikimedia'
+	},
+	{
+		src: boardwalkSC,
+		alt: 'Beach Boardwalk',
+		caption: 'Santa Cruz Beach Boardwalk'
+	},
+	{
+		src: downtownAaron,
+		alt: 'Downtown Santa Cruz',
+		caption: 'Downtown Santa Cruz - Photo by Aaron Brick (Wikimedia)'
+	},
+	{
+		src: surfer,
+		alt: 'Surfer at Santa Cruz',
+		caption: 'Surfer at Santa Cruz - Photo by David Yao (Unsplash)'
+	},
+	{
+		src: naturalBridges,
+		alt: 'Natural Bridges State Beach',
+		caption: 'Natural Bridges State Beach - Photo by Simon Hurry (Unsplash)'
+	},
+	{
+		src: pinkLady,
+		alt: 'Pink Lady Historic House',
+		caption: 'Pink Lady Historic House - Photo by Patrick Tehan (Mercury News)'
+	},
+	{
+		src: downtown3,
+		alt: 'Downtown Santa Cruz',
+		caption: 'Downtown Santa Cruz - Photo by M. O\'Leary'
+	}
+];
 ---
 
 <Layout
@@ -23,66 +96,18 @@ import mapBg from '../assets/map-bg.jpg';
 	<!-- Gallery Grid -->
 	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
 		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			<!-- Placeholder cards for images - to be replaced with actual photos -->
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-primary/20 to-accent/30 flex items-center justify-center">
-					<p class="text-muted-foreground">Santa Cruz Boardwalk</p>
+			{galleryImages.map((image) => (
+				<div class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
+					<Image
+						src={image.src}
+						alt={image.alt}
+						class="aspect-[4/3] object-cover w-full"
+						quality={80}
+						data-lightbox-img
+						data-caption={image.caption}
+					/>
 				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Santa Cruz Boardwalk</h3>
-					<p class="text-sm text-muted-foreground">Historic beachfront amusement park</p>
-				</div>
-			</div>
-
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-secondary/20 to-primary/30 flex items-center justify-center">
-					<p class="text-muted-foreground">Downtown Santa Cruz</p>
-				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Downtown Santa Cruz</h3>
-					<p class="text-sm text-muted-foreground">Vibrant shops and local culture</p>
-				</div>
-			</div>
-
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-accent/20 to-secondary/30 flex items-center justify-center">
-					<p class="text-muted-foreground">Santa Cruz Beach</p>
-				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Santa Cruz Beach</h3>
-					<p class="text-sm text-muted-foreground">Beautiful coastal views</p>
-				</div>
-			</div>
-
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-primary/30 to-accent/20 flex items-center justify-center">
-					<p class="text-muted-foreground">Santa Cruz Lighthouse</p>
-				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Santa Cruz Lighthouse</h3>
-					<p class="text-sm text-muted-foreground">Iconic coastal landmark</p>
-				</div>
-			</div>
-
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-secondary/30 to-primary/20 flex items-center justify-center">
-					<p class="text-muted-foreground">Santa Cruz Cliffs</p>
-				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Santa Cruz Cliffs</h3>
-					<p class="text-sm text-muted-foreground">Dramatic coastal scenery</p>
-				</div>
-			</div>
-
-			<div class="card overflow-hidden">
-				<div class="aspect-[4/3] bg-gradient-to-br from-accent/30 to-secondary/20 flex items-center justify-center">
-					<p class="text-muted-foreground">Santa Cruz Surfer</p>
-				</div>
-				<div class="p-4">
-					<h3 class="font-semibold">Santa Cruz Surfer</h3>
-					<p class="text-sm text-muted-foreground">Surf culture and lifestyle</p>
-				</div>
-			</div>
+			))}
 		</div>
 	</section>
 
@@ -99,4 +124,6 @@ import mapBg from '../assets/map-bg.jpg';
 			</div>
 		</div>
 	</section>
+
+	<Lightbox />
 </Layout>
