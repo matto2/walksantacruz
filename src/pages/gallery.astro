@@ -16,6 +16,9 @@ import surfer from '../assets/surfer_david-yao_unsplash.jpg';
 import naturalBridges from '../assets/natural-bridges_simon-hurry_unsplash.jpg';
 import pinkLady from '../assets/pinkLady_Patrick-Tehan_Mercury-News.jpg';
 import downtown3 from '../assets/downtown3_oleary.jpg';
+import downtown4 from '../assets/downtown4_oleary.jpg';
+import pond from '../assets/pond_oleary.jpg';
+import trees from '../assets/trees_oleary.jpg';
 
 const galleryImages = [
 	{
@@ -72,6 +75,21 @@ const galleryImages = [
 		src: downtown3,
 		alt: 'Downtown Santa Cruz',
 		caption: 'Downtown Santa Cruz - Photo by M. O\'Leary'
+	},
+	{
+		src: downtown4,
+		alt: 'Downtown Santa Cruz',
+		caption: 'Downtown Santa Cruz - Photo by M. O\'Leary'
+	},
+	{
+		src: pond,
+		alt: 'Santa Cruz Pond',
+		caption: 'Santa Cruz Pond - Photo by M. O\'Leary'
+	},
+	{
+		src: trees,
+		alt: 'Santa Cruz Trees',
+		caption: 'Santa Cruz Trees - Photo by M. O\'Leary'
 	}
 ];
 ---
@@ -97,7 +115,7 @@ const galleryImages = [
 	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
 		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 			{galleryImages.map((image) => (
-				<div class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow">
+				<div class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow p-0">
 					<Image
 						src={image.src}
 						alt={image.alt}
