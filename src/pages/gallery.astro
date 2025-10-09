@@ -1,147 +1,163 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import Lightbox from '../components/Lightbox.astro';
-import mapBg from '../assets/map-bg.jpg';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import Lightbox from "../components/Lightbox.astro";
+import mapBg from "../assets/map-bg.jpg";
 
 // Import gallery images
-import downtownSantaCruz from '../assets/downtown-santa-cruz_wikimedia.jpg';
-import boardwalkJeff from '../assets/boardwalk_jeff-nissen_pexels.jpg';
-import harbor from '../assets/harbor_zetong_ pexels.jpg';
-import lighthouse from '../assets/lighthouse2_Don-DeBold_wikimedia.jpg';
-import mission from '../assets/mission-santa-cruz_wikimedia.jpg';
-import boardwalkSC from '../assets/boardwalk_santa-cruz.jpg';
-import downtownAaron from '../assets/downtown2-aaronbrick_wikimedia.jpg';
-import surfer from '../assets/surfer_david-yao_unsplash.jpg';
-import naturalBridges from '../assets/natural-bridges_simon-hurry_unsplash.jpg';
-import pinkLady from '../assets/pinkLady_Patrick-Tehan_Mercury-News.jpg';
-import downtown3 from '../assets/downtown3_oleary.jpg';
-import downtown4 from '../assets/downtown4_oleary.jpg';
-import pond from '../assets/pond_oleary.jpg';
-import trees from '../assets/trees_oleary.jpg';
+import downtownSantaCruz from "../assets/downtown-santa-cruz_wikimedia.jpg";
+import boardwalkJeff from "../assets/boardwalk_jeff-nissen_pexels.jpg";
+import harbor from "../assets/harbor_zetong_ pexels.jpg";
+import lighthouse from "../assets/lighthouse2_Don-DeBold_wikimedia.jpg";
+import mission from "../assets/mission-santa-cruz_wikimedia.jpg";
+import boardwalkSC from "../assets/boardwalk_santa-cruz.jpg";
+import downtownAaron from "../assets/downtown2-aaronbrick_wikimedia.jpg";
+import surfer from "../assets/surfer_david-yao_unsplash.jpg";
+import naturalBridges from "../assets/natural-bridges_simon-hurry_unsplash.jpg";
+import pinkLady from "../assets/pinkLady_Patrick-Tehan_Mercury-News.jpg";
+import downtown3 from "../assets/downtown3_oleary.jpg";
+import downtown4 from "../assets/downtown4_oleary.jpg";
+import pond from "../assets/pond_oleary.jpg";
+import trees from "../assets/trees_oleary.jpg";
 
 const galleryImages = [
-	{
-		src: downtownSantaCruz,
-		alt: 'Downtown Santa Cruz',
-		caption: 'Downtown Santa Cruz - Photo by Wikimedia'
-	},
-	{
-		src: boardwalkJeff,
-		alt: 'Santa Cruz Beach Boardwalk',
-		caption: 'Santa Cruz Beach Boardwalk - Photo by Jeff Nissen (Pexels)'
-	},
-	{
-		src: harbor,
-		alt: 'Santa Cruz Harbor',
-		caption: 'Santa Cruz Harbor - Photo by Zetong (Pexels)'
-	},
-	{
-		src: lighthouse,
-		alt: 'Santa Cruz Lighthouse',
-		caption: 'Santa Cruz Lighthouse - Photo by Don DeBold (Wikimedia)'
-	},
-	{
-		src: mission,
-		alt: 'Mission Santa Cruz',
-		caption: 'Mission Santa Cruz - Photo by Wikimedia'
-	},
-	{
-		src: boardwalkSC,
-		alt: 'Beach Boardwalk',
-		caption: 'Santa Cruz Beach Boardwalk'
-	},
-	{
-		src: downtownAaron,
-		alt: 'Downtown Santa Cruz',
-		caption: 'Downtown Santa Cruz - Photo by Aaron Brick (Wikimedia)'
-	},
-	{
-		src: surfer,
-		alt: 'Surfer at Santa Cruz',
-		caption: 'Surfer at Santa Cruz - Photo by David Yao (Unsplash)'
-	},
-	{
-		src: naturalBridges,
-		alt: 'Natural Bridges State Beach',
-		caption: 'Natural Bridges State Beach - Photo by Simon Hurry (Unsplash)'
-	},
-	{
-		src: pinkLady,
-		alt: 'Pink Lady Historic House',
-		caption: 'Pink Lady Historic House - Photo by Patrick Tehan (Mercury News)'
-	},
-	{
-		src: downtown3,
-		alt: 'Downtown Santa Cruz',
-		caption: 'Downtown Santa Cruz - Photo by M. O\'Leary'
-	},
-	{
-		src: downtown4,
-		alt: 'Downtown Santa Cruz',
-		caption: 'Downtown Santa Cruz - Photo by M. O\'Leary'
-	},
-	{
-		src: pond,
-		alt: 'Santa Cruz Pond',
-		caption: 'Santa Cruz Pond - Photo by M. O\'Leary'
-	},
-	{
-		src: trees,
-		alt: 'Santa Cruz Trees',
-		caption: 'Santa Cruz Trees - Photo by M. O\'Leary'
-	}
+  {
+    src: downtownSantaCruz,
+    alt: "Downtown Santa Cruz",
+    caption: "Downtown Santa Cruz - Photo by Wikimedia",
+  },
+  {
+    src: boardwalkJeff,
+    alt: "Santa Cruz Beach Boardwalk",
+    caption: "Santa Cruz Beach Boardwalk - Photo by Jeff Nissen (Pexels)",
+  },
+  {
+    src: harbor,
+    alt: "Santa Cruz Harbor",
+    caption: "Santa Cruz Harbor - Photo by Zetong (Pexels)",
+  },
+  {
+    src: lighthouse,
+    alt: "Santa Cruz Lighthouse",
+    caption: "Santa Cruz Lighthouse - Photo by Don DeBold (Wikimedia)",
+  },
+  {
+    src: mission,
+    alt: "Mission Santa Cruz",
+    caption: "Mission Santa Cruz - Photo by Wikimedia",
+  },
+  {
+    src: boardwalkSC,
+    alt: "Beach Boardwalk",
+    caption: "Santa Cruz Beach Boardwalk",
+  },
+  {
+    src: downtownAaron,
+    alt: "Downtown Santa Cruz",
+    caption: "Downtown Santa Cruz - Photo by Aaron Brick (Wikimedia)",
+  },
+  {
+    src: surfer,
+    alt: "Surfer at Santa Cruz",
+    caption: "Surfer at Santa Cruz - Photo by David Yao (Unsplash)",
+  },
+  {
+    src: naturalBridges,
+    alt: "Natural Bridges State Beach",
+    caption: "Natural Bridges State Beach - Photo by Simon Hurry (Unsplash)",
+  },
+  {
+    src: pinkLady,
+    alt: "Pink Lady Historic House",
+    caption: "Pink Lady - Photo by Patrick Tehan (Mercury News)",
+  },
+  {
+    src: downtown3,
+    alt: "Downtown Santa Cruz",
+    caption: "Downtown Santa Cruz - Photo by M. O'Leary",
+  },
+  {
+    src: downtown4,
+    alt: "Downtown Santa Cruz",
+    caption: "Downtown Santa Cruz - Photo by M. O'Leary",
+  },
+  {
+    src: pond,
+    alt: "Santa Cruz Pond",
+    caption: "Santa Cruz Pond - Photo by M. O'Leary",
+  },
+  {
+    src: trees,
+    alt: "Santa Cruz Trees",
+    caption: "Santa Cruz Trees - Photo by M. O'Leary",
+  },
 ];
 ---
 
 <Layout
-	title="Gallery - Experience Santa Cruz | Walk Santa Cruz"
-	description="Preview the beauty and charm of Santa Cruz through our gallery. See the sights you'll experience on our guided walking tours."
+  title="Gallery - Experience Santa Cruz | Walk Santa Cruz"
+  description="Preview the beauty and charm of Santa Cruz through our gallery. See the sights you'll experience on our guided walking tours."
 >
-	<!-- Hero Section -->
-	<section class="full-bleed relative py-8 md:py-12">
-		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-		<div class="container relative">
-			<div class="max-w-3xl mx-auto text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-4">Experience Santa Cruz</h1>
-				<p class="text-xl text-muted-foreground">
-					Preview the beauty and charm of Santa Cruz through our gallery
-				</p>
-			</div>
-		</div>
-	</section>
+  <!-- Hero Section -->
+  <section class="full-bleed relative py-8 md:py-12">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          Experience Santa Cruz
+        </h1>
+        <p class="text-xl text-muted-foreground">
+          Preview the beauty and charm of Santa Cruz through our gallery
+        </p>
+      </div>
+    </div>
+  </section>
 
-	<!-- Gallery Grid -->
-	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
-		<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-			{galleryImages.map((image) => (
-				<div class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow p-0">
-					<Image
-						src={image.src}
-						alt={image.alt}
-						class="w-full h-auto"
-						quality={80}
-						data-lightbox-img
-						data-caption={image.caption}
-					/>
-				</div>
-			))}
-		</div>
-	</section>
+  <!-- Gallery Grid -->
+  <section class="container pt-6 pb-12 md:pt-6 md:pb-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        galleryImages.map((image) => (
+          <div class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow p-0">
+            <Image
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-auto"
+              quality={80}
+              data-lightbox-img
+              data-caption={image.caption}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
 
-	<!-- CTA Section -->
-	<section class="full-bleed relative py-16 md:py-24">
-		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-		<div class="container relative">
-			<div class="max-w-2xl mx-auto text-center">
-				<h2 class="text-3xl md:text-4xl font-bold mb-6">Experience These Sights and More</h2>
-				<p class="text-lg text-muted-foreground mb-8">
-					Join our guided walking tours to explore the beauty and history of Santa Cruz
-				</p>
-				<button data-booking-modal class="btn btn-lg">Book Your Tour Now</button>
-			</div>
-		</div>
-	</section>
+  <!-- CTA Section -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Experience These Sights and More
+        </h2>
+        <p class="text-lg text-muted-foreground mb-8">
+          Join our guided walking tours to explore the beauty and history of
+          Santa Cruz
+        </p>
+        <button data-booking-modal class="btn btn-lg">Book Your Tour Now</button
+        >
+      </div>
+    </div>
+  </section>
 
-	<Lightbox />
+  <Lightbox />
 </Layout>
