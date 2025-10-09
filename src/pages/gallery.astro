@@ -19,6 +19,7 @@ import downtown3 from "../assets/downtown3_oleary.jpg";
 import downtown4 from "../assets/downtown4_oleary.jpg";
 import pond from "../assets/pond_oleary.jpg";
 import trees from "../assets/trees_oleary.jpg";
+import sharkFinCove from "../assets/shark-fin-cove_Thomson200_wikimedia.jpg";
 
 const galleryImages = [
   {
@@ -91,6 +92,11 @@ const galleryImages = [
     alt: "Santa Cruz Trees",
     caption: "Santa Cruz Trees - Photo by M. O'Leary",
   },
+  {
+    src: sharkFinCove,
+    alt: "Shark Fin Cove",
+    caption: "Shark Fin Cove - Photo by Thomson200 (Wikimedia)",
+  },
 ];
 ---
 
@@ -153,8 +159,10 @@ const galleryImages = [
           Join our guided walking tours to explore the beauty and history of
           Santa Cruz
         </p>
-        <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour Now</
-        >
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour Now</a>
+          <a href="/contact" class="btn btn-lg btn-secondary">Request Private Tour</a>
+        </div>
       </div>
     </div>
   </section>
