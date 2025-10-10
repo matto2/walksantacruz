@@ -126,24 +126,54 @@ import mapBg from "../assets/map-bg.jpg";
         <div class="p-8">
           <h4 class="text-xl font-semibold mb-6">Tour Information</h4>
           <div class="grid sm:grid-cols-2 gap-6">
-            <div>
-              <div class="font-semibold mb-2">Duration</div>
-              <div class="text-muted-foreground">2 hours</div>
-            </div>
-            <div>
-              <div class="font-semibold mb-2">Meeting Point</div>
-              <div class="text-muted-foreground">
-                Abbott Square Market in Downtown Santa Cruz
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:clock"
+                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+              />
+              <div>
+                <div class="font-semibold mb-2">Duration</div>
+                <div class="text-muted-foreground">2 hours</div>
               </div>
             </div>
-            <div>
-              <div class="font-semibold mb-2">Price</div>
-              <div class="text-muted-foreground">$45 per person</div>
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:dollar-sign"
+                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+              />
+              <div>
+                <div class="font-semibold mb-2">Price</div>
+                <div class="text-muted-foreground">$45 per person</div>
+              </div>
             </div>
-            <div>
-              <div class="font-semibold mb-2">Schedule</div>
-              <div class="text-muted-foreground">
-                Friday, Saturday, and Sunday at 10am and 2pm
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:calendar"
+                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+              />
+              <div>
+                <div class="font-semibold mb-2">Schedule</div>
+                <div class="text-muted-foreground">
+                  Friday, Saturday, and Sunday at 10am and 2pm
+                </div>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <Icon
+                name="lucide:map-pin"
+                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+              />
+              <div>
+                <div class="font-semibold mb-2">Meeting Point</div>
+                <div class="text-muted-foreground">
+                  <a
+                    href="https://maps.app.goo.gl/M7uF1gUT19KMFiMW8"
+                    data-map-link
+                    class="text-primary hover:underline cursor-pointer"
+                  >
+                    Abbott Square Market in Downtown Santa Cruz
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -227,6 +257,35 @@ import mapBg from "../assets/map-bg.jpg";
       </div>
     </div>
   </section>
+
+  <!-- Map Modal (desktop only) -->
+  <div id="map-modal" class="hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+    <div class="card max-w-4xl w-full">
+      <div class="p-6">
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="text-xl font-bold">Abbott Square Market</h3>
+          <button id="close-map-modal" class="text-muted-foreground hover:text-foreground">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <div class="w-full h-96 rounded-lg overflow-hidden">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.478677471583!2d-122.02802742415363!3d36.97450577219796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e40266abd9cbb%3A0xb9f2d632857836ec!2s725%20Front%20St%2C%20Santa%20Cruz%2C%20CA%2095060!5e0!3m2!1sen!2sus!4v1760105797730!5m2!1sen!2sus"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Abbott Square Market Location"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script is:inline>
@@ -259,4 +318,60 @@ import mapBg from "../assets/map-bg.jpg";
 
   // Re-run after view transitions
   document.addEventListener("astro:page-load", setupVideoPlaylist);
+
+  // Map link handler
+  function setupMapLink() {
+    const mapLink = document.querySelector('[data-map-link]');
+    if (!mapLink) return;
+
+    mapLink.addEventListener('click', function(e) {
+      // Check if desktop (screen width >= 768px)
+      if (window.innerWidth >= 768) {
+        e.preventDefault();
+        const modal = document.getElementById('map-modal');
+        if (modal) {
+          modal.classList.remove('hidden');
+        }
+      }
+      // On mobile, let the default link behavior open the map app
+    });
+
+    // Close modal handlers
+    const closeBtn = document.getElementById('close-map-modal');
+    const modal = document.getElementById('map-modal');
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (modal) {
+          modal.classList.add('hidden');
+        }
+      });
+    }
+
+    if (modal) {
+      // Close on background click
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+        }
+      });
+
+      // Close on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          modal.classList.add('hidden');
+        }
+      });
+    }
+  }
+
+  // Run on initial load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupMapLink);
+  } else {
+    setupMapLink();
+  }
+
+  // Re-run after view transitions
+  document.addEventListener('astro:page-load', setupMapLink);
 </script>
