@@ -36,9 +36,11 @@ const currentPath = Astro.url.pathname;
 				<a href="/contact" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/contact' ? 'font-bold border-primary' : 'border-transparent'}`}>
 					Contact
 				</a>
-				<a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn">
+				<!-- Stripe booking link (commented out for now) -->
+				<!-- <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn">Book Tour</a> -->
+				<button data-booking-modal class="btn">
 					Book Tour
-				</a>
+				</button>
 			</div>
 		</div>
 
@@ -57,9 +59,11 @@ const currentPath = Astro.url.pathname;
 				<a href="/contact" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/contact' ? 'font-bold' : ''}`}>
 					Contact
 				</a>
-				<a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn w-full">
+				<!-- Stripe booking link (commented out for now) -->
+				<!-- <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn w-full">Book Tour</a> -->
+				<button data-booking-modal class="btn w-full">
 					Book Tour
-				</a>
+				</button>
 			</div>
 		</div>
 	</nav>
