@@ -1,5 +1,5 @@
 ---
-import FootprintsIcon from '../assets/footprints-blk.svg';
+import FootprintsIcon from '../assets/SVG/footprints-ICON.svg';
 
 interface Props {
 	class?: string;
@@ -14,7 +14,7 @@ const {
 } = Astro.props;
 ---
 
-<div class={`flex items-center gap-0.5 ${className || ''}`}>
+<div class={`flex items-center gap-1 ${className || ''}`}>
 	<FootprintsIcon width={32} height={32} class="flex-shrink-0" fill={iconColor} />
-	<h1 class={`text-xl ${textColor}`}>Walk Santa Cruz</h1>
+	<h1 class={`text-xl ${textColor}`} style="color: #333333;">Walk Santa Cruz</h1>
 </div>
