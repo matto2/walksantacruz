@@ -7,12 +7,22 @@ import BookingModal from '../components/BookingModal.astro';
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
+	type?: string;
 }
 
 const {
-	title = 'Walk Santa Cruz - Local Walking Tours',
-	description = 'Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.'
+	title = 'Walk Santa Cruz - Walking Tours | Local Guides, Local Stories',
+	description = 'Discover Santa Cruz with local guides who share local stories. Expert-guided walking tours through downtown and historic Mission Hill.',
+	image = '/downtown_hero.jpg',
+	type = 'website'
 } = Astro.props;
+
+// Construct canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Construct full image URL for social sharing
+const imageURL = new URL(image, Astro.site);
 ---
 
 <!doctype html>
@@ -22,8 +32,67 @@ const {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
+
+		<!-- Primary Meta Tags -->
 		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+
+		<!-- Canonical URL -->
+		<link rel="canonical" href={canonicalURL} />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={type} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={imageURL} />
+		<meta property="og:site_name" content="Walk Santa Cruz" />
+		<meta property="og:locale" content="en_US" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={imageURL} />
+
+		<!-- Structured Data (JSON-LD) -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "TouristAttraction",
+				"name": "Walk Santa Cruz",
+				"description": "Expert-guided walking tours through downtown Santa Cruz and historic Mission Hill",
+				"url": "https://walksantacruz.com",
+				"telephone": "+1-831-275-2566",
+				"email": "hello@walksantacruz.com",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Santa Cruz",
+					"addressRegion": "CA",
+					"addressCountry": "US"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": "36.9741",
+					"longitude": "-122.0308"
+				},
+				"priceRange": "$$",
+				"image": "https://walksantacruz.com/downtown_hero.jpg",
+				"touristType": ["Tourists", "Locals"],
+				"availableLanguage": "English",
+				"offers": {
+					"@type": "Offer",
+					"name": "Downtown & Mission Hill Historic District Tour",
+					"price": "45",
+					"priceCurrency": "USD",
+					"url": "https://walksantacruz.com",
+					"availability": "https://schema.org/InStock"
+				}
+			}
+		</script>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
@@ -39,6 +108,9 @@ const {
 		<Footer />
 
 		<BookingModal />
+
+		<!-- FareHarbor Lightframe API - DISABLED FOR NOW - Uncomment when ready to use FareHarbor -->
+		<!-- <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script> -->
 	</body>
 </html>
 
