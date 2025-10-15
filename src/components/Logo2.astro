@@ -1,5 +1,6 @@
 ---
 import FootprintsIcon from '../assets/SVG/footprints-ICON.svg';
+import WhiteIcon from '../assets/SVG/walk-icon-WHITE.svg';
 
 interface Props {
 	class?: string;
@@ -12,9 +13,15 @@ const {
 	iconColor = 'currentColor',
 	textColor = 'text-primary'
 } = Astro.props;
+
+// Determine text color - use white if textColor prop is text-white, otherwise use brand dark
+const computedTextColor = textColor === 'text-white' ? '#ffffff' : '#333333';
+
+// Use white icon when textColor is white (footer), otherwise use regular icon (header)
+const Icon = textColor === 'text-white' ? WhiteIcon : FootprintsIcon;
 ---
 
 <div class={`flex items-center gap-2 ${className || ''}`}>
-	<FootprintsIcon width={32} height={32} class="flex-shrink-0" fill={iconColor} />
-	<h1 class={`text-xl ${textColor}`} style="color: #333333;">Walk Santa Cruz</h1>
+	<Icon width={32} height={32} class="flex-shrink-0" fill={iconColor} />
+	<h1 class={`text-xl ${textColor}`} style={`color: ${computedTextColor};`}>Walk Santa Cruz</h1>
 </div>
