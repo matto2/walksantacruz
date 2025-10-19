@@ -53,7 +53,10 @@ import mapBg from "../assets/map-bg.jpg";
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <!-- FareHarbor book button -->
-        <a href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes" class="btn btn-lg">Book online now!</a>
+        <a
+          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+          class="btn btn-lg">Book online now!</a
+        >
         <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour Now</a> -->
         <a href="/contact" class="btn btn-lg btn-secondary"
           >Request Private Tour</a
@@ -144,7 +147,7 @@ import mapBg from "../assets/map-bg.jpg";
               />
               <div>
                 <div class="font-semibold mb-2">Price</div>
-                <div class="text-muted-foreground">$45 per person</div>
+                <div class="text-muted-foreground">$35 per person</div>
               </div>
             </div>
             <div class="flex items-start gap-3">
@@ -183,7 +186,10 @@ import mapBg from "../assets/map-bg.jpg";
 
       <div class="text-center">
         <!-- FareHarbor book button -->
-        <a href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes" class="btn btn-lg">Book online now!</a>
+        <a
+          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+          class="btn btn-lg">Book online now!</a
+        >
         <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book This Tour</a> -->
       </div>
     </div>
@@ -250,34 +256,53 @@ import mapBg from "../assets/map-bg.jpg";
     >
     </div>
     <div class="container relative">
-    <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Ready to Explore Santa Cruz?
-      </h2>
-      <p class="text-lg text-muted-foreground mb-8">
-        Join us for a memorable walking tour through the heart of Santa Cruz.
-        Book your spot today or contact us for a private tour experience.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <!-- FareHarbor book button -->
-        <a href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes" class="btn btn-lg">Book online now!</a>
-        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour</a> -->
-        <a href="/contact" class="btn btn-lg btn-secondary"
-          >Request Private Tour</a
-        >
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Ready to Explore Santa Cruz?
+        </h2>
+        <p class="text-lg text-muted-foreground mb-8">
+          Join us for a memorable walking tour through the heart of Santa Cruz.
+          Book your spot today or contact us for a private tour experience.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <!-- FareHarbor book button -->
+          <a
+            href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+            class="btn btn-lg">Book online now!</a
+          >
+          <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour</a> -->
+          <a href="/contact" class="btn btn-lg btn-secondary"
+            >Request Private Tour</a
+          >
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <!-- Map Modal (desktop only) -->
-  <div id="map-modal" class="hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+  <div
+    id="map-modal"
+    class="hidden fixed inset-0 bg-background/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+  >
     <div class="card max-w-4xl w-full">
       <div class="p-6">
         <div class="flex justify-between items-start mb-4">
           <h3 class="text-xl font-bold">Abbott Square Market</h3>
-          <button id="close-map-modal" class="text-muted-foreground hover:text-foreground">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <button
+            id="close-map-modal"
+            class="text-muted-foreground hover:text-foreground"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
@@ -292,8 +317,7 @@ import mapBg from "../assets/map-bg.jpg";
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Abbott Square Market Location"
-          ></iframe>
+            title="Abbott Square Market Location"></iframe>
         </div>
       </div>
     </div>
@@ -333,57 +357,57 @@ import mapBg from "../assets/map-bg.jpg";
 
   // Map link handler
   function setupMapLink() {
-    const mapLink = document.querySelector('[data-map-link]');
+    const mapLink = document.querySelector("[data-map-link]");
     if (!mapLink) return;
 
-    mapLink.addEventListener('click', function(e) {
+    mapLink.addEventListener("click", function (e) {
       // Check if desktop (screen width >= 768px)
       if (window.innerWidth >= 768) {
         e.preventDefault();
-        const modal = document.getElementById('map-modal');
+        const modal = document.getElementById("map-modal");
         if (modal) {
-          modal.classList.remove('hidden');
+          modal.classList.remove("hidden");
         }
       }
       // On mobile, let the default link behavior open the map app
     });
 
     // Close modal handlers
-    const closeBtn = document.getElementById('close-map-modal');
-    const modal = document.getElementById('map-modal');
+    const closeBtn = document.getElementById("close-map-modal");
+    const modal = document.getElementById("map-modal");
 
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
+      closeBtn.addEventListener("click", () => {
         if (modal) {
-          modal.classList.add('hidden');
+          modal.classList.add("hidden");
         }
       });
     }
 
     if (modal) {
       // Close on background click
-      modal.addEventListener('click', (e) => {
+      modal.addEventListener("click", (e) => {
         if (e.target === modal) {
-          modal.classList.add('hidden');
+          modal.classList.add("hidden");
         }
       });
 
       // Close on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-          modal.classList.add('hidden');
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+          modal.classList.add("hidden");
         }
       });
     }
   }
 
   // Run on initial load
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupMapLink);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupMapLink);
   } else {
     setupMapLink();
   }
 
   // Re-run after view transitions
-  document.addEventListener('astro:page-load', setupMapLink);
+  document.addEventListener("astro:page-load", setupMapLink);
 </script>
