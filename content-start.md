@@ -36,7 +36,7 @@ Intimate experience with personalized attention.
 
 **Duration:** 2 hours  
 **Meeting Point:** Downtown Clock Tower  
-**Price:** $35 per person
+**Price:** Adults $45 · Kids $30
 
 [Book Your Tour Now](#book)
 
