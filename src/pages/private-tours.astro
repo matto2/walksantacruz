@@ -1,0 +1,251 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from "astro-icon/components";
+import Layout from '../layouts/Layout.astro';
+import mapBg from '../assets/map-bg.jpg';
+
+// Import private tour photos - EASILY SWAP THESE by changing the filenames below
+import photo1 from '../assets/private-tours/IMG_0036.jpeg';
+import photo2 from '../assets/private-tours/IMG_0371.jpeg';
+import photo3 from '../assets/private-tours/IMG_0396.jpeg';
+import photo4 from '../assets/private-tours/IMG_0468.jpeg';
+import photo5 from '../assets/private-tours/IMG_1204.jpeg';
+import photo6 from '../assets/private-tours/IMG_1766.jpeg';
+import photo7 from '../assets/private-tours/IMG_1775.jpeg';
+import photo8 from '../assets/private-tours/IMG_2591.jpg';
+import surfingPhoto from '../assets/me_surfing.jpg';
+---
+
+<Layout
+	title="Private Tours - Customized Santa Cruz Experiences | Walk Santa Cruz"
+	description="Create your perfect Santa Cruz adventure with our private tours. From coastal walks to surf history, UCSC tours to hidden gems - we'll customize an experience just for you."
+>
+	<!-- Hero Section -->
+	<section class="full-bleed relative py-8 md:py-12">
+		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+		<div class="container relative">
+			<div class="max-w-3xl mx-auto text-center">
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">Private Tours</h1>
+				<p class="text-xl text-muted-foreground">
+					Your Santa Cruz adventure, your way
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- Intro Content -->
+	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
+		<div class="max-w-3xl mx-auto">
+			<div class="prose prose-lg max-w-none">
+				<!-- Intro Text -->
+				<p class="text-xl text-muted-foreground leading-relaxed mb-8 text-center">
+					Whether you're a history buff, nature lover, surf enthusiast, or simply curious about Santa Cruz's hidden stories, our private tours offer the ultimate flexibility and personalized attention.
+				</p>
+
+				<p class="text-lg text-muted-foreground leading-relaxed mb-12">
+					With a private tour, you set the pace, choose the focus, and explore the aspects of Santa Cruz that intrigue you most. From intimate group gatherings to solo adventures, we'll craft an unforgettable experience tailored to your interests, fitness level, and schedule.
+				</p>
+
+				<!-- Tour Ideas List -->
+				<h2 class="text-2xl md:text-3xl font-bold mb-6">Private Tour Ideas</h2>
+				<p class="text-muted-foreground mb-6">
+					These are just starting points - we can customize any tour to match your interests perfectly:
+				</p>
+
+				<ul class="space-y-3 text-lg text-muted-foreground mb-12">
+					<li>Historical walking tours tailored to your interests</li>
+					<li>Coastal bluff walks with hidden gems</li>
+					<li>Surf history and surf spot exploration</li>
+					<li>UCSC tours</li>
+					<li>Movie filming locations</li>
+					<li>Wilder Ranch tours</li>
+					<li>Shark Fin Cove</li>
+					<li>Cotoni-Coast Dairies Hikes</li>
+					<li>Henry Cowell Ranch & Limekilns history tour</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Image Gallery Section -->
+	<section class="container pb-12 md:pb-16">
+		<div class="max-w-5xl mx-auto">
+			<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Experience the Beauty of Santa Cruz</h2>
+
+			<!-- EASY IMAGE SWAPS: Change the import filenames at the top of this file -->
+			<!-- Hero surfing photo -->
+			<div class="mb-6">
+				<div class="aspect-[3/2] rounded-lg overflow-hidden">
+					<Image
+						src={surfingPhoto}
+						alt="Surfing in the Maldives"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-2 gap-6 mb-6">
+				<div class="aspect-[4/3] rounded-lg overflow-hidden">
+					<Image
+						src={photo1}
+						alt="Private tour location in Santa Cruz"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="aspect-[4/3] rounded-lg overflow-hidden">
+					<Image
+						src={photo2}
+						alt="Beautiful Santa Cruz scenery"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-6 mb-6">
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo3}
+						alt="Santa Cruz tour experience"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo4}
+						alt="Scenic Santa Cruz view"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo5}
+						alt="Santa Cruz coastline"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+			</div>
+
+			<div class="grid md:grid-cols-3 gap-6">
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo6}
+						alt="Historic Santa Cruz location"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo7}
+						alt="Santa Cruz natural beauty"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+				<div class="aspect-square rounded-lg overflow-hidden">
+					<Image
+						src={photo8}
+						alt="Santa Cruz exploration"
+						class="w-full h-full object-cover"
+						loading="lazy"
+						quality={80}
+					/>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact/Booking Section -->
+	<section class="container py-12 md:py-16">
+		<div class="max-w-2xl mx-auto">
+			<div class="text-center mb-12">
+				<h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Create Your Custom Tour?</h2>
+				<p class="text-xl text-muted-foreground">
+					Let's design the perfect Santa Cruz experience for you. Get in touch to discuss your ideas, ask questions, and book your private tour.
+				</p>
+			</div>
+
+			<!-- Contact Options -->
+			<div class="flex flex-wrap justify-center gap-4 mb-8">
+				<a href="tel:8312752566" class="btn btn-secondary inline-flex items-center gap-2">
+					<Icon name="lucide:phone" class="w-5 h-5" />
+					Call Us
+				</a>
+				<a href="mailto:hello@walksantacruz.com" class="btn btn-secondary inline-flex items-center gap-2">
+					<Icon name="lucide:mail" class="w-5 h-5" />
+					Email
+				</a>
+				<a href="https://wa.me/18312752566" target="_blank" rel="noopener noreferrer" class="btn btn-secondary inline-flex items-center gap-2">
+					<Icon name="lucide:message-circle" class="w-5 h-5" />
+					WhatsApp
+				</a>
+			</div>
+
+			<!-- Private Tour Request Form -->
+			<div>
+				<form
+					name="private-tour"
+					method="POST"
+					data-netlify="true"
+					netlify-honeypot="bot-field"
+					class="form space-y-6"
+				>
+					<input type="hidden" name="form-name" value="private-tour" />
+					<p class="hidden">
+						<label>
+							Don't fill this out if you're human: <input name="bot-field" />
+						</label>
+					</p>
+
+					<div>
+						<label for="name" class="block font-semibold mb-2">Name *</label>
+						<input type="text" id="name" name="name" required class="w-full" />
+					</div>
+
+					<div>
+						<label for="email" class="block font-semibold mb-2">Email *</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							required
+							class="w-full"
+						/>
+					</div>
+
+					<div>
+						<label for="phone" class="block font-semibold mb-2">Phone</label>
+						<input type="tel" id="phone" name="phone" class="w-full" />
+					</div>
+
+					<div>
+						<label for="message" class="block font-semibold mb-2">Tell us about your ideal tour *</label>
+						<textarea
+							id="message"
+							name="message"
+							rows="6"
+							required
+							placeholder="Share any specific interests, accessibility needs, or special requests..."
+							class="w-full"></textarea>
+					</div>
+
+					<button type="submit" class="btn btn-lg w-full">Request Private Tour</button>
+				</form>
+			</div>
+		</div>
+	</section>
+</Layout>
