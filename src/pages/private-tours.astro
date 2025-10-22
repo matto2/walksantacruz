@@ -13,7 +13,7 @@ import photo5 from '../assets/private-tours/IMG_1204.jpeg';
 import photo6 from '../assets/private-tours/IMG_1766.jpeg';
 import photo7 from '../assets/private-tours/IMG_1775.jpeg';
 import photo8 from '../assets/private-tours/IMG_2591.jpg';
-import surfingPhoto from '../assets/me_surfing.jpg';
+import heroPhoto from '../assets/private-tours/pantherBeach.jpg';
 ---
 
 <Layout
@@ -52,16 +52,43 @@ import surfingPhoto from '../assets/me_surfing.jpg';
 					These are just starting points - we can customize any tour to match your interests perfectly:
 				</p>
 
-				<ul class="space-y-3 text-lg text-muted-foreground mb-12">
-					<li>Historical walking tours tailored to your interests</li>
-					<li>Coastal bluff walks with hidden gems</li>
-					<li>Surf history and surf spot exploration</li>
-					<li>UCSC tours</li>
-					<li>Movie filming locations</li>
-					<li>Wilder Ranch tours</li>
-					<li>Shark Fin Cove</li>
-					<li>Cotoni-Coast Dairies Hikes</li>
-					<li>Henry Cowell Ranch & Limekilns history tour</li>
+				<ul class="space-y-3 text-lg text-muted-foreground mb-12 list-none">
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Historical walking tours tailored to your interests</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Coastal bluff walks with hidden gems</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Surf history and surf spot exploration</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>UCSC tours</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Movie filming locations</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Wilder Ranch tours</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Shark Fin Cove</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Cotoni-Coast Dairies Hikes</span>
+					</li>
+					<li class="flex items-center gap-3">
+						<span class="text-[#e26f04] -mt-0.5">●</span>
+						<span>Henry Cowell Ranch & Limekilns history tour</span>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -73,12 +100,12 @@ import surfingPhoto from '../assets/me_surfing.jpg';
 			<h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Experience the Beauty of Santa Cruz</h2>
 
 			<!-- EASY IMAGE SWAPS: Change the import filenames at the top of this file -->
-			<!-- Hero surfing photo -->
+			<!-- Hero photo -->
 			<div class="mb-6">
 				<div class="aspect-[3/2] rounded-lg overflow-hidden">
 					<Image
-						src={surfingPhoto}
-						alt="Surfing in the Maldives"
+						src={heroPhoto}
+						alt="Panther Beach, Santa Cruz"
 						class="w-full h-full object-cover"
 						loading="lazy"
 						quality={80}
