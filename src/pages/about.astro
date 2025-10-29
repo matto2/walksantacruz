@@ -1,143 +1,185 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '../layouts/Layout.astro';
-import aboutPhoto from '../assets/private-tours/IMG_6501.jpeg';
-import heroPhoto from '../assets/Matt-by-moore-creek.jpg';
-import pescaderoPhoto from '../assets/walking-pescadero.jpg';
-import mapBg from '../assets/map-bg.jpg';
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import aboutPhoto from "../assets/private-tours/IMG_6501.jpeg";
+import heroPhoto from "../assets/Matt-by-moore-creek.jpg";
+import pescaderoPhoto from "../assets/walking-pescadero.jpg";
+import mapBg from "../assets/map-bg.jpg";
 ---
 
 <Layout
-	title="About Your Guide - Matt O'Leary | Walk Santa Cruz"
-	description="Meet Matt O'Leary, your local Santa Cruz guide. A native with a passion for sharing the rich history and vibrant culture of our coastal community."
+  title="About Your Guide - Matt O'Leary | Walk Santa Cruz"
+  description="Meet Matt O'Leary, your local Santa Cruz guide. A native with a passion for sharing the rich history and vibrant culture of our coastal community."
 >
-	<!-- Hero Section -->
-	<section class="full-bleed relative py-8 md:py-12">
-		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-		<div class="container relative">
-			<div class="max-w-3xl mx-auto text-center">
-				<h1 class="text-4xl md:text-5xl font-bold mb-4">About Your Guide</h1>
-				<p class="text-xl text-muted-foreground">
-					Local expertise, passionate storytelling
-				</p>
-			</div>
-		</div>
-	</section>
+  <!-- Hero Section -->
+  <section class="full-bleed relative py-8 md:py-12">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">About Your Guide</h1>
+        <p class="text-xl text-muted-foreground">
+          Local expertise, passionate storytelling
+        </p>
+      </div>
+    </div>
+  </section>
 
-	<!-- About Content -->
-	<section class="container pt-6 pb-12 md:pt-6 md:pb-16">
-		<div class="max-w-3xl mx-auto">
-			<!-- Hero photo at top -->
-			<div class="mb-12">
-				<div class="aspect-square rounded-lg overflow-hidden">
-					<Image
-						src={heroPhoto}
-						alt="Matt O'Leary by Moore Creek"
-						class="w-full h-full object-cover"
-						loading="eager"
-						quality={80}
-					/>
-				</div>
-			</div>
+  <!-- About Content -->
+  <section class="container pt-6 pb-12 md:pt-6 md:pb-16">
+    <div class="max-w-3xl mx-auto">
+      <!-- Hero photo at top -->
+      <div class="mb-12">
+        <div class="aspect-square rounded-lg overflow-hidden">
+          <Image
+            src={heroPhoto}
+            alt="Matt O'Leary by Moore Creek"
+            class="w-full h-full object-cover"
+            loading="eager"
+            quality={80}
+          />
+        </div>
+      </div>
 
-			<div class="prose prose-lg max-w-none">
-				<!-- Paragraph 1 -->
-				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-					Hi! I'm <strong>Matt O'Leary</strong>, and I grew up in Santa Cruz, where I went to Santa Cruz High and UCSC. I've spent countless hours exploring the beaches, redwoods, and neighborhoods that make this area so special.
-				</p>
+      <div class="prose prose-lg max-w-none">
+        <!-- Paragraph 1 -->
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+          Hi! I'm <strong>Matt O'Leary</strong>, and I grew up in Santa Cruz and
+          have spent countless hours exploring the beaches, redwoods, and
+          neighborhoods that make this area so special.
+        </p>
 
-				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-					Over the years, I've developed a deep appreciation for studying the history, architecture, and natural surroundings of the Santa Cruz area. What began as casual walks with friends has grown into a passion for sharing what I've learned — helping visitors and locals alike discover the hidden gems and stories that make this place unique.
-				</p>
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+          Over the years, I've developed a deep appreciation for studying the
+          history, architecture, and natural surroundings of the Santa Cruz
+          area. What began as casual walks with friends has grown into a passion
+          for sharing what I've learned — helping visitors and locals alike
+          discover the hidden gems and stories that make this place unique.
+        </p>
 
-				<!-- Hiking photo (Pescadero) -->
-				<div class="mb-6">
-					<div class="aspect-[4/3] rounded-lg overflow-hidden">
-						<Image
-							src={pescaderoPhoto}
-							alt="Walking in Pescadero"
-							class="w-full h-full object-cover object-bottom"
-							loading="lazy"
-							quality={80}
-						/>
-					</div>
-				</div>
+        <!-- Hiking photo (Pescadero) -->
+        <div class="mb-6">
+          <div class="aspect-[4/3] rounded-lg overflow-hidden">
+            <Image
+              src={pescaderoPhoto}
+              alt="Walking in Pescadero"
+              class="w-full h-full object-cover object-bottom"
+              loading="lazy"
+              quality={80}
+            />
+          </div>
+        </div>
 
-				<!-- Paragraph 2 -->
-				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-					When I'm not leading tours, I work as a designer and web developer, and I've also taught surf lessons both casually and professionally. I enjoy spending time outdoors with family and friends — whether it's hiking local trails or exploring the coastline. That same spirit of sharing what I love inspired me to start Walk Santa Cruz.
-				</p>
+        <!-- Paragraph 2 -->
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+          When I'm not leading tours, I work as a designer and developer, and
+          I've also taught surf lessons both casually and professionally. I
+          enjoy spending time outdoors with family and friends — whether it's
+          hiking local trails or exploring the coastline. That same spirit of
+          sharing what I love inspired me to start Walk Santa Cruz.
+        </p>
 
-				<p class="text-lg text-muted-foreground leading-relaxed mb-6">
-					I believe the best way to experience this place is on foot — it's a healthy, fun way to slow down, take in the scenery, and connect with the stories and landscapes that define Santa Cruz.
-				</p>
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+          I believe the best way to experience this place is on foot — it's a
+          healthy, fun way to slow down, take in the scenery, and connect with
+          the stories and landscapes that define Santa Cruz.
+        </p>
 
-				<!-- Cave/Beach photo -->
-				<div class="mb-6">
-					<div class="aspect-[3/2] rounded-lg overflow-hidden">
-						<Image
-							src={aboutPhoto}
-							alt="Beautiful Santa Cruz coastline"
-							class="w-full h-full object-cover"
-							loading="eager"
-							quality={80}
-						/>
-					</div>
-				</div>
+        <!-- Cave/Beach photo -->
+        <div class="mb-6">
+          <div class="aspect-[3/2] rounded-lg overflow-hidden">
+            <Image
+              src={aboutPhoto}
+              alt="Beautiful Santa Cruz coastline"
+              class="w-full h-full object-cover"
+              loading="eager"
+              quality={80}
+            />
+          </div>
+        </div>
 
-				<!-- Paragraph 3 -->
-				<p class="text-lg text-muted-foreground leading-relaxed mb-8">
-					I look forward to walking with you soon! Feel free to <a href="/private-tours" class="text-primary hover:underline">reach out</a> if you're interested in private tours or custom experiences.
-				</p>
-			</div>
+        <!-- Paragraph 3 -->
+        <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+          I look forward to walking with you soon! Feel free to <a
+            href="/private-tours"
+            class="text-primary hover:underline">reach out</a
+          > if you're interested in private tours or custom experiences.
+        </p>
+      </div>
 
-			<!-- CTA -->
-			<div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-				<!-- FareHarbor book button -->
-				<a href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes" class="btn btn-lg">Book online now!</a>
-				<!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book a Tour</a> -->
-				<a href="/private-tours" class="btn btn-lg btn-secondary">Request Private Tour</a>
-			</div>
-		</div>
-	</section>
+      <!-- CTA -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+        <!-- FareHarbor book button -->
+        <a
+          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+          class="btn btn-lg">Book online now!</a
+        >
+        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book a Tour</a> -->
+        <a href="/private-tours" class="btn btn-lg btn-secondary"
+          >Request Private Tour</a
+        >
+      </div>
+    </div>
+  </section>
 
-	<!-- Why Walk With Us -->
-	<section class="full-bleed relative py-16 md:py-24">
-		<div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-		<div class="container relative">
-			<div class="max-w-4xl mx-auto">
-				<h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Why Walk With Us</h2>
+  <!-- Why Walk With Us -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Why Walk With Us
+        </h2>
 
-				<div class="grid md:grid-cols-2 gap-8">
-					<div class="card">
-						<div class="p-6">
-							<h3 class="font-semibold text-lg mb-3">Local Expertise</h3>
-							<p class="text-muted-foreground">Our guides are Santa Cruz natives with deep knowledge and passion for our community's history and culture.</p>
-						</div>
-					</div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Local Expertise</h3>
+              <p class="text-muted-foreground">
+                Our guides are Santa Cruz natives with deep knowledge and
+                passion for our community's history and culture.
+              </p>
+            </div>
+          </div>
 
-					<div class="card">
-						<div class="p-6">
-							<h3 class="font-semibold text-lg mb-3">Small Groups</h3>
-							<p class="text-muted-foreground">Enjoy personalized attention with our small group sizes or opt for a private tour experience.</p>
-						</div>
-					</div>
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Small Groups</h3>
+              <p class="text-muted-foreground">
+                Enjoy personalized attention with our small group sizes or opt
+                for a private tour experience.
+              </p>
+            </div>
+          </div>
 
-					<div class="card">
-						<div class="p-6">
-							<h3 class="font-semibold text-lg mb-3">Hidden Gems</h3>
-							<p class="text-muted-foreground">Discover secret spots and fascinating stories that even locals might not know about.</p>
-						</div>
-					</div>
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Hidden Gems</h3>
+              <p class="text-muted-foreground">
+                Discover secret spots and fascinating stories that even locals
+                might not know about.
+              </p>
+            </div>
+          </div>
 
-					<div class="card">
-						<div class="p-6">
-							<h3 class="font-semibold text-lg mb-3">Easy & Accessible</h3>
-							<p class="text-muted-foreground">Our tours are designed to be comfortable for most fitness levels with plenty of stops along the way.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Easy & Accessible</h3>
+              <p class="text-muted-foreground">
+                Our tours are designed to be comfortable for most fitness levels
+                with plenty of stops along the way.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>
