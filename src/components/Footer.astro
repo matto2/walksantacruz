@@ -1,6 +1,8 @@
 ---
 // Footer Component
+import { Image } from "astro:assets";
 import Logo2 from "./Logo2.astro";
+import LookoutLogo from "../assets/LookoutLogo.png";
 ---
 
 <footer class="bg-primary text-primary-foreground mt-auto">
@@ -15,7 +17,7 @@ import Logo2 from "./Logo2.astro";
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="/src/assets/LookoutLogo.png" alt="Lookout Santa Cruz" class="max-w-full h-auto max-h-12" />
+            <Image src={LookoutLogo} alt="Lookout Santa Cruz" class="max-w-full h-auto max-h-12" />
           </a>
         </div>
         <div class="md:col-span-2 text-center md:text-left">
