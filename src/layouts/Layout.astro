@@ -57,6 +57,11 @@ const imageURL = new URL(image, Astro.site);
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={imageURL} />
 
+		<!-- Additional SEO -->
+		<meta name="robots" content="index, follow" />
+		<meta name="author" content="Walk Santa Cruz" />
+		<meta name="keywords" content="santa cruz walking tours, historic santa cruz, downtown tours, mission hill, local guides, santa cruz history, architectural tours, california tours" />
+
 		<!-- Structured Data (JSON-LD) -->
 		<script type="application/ld+json">
 			{
@@ -90,6 +95,38 @@ const imageURL = new URL(image, Astro.site);
 					"url": "https://walksantacruz.com",
 					"availability": "https://schema.org/InStock"
 				}
+			}
+		</script>
+
+		<!-- LocalBusiness Schema -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "LocalBusiness",
+				"name": "Walk Santa Cruz",
+				"url": "https://walksantacruz.com",
+				"logo": "https://walksantacruz.com/favicon.svg",
+				"telephone": "+1-831-275-2566",
+				"email": "hello@walksantacruz.com",
+				"priceRange": "$$",
+				"address": {
+					"@type": "PostalAddress",
+					"addressLocality": "Santa Cruz",
+					"addressRegion": "CA",
+					"postalCode": "95060",
+					"addressCountry": "US"
+				},
+				"geo": {
+					"@type": "GeoCoordinates",
+					"latitude": 36.9741,
+					"longitude": -122.0308
+				},
+				"sameAs": [
+					"https://instagram.com/walksantacruz",
+					"https://twitter.com/walksantacruz",
+					"https://tiktok.com/@walksantacruz",
+					"https://youtube.com/@walksantacruz"
+				]
 			}
 		</script>
 
