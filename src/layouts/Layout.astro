@@ -3,6 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import BookingModal from '../components/BookingModal.astro';
+import EyebrowBanner from '../components/EyebrowBanner.astro';
 
 interface Props {
 	title?: string;
@@ -195,12 +196,9 @@ const imageURL = new URL(image, Astro.site);
 	</head>
 	<body class="h-full flex flex-col bg-background text-foreground font-sans antialiased">
 		<!-- Gift Card Eyebrow Banner -->
-		<a
-			href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes"
-			class="block bg-red-600 text-white text-center py-3 px-4 hover:bg-red-700 transition-colors font-medium text-sm md:text-base"
-		>
-			🎄 Gift Cards Available! Give the unique gift of a historic walking tour ❤️ 🎁
-		</a>
+		<EyebrowBanner href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes">
+			🎄 <span class="underline">Gift Cards Available!</span> Give the unique gift of a historic walking tour ❤️ 🎁
+		</EyebrowBanner>
 
 		<Header />
 
