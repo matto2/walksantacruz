@@ -2,8 +2,12 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
+import TourCard from "../components/TourCard.astro";
 import heroImage from "../assets/downtown_hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
+import downtownTour from "../assets/downtown-santa-cruz_wikimedia.jpg";
+import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
+import surfer from "../assets/surfer.jpg";
 ---
 
 <Layout
@@ -66,21 +70,23 @@ import mapBg from "../assets/map-bg.jpg";
   <section class="container py-16 md:py-24">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
-        Our Santa Cruz Walking Tour
+        Santa Cruz Walking Tours
       </h2>
 
-      <h3 class="text-2xl font-semibold text-primary mb-4">
-        Downtown & Mission Hill Historic District Tour
-      </h3>
-
       <p class="text-lg text-muted-foreground mb-8">
-        Join us for a captivating journey through the heart of Santa Cruz. Our
-        signature walking tour combines the vibrant downtown area with the
-        historic Mission Hill district, offering a perfect blend of past and
-        present. Companion app is available on request.
+        Join us for captivating journeys through Santa Cruz, at a relaxed pace,
+        with stories that bring this coastal town to life. We offer three guided
+        walking tours, each revealing a different side of Santa Cruz's rich
+        history and culture. Whether you're drawn to downtown's architectural
+        gems, the legendary beach and surfing zones, or the quiet beauty of
+        Mission Hill, there's a walk for you.
       </p>
 
-      <div class="grid md:grid-cols-3 gap-6 my-12">
+      <h3 class="text-2xl font-semibold text-primary mb-4">
+        Why Walk With Us?
+      </h3>
+
+      <div class="grid md:grid-cols-3 gap-6 mb-12">
         <div class="card">
           <div class="p-6 text-center">
             <Icon
@@ -123,63 +129,48 @@ import mapBg from "../assets/map-bg.jpg";
         </div>
       </div>
 
-      <div class="card bg-muted/50 mb-8">
-        <div class="p-8">
-          <h4 class="text-xl font-semibold mb-6">Tour Information</h4>
-          <div class="grid sm:grid-cols-2 gap-6">
-            <div class="flex items-start gap-3">
-              <Icon
-                name="lucide:clock"
-                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-              />
-              <div>
-                <div class="font-semibold mb-2">Duration</div>
-                <div class="text-muted-foreground">1.5 hours</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon
-                name="lucide:dollar-sign"
-                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-              />
-              <div>
-                <div class="font-semibold mb-2">Price</div>
-                <div class="text-muted-foreground">Adults $45 / Kids $30</div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon
-                name="lucide:calendar"
-                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-              />
-              <div>
-                <div class="font-semibold mb-2">Schedule</div>
-                <div class="text-muted-foreground">
-                  Friday, Saturday, and Sunday at 10am and 2pm
-                </div>
-              </div>
-            </div>
-            <div class="flex items-start gap-3">
-              <Icon
-                name="lucide:map-pin"
-                class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-              />
-              <div>
-                <div class="font-semibold mb-2">Meeting Point</div>
-                <div class="text-muted-foreground">
-                  <a
-                    href="https://maps.app.goo.gl/M7uF1gUT19KMFiMW8"
-                    data-map-link
-                    class="text-primary hover:underline cursor-pointer"
-                  >
-                    Abbott Square Market in Downtown Santa Cruz
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3 class="text-2xl font-semibold text-primary mb-4">
+        Our Tours
+      </h3>
+
+      <TourCard
+        title="Santa Cruz Downtown & Mission Hill"
+        description="Explore Santa Cruz's rich history, architecture, and culture on a relaxed 90-minute walking tour. Led by a knowledgeable local guide."
+        image={downtownTour}
+        imageAlt="Downtown Santa Cruz street scene"
+        duration="1.5 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Friday, Saturday, and Sunday at 2pm"
+        meetingPoint="Abbott Square Market in Downtown Santa Cruz"
+        meetingPointUrl="https://maps.app.goo.gl/M7uF1gUT19KMFiMW8"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
+
+      <TourCard
+        title="Beach Hill to Mission Hill Loop via Downtown Santa Cruz"
+        description="Discover a side of Santa Cruz most visitors miss as we walk from the coastal mansions of Beach Hill to the historic heights of Mission Hill — with vibrant downtown streets in between."
+        image={goldenGateVilla}
+        imageAlt="golden gate villa"
+        duration="2.5 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Friday, Saturday, and Sunday at 10am"
+        meetingPoint="300 Beach St, Santa Cruz, CA 95060 - Aloha Terrace Group Picnic Area"
+        meetingPointUrl="https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
+
+      <TourCard
+        title="Santa Cruz Surfing & Beach Culture Walking Tour"
+        description="Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 90-minute guided walk along the waterfront."
+        image={surfer}
+        imageAlt="surfer"
+        duration="2 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Friday, Saturday, and Sunday at 10am"
+        meetingPoint="225 Beach St, Santa Cruz, CA 95060 - Next to Beach Volleyball Courts"
+        meetingPointUrl="https://maps.app.goo.gl/5kQSAFFEfZigLaFKA"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
 
       <div class="text-center">
         <!-- FareHarbor book button -->

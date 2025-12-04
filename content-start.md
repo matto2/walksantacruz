@@ -18,7 +18,7 @@ PAGE: Tours (tours.astro)
 PRIMARY SEO TARGET: "Downtown Santa Cruz walking tour", "Mission Hill Historic District tour"
 ================================================= -->
 
-## Our Santa Cruz Walking Tour
+## Santa Cruz Walking Tours
 
 ### Downtown & Mission Hill Historic District Tour
 

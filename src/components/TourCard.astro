@@ -1,0 +1,106 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  title: string;
+  description: string;
+  image: ImageMetadata;
+  imageAlt: string;
+  duration: string;
+  price: string;
+  schedule: string;
+  meetingPoint: string;
+  meetingPointUrl: string;
+  bookingUrl: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  imageAlt,
+  duration,
+  price,
+  schedule,
+  meetingPoint,
+  meetingPointUrl,
+  bookingUrl,
+} = Astro.props;
+---
+
+<div class="card bg-muted/50 mb-10">
+  <div class="px-8 pb-8 pt-4">
+    <h4 class="text-xl font-semibold mb-6">{title}</h4>
+    <p class="text-muted-foreground mb-6">
+      {description}
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Tour Image -->
+      <div class="w-full md:w-40 md:flex-shrink-0">
+        <a href={bookingUrl}>
+          <Image
+            src={image}
+            alt={imageAlt}
+            class="w-full h-40 object-cover rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
+          />
+        </a>
+      </div>
+
+      <!-- Tour Details Grid -->
+      <div class="grid sm:grid-cols-2 gap-6 flex-1">
+        <div class="flex items-start gap-3">
+          <Icon
+            name="lucide:clock"
+            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+          />
+          <div>
+            <div class="font-semibold mb-2">Duration</div>
+            <div class="text-muted-foreground">{duration}</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon
+            name="lucide:dollar-sign"
+            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+          />
+          <div>
+            <div class="font-semibold mb-2">Price</div>
+            <div class="text-muted-foreground">{price}</div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon
+            name="lucide:calendar"
+            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+          />
+          <div>
+            <div class="font-semibold mb-2">Schedule</div>
+            <div class="text-muted-foreground">
+              {schedule}
+            </div>
+          </div>
+        </div>
+        <div class="flex items-start gap-3">
+          <Icon
+            name="lucide:map-pin"
+            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
+          />
+          <div>
+            <div class="font-semibold mb-2">Meeting Point</div>
+            <div class="text-muted-foreground">
+              <a
+                href={meetingPointUrl}
+                data-map-link
+                class="text-primary hover:underline cursor-pointer"
+              >
+                {meetingPoint}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
