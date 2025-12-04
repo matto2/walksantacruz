@@ -1,24 +1,24 @@
 ---
 interface Props {
-	href: string;
-	bgColor?: string;
-	hoverBgColor?: string;
-	textColor?: string;
-	textSize?: string;
+  href: string;
+  bgColor?: string;
+  hoverBgColor?: string;
+  textColor?: string;
+  textSize?: string;
 }
 
 const {
-	href,
-	bgColor = 'bg-red-600',
-	hoverBgColor = 'hover:bg-red-700',
-	textColor = 'text-white',
-	textSize = 'text-sm md:text-base'
+  href,
+  bgColor = "bg-rose-200",
+  hoverBgColor = "hover:bg-rose-300",
+  textColor = "text-rose-800",
+  textSize = "text-sm md:text-base",
 } = Astro.props;
 ---
 
 <a
-	href={href}
-	class={`block ${bgColor} ${textColor} text-center py-3 px-4 ${hoverBgColor} transition-colors font-medium ${textSize}`}
+  href={href}
+  class={`block ${bgColor} ${textColor} text-center py-3 px-4 ${hoverBgColor} transition-colors font-medium ${textSize}`}
 >
-	<slot />
+  <slot />
 </a>

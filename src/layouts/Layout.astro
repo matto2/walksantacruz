@@ -1,22 +1,22 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import BookingModal from '../components/BookingModal.astro';
-import EyebrowBanner from '../components/EyebrowBanner.astro';
+import { ViewTransitions } from "astro:transitions";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BookingModal from "../components/BookingModal.astro";
+import EyebrowBanner from "../components/EyebrowBanner.astro";
 
 interface Props {
-	title?: string;
-	description?: string;
-	image?: string;
-	type?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: string;
 }
 
 const {
-	title = 'Walk Santa Cruz - Walking Tours | Local Guides, Local Stories',
-	description = 'Discover Santa Cruz with local guides who share local stories. Expert-guided walking tours through downtown and historic Mission Hill.',
-	image = '/downtown_hero.jpg',
-	type = 'website'
+  title = "Walk Santa Cruz - Walking Tours | Local Guides, Local Stories",
+  description = "Discover Santa Cruz with local guides who share local stories. Expert-guided walking tours through downtown and historic Mission Hill.",
+  image = "/downtown_hero.jpg",
+  type = "website",
 } = Astro.props;
 
 // Construct canonical URL
@@ -28,229 +28,242 @@ const imageURL = new URL(image, Astro.site);
 
 <!doctype html>
 <html lang="en" class="h-full">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
+    <meta name="generator" content={Astro.generator} />
 
-		<!-- Primary Meta Tags -->
-		<title>{title}</title>
-		<meta name="title" content={title} />
-		<meta name="description" content={description} />
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
 
-		<!-- Canonical URL -->
-		<link rel="canonical" href={canonicalURL} />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
 
-		<!-- Open Graph / Facebook -->
-		<meta property="og:type" content={type} />
-		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image" content={imageURL} />
-		<meta property="og:site_name" content="Walk Santa Cruz" />
-		<meta property="og:locale" content="en_US" />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageURL} />
+    <meta property="og:site_name" content="Walk Santa Cruz" />
+    <meta property="og:locale" content="en_US" />
 
-		<!-- Twitter -->
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={title} />
-		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={imageURL} />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageURL} />
 
-		<!-- Additional SEO -->
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Walk Santa Cruz" />
-		<meta name="keywords" content="santa cruz walking tours, historic santa cruz, downtown tours, mission hill, local guides, santa cruz history, architectural tours, california tours" />
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Walk Santa Cruz" />
+    <meta
+      name="keywords"
+      content="santa cruz walking tours, historic santa cruz, downtown tours, mission hill, local guides, santa cruz history, architectural tours, california tours"
+    />
 
-		<!-- Structured Data (JSON-LD) -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "TouristAttraction",
-				"name": "Walk Santa Cruz",
-				"description": "Expert-guided walking tours through downtown Santa Cruz and historic Mission Hill",
-				"url": "https://walksantacruz.com",
-				"telephone": "+1-831-275-2566",
-				"email": "hello@walksantacruz.com",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Santa Cruz",
-					"addressRegion": "CA",
-					"addressCountry": "US"
-				},
-				"geo": {
-					"@type": "GeoCoordinates",
-					"latitude": "36.9741",
-					"longitude": "-122.0308"
-				},
-				"priceRange": "$$",
-				"image": "https://walksantacruz.com/downtown_hero.jpg",
-				"touristType": ["Tourists", "Locals"],
-				"availableLanguage": "English",
-				"offers": {
-					"@type": "Offer",
-					"name": "Downtown & Mission Hill Historic District Tour",
-					"price": "45",
-					"priceCurrency": "USD",
-					"url": "https://walksantacruz.com",
-					"availability": "https://schema.org/InStock"
-				}
-			}
-		</script>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "TouristAttraction",
+        "name": "Walk Santa Cruz",
+        "description": "Expert-guided walking tours through downtown Santa Cruz and historic Mission Hill",
+        "url": "https://walksantacruz.com",
+        "telephone": "+1-831-275-2566",
+        "email": "hello@walksantacruz.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santa Cruz",
+          "addressRegion": "CA",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "36.9741",
+          "longitude": "-122.0308"
+        },
+        "priceRange": "$$",
+        "image": "https://walksantacruz.com/downtown_hero.jpg",
+        "touristType": ["Tourists", "Locals"],
+        "availableLanguage": "English",
+        "offers": {
+          "@type": "Offer",
+          "name": "Downtown & Mission Hill Historic District Tour",
+          "price": "45",
+          "priceCurrency": "USD",
+          "url": "https://walksantacruz.com",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    </script>
 
-		<!-- LocalBusiness Schema -->
-		<script type="application/ld+json">
-			{
-				"@context": "https://schema.org",
-				"@type": "LocalBusiness",
-				"name": "Walk Santa Cruz",
-				"url": "https://walksantacruz.com",
-				"logo": "https://walksantacruz.com/favicon.svg",
-				"telephone": "+1-831-275-2566",
-				"email": "hello@walksantacruz.com",
-				"priceRange": "$$",
-				"address": {
-					"@type": "PostalAddress",
-					"addressLocality": "Santa Cruz",
-					"addressRegion": "CA",
-					"postalCode": "95060",
-					"addressCountry": "US"
-				},
-				"geo": {
-					"@type": "GeoCoordinates",
-					"latitude": 36.9741,
-					"longitude": -122.0308
-				},
-				"aggregateRating": {
-					"@type": "AggregateRating",
-					"ratingValue": "5",
-					"reviewCount": "3",
-					"bestRating": "5",
-					"worstRating": "1"
-				},
-				"review": [
-					{
-						"@type": "Review",
-						"author": {
-							"@type": "Person",
-							"name": "Karen Willcuts"
-						},
-						"reviewRating": {
-							"@type": "Rating",
-							"ratingValue": "5",
-							"bestRating": "5"
-						},
-						"reviewBody": "I went on Matt's tour this morning and loved it! The tour is fun and interesting with a great combination of history, fun facts, and architecture. I would never have noticed on my own the details he pointed out on the buildings. His knowledge is truly impressive and you can tell he really loves telling the history of Santa Cruz. I highly recommend this tour if you are looking for the history of the area, a talk about beautiful architecture, and a nice little walk around downtown Santa Cruz."
-					},
-					{
-						"@type": "Review",
-						"author": {
-							"@type": "Person",
-							"name": "Ling Yang"
-						},
-						"reviewRating": {
-							"@type": "Rating",
-							"ratingValue": "5",
-							"bestRating": "5"
-						},
-						"reviewBody": "It was a really fun tour! Learned a lot of history about Santa Cruz and different styles of architectures!"
-					},
-					{
-						"@type": "Review",
-						"author": {
-							"@type": "Person",
-							"name": "Annika John"
-						},
-						"reviewRating": {
-							"@type": "Rating",
-							"ratingValue": "5",
-							"bestRating": "5"
-						},
-						"reviewBody": "I took my husband and two toddlers on this tour with Matt and we had a great time! My three year old even enjoyed the fun facts! Matt has a genuine enthusiasm about every fact he shares, and it gave us a deeper appreciation for Santa Cruz!"
-					}
-				],
-				"sameAs": [
-					"https://instagram.com/walksantacruz",
-					"https://twitter.com/walksantacruz",
-					"https://tiktok.com/@walksantacruz",
-					"https://youtube.com/@walksantacruz"
-				]
-			}
-		</script>
+    <!-- LocalBusiness Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Walk Santa Cruz",
+        "url": "https://walksantacruz.com",
+        "logo": "https://walksantacruz.com/favicon.svg",
+        "telephone": "+1-831-275-2566",
+        "email": "hello@walksantacruz.com",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santa Cruz",
+          "addressRegion": "CA",
+          "postalCode": "95060",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 36.9741,
+          "longitude": -122.0308
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5",
+          "reviewCount": "3",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Karen Willcuts"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "I went on Matt's tour this morning and loved it! The tour is fun and interesting with a great combination of history, fun facts, and architecture. I would never have noticed on my own the details he pointed out on the buildings. His knowledge is truly impressive and you can tell he really loves telling the history of Santa Cruz. I highly recommend this tour if you are looking for the history of the area, a talk about beautiful architecture, and a nice little walk around downtown Santa Cruz."
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Ling Yang"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "It was a really fun tour! Learned a lot of history about Santa Cruz and different styles of architectures!"
+          },
+          {
+            "@type": "Review",
+            "author": {
+              "@type": "Person",
+              "name": "Annika John"
+            },
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": "5",
+              "bestRating": "5"
+            },
+            "reviewBody": "I took my husband and two toddlers on this tour with Matt and we had a great time! My three year old even enjoyed the fun facts! Matt has a genuine enthusiasm about every fact he shares, and it gave us a deeper appreciation for Santa Cruz!"
+          }
+        ],
+        "sameAs": [
+          "https://instagram.com/walksantacruz",
+          "https://twitter.com/walksantacruz",
+          "https://tiktok.com/@walksantacruz",
+          "https://youtube.com/@walksantacruz"
+        ]
+      }
+    </script>
 
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-6B827QW9KC"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-6B827QW9KC');
-		</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B827QW9KC"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6B827QW9KC");
+    </script>
 
-		<ViewTransitions />
-	</head>
-	<body class="h-full flex flex-col bg-background text-foreground font-sans antialiased">
-		<!-- Gift Card Eyebrow Banner -->
-		<EyebrowBanner href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes">
-			🎄 <span class="underline">Gift Cards Available!</span> Give the unique gift of a historic walking tour ❤️ 🎁
-		</EyebrowBanner>
+    <ViewTransitions />
+  </head>
+  <body
+    class="h-full flex flex-col bg-background text-foreground font-sans antialiased"
+  >
+    <!-- Gift Card Eyebrow Banner -->
+    <EyebrowBanner
+      href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes"
+    >
+      🎄 Give the unique gift of a historic walking tour ❤️ 🎁
+    </EyebrowBanner>
 
-		<Header />
+    <Header />
 
-		<main class="flex-1">
-			<slot />
-		</main>
+    <main class="flex-1">
+      <slot />
+    </main>
 
-		<Footer />
+    <Footer />
 
-		<BookingModal />
+    <BookingModal />
 
-		<!-- FareHarbor Lightframe API - DISABLED FOR NOW - Uncomment when ready to use FareHarbor -->
-		<!-- <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script> -->
-	</body>
+    <!-- FareHarbor Lightframe API - DISABLED FOR NOW - Uncomment when ready to use FareHarbor -->
+    <!-- <script src="https://fareharbor.com/embeds/api/v1/?autolightframe=yes"></script> -->
+  </body>
 </html>
 
 <style is:global>
-	@import "../styles/global.css";
+  @import "../styles/global.css";
 
-	/* Container utilities */
-	.container {
-		width: 100%;
-		max-width: 1280px;
-		margin-left: auto;
-		margin-right: auto;
-		padding-left: 1rem;
-		padding-right: 1rem;
-	}
+  /* Container utilities */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 
-	@media (min-width: 640px) {
-		.container {
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
-		}
-	}
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
 
-	@media (min-width: 1024px) {
-		.container {
-			padding-left: 2rem;
-			padding-right: 2rem;
-		}
-	}
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 
-	/* Full bleed utility for images/videos */
-	.full-bleed {
-		width: 100vw;
-		margin-left: calc(50% - 50vw);
-		margin-right: calc(50% - 50vw);
-	}
+  /* Full bleed utility for images/videos */
+  .full-bleed {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
 
-	/* Smooth scrolling */
-	html {
-		scroll-behavior: smooth;
-	}
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 </style>
