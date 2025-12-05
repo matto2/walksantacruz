@@ -129,9 +129,7 @@ import surfer from "../assets/surfer.jpg";
         </div>
       </div>
 
-      <h3 class="text-2xl font-semibold text-primary mb-4">
-        Our Tours
-      </h3>
+      <h3 class="text-2xl font-semibold text-primary mb-4">Our Tours</h3>
 
       <TourCard
         title="Santa Cruz Downtown & Mission Hill"
@@ -163,7 +161,7 @@ import surfer from "../assets/surfer.jpg";
 
       <TourCard
         title="Santa Cruz Surfing & Beach Culture Walking Tour"
-        description="Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 90-minute guided walk along the waterfront."
+        description="Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 2-hour guided walk along the waterfront."
         image={surfer}
         imageAlt="surfer"
         duration="2 hours"
@@ -580,7 +578,7 @@ import surfer from "../assets/surfer.jpg";
     const modalTitle = document.getElementById("map-modal-title");
     const modalIframe = document.getElementById("map-modal-iframe");
 
-    mapLinks.forEach(mapLink => {
+    mapLinks.forEach((mapLink) => {
       mapLink.addEventListener("click", function (e) {
         // Check if desktop (screen width >= 768px)
         if (window.innerWidth >= 768) {
