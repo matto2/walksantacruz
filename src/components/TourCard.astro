@@ -12,6 +12,7 @@ interface Props {
   schedule: string;
   meetingPoint: string;
   meetingPointUrl: string;
+  meetingPointEmbedUrl?: string;
   bookingUrl: string;
 }
 
@@ -25,6 +26,7 @@ const {
   schedule,
   meetingPoint,
   meetingPointUrl,
+  meetingPointEmbedUrl,
   bookingUrl,
 } = Astro.props;
 ---
@@ -94,6 +96,7 @@ const {
                 href={meetingPointUrl}
                 data-map-link
                 data-map-title={meetingPoint}
+                data-map-embed-url={meetingPointEmbedUrl || meetingPointUrl}
                 class="text-primary hover:underline cursor-pointer"
               >
                 {meetingPoint}
