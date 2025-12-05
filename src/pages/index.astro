@@ -154,7 +154,7 @@ import surfer from "../assets/surfer.jpg";
         duration="2.5 hours"
         price="Adults $45 / Kids & Seniors $30"
         schedule="Friday, Saturday, and Sunday at 10am"
-        meetingPoint="300 Beach St, Santa Cruz, CA 95060 - Aloha Terrace Group Picnic Area"
+        meetingPoint="Aloha Terrace Group Picnic Area"
         meetingPointUrl="https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9"
         bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
       />
@@ -167,7 +167,7 @@ import surfer from "../assets/surfer.jpg";
         duration="2 hours"
         price="Adults $45 / Kids & Seniors $30"
         schedule="Friday, Saturday, and Sunday at 10am"
-        meetingPoint="225 Beach St, Santa Cruz, CA 95060 - Next to Beach Volleyball Courts"
+        meetingPoint="Next to Beach Volleyball Courts"
         meetingPointUrl="https://maps.app.goo.gl/5kQSAFFEfZigLaFKA"
         bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
       />
@@ -499,7 +499,7 @@ import surfer from "../assets/surfer.jpg";
     <div class="card max-w-4xl w-full">
       <div class="p-6">
         <div class="flex justify-between items-start mb-4">
-          <h3 class="text-xl font-bold">Abbott Square Market</h3>
+          <h3 id="map-modal-title" class="text-xl font-bold">Meeting Point</h3>
           <button
             id="close-map-modal"
             class="text-muted-foreground hover:text-foreground"
@@ -522,14 +522,15 @@ import surfer from "../assets/surfer.jpg";
         </div>
         <div class="w-full h-96 rounded-lg overflow-hidden">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.478677471583!2d-122.02802742415363!3d36.97450577219796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e40266abd9cbb%3A0xb9f2d632857836ec!2s725%20Front%20St%2C%20Santa%20Cruz%2C%20CA%2095060!5e0!3m2!1sen!2sus!4v1760105797730!5m2!1sen!2sus"
+            id="map-modal-iframe"
+            src=""
             width="100%"
             height="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Abbott Square Market Location"></iframe>
+            title="Meeting Point Location"></iframe>
         </div>
       </div>
     </div>
@@ -569,24 +570,45 @@ import surfer from "../assets/surfer.jpg";
 
   // Map link handler
   function setupMapLink() {
-    const mapLink = document.querySelector("[data-map-link]");
-    if (!mapLink) return;
+    const mapLinks = document.querySelectorAll("[data-map-link]");
+    if (!mapLinks.length) return;
 
-    mapLink.addEventListener("click", function (e) {
-      // Check if desktop (screen width >= 768px)
-      if (window.innerWidth >= 768) {
-        e.preventDefault();
-        const modal = document.getElementById("map-modal");
-        if (modal) {
-          modal.classList.remove("hidden");
+    const modal = document.getElementById("map-modal");
+    const modalTitle = document.getElementById("map-modal-title");
+    const modalIframe = document.getElementById("map-modal-iframe");
+
+    mapLinks.forEach(mapLink => {
+      mapLink.addEventListener("click", function (e) {
+        // Check if desktop (screen width >= 768px)
+        if (window.innerWidth >= 768) {
+          e.preventDefault();
+
+          // Get the map URL and title from data attributes
+          const mapUrl = this.getAttribute("href");
+          const mapTitle = this.getAttribute("data-map-title");
+
+          // Update modal content
+          if (modalTitle) {
+            modalTitle.textContent = mapTitle || "Meeting Point";
+          }
+
+          if (modalIframe) {
+            // Convert Google Maps share URL to embed URL
+            const embedUrl = mapUrl.replace("maps.app.goo.gl", "www.google.com/maps/embed?pb=");
+            modalIframe.src = mapUrl; // Use direct URL for iframe
+          }
+
+          // Show modal
+          if (modal) {
+            modal.classList.remove("hidden");
+          }
         }
-      }
-      // On mobile, let the default link behavior open the map app
+        // On mobile, let the default link behavior open the map app
+      });
     });
 
     // Close modal handlers
     const closeBtn = document.getElementById("close-map-modal");
-    const modal = document.getElementById("map-modal");
 
     if (closeBtn) {
       closeBtn.addEventListener("click", () => {
