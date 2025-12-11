@@ -31,7 +31,11 @@ const {
 } = Astro.props;
 ---
 
-<div class="card bg-muted/50 mb-10">
+<div
+  class="card bg-muted/50 mb-10 cursor-pointer transition-all hover:border-[#e26f04]"
+  data-booking-url={bookingUrl}
+  data-tour-card
+>
   <div class="px-8 pb-8 pt-4">
     <h4 class="text-xl font-semibold mb-6">{title}</h4>
     <p class="text-muted-foreground mb-6">
@@ -41,13 +45,11 @@ const {
     <div class="flex flex-col md:flex-row gap-6">
       <!-- Tour Image -->
       <div class="w-full md:w-40 md:flex-shrink-0">
-        <a href={bookingUrl}>
-          <Image
-            src={image}
-            alt={imageAlt}
-            class="w-full h-40 object-cover rounded-lg hover:opacity-90 transition-opacity cursor-pointer"
-          />
-        </a>
+        <Image
+          src={image}
+          alt={imageAlt}
+          class="w-full h-40 object-cover rounded-lg hover:opacity-90 transition-opacity"
+        />
       </div>
 
       <!-- Tour Details Grid -->
@@ -108,3 +110,39 @@ const {
     </div>
   </div>
 </div>
+
+<script>
+  function setupTourCardClickHandlers() {
+    const tourCards = document.querySelectorAll("[data-tour-card]");
+
+    tourCards.forEach((card) => {
+      card.addEventListener("click", function (e) {
+        // Check if the click is on the meeting point link or its children
+        const target = e.target as HTMLElement;
+        const isMapLink =
+          target.closest("[data-map-link]") !== null ||
+          target.hasAttribute("data-map-link");
+
+        // If not clicking on the map link, navigate to booking URL
+        if (!isMapLink) {
+          const bookingUrl = (card as HTMLElement).getAttribute(
+            "data-booking-url"
+          );
+          if (bookingUrl) {
+            window.location.href = bookingUrl;
+          }
+        }
+      });
+    });
+  }
+
+  // Run on initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupTourCardClickHandlers);
+  } else {
+    setupTourCardClickHandlers();
+  }
+
+  // Re-run after view transitions
+  document.addEventListener("astro:page-load", setupTourCardClickHandlers);
+</script>

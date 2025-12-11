@@ -82,7 +82,60 @@ import surfer from "../assets/surfer.jpg";
         Mission Hill, there's a walk for you.
       </p>
 
-      <h3 class="text-2xl font-semibold text-primary mb-4">
+      <h3 class="text-2xl font-semibold text-primary mb-4">Our Tours</h3>
+
+      <TourCard
+        title="Santa Cruz Downtown & Mission Hill"
+        description="Explore Santa Cruz's rich history, architecture, and culture on a relaxed 90-minute walking tour. Led by a knowledgeable local guide."
+        image={downtownTour}
+        imageAlt="Downtown Santa Cruz street scene"
+        duration="1.5 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Friday, Saturday, and Sunday at 2pm"
+        meetingPoint="Abbott Square Market in Downtown Santa Cruz"
+        meetingPointUrl="https://maps.app.goo.gl/M7uF1gUT19KMFiMW8"
+        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.4667898953576!2d-122.02546669999998!3d36.9747896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e4026125f9a71%3A0x8ba1abfab596ea05!2sAbbott%20Square%20Market!5e0!3m2!1sen!2sus!4v1764894658764!5m2!1sen!2sus"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
+
+      <TourCard
+        title="Beach Hill to Mission Hill Loop via Downtown Santa Cruz"
+        description="Discover a side of Santa Cruz most visitors miss as we walk from the coastal mansions of Beach Hill to the historic heights of Mission Hill — with vibrant downtown streets in between. (This is the same as our downtown tour, but adds in Beach Hill to include the city's waterfront in the tour.)"
+        image={goldenGateVilla}
+        imageAlt="golden gate villa"
+        duration="2.5 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Friday, Saturday, and Sunday at 10am"
+        meetingPoint="Aloha Terrace Group Picnic Area"
+        meetingPointUrl="https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9"
+        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
+
+      <TourCard
+        title="Santa Cruz Surfing & Beach Culture Walking Tour"
+        description="Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 2-hour guided walk along the waterfront."
+        image={surfer}
+        imageAlt="surfer"
+        duration="2 hours"
+        price="Adults $45 / Kids & Seniors $30"
+        schedule="Thursday at 10am"
+        meetingPoint="Next to Beach Volleyball Courts"
+        meetingPointUrl="https://maps.app.goo.gl/5kQSAFFEfZigLaFKA"
+        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d352.97276085142056!2d-122.02167846601544!3d36.963272602578684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a99cbaf37ed%3A0xd65ed89d6ad5674c!2sSanta%20Cruz%20Main%20Beach%20Volleyball!5e0!3m2!1sen!2sus!4v1764894765720!5m2!1sen!2sus"
+        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+      />
+
+      <div class="text-center">
+        <!-- FareHarbor book button -->
+        <a
+          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
+          class="btn btn-lg">Book online now!</a
+        >
+        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book This Tour</a> -->
+      </div>
+
+      <h3 class="text-2xl font-semibold text-primary mb-4 mt-12">
         Why Walk With Us?
       </h3>
 
@@ -127,59 +180,6 @@ import surfer from "../assets/surfer.jpg";
             </p>
           </div>
         </div>
-      </div>
-
-      <h3 class="text-2xl font-semibold text-primary mb-4">Our Tours</h3>
-
-      <TourCard
-        title="Santa Cruz Downtown & Mission Hill"
-        description="Explore Santa Cruz's rich history, architecture, and culture on a relaxed 90-minute walking tour. Led by a knowledgeable local guide."
-        image={downtownTour}
-        imageAlt="Downtown Santa Cruz street scene"
-        duration="1.5 hours"
-        price="Adults $45 / Kids & Seniors $30"
-        schedule="Friday, Saturday, and Sunday at 2pm"
-        meetingPoint="Abbott Square Market in Downtown Santa Cruz"
-        meetingPointUrl="https://maps.app.goo.gl/M7uF1gUT19KMFiMW8"
-        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.4667898953576!2d-122.02546669999998!3d36.9747896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e4026125f9a71%3A0x8ba1abfab596ea05!2sAbbott%20Square%20Market!5e0!3m2!1sen!2sus!4v1764894658764!5m2!1sen!2sus"
-        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
-      />
-
-      <TourCard
-        title="Beach Hill to Mission Hill Loop via Downtown Santa Cruz"
-        description="Discover a side of Santa Cruz most visitors miss as we walk from the coastal mansions of Beach Hill to the historic heights of Mission Hill — with vibrant downtown streets in between. (This is the same as our downtown tour, but adds in Beach Hill to include the city's waterfront in the tour.)"
-        image={goldenGateVilla}
-        imageAlt="golden gate villa"
-        duration="2.5 hours"
-        price="Adults $45 / Kids & Seniors $30"
-        schedule="Friday, Saturday, and Sunday at 10am"
-        meetingPoint="Aloha Terrace Group Picnic Area"
-        meetingPointUrl="https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9"
-        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus"
-        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
-      />
-
-      <TourCard
-        title="Santa Cruz Surfing & Beach Culture Walking Tour"
-        description="Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 2-hour guided walk along the waterfront."
-        image={surfer}
-        imageAlt="surfer"
-        duration="2 hours"
-        price="Adults $45 / Kids & Seniors $30"
-        schedule="Friday, Saturday, and Sunday at 10am"
-        meetingPoint="Next to Beach Volleyball Courts"
-        meetingPointUrl="https://maps.app.goo.gl/5kQSAFFEfZigLaFKA"
-        meetingPointEmbedUrl="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d352.97276085142056!2d-122.02167846601544!3d36.963272602578684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a99cbaf37ed%3A0xd65ed89d6ad5674c!2sSanta%20Cruz%20Main%20Beach%20Volleyball!5e0!3m2!1sen!2sus!4v1764894765720!5m2!1sen!2sus"
-        bookingUrl="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
-      />
-
-      <div class="text-center">
-        <!-- FareHarbor book button -->
-        <a
-          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
-          class="btn btn-lg">Book online now!</a
-        >
-        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book This Tour</a> -->
       </div>
     </div>
   </section>
