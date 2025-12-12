@@ -182,9 +182,19 @@
 			caption: img.getAttribute('data-caption') || ''
 		}));
 
-		// Add click handlers to gallery images
-		galleryImages.forEach((img, index) => {
-			img.addEventListener('click', () => openLightbox(index));
+		// Add click handlers to gallery containers (not images directly)
+		const galleryTriggers = document.querySelectorAll('[data-lightbox-trigger]');
+		galleryTriggers.forEach((trigger, index) => {
+			// Click handler
+			trigger.addEventListener('click', () => openLightbox(index));
+
+			// Keyboard handler (Enter or Space)
+			trigger.addEventListener('keydown', (e: KeyboardEvent) => {
+				if (e.key === 'Enter' || e.key === ' ') {
+					e.preventDefault();
+					openLightbox(index);
+				}
+			});
 		});
 
 		// Close button

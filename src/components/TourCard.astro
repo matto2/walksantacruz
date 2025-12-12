@@ -35,6 +35,9 @@ const {
   class="card bg-muted/50 mb-10 cursor-pointer transition-all hover:border-[#e26f04]"
   data-booking-url={bookingUrl}
   data-tour-card
+  role="button"
+  tabindex="0"
+  aria-label={`Book ${title} - Click to view booking options`}
 >
   <div class="px-8 pb-8 pt-4">
     <h4 class="text-xl font-semibold mb-6">{title}</h4>
@@ -118,8 +121,8 @@ const {
     const tourCards = document.querySelectorAll("[data-tour-card]");
 
     tourCards.forEach((card) => {
-      card.addEventListener("click", function (e) {
-        // Check if the click is on the meeting point link or its children
+      const handleActivation = (e: Event) => {
+        // Check if the click/keypress is on the meeting point link or its children
         const target = e.target as HTMLElement;
         const isMapLink =
           target.closest("[data-map-link]") !== null ||
@@ -133,6 +136,17 @@ const {
           if (bookingUrl) {
             window.location.href = bookingUrl;
           }
+        }
+      };
+
+      // Click handler
+      card.addEventListener("click", handleActivation);
+
+      // Keyboard handler (Enter or Space)
+      card.addEventListener("keydown", function (e: KeyboardEvent) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleActivation(e);
         }
       });
     });
