@@ -11,7 +11,7 @@ import surfer from "../assets/surfer.jpg";
 ---
 
 <Layout
-  title="Walk Santa Cruz - Local Walking Tours | Guided Tours in Santa Cruz, CA"
+  title="Walk Santa Cruz - Guided Walking Tours in Santa Cruz, CA"
   description="Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours. Local guides, local stories."
 >
   <!-- Hero Section - Full Bleed -->
@@ -27,6 +27,7 @@ import surfer from "../assets/surfer.jpg";
         playsinline
         class="w-full h-full object-cover"
         poster={heroImage.src}
+        aria-label="Santa Cruz walking tour background video"
       >
         <source src="/IMG_9072_web.mp4" type="video/mp4" />
         <!-- Fallback image for browsers that don't support video -->
@@ -508,6 +509,7 @@ import surfer from "../assets/surfer.jpg";
           <button
             id="close-map-modal"
             class="text-muted-foreground hover:text-foreground"
+            aria-label="Close map modal"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

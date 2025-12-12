@@ -184,6 +184,7 @@ const imageURL = new URL(image, Astro.site);
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@800&family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
       rel="stylesheet"
@@ -206,6 +207,8 @@ const imageURL = new URL(image, Astro.site);
   <body
     class="h-full flex flex-col bg-background text-foreground font-sans antialiased"
   >
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Gift Card Eyebrow Banner -->
     <EyebrowBanner
       href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes"
@@ -215,7 +218,7 @@ const imageURL = new URL(image, Astro.site);
 
     <Header />
 
-    <main class="flex-1">
+    <main id="main" class="flex-1">
       <slot />
     </main>
 
@@ -265,5 +268,20 @@ const imageURL = new URL(image, Astro.site);
   /* Smooth scrolling */
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+  }
+
+  .skip-link:focus {
+    left: 0;
+    top: 0;
+    background: #000;
+    color: #fff;
+    padding: 1rem;
   }
 </style>
