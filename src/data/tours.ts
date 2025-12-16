@@ -323,7 +323,7 @@ export const tours: Tour[] = [
 
     highlights: [
       'Extended 2.5-hour experience covering three distinct neighborhoods',
-      'Small group size (maximum 12 people) for personalized attention',
+      'Small group size (maximum 10 people) for personalized attention',
       'Insider recommendations for restaurants, beaches, and hidden local spots',
       'Beach Hill Historic District - grand oceanfront estates with stunning views',
       'Santa Cruz Beach Boardwalk - California\'s oldest surviving amusement park',
@@ -337,7 +337,7 @@ export const tours: Tour[] = [
       included: [
         'Expert local guide with comprehensive knowledge of Santa Cruz history and architecture',
         'Extended 2.5-hour experience covering three distinct neighborhoods',
-        'Small group size (maximum 12 people) ensuring personalized attention',
+        'Small group size (maximum 10 people) ensuring personalized attention',
         'Multiple elevation changes providing dramatic views and perspectives',
         'Stories connecting Beach Hill, downtown, and Mission Hill',
         'Insider tips on local restaurants, beaches, trails, and attractions'
