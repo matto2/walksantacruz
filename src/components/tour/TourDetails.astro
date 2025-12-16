@@ -1,0 +1,124 @@
+---
+import { Icon } from "astro-icon/components";
+import type { MeetingPoint } from "../../data/tours";
+
+interface Props {
+  duration: string;
+  price: string;
+  schedule: string;
+  meetingPoint: MeetingPoint;
+  bookingUrl: string;
+}
+
+const { duration, price, schedule, meetingPoint, bookingUrl } = Astro.props;
+---
+
+<!-- Desktop: Sticky Sidebar Card -->
+<div
+  class="hidden md:block card bg-background border-2 border-primary/20 sticky top-4"
+>
+  <div class="p-6">
+    <h3 class="text-2xl font-bold mb-6 text-center">Tour Details</h3>
+
+    <!-- Price (most prominent) -->
+    <div class="mb-6 text-center">
+      <div class="text-3xl font-bold text-primary mb-2">
+        {price}
+      </div>
+      <div class="text-sm text-muted-foreground italic">
+        (+ applicable fees)
+      </div>
+    </div>
+
+    <!-- Primary CTA -->
+    <a href={bookingUrl} class="btn btn-lg w-full mb-6 block text-center">
+      Book This Tour
+    </a>
+
+    <!-- Details Grid -->
+    <div class="space-y-4">
+      <div class="flex items-start gap-3">
+        <Icon
+          name="lucide:clock"
+          class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+        />
+        <div class="flex-1">
+          <div class="font-semibold text-sm mb-1">Duration</div>
+          <div class="text-sm text-muted-foreground">{duration}</div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <Icon
+          name="lucide:calendar"
+          class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+        />
+        <div class="flex-1">
+          <div class="font-semibold text-sm mb-1">Schedule</div>
+          <div class="text-sm text-muted-foreground">{schedule}</div>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-3">
+        <Icon
+          name="lucide:map-pin"
+          class="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+        />
+        <div class="flex-1">
+          <div class="font-semibold text-sm mb-1">Meeting Point</div>
+          <div class="text-sm">
+            <a
+              href={meetingPoint.url}
+              data-map-link-details
+              data-map-title={meetingPoint.name}
+              data-map-embed-url={meetingPoint.embedUrl || meetingPoint.url}
+              class="text-primary hover:underline cursor-pointer"
+            >
+              {meetingPoint.name}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="mt-6 pt-6 border-t border-border">
+      <div class="text-sm text-center text-muted-foreground mb-2">
+        Questions?
+      </div>
+      <div class="text-sm text-center">
+        <a
+          href="tel:831-275-2566"
+          class="text-primary hover:underline inline-flex items-center gap-1"
+        >
+          <Icon name="lucide:phone" class="w-4 h-4" />
+          831-275-2566
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile: Fixed Bottom Bar -->
+<div
+  class="md:hidden fixed bottom-0 left-0 right-0 bg-background border-t-2 border-primary/20 shadow-lg z-40"
+>
+  <div class="container py-4">
+    <div class="flex items-center justify-between gap-4">
+      <div class="flex-shrink-0">
+        <div class="text-lg font-bold text-primary">{price}</div>
+        <div class="text-xs text-muted-foreground">{duration}</div>
+      </div>
+      <a
+        href={bookingUrl}
+        class="btn flex-1 text-center"
+        style="min-width: 150px;"
+      >
+        Book Tour
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Add padding to bottom of page on mobile so content isn't hidden by fixed bar -->
+<div class="md:hidden h-24" aria-hidden="true"></div>

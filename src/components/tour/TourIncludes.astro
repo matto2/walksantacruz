@@ -1,0 +1,87 @@
+---
+import { Icon } from "astro-icon/components";
+import type { TourIncludes } from "../../data/tours";
+
+interface Props {
+  includes: TourIncludes;
+}
+
+const { includes } = Astro.props;
+---
+
+<div>
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">What to Expect</h2>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- What's Included -->
+    <div class="card bg-primary/5">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <Icon name="lucide:check-circle" class="w-5 h-5 text-primary" />
+          <span>What's Included</span>
+        </h3>
+        <ul class="space-y-2">
+          {
+            includes.included.map((item) => (
+              <li class="flex items-start gap-2 text-sm">
+                <Icon
+                  name="lucide:check"
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- What to Bring -->
+    <div class="card bg-muted/50">
+      <div class="p-6">
+        <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+          <Icon name="lucide:backpack" class="w-5 h-5 text-primary" />
+          <span>What to Bring</span>
+        </h3>
+        <ul class="space-y-2">
+          {
+            includes.toBring.map((item) => (
+              <li class="flex items-start gap-2 text-sm">
+                <Icon
+                  name="lucide:circle-dot"
+                  class="w-4 h-4 text-primary flex-shrink-0 mt-0.5"
+                />
+                <span>{item}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Not Included (if provided) -->
+    {
+      includes.notIncluded && includes.notIncluded.length > 0 && (
+        <div class="card md:col-span-2">
+          <div class="p-6">
+            <h3 class="text-lg font-semibold mb-4 flex items-center gap-2">
+              <Icon name="lucide:info" class="w-5 h-5 text-muted-foreground" />
+              <span>Not Included</span>
+            </h3>
+            <ul class="grid sm:grid-cols-2 gap-2">
+              {includes.notIncluded.map((item) => (
+                <li class="flex items-start gap-2 text-sm text-muted-foreground">
+                  <Icon
+                    name="lucide:minus"
+                    class="w-4 h-4 flex-shrink-0 mt-0.5"
+                  />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )
+    }
+  </div>
+</div>

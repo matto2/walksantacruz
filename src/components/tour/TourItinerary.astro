@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon/components";
+import type { TourItineraryStop } from "../../data/tours";
+
+interface Props {
+  itinerary: TourItineraryStop[];
+  highlights: string[];
+}
+
+const { itinerary, highlights } = Astro.props;
+---
+
+<div class="space-y-8">
+  <!-- What You'll Experience Section -->
+  <div>
+    <h2 class="text-2xl md:text-3xl font-bold mb-6">What You'll Experience</h2>
+
+    <!-- Itinerary Timeline -->
+    <div class="space-y-6">
+      {
+        itinerary.map((stop, index) => (
+          <div class="flex gap-4">
+            <!-- Number Circle -->
+            <div class="flex-shrink-0">
+              <div class="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
+                {index + 1}
+              </div>
+              {index < itinerary.length - 1 && (
+                <div class="w-0.5 h-full bg-primary/30 mx-auto mt-2" />
+              )}
+            </div>
+
+            <!-- Stop Content -->
+            <div class="flex-1 pb-6">
+              <div class="flex items-start justify-between gap-4 mb-2">
+                <h3 class="text-xl font-semibold">{stop.title}</h3>
+                {stop.duration && (
+                  <div class="flex items-center gap-1 text-sm text-muted-foreground whitespace-nowrap">
+                    <Icon name="lucide:clock" class="w-4 h-4" />
+                    <span>{stop.duration}</span>
+                  </div>
+                )}
+              </div>
+              <p class="text-muted-foreground leading-relaxed">
+                {stop.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Highlights Section -->
+  {
+    highlights && highlights.length > 0 && (
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Tour Highlights</h3>
+        <ul class="grid sm:grid-cols-2 gap-3">
+          {highlights.map((highlight) => (
+            <li class="flex items-start gap-2">
+              <Icon
+                name="lucide:check-circle"
+                class="w-5 h-5 text-primary flex-shrink-0 mt-0.5"
+              />
+              <span class="text-muted-foreground">{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>

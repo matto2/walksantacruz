@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import type { Tour } from "../../data/tours";
+
+interface Props {
+  relatedTours: Tour[];
+}
+
+const { relatedTours } = Astro.props;
+---
+
+{
+  relatedTours && relatedTours.length > 0 && (
+    <div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center">
+        You Might Also Like
+      </h2>
+      <p class="text-center text-muted-foreground mb-8">
+        Discover more of Santa Cruz with these tours
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {relatedTours.map((tour) => (
+          <a
+            href={`/tours/${tour.slug}`}
+            class="card bg-muted/50 hover:border-primary transition-all group block"
+          >
+            <div class="p-6">
+              {/* Tour Image */}
+              <div class="mb-4 rounded-lg overflow-hidden">
+                <Image
+                  src={tour.cardImage}
+                  alt={tour.cardImageAlt}
+                  class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  quality={75}
+                />
+              </div>
+
+              {/* Tour Title */}
+              <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                {tour.title}
+              </h3>
+
+              {/* Tour Pricing */}
+              <div class="text-sm mb-4 space-y-1">
+                <div class="font-semibold text-foreground">ADULT: ${tour.adultPrice}</div>
+                <div class="font-semibold text-foreground">CHILD (6-12): ${tour.childPrice}</div>
+                <div class="text-xs text-muted-foreground">5 and under FREE per adult ticket purchased</div>
+              </div>
+
+              {/* Learn More Link */}
+              <div class="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+                <span>Learn More</span>
+                <Icon name="lucide:arrow-right" class="w-4 h-4" />
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  )
+}

@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+import type { TourFAQ } from "../../data/tours";
+
+interface Props {
+  faqs: TourFAQ[];
+}
+
+const { faqs } = Astro.props;
+
+// Generate structured data for SEO
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<div>
+  <h2 class="text-2xl md:text-3xl font-bold mb-6">
+    Frequently Asked Questions
+  </h2>
+
+  <div class="space-y-4">
+    {
+      faqs.map((faq, index) => (
+        <div class="card border border-border">
+          <details class="group">
+            <summary class="flex items-center justify-between cursor-pointer p-6 hover:bg-muted/50 transition-colors">
+              <h3 class="font-semibold text-lg pr-4">{faq.question}</h3>
+              <Icon
+                name="lucide:chevron-down"
+                class="w-5 h-5 text-primary flex-shrink-0 transition-transform group-open:rotate-180"
+              />
+            </summary>
+            <div class="px-6 pb-6 pt-2">
+              <p class="text-muted-foreground leading-relaxed">{faq.answer}</p>
+            </div>
+          </details>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Still have questions CTA -->
+  <div class="mt-8 text-center p-6 card bg-primary/5">
+    <h3 class="font-semibold mb-2">Still have questions?</h3>
+    <p class="text-muted-foreground mb-4">
+      We're here to help! Contact us and we'll be happy to answer any questions
+      you have.
+    </p>
+    <div class="flex flex-wrap gap-4 justify-center">
+      <a href="tel:831-275-2566" class="btn btn-secondary inline-flex items-center gap-2">
+        <Icon name="lucide:phone" class="w-4 h-4" />
+        831-275-2566
+      </a>
+      <a href="mailto:hello@walksantacruz.com" class="btn btn-secondary inline-flex items-center gap-2">
+        <Icon name="lucide:mail" class="w-4 h-4" />
+        hello@walksantacruz.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQPage Structured Data for SEO -->
+<script type="application/ld+json" set:html={JSON.stringify(faqStructuredData)}
+></script>
+
+<style>
+  /* Remove default details marker */
+  details summary {
+    list-style: none;
+  }
+  details summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
