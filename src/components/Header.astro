@@ -1,6 +1,7 @@
 ---
 // Header Navigation Component
 import Logo2 from './Logo2.astro';
+import { tours } from '../data/tours';
 const currentPath = Astro.url.pathname;
 ---
 
@@ -27,6 +28,29 @@ const currentPath = Astro.url.pathname;
 				<a href="/" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/' ? 'font-bold border-primary' : 'border-transparent'}`}>
 					Home
 				</a>
+
+				<!-- Tours Dropdown -->
+				<div class="relative group">
+					<button class="text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] border-transparent flex items-center gap-1">
+						Our Tours
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180">
+							<path d="m6 9 6 6 6-6"/>
+						</svg>
+					</button>
+					<div class="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+						<div class="py-2">
+							{tours.map((tour) => (
+								<a
+									href={`/tours/${tour.slug}`}
+									class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === `/tours/${tour.slug}` ? 'font-bold text-primary' : ''}`}
+								>
+									{tour.title}
+								</a>
+							))}
+						</div>
+					</div>
+				</div>
+
 				<a href="/gallery" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/gallery' ? 'font-bold border-primary' : 'border-transparent'}`}>
 					Gallery
 				</a>
@@ -48,6 +72,27 @@ const currentPath = Astro.url.pathname;
 				<a href="/" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/' ? 'font-bold' : ''}`}>
 					Home
 				</a>
+
+				<!-- Tours Dropdown Mobile -->
+				<div>
+					<button id="mobile-tours-toggle" class="text-foreground hover:text-primary transition-colors font-medium flex items-center gap-1 w-full">
+						Our Tours
+						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform" id="mobile-tours-arrow">
+							<path d="m6 9 6 6 6-6"/>
+						</svg>
+					</button>
+					<div id="mobile-tours-dropdown" class="hidden pl-4 mt-2 flex flex-col gap-2">
+						{tours.map((tour) => (
+							<a
+								href={`/tours/${tour.slug}`}
+								class={`text-foreground hover:text-primary transition-colors ${currentPath === `/tours/${tour.slug}` ? 'font-bold text-primary' : ''}`}
+							>
+								{tour.title}
+							</a>
+						))}
+					</div>
+				</div>
+
 				<a href="/gallery" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/gallery' ? 'font-bold' : ''}`}>
 					Gallery
 				</a>
@@ -81,11 +126,35 @@ const currentPath = Astro.url.pathname;
 			mobileMenu.classList.toggle('hidden');
 		});
 
-		// Close mobile menu when clicking a link
-		const mobileLinks = mobileMenu.querySelectorAll('a, button');
+		// Get fresh references to tours dropdown elements after DOM is ready
+		const toursToggle = document.getElementById('mobile-tours-toggle');
+		const toursDropdown = document.getElementById('mobile-tours-dropdown');
+
+		// Setup tours dropdown toggle
+		if (toursToggle && toursDropdown) {
+			// Remove old listener by cloning
+			const newToursToggle = toursToggle.cloneNode(true);
+			toursToggle.parentNode.replaceChild(newToursToggle, toursToggle);
+
+			newToursToggle.addEventListener('click', (e) => {
+				e.preventDefault();
+				e.stopPropagation();
+				// Get fresh reference to arrow after cloning
+				const arrow = document.getElementById('mobile-tours-arrow');
+				toursDropdown.classList.toggle('hidden');
+				if (arrow) arrow.classList.toggle('rotate-180');
+			});
+		}
+
+		// Close mobile menu when clicking a link (but not the tours toggle button)
+		const mobileLinks = mobileMenu.querySelectorAll('a');
 		mobileLinks.forEach(link => {
 			link.addEventListener('click', () => {
 				mobileMenu.classList.add('hidden');
+				const dropdown = document.getElementById('mobile-tours-dropdown');
+				const arrow = document.getElementById('mobile-tours-arrow');
+				if (dropdown) dropdown.classList.add('hidden');
+				if (arrow) arrow.classList.remove('rotate-180');
 			});
 		});
 	}

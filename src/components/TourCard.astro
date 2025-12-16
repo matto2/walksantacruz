@@ -3,162 +3,51 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 interface Props {
+  slug: string;
   title: string;
-  description: string;
   image: ImageMetadata;
   imageAlt: string;
-  duration: string;
-  price: string;
-  schedule: string;
-  meetingPoint: string;
-  meetingPointUrl: string;
-  meetingPointEmbedUrl?: string;
-  bookingUrl: string;
+  adultPrice: number;
+  childPrice: number;
 }
 
-const {
-  title,
-  description,
-  image,
-  imageAlt,
-  duration,
-  price,
-  schedule,
-  meetingPoint,
-  meetingPointUrl,
-  meetingPointEmbedUrl,
-  bookingUrl,
-} = Astro.props;
+const { slug, title, image, imageAlt, adultPrice, childPrice } = Astro.props;
 ---
 
-<div
-  class="card bg-muted/50 mb-10 cursor-pointer transition-all hover:border-[#e26f04]"
-  data-booking-url={bookingUrl}
+<a
+  href={`/tours/${slug}`}
+  class="card bg-muted/50 hover:border-primary transition-all group block"
   data-tour-card
-  role="button"
-  tabindex="0"
-  aria-label={`Book ${title} - Click to view booking options`}
+  aria-label={`Learn more about ${title}`}
 >
-  <div class="px-8 pb-8 pt-4">
-    <h4 class="text-xl font-semibold mb-6">{title}</h4>
-    <p class="text-muted-foreground mb-6">
-      {description}
-    </p>
+  <div class="p-6">
+    {/* Tour Image */}
+    <div class="mb-4 rounded-lg overflow-hidden">
+      <Image
+        src={image}
+        alt={imageAlt}
+        class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
+        loading="lazy"
+        quality={75}
+      />
+    </div>
 
-    <div class="flex flex-col md:flex-row gap-6">
-      <!-- Tour Image -->
-      <div class="w-full md:w-40 md:flex-shrink-0">
-        <Image
-          src={image}
-          alt={imageAlt}
-          class="w-full h-40 object-cover rounded-lg hover:opacity-90 transition-opacity"
-        />
-      </div>
+    {/* Tour Title */}
+    <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+      {title}
+    </h3>
 
-      <!-- Tour Details Grid -->
-      <div class="grid sm:grid-cols-2 gap-6 flex-1">
-        <div class="flex items-start gap-3">
-          <Icon
-            name="lucide:clock"
-            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-          />
-          <div>
-            <div class="font-semibold mb-2">Duration</div>
-            <div class="text-muted-foreground">{duration}</div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <Icon
-            name="lucide:dollar-sign"
-            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-          />
-          <div>
-            <div class="font-semibold mb-2">Price</div>
-            <div class="text-muted-foreground">
-              {price}<br /><span class="text-xs italic">(+ applicable fees)</span>
-            </div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <Icon
-            name="lucide:calendar"
-            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-          />
-          <div>
-            <div class="font-semibold mb-2">Schedule</div>
-            <div class="text-muted-foreground">
-              {schedule}
-            </div>
-          </div>
-        </div>
-        <div class="flex items-start gap-3">
-          <Icon
-            name="lucide:map-pin"
-            class="w-5 h-5 text-[#e26f04] mt-1 flex-shrink-0"
-          />
-          <div>
-            <div class="font-semibold mb-2">Meeting Point</div>
-            <div class="text-muted-foreground">
-              <a
-                href={meetingPointUrl}
-                data-map-link
-                data-map-title={meetingPoint}
-                data-map-embed-url={meetingPointEmbedUrl || meetingPointUrl}
-                class="text-primary hover:underline cursor-pointer"
-              >
-                {meetingPoint}
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+    {/* Tour Pricing */}
+    <div class="text-sm mb-4 space-y-1">
+      <div class="font-semibold text-foreground">ADULT: ${adultPrice}</div>
+      <div class="font-semibold text-foreground">CHILD (6-12): ${childPrice}</div>
+      <div class="text-xs text-muted-foreground">5 and under FREE per adult ticket purchased</div>
+    </div>
+
+    {/* Learn More Link */}
+    <div class="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
+      <span>Learn More</span>
+      <Icon name="lucide:arrow-right" class="w-4 h-4" />
     </div>
   </div>
-</div>
-
-<script>
-  function setupTourCardClickHandlers() {
-    const tourCards = document.querySelectorAll("[data-tour-card]");
-
-    tourCards.forEach((card) => {
-      const handleActivation = (e: Event) => {
-        // Check if the click/keypress is on the meeting point link or its children
-        const target = e.target as HTMLElement;
-        const isMapLink =
-          target.closest("[data-map-link]") !== null ||
-          target.hasAttribute("data-map-link");
-
-        // If not clicking on the map link, navigate to booking URL
-        if (!isMapLink) {
-          const bookingUrl = (card as HTMLElement).getAttribute(
-            "data-booking-url"
-          );
-          if (bookingUrl) {
-            window.location.href = bookingUrl;
-          }
-        }
-      };
-
-      // Click handler
-      card.addEventListener("click", handleActivation);
-
-      // Keyboard handler (Enter or Space)
-      card.addEventListener("keydown", function (e: KeyboardEvent) {
-        if (e.key === "Enter" || e.key === " ") {
-          e.preventDefault();
-          handleActivation(e);
-        }
-      });
-    });
-  }
-
-  // Run on initial load
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupTourCardClickHandlers);
-  } else {
-    setupTourCardClickHandlers();
-  }
-
-  // Re-run after view transitions
-  document.addEventListener("astro:page-load", setupTourCardClickHandlers);
-</script>
+</a>
