@@ -6,6 +6,8 @@ import Lightbox from "../../components/Lightbox.astro";
 import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import mapBg from "../../assets/map-bg.jpg";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
+import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
+import mattLocalMag from "../../assets/surf-tour/Me-in-Local-Mag_1990.jpg";
 
 export async function getStaticPaths() {
   return tours.map((tour) => ({
@@ -270,6 +272,71 @@ const tourStructuredData = {
 
     </div>
   </section>
+
+  <!-- Matt Knows His Surf Section (Surfing Tour Only) -->
+  {
+    tour.slug === 'surfing-beach-culture' && (
+      <section class="container py-16 md:py-24">
+        <div class="max-w-3xl mx-auto card p-8 md:p-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
+            Matt Knows His Surf
+          </h2>
+
+          <div class="prose prose-lg max-w-none text-muted-foreground space-y-4">
+            <p>
+              I've spent years studying Santa Cruz surf culture—and I've lived it, too.
+            </p>
+
+            <p>
+              I started boogie boarding at the Wharf and Finger Bowl in the late '70s, then moved to stand-up surfing. My first board was a beat-up yellow single fin from Otto and Jeanne's. I learned at Cowells, graduated to the Lane, and explored up and down the coast from there.
+            </p>
+
+            <p>
+              I competed at the O'Neill Coldwater Classic and Bud Tour. In 1994, I co-founded <a href="https://allsurfmagazines.com/book-list-2/magazines/usa/the-juice/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">The Juice, Northern California's Surf Magazine</a> with Eric Mitchell—documenting the surf culture I was living.
+            </p>
+
+            <div class="my-6">
+              <Image
+                src={mattLocalMag}
+                alt="Matt surfing a small cove off West Cliff, 1990"
+                class="w-full rounded-lg"
+                loading="lazy"
+                quality={85}
+              />
+              <p class="text-sm text-center text-muted-foreground mt-2 italic">
+                Surfing a small cove off West Cliff - Published in Local magazine, 1990 - Photo Bud Clark
+              </p>
+            </div>
+
+            <p>
+              I've continued writing about surfing over the years, including a piece on Medium about <a href="https://medium.com/@mattosurf/surfing-well-into-middle-age-461d55a173eb" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">surfing well into middle age</a>.
+            </p>
+
+            <p>
+              I've taught friends and family to surf, got my sons hooked early, and chased waves across Hawaii, Bali, Maldives, Costa Rica, France, Cook Islands, Nicaragua, Baja, California, Oregon, Puerto Escondido—even New York.
+            </p>
+
+            <p>
+              ...and I'm still surfing today 🏄‍♂️
+            </p>
+
+            <div class="mt-6">
+              <Image
+                src={mattSurfing2025}
+                alt="Matt surfing up the coast in 2025"
+                class="w-full rounded-lg"
+                loading="lazy"
+                quality={85}
+              />
+              <p class="text-sm text-center text-muted-foreground mt-2 italic">
+                Matt surfing up the coast in 2025 - Photo Nola Moosman
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
 
   <!-- Related Tours -->
   {
