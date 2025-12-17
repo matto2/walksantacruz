@@ -478,16 +478,16 @@ export const tours: Tour[] = [
     ],
 
     highlights: [
-      'Small group experience (maximum 10 people) for personalized attention',
+      'See the spot where surfing was introduced to mainland America by Hawaiian princes in 1885',
       'Learn to identify surf breaks and read ocean conditions',
       'Insider tips on surf shops, viewing spots, and local surf traditions',
-      'Main Beach - where Hawaiian princes introduced surfing to mainland America in 1885',
-      'Santa Cruz Beach Boardwalk - California\'s oldest amusement park and beach culture hub',
+      'Santa Cruz Beach Boardwalk - where Duke Kahanamoku demonstrated his legendary water feats',
       'Cowell Beach - premier beginner surf spot and longboarding renaissance birthplace',
       'Steamer Lane - world-famous surf break with multiple peaks (The Point, The Slot, Middle Peak)',
       'Santa Cruz Surfing Museum - surfboard evolution and Jack O\'Neill\'s wetsuit innovations',
       'Lighthouse Point - marine wildlife viewing including sea lions, harbor seals, otters, and migrating whales',
-      'West Cliff Drive - scenic tour of various surf breaks and coastal geography'
+      'West Cliff Drive - scenic tour of various surf breaks and coastal geography',
+      'Small group experience (maximum 10 people) for personalized attention'
     ],
 
     includes: {
