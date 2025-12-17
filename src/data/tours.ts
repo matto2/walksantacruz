@@ -484,7 +484,7 @@ export const tours: Tour[] = [
       'Santa Cruz Beach Boardwalk - where Duke Kahanamoku demonstrated his legendary water feats',
       'Cowell Beach - premier beginner surf spot and longboarding renaissance birthplace',
       'Steamer Lane - world-famous surf break with multiple peaks (The Point, The Slot, Middle Peak)',
-      'Santa Cruz Surfing Museum - surfboard evolution and Jack O\'Neill\'s wetsuit innovations',
+      'Hear stories about the innovators: Jack O\'Neill, Sam Reid, Dorothy Becker to today\'s aerial heroes and big wave legends',
       'Lighthouse Point - marine wildlife viewing including sea lions, harbor seals, otters, and migrating whales',
       'West Cliff Drive - scenic tour of various surf breaks and coastal geography',
       'Small group experience (maximum 10 people) for personalized attention'
