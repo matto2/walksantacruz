@@ -216,18 +216,18 @@ const imageURL = new URL(image, Astro.site);
   >
     <a href="#main" class="skip-link">Skip to main content</a>
 
+    <Header />
+
+    <main id="main" class="flex-1">
+      <slot />
+    </main>
+
     <!-- Gift Card Eyebrow Banner -->
     <EyebrowBanner
       href="https://fareharbor.com/embeds/book/walksantacruz/items/679241/calendar/?full-items=yes"
     >
       Give the unique gift of a historic walking tour 🎄🎁
     </EyebrowBanner>
-
-    <Header />
-
-    <main id="main" class="flex-1">
-      <slot />
-    </main>
 
     <Footer />
 
