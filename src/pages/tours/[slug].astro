@@ -97,7 +97,7 @@ const tourStructuredData = {
   </section>
 
   <!-- Main Content -->
-  <section class="container pb-16">
+  <section class="container pb-8">
     <div class="max-w-3xl mx-auto">
 
       <!-- Trip Highlights -->
@@ -276,7 +276,7 @@ const tourStructuredData = {
   <!-- Matt Knows His Surf Section (Surfing Tour Only) -->
   {
     tour.slug === 'surfing-beach-culture' && (
-      <section class="container py-16 md:py-24">
+      <section class="container pt-16 pb-4 md:pt-24 md:pb-6">
         <div class="max-w-3xl mx-auto card p-8 md:p-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
             Matt Knows His Surf
@@ -338,10 +338,19 @@ const tourStructuredData = {
     )
   }
 
+  <!-- Book Online CTA -->
+  <section class="container pt-2 pb-8 md:pt-2 md:pb-12">
+    <div class="max-w-2xl mx-auto text-center">
+      <a href={tour.bookingUrl} class="btn btn-lg">
+        Book Online Now
+      </a>
+    </div>
+  </section>
+
   <!-- Related Tours -->
   {
     relatedTours.length > 0 && (
-      <section class="container py-16 md:py-24">
+      <section class="container pt-8 pb-16 md:pt-12 md:pb-24">
         <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center">
           You Might Also Like
         </h2>
