@@ -1,0 +1,133 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+// import faqImage from "../assets/faq-placeholder.jpg"; // Uncomment when image is added
+---
+
+<Layout
+  title="FAQ - Frequently Asked Questions | Walk Santa Cruz"
+  description="Get answers to common questions about our walking tours, including parking, pet policies, tipping, and more."
+>
+  <!-- Hero Section -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-lg text-center text-muted-foreground mb-12">
+        Everything you need to know about our Santa Cruz walking tours
+      </p>
+
+      <!-- FAQ Image Placeholder -->
+      <div class="mb-12 rounded-lg overflow-hidden bg-muted flex items-center justify-center" style="height: 400px;">
+        <div class="text-center text-muted-foreground">
+          <Icon name="lucide:image" class="w-16 h-16 mx-auto mb-4 opacity-50" />
+          <p class="text-lg">FAQ Image Placeholder</p>
+          <p class="text-sm">Image will be added here</p>
+        </div>
+      </div>
+      <!-- Uncomment when image is ready:
+      <div class="mb-12 rounded-lg overflow-hidden">
+        <Image
+          src={faqImage}
+          alt="Walk Santa Cruz Tours"
+          class="w-full h-auto"
+          loading="eager"
+          quality={85}
+        />
+      </div>
+      -->
+
+      <!-- FAQ Items -->
+      <div class="space-y-8">
+
+        <!-- Parking -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-2xl font-bold mb-4 flex items-start gap-3">
+            <Icon name="lucide:car" class="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <span>Where can I park?</span>
+          </h2>
+          <div class="prose prose-lg max-w-none text-muted-foreground ml-9">
+            <p>
+              Street parking is available throughout downtown Santa Cruz. Most tours meet near downtown, where you'll find metered parking and public parking garages.
+            </p>
+            <p class="font-semibold text-foreground mt-4">
+              We recommend using the <a href="https://parkmobile.io/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">ParkMobile app</a> for easy mobile payment at parking meters throughout the city.
+            </p>
+            <p class="text-sm mt-2">
+              The app allows you to pay for parking from your phone, extend your session remotely, and receive notifications before your time expires.
+            </p>
+          </div>
+        </div>
+
+        <!-- Dogs -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-2xl font-bold mb-4 flex items-start gap-3">
+            <Icon name="lucide:dog" class="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <span>Can I bring my dog?</span>
+          </h2>
+          <div class="prose prose-lg max-w-none text-muted-foreground ml-9">
+            <p>
+              Dogs on leash are welcome to join our tours! They're allowed in all public areas where they would normally be permitted.
+            </p>
+            <p class="text-sm mt-2">
+              Please ensure your dog is well-behaved, on a leash at all times, and comfortable walking in groups. Don't forget to bring water for your furry friend!
+            </p>
+          </div>
+        </div>
+
+        <!-- Tipping -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-2xl font-bold mb-4 flex items-start gap-3">
+            <Icon name="lucide:banknote" class="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <span>Is tipping expected?</span>
+          </h2>
+          <div class="prose prose-lg max-w-none text-muted-foreground ml-9">
+            <p>
+              Tips are appreciated but not required. If you enjoyed your tour and felt your guide provided exceptional service, gratuities are always welcome as a way to show your appreciation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Reviews -->
+        <div class="card p-6 md:p-8">
+          <h2 class="text-2xl font-bold mb-4 flex items-start gap-3">
+            <Icon name="lucide:star" class="w-6 h-6 text-primary mt-1 flex-shrink-0" />
+            <span>How can I leave a review?</span>
+          </h2>
+          <div class="prose prose-lg max-w-none text-muted-foreground ml-9">
+            <p class="font-semibold text-foreground">
+              Reviews are very much appreciated! We ❤️ reviews!
+            </p>
+            <p class="mt-4">
+              Please leave us a review on <a href="https://maps.app.goo.gl/MTTKShE8KJNBnoC69" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-semibold">Google Maps</a> or the service you purchased your tickets on.
+            </p>
+            <p class="text-sm mt-2">
+              Your feedback helps us improve our tours and helps other visitors discover the hidden stories of Santa Cruz!
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CTA Section -->
+      <div class="mt-12 text-center card bg-primary/5 p-8 md:p-12">
+        <Icon
+          name="lucide:help-circle"
+          class="w-16 h-16 text-primary mx-auto mb-6"
+        />
+        <h2 class="text-3xl font-bold mb-4">
+          Have More Questions?
+        </h2>
+        <p class="text-lg text-muted-foreground mb-8">
+          We're here to help! Feel free to reach out with any questions about our tours.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="btn btn-lg">Contact Us</a>
+          <a href="tel:831-275-2566" class="btn btn-lg btn-outline">Call (831) 275-2566</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>
