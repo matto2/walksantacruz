@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-// import faqImage from "../assets/faq-placeholder.jpg"; // Uncomment when image is added
+import { Image } from "astro:assets";
+import faqImage from "../assets/FAQ_IMG_0176.jpg";
 ---
 
 <Layout
@@ -18,25 +19,16 @@ import { Icon } from "astro-icon/components";
         Everything you need to know about our Santa Cruz walking tours
       </p>
 
-      <!-- FAQ Image Placeholder -->
-      <div class="mb-12 rounded-lg overflow-hidden bg-muted flex items-center justify-center" style="height: 400px;">
-        <div class="text-center text-muted-foreground">
-          <Icon name="lucide:image" class="w-16 h-16 mx-auto mb-4 opacity-50" />
-          <p class="text-lg">FAQ Image Placeholder</p>
-          <p class="text-sm">Image will be added here</p>
-        </div>
-      </div>
-      <!-- Uncomment when image is ready:
+      <!-- FAQ Image -->
       <div class="mb-12 rounded-lg overflow-hidden">
         <Image
           src={faqImage}
-          alt="Walk Santa Cruz Tours"
+          alt="Walk Santa Cruz Tours FAQ"
           class="w-full h-auto"
           loading="eager"
           quality={85}
         />
       </div>
-      -->
 
       <!-- FAQ Items -->
       <div class="space-y-8">
@@ -122,9 +114,19 @@ import { Icon } from "astro-icon/components";
         <p class="text-lg text-muted-foreground mb-8">
           We're here to help! Feel free to reach out with any questions about our tours.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="btn btn-lg">Contact Us</a>
-          <a href="tel:831-275-2566" class="btn btn-lg btn-outline">Call (831) 275-2566</a>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="tel:8312752566" class="btn btn-secondary inline-flex items-center gap-2">
+            <Icon name="lucide:phone" class="w-5 h-5" />
+            831-275-2566
+          </a>
+          <a href="mailto:hello@walksantacruz.com" class="btn btn-secondary inline-flex items-center gap-2">
+            <Icon name="lucide:mail" class="w-5 h-5" />
+            hello@walksantacruz.com
+          </a>
+          <a href="https://wa.me/18312752566" target="_blank" rel="noopener noreferrer" class="btn btn-secondary inline-flex items-center gap-2">
+            <Icon name="lucide:message-circle" class="w-5 h-5" />
+            WhatsApp
+          </a>
         </div>
       </div>
 
