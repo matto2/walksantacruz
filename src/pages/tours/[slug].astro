@@ -7,7 +7,7 @@ import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import mapBg from "../../assets/map-bg.jpg";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
 import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
-import mattLocalMag from "../../assets/surf-tour/Me-in-Local-Mag_1990.jpg";
+import mattLocalMag from "../../assets/surf-tour/matt-surfing-1990.jpg";
 
 export async function getStaticPaths() {
   return tours.map((tour) => ({
@@ -22,7 +22,11 @@ const relatedTours = getRelatedTours(tour.slug);
 // Pre-process gallery images for lightbox
 const processedGalleryImages = await Promise.all(
   tour.galleryImages.map(async (image) => {
-    const optimizedImage = await getImage({ src: image.src, format: 'webp', quality: 80 });
+    const optimizedImage = await getImage({
+      src: image.src,
+      format: "webp",
+      quality: 80,
+    });
     return {
       ...image,
       optimizedSrc: optimizedImage.src,
@@ -84,7 +88,9 @@ const tourStructuredData = {
 
     <!-- Breadcrumb -->
     <nav class="mb-8" aria-label="Breadcrumb">
-      <ol class="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+      <ol
+        class="flex items-center justify-center gap-2 text-sm text-muted-foreground"
+      >
         <li><a href="/" class="hover:underline">Home</a></li>
         <Icon name="lucide:chevron-right" class="w-4 h-4" />
         <li><a href="/#tours" class="hover:underline">Tours</a></li>
@@ -99,19 +105,20 @@ const tourStructuredData = {
   <!-- Main Content -->
   <section class="container pb-8">
     <div class="max-w-3xl mx-auto">
-
       <!-- Trip Highlights -->
       <div class="mb-12">
         <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#e26f04]">
           Trip Highlights:
         </h2>
         <ul class="space-y-2">
-          {tour.highlights.map((highlight) => (
-            <li class="flex items-center gap-3">
-              <span class="text-[#e26f04]">•</span>
-              <span class="text-muted-foreground">{highlight}</span>
-            </li>
-          ))}
+          {
+            tour.highlights.map((highlight) => (
+              <li class="flex items-center gap-3">
+                <span class="text-[#e26f04]">•</span>
+                <span class="text-muted-foreground">{highlight}</span>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
@@ -129,7 +136,8 @@ const tourStructuredData = {
             <span class="font-bold">CHILD (6-17):</span> ${tour.childPrice}
           </div>
           <div class="text-sm text-muted-foreground">
-            Kids 5 and under and Seniors over 72 are FREE with adult ticket purchased
+            Kids 5 and under and Seniors over 72 are FREE with adult ticket
+            purchased
           </div>
         </div>
 
@@ -150,7 +158,9 @@ const tourStructuredData = {
 
       <!-- Description -->
       <div class="mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#e26f04] text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-6 text-[#e26f04] text-center"
+        >
           Description
         </h2>
         <div class="prose prose-lg max-w-none text-center">
@@ -162,7 +172,9 @@ const tourStructuredData = {
 
       <!-- Important Information -->
       <div class="mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center"
+        >
           Important Information
         </h2>
 
@@ -186,56 +198,60 @@ const tourStructuredData = {
         <div class="mb-8 text-center">
           <h3 class="text-xl font-bold mb-4">Private Tours</h3>
           <p class="text-muted-foreground mb-4">
-            We're happy to arrange private tours or build custom group tours for schools, corporate teams, non-profits, family reunions, and more.
+            We're happy to arrange private tours or build custom group tours for
+            schools, corporate teams, non-profits, family reunions, and more.
           </p>
-          <a href="/private-tours" class="btn">
-            Make Inquiry
-          </a>
+          <a href="/private-tours" class="btn"> Make Inquiry </a>
         </div>
 
         <!-- Want a different tour? -->
         <div class="text-center">
           <h3 class="text-xl font-bold mb-4">Want a different tour?</h3>
           <p class="text-muted-foreground mb-4">
-            We have many other tours to choose from in a variety of topics, languages, and group sizes.
+            We have many other tours to choose from in a variety of topics,
+            languages, and group sizes.
           </p>
-          <a href="/#tours" class="btn">
-            See Other Tours
-          </a>
+          <a href="/#tours" class="btn"> See Other Tours </a>
         </div>
       </div>
 
       <!-- Gallery -->
       <div class="mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center"
+        >
           Gallery
         </h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {processedGalleryImages.map((image, index) => (
-            <div
-              class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow p-0"
-              role="button"
-              tabindex="0"
-              data-lightbox-trigger
-              data-lightbox-index={index}
-              aria-label={`View ${image.alt} in lightbox`}
-            >
-              <img
-                src={image.optimizedSrc}
-                alt={image.alt}
-                class="w-full h-64 object-cover"
-                loading="lazy"
-                data-lightbox-img
-                data-caption={image.caption}
-              />
-            </div>
-          ))}
+          {
+            processedGalleryImages.map((image, index) => (
+              <div
+                class="card overflow-hidden cursor-pointer hover:shadow-lg transition-shadow p-0"
+                role="button"
+                tabindex="0"
+                data-lightbox-trigger
+                data-lightbox-index={index}
+                aria-label={`View ${image.alt} in lightbox`}
+              >
+                <img
+                  src={image.optimizedSrc}
+                  alt={image.alt}
+                  class="w-full h-64 object-cover"
+                  loading="lazy"
+                  data-lightbox-img
+                  data-caption={image.caption}
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
 
       <!-- What Makes This Tour Special -->
       <div class="mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center">
+        <h2
+          class="text-2xl md:text-3xl font-bold mb-8 text-[#e26f04] text-center"
+        >
           What Makes This Tour Special
         </h2>
 
@@ -243,14 +259,20 @@ const tourStructuredData = {
         <div class="mb-8">
           <div class="rounded-lg overflow-hidden mb-6">
             <Image
-              src={tour.slug === 'surfing-beach-culture' ? surferDavidYao : tour.heroImage}
-              alt={tour.slug === 'surfing-beach-culture' ? 'Surfer at Santa Cruz' : tour.heroImageAlt}
+              src={tour.slug === "surfing-beach-culture"
+                ? surferDavidYao
+                : tour.heroImage}
+              alt={tour.slug === "surfing-beach-culture"
+                ? "Surfer at Santa Cruz"
+                : tour.heroImageAlt}
               class="w-full h-64 object-cover"
               loading="lazy"
               quality={80}
             />
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center">Why take this tour?</h3>
+          <h3 class="text-xl font-bold mb-4 text-center">
+            Why take this tour?
+          </h3>
           <p class="text-muted-foreground leading-relaxed text-center">
             {tour.longDescription}
           </p>
@@ -260,22 +282,23 @@ const tourStructuredData = {
         <div class="text-center">
           <h3 class="text-xl font-bold mb-4">Included</h3>
           <ul class="space-y-2 text-left max-w-xl mx-auto">
-            {tour.includes.included.map((item) => (
-              <li class="flex items-start gap-3">
-                <span class="text-[#e26f04] mt-1">•</span>
-                <span class="text-muted-foreground">{item}</span>
-              </li>
-            ))}
+            {
+              tour.includes.included.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="text-[#e26f04] mt-1">•</span>
+                  <span class="text-muted-foreground">{item}</span>
+                </li>
+              ))
+            }
           </ul>
         </div>
       </div>
-
     </div>
   </section>
 
   <!-- Matt Knows His Surf Section (Surfing Tour Only) -->
   {
-    tour.slug === 'surfing-beach-culture' && (
+    tour.slug === "surfing-beach-culture" && (
       <section class="container pt-16 pb-4 md:pt-24 md:pb-6">
         <div class="max-w-3xl mx-auto card p-8 md:p-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
@@ -284,15 +307,31 @@ const tourStructuredData = {
 
           <div class="prose prose-lg max-w-none text-muted-foreground space-y-4">
             <p>
-              I've spent years studying Santa Cruz surf culture—and I've lived it, too.
+              I've spent years studying Santa Cruz surf culture—and I've lived
+              it, too.
             </p>
 
             <p>
-              I started boogie boarding at the Wharf and Finger Bowl in the late '70s, then moved to stand-up surfing. My first board was a beat-up yellowed single fin from Otto and Jeanne's. I learned at Cowells, graduated to the Lane, and explored up and down the coast from there.
+              I started boogie boarding at the Wharf and Finger Bowl in the late
+              '70s, then moved to stand-up surfing. My first board was an old
+              beat-up single fin from the long-gone Otto and Jeanne's surf spot.
+              I learned at Cowells, graduated to the Lane, and explored up and
+              down the coast from there.
             </p>
 
             <p>
-              I competed in the O'Neill Coldwater Classic and Bud Tour. In 1994, I co-founded <a href="https://allsurfmagazines.com/book-list-2/magazines/usa/the-juice/" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">The Juice, Northern California's Surf Magazine</a> with Eric Mitchell—documenting the surf culture I was living. Before that I was in another local surfing 'zine myself:
+              I competed in the O'Neill Coldwater Classic and a few Bud Tour
+              events. In the early '90s, I co-founded a regional surf magazine
+              called{" "}
+              <a
+                href="https://allsurfmagazines.com/book-list-2/magazines/usa/the-juice/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                The Juice
+              </a>{" "}
+              with Eric Mitchell—documenting the surf culture I was living.
             </p>
 
             <div class="my-6">
@@ -304,21 +343,30 @@ const tourStructuredData = {
                 quality={85}
               />
               <p class="text-sm text-center text-muted-foreground mt-2 italic">
-                Surfing a small cove off West Cliff - Published in Local magazine, 1990 - Photo Bud Clark
+                Matt surfing a small cove off West Cliff, 1990 - Photo Bud Clark
               </p>
             </div>
 
             <p>
-              I've continued writing about surfing over the years, including a piece on Medium about <a href="https://medium.com/@mattosurf/surfing-well-into-middle-age-461d55a173eb" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">surfing well into middle age</a>.
+              I later wrote a little piece on Medium about{" "}
+              <a
+                href="https://medium.com/@mattosurf/surfing-well-into-middle-age-461d55a173eb"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                surfing well into middle age.
+              </a>
             </p>
 
             <p>
-              I've taught friends and family to surf, got my sons hooked early, and chased waves across Hawaii, Bali, Maldives, Costa Rica, France, Cook Islands, Nicaragua, Baja, California, Oregon, Puerto Escondido—even New York.
+              I've taught friends and family to surf, got my sons hooked early,
+              and chased waves across Hawaii, Bali, Maldives, Costa Rica,
+              France, Cook Islands, Nicaragua, California, Oregon, Mexico—even
+              New York.
             </p>
 
-            <p>
-              ...and I'm still surfing today 🏄‍♂️
-            </p>
+            <p>...and I'm still surfing today 🏄‍♂️</p>
 
             <div class="mt-6">
               <Image
@@ -341,9 +389,7 @@ const tourStructuredData = {
   <!-- Book Online CTA -->
   <section class="container pt-2 pb-8 md:pt-2 md:pb-12">
     <div class="max-w-2xl mx-auto text-center">
-      <a href={tour.bookingUrl} class="btn btn-lg">
-        Book Online Now
-      </a>
+      <a href={tour.bookingUrl} class="btn btn-lg"> Book Online Now </a>
     </div>
   </section>
 
@@ -383,9 +429,16 @@ const tourStructuredData = {
 
                 {/* Tour Pricing */}
                 <div class="text-sm mb-4 space-y-1">
-                  <div class="font-semibold text-foreground">ADULT (18+): ${relatedTour.adultPrice}</div>
-                  <div class="font-semibold text-foreground">CHILD (6-17): ${relatedTour.childPrice}</div>
-                  <div class="text-xs text-muted-foreground">Kids 5 and under and Seniors over 72 are FREE with adult ticket purchased</div>
+                  <div class="font-semibold text-foreground">
+                    ADULT (18+): ${relatedTour.adultPrice}
+                  </div>
+                  <div class="font-semibold text-foreground">
+                    CHILD (6-17): ${relatedTour.childPrice}
+                  </div>
+                  <div class="text-xs text-muted-foreground">
+                    Kids 5 and under and Seniors over 72 are FREE with adult
+                    ticket purchased
+                  </div>
                 </div>
 
                 {/* Learn More Link */}
@@ -404,10 +457,7 @@ const tourStructuredData = {
   <!-- Final CTA Section -->
   <section class="container py-16 md:py-24">
     <div class="max-w-2xl mx-auto text-center card bg-primary/5 p-8 md:p-12">
-      <Icon
-        name="lucide:compass"
-        class="w-16 h-16 text-primary mx-auto mb-6"
-      />
+      <Icon name="lucide:compass" class="w-16 h-16 text-primary mx-auto mb-6" />
       <h2 class="text-3xl md:text-4xl font-bold mb-4">
         Ready to Explore Santa Cruz?
       </h2>
@@ -432,4 +482,4 @@ const tourStructuredData = {
 <script
   type="application/ld+json"
   set:html={JSON.stringify(tourStructuredData)}
-></script>
+/>
