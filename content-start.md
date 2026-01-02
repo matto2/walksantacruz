@@ -9,7 +9,7 @@ PRIMARY SEO TARGET: "Santa Cruz walking tours", "guided walking tours in Santa C
 Discover the hidden gems and fascinating history of Santa Cruz with our expert-guided walking tours.
 
 [Book Your Tour Now](#book)  
-[Request Private Tour](#private)
+[Book a Private Tour](#private)
 
 ---
 
@@ -157,7 +157,7 @@ Looking for a customized experience? Fill out the form below to inquire about ou
 - **Group Size (Select)**
 - **Special Requests**
 
-[Request Private Tour](#private)
+[Book a Private Tour](#private)
 
 ---
 
