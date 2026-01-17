@@ -436,7 +436,7 @@ export const tours: Tour[] = [
     price: 'Adult $45 / Child $30',
     adultPrice: 45,
     childPrice: 30,
-    schedule: 'Thursday at 10am',
+    schedule: 'Thursday at 11:30am and 2pm',
     meetingPoint: {
       name: 'At the Boardwalk\'s Aloha Terrace Group Picnic Area (next to the Beach Volleyball Courts)',
       url: 'https://maps.app.goo.gl/5kQSAFFEfZigLaFKA',
