@@ -486,6 +486,7 @@ export const tours: Tour[] = [
       'Steamer Lane - world-famous surf break with multiple peaks (The Point, The Slot, Middle Peak)',
       'Hear stories about the innovators: Jack O\'Neill, Sam Reid, Dorothy Becker to today\'s aerial heroes and big wave legends',
       'Lighthouse Point - marine wildlife viewing including sea lions, harbor seals, otters, and migrating whales',
+      'Loop through the small but mighty Surfing Museum to learn more and browse historic surf photos and artifacts (if open)',
       'West Cliff Drive - scenic tour of various surf breaks and coastal geography',
       'Small group experience (maximum 10 people) for personalized attention'
     ],
