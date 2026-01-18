@@ -614,7 +614,7 @@ import mapBg from "../assets/map-bg.jpg";
               <h4>Discover the Best of Santa Cruz</h4>
               <p>Get our insider's guide to 10 must-see attractions and experiences in Santa Cruz – from iconic surf spots to hidden gems. Free guide delivered straight to your inbox!</p>
             </div>
-            <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2045995/forms/176903501321864693/subscribe" data-code="" method="post" target="_blank">
+            <form class="ml-block-form" id="ml-newsletter-form" action="https://assets.mailerlite.com/jsonp/2045995/forms/176903501321864693/subscribe" data-code="" method="post">
               <div class="ml-form-formContent">
                 <div class="ml-form-fieldRow ml-last-item">
                   <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
@@ -644,15 +644,38 @@ import mapBg from "../assets/map-bg.jpg";
     </div>
 
     <script is:inline>
-      function ml_webform_success_35892658() {
-        var $ = ml_jQuery || jQuery;
-        $('.ml-subscribe-form-35892658 .row-success').show();
-        $('.ml-subscribe-form-35892658 .row-form').hide();
-      }
-    </script>
-    <script is:inline src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024"></script>
-    <script is:inline>
-      fetch("https://assets.mailerlite.com/jsonp/2045995/forms/176903501321864693/takel")
+      document.addEventListener('DOMContentLoaded', function() {
+        var form = document.getElementById('ml-newsletter-form');
+        if (form) {
+          form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            var emailInput = form.querySelector('input[name="fields[email]"]');
+            var submitBtn = form.querySelector('button[type="submit"]');
+            var loadingBtn = form.querySelector('button.loading');
+
+            // Show loading state
+            if (submitBtn) submitBtn.style.display = 'none';
+            if (loadingBtn) loadingBtn.style.display = 'block';
+
+            var formData = new FormData(form);
+
+            fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              mode: 'no-cors'
+            }).then(function() {
+              // Hide form, show success
+              document.querySelector('.ml-subscribe-form-35892658 .row-form').style.display = 'none';
+              document.querySelector('.ml-subscribe-form-35892658 .row-success').style.display = 'block';
+            }).catch(function() {
+              // Still show success (no-cors doesn't return response)
+              document.querySelector('.ml-subscribe-form-35892658 .row-form').style.display = 'none';
+              document.querySelector('.ml-subscribe-form-35892658 .row-success').style.display = 'block';
+            });
+          });
+        }
+      });
     </script>
   </section>
 
