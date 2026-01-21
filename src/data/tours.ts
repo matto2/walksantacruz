@@ -260,7 +260,7 @@ export const tours: Tour[] = [
 
   {
     slug: 'beach-hill-loop',
-    title: 'Santa Cruz: Beach to Mission Loop',
+    title: 'Beach Hill to Mission Hill Loop',
     shortDescription: "Start at the beach, climb through oceanfront estates, descend a hidden staircase into downtown, ascend to Mission Hill's historic adobe, then loop back through Victorian neighborhoods. This extended version of our signature Heart of Santa Cruz tour covers it all in one unforgettable journey.",
     longDescription: "Experience Santa Cruz from every angle on this epic loop that takes you from sea level to hilltop and back again. You'll explore elegant mansions with ocean views, discover secret staircases locals love, wander through downtown's architectural gems, climb to the city's historic mission site, and stroll through charming Victorian neighborhoods. It's the complete Santa Cruz story in one unforgettable walk.",
 
@@ -412,7 +412,7 @@ export const tours: Tour[] = [
 
   {
     slug: 'surfing-beach-culture',
-    title: 'Santa Cruz Surf History and Culture Tour',
+    title: 'Santa Cruz Surf Walk - History and Culture Tour',
     shortDescription: 'Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 2-hour guided walk along the waterfront.',
     longDescription: "Dive into the heart of surf culture at its West Coast birthplace. This oceanfront tour explores how surfing shaped Santa Cruz's identity and continues to define our coastal community today.",
 
