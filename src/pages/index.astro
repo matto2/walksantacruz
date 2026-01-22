@@ -44,15 +44,14 @@ import mapBg from "../assets/map-bg.jpg";
 
     <div class="container relative z-10 text-center py-24">
       <h1
-        class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md"
+        class="text-3xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md"
       >
-        Local guides, local stories.
+        Expert-led Santa Cruz<br />Walking Tours
       </h1>
       <p
         class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-8 drop-shadow-md"
       >
-        Discover the hidden gems and fascinating history of Santa Cruz with our
-        expert-guided walking tours.
+        Experience Santa Cruz like a local
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <!-- FareHarbor book button -->
@@ -68,13 +67,19 @@ import mapBg from "../assets/map-bg.jpg";
   <!-- Tour Section -->
   <section id="tours" class="container py-16 md:py-24">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
         History & Culture Walking Tours Made for You
       </h2>
 
-      <p class="text-lg text-muted-foreground mb-8">
-        Three guided walking tours exploring different sides of Santa Cruz—from downtown architecture to legendary beaches and scenic Mission Hill.
-      </p>
+      <blockquote class="text-lg text-muted-foreground mb-8 italic text-center">
+        "I grew up in Santa Cruz, and it's the history and culture that make
+        this place special. My tours take you through neighborhoods, landmarks,
+        and coastal spots that reveal the city's true character—plus the local
+        stories and hidden places most visitors never find."
+        <footer class="mt-4 not-italic">
+          <span class="font-semibold">— Matt</span>, Founder & Local Guide
+        </footer>
+      </blockquote>
 
       <div class="grid md:grid-cols-3 gap-6 mb-12">
         {
@@ -89,66 +94,6 @@ import mapBg from "../assets/map-bg.jpg";
             />
           ))
         }
-      </div>
-
-      <div class="text-center">
-        <!-- FareHarbor book button -->
-        <a
-          href="https://fareharbor.com/embeds/book/walksantacruz/?full-items=yes"
-          class="btn btn-lg">Book a Tour</a
-        >
-        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book This Tour</a> -->
-      </div>
-
-      <div class="text-center text-lg mt-12 mb-8">
-        Call, text, or WhatsApp: <a href="tel:831-275-2566" class="text-primary hover:underline">831-275-2566</a> • <a href="mailto:hello@walksantacruz.com" class="text-primary hover:underline">hello@walksantacruz.com</a>
-      </div>
-
-      <h3 class="text-2xl font-semibold text-primary mb-4">
-        Why Walk With Us?
-      </h3>
-
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="card">
-          <div class="p-6 text-center">
-            <Icon
-              name="lucide:sparkles"
-              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
-            />
-            <h4 class="font-semibold text-lg mb-2">Fun & Informative</h4>
-            <p class="text-muted-foreground">
-              Our local guides share fascinating stories and little-known facts
-              about Santa Cruz.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="p-6 text-center">
-            <Icon
-              name="lucide:footprints"
-              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
-            />
-            <h4 class="font-semibold text-lg mb-2">Easy Walking</h4>
-            <p class="text-muted-foreground">
-              Comfortable pace with some stairs. No special equipment needed.
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="p-6 text-center">
-            <Icon
-              name="lucide:users-round"
-              class="w-12 h-12 text-[#e26f04] mb-4 mx-auto"
-            />
-            <h4 class="font-semibold text-lg mb-2">Small Groups</h4>
-            <p class="text-muted-foreground">
-              Limited group sizes ensure a personalized experience with plenty
-              of time for questions.
-            </p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -447,8 +392,7 @@ import mapBg from "../assets/map-bg.jpg";
         Ready to Explore Santa Cruz?
       </h2>
       <p class="text-lg text-muted-foreground mb-8">
-        Join us for a memorable walking tour through the heart of Santa Cruz.
-        Book your spot today or contact us for a private tour experience.
+        Join us for a memorable walking tour through Santa Cruz's quirky neighborhoods, hidden corners, and scenic coastal spots. Book your spot today or contact us to arrange a private tour.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <!-- FareHarbor book button -->
@@ -457,6 +401,9 @@ import mapBg from "../assets/map-bg.jpg";
           class="btn btn-lg">Book a Tour</a
         >
         <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour</a> -->
+      </div>
+      <div class="text-center text-lg mt-8">
+        Call, text, or WhatsApp: <a href="tel:831-275-2566" class="text-primary hover:underline">831-275-2566</a> • <a href="mailto:hello@walksantacruz.com" class="text-primary hover:underline">hello@walksantacruz.com</a>
       </div>
     </div>
   </section>
