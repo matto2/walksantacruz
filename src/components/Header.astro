@@ -51,11 +51,14 @@ const currentPath = Astro.url.pathname;
 					</div>
 				</div>
 
+				<a href="/about" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/about' ? 'font-bold border-primary' : 'border-transparent'}`}>
+					About
+				</a>
 				<a href="/gallery" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/gallery' ? 'font-bold border-primary' : 'border-transparent'}`}>
 					Gallery
 				</a>
-				<a href="/about" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/about' ? 'font-bold border-primary' : 'border-transparent'}`}>
-					About
+				<a href="/team-offsites" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/team-offsites' ? 'font-bold border-primary' : 'border-transparent'}`}>
+					Team Offsites
 				</a>
 				<a href="/contact" class={`text-foreground hover:text-primary transition-colors font-medium pb-1 border-b-[3px] ${currentPath === '/contact' ? 'font-bold border-primary' : 'border-transparent'}`}>
 					Contact
@@ -90,11 +93,14 @@ const currentPath = Astro.url.pathname;
 					</div>
 				</div>
 
+				<a href="/about" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/about' ? 'font-bold' : ''}`}>
+					About
+				</a>
 				<a href="/gallery" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/gallery' ? 'font-bold' : ''}`}>
 					Gallery
 				</a>
-				<a href="/about" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/about' ? 'font-bold' : ''}`}>
-					About
+				<a href="/team-offsites" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/team-offsites' ? 'font-bold' : ''}`}>
+					Team Offsites
 				</a>
 				<a href="/contact" class={`text-foreground hover:text-primary transition-colors font-medium ${currentPath === '/contact' ? 'font-bold' : ''}`}>
 					Contact

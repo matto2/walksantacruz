@@ -108,7 +108,7 @@ export interface Tour {
 export const tours: Tour[] = [
   {
     slug: 'downtown-mission-hill',
-    title: 'Heart of Santa Cruz Tour',
+    title: 'Heart of Downtown Santa Cruz Tour',
     shortDescription: "Explore Santa Cruz's rich history, architecture, and culture on a relaxed 90-minute walking tour. Led by a knowledgeable local guide.",
     longDescription: "Journey through time as we explore downtown Santa Cruz's architectural gems and the historic Mission Hill district. Discover the stories behind the buildings, the people who shaped this coastal town, and the vibrant culture that makes Santa Cruz unique.",
 
