@@ -31,19 +31,34 @@ const Icon = textColor === 'text-white' ? OrangeCircleIcon : FootprintsIcon;
 
 <div class={`flex items-center gap-2 ${className || ''}`}>
 	<Icon width={iconSize} height={iconSize} class={`flex-shrink-0 ${iconClass}`} fill={iconColor} />
-	<span class={`${textSize} ${textColor}`} style={`color: ${computedTextColor}; font-family: 'Night Empty', sans-serif; transform: translateY(3px);`}>Walk Santa Cruz</span>
+	<span class={`${textSize} ${textColor} ${size === 'large' ? 'logo-text-responsive' : ''}`} style={`color: ${computedTextColor}; font-family: 'Night Empty', sans-serif; transform: translateY(3px);`}>Walk Santa Cruz</span>
 </div>
 
 {size === 'large' && (
 	<style>
 		.logo-icon-responsive {
-			width: 32px;
-			height: 32px;
+			width: 28px;
+			height: 28px;
+		}
+		.logo-text-responsive {
+			font-size: 1.5rem;
+		}
+		@media (min-width: 377px) {
+			.logo-icon-responsive {
+				width: 32px;
+				height: 32px;
+			}
+			.logo-text-responsive {
+				font-size: 2.25rem;
+			}
 		}
 		@media (min-width: 1024px) {
 			.logo-icon-responsive {
 				width: 42px;
 				height: 42px;
+			}
+			.logo-text-responsive {
+				font-size: 3rem;
 			}
 		}
 	</style>
