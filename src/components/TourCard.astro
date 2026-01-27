@@ -16,6 +16,7 @@ const { slug, title, image, imageAlt, adultPrice, childPrice } = Astro.props;
 
 <a
   href={`/tours/${slug}`}
+  data-astro-reload
   class="bg-card text-card-foreground flex flex-col rounded-xl border pb-0 shadow-sm hover:border-primary transition-all group block overflow-hidden"
   data-tour-card
   aria-label={`Learn more about ${title}`}

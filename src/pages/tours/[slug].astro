@@ -170,6 +170,13 @@ const tourStructuredData = {
         </div>
       </div>
 
+      <!-- FareHarbor Calendar -->
+      {tour.fareharborCalendarId && (
+        <div class="mb-12">
+          <script is:inline data-tour-calendar={tour.fareharborCalendarId} src={`https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${tour.fareharborCalendarId}/?fallback=simple&full-items=yes&flow=1491352`}></script>
+        </div>
+      )}
+
       <!-- Important Information -->
       <div class="mb-12">
         <h2
@@ -423,6 +430,7 @@ const tourStructuredData = {
           {relatedTours.map((relatedTour) => (
             <a
               href={`/tours/${relatedTour.slug}`}
+              data-astro-reload
               class="card bg-muted/50 hover:border-primary transition-all group block"
             >
               <div class="p-6">

@@ -102,6 +102,9 @@ export interface Tour {
 
   // Related
   relatedTourSlugs: string[];
+
+  // FareHarbor
+  fareharborCalendarId?: string;
 }
 
 // Tour Data
@@ -255,7 +258,9 @@ export const tours: Tour[] = [
       'victorian architecture santa cruz'
     ],
 
-    relatedTourSlugs: ['beach-hill-loop', 'surfing-beach-culture']
+    relatedTourSlugs: ['beach-hill-loop', 'surfing-beach-culture'],
+
+    fareharborCalendarId: '673407'
   },
 
   {
@@ -407,7 +412,9 @@ export const tours: Tour[] = [
       'guided tour santa cruz'
     ],
 
-    relatedTourSlugs: ['downtown-mission-hill', 'surfing-beach-culture']
+    relatedTourSlugs: ['downtown-mission-hill', 'surfing-beach-culture'],
+
+    fareharborCalendarId: '686749'
   },
 
   {
@@ -576,7 +583,9 @@ export const tours: Tour[] = [
       'guided surf tour'
     ],
 
-    relatedTourSlugs: ['downtown-mission-hill', 'beach-hill-loop']
+    relatedTourSlugs: ['downtown-mission-hill', 'beach-hill-loop'],
+
+    fareharborCalendarId: '686192'
   }
 ];
 
