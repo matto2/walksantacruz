@@ -1,27 +1,50 @@
 ---
 import FootprintsIcon from '../assets/SVG/footprints-ICON.svg';
 import WhiteIcon from '../assets/SVG/walk-icon-WHITE.svg';
+import OrangeCircleIcon from '../assets/wsc-orange-circle.svg';
 
 interface Props {
 	class?: string;
 	iconColor?: string;
 	textColor?: string;
+	size?: 'default' | 'large';
 }
 
 const {
 	class: className,
 	iconColor = 'currentColor',
-	textColor = 'text-primary'
+	textColor = 'text-primary',
+	size = 'default'
 } = Astro.props;
+
+// For 'large' size, use responsive classes (small on mobile, large on lg+)
+const iconSize = size === 'large' ? 32 : 32;
+const iconClass = size === 'large' ? 'logo-icon-responsive' : '';
+const textSize = size === 'large' ? 'text-4xl lg:text-5xl' : 'text-4xl';
 
 // Determine text color - use white if textColor prop is text-white, otherwise use brand dark
 const computedTextColor = textColor === 'text-white' ? '#ffffff' : '#333333';
 
-// Use white icon when textColor is white (footer), otherwise use regular icon (header)
-const Icon = textColor === 'text-white' ? WhiteIcon : FootprintsIcon;
+// Use orange circle icon when textColor is white (header/footer), otherwise use regular icon
+const Icon = textColor === 'text-white' ? OrangeCircleIcon : FootprintsIcon;
 ---
 
 <div class={`flex items-center gap-2 ${className || ''}`}>
-	<Icon width={32} height={32} class="flex-shrink-0" fill={iconColor} />
-	<h1 class={`text-xl ${textColor}`} style={`color: ${computedTextColor};`}>Walk Santa Cruz</h1>
+	<Icon width={iconSize} height={iconSize} class={`flex-shrink-0 ${iconClass}`} fill={iconColor} />
+	<span class={`${textSize} ${textColor}`} style={`color: ${computedTextColor}; font-family: 'Night Empty', sans-serif; transform: translateY(3px);`}>Walk Santa Cruz</span>
 </div>
+
+{size === 'large' && (
+	<style>
+		.logo-icon-responsive {
+			width: 32px;
+			height: 32px;
+		}
+		@media (min-width: 1024px) {
+			.logo-icon-responsive {
+				width: 42px;
+				height: 42px;
+			}
+		}
+	</style>
+)}

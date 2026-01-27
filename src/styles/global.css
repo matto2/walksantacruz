@@ -2,6 +2,20 @@
 @import "basecoat-css";
 @import "./theme.css";
 
+/* Night Empty font for logo */
+@font-face {
+	font-family: 'Night Empty';
+	src: url('/fonts/NightEmpty.woff') format('woff'),
+	     url('/fonts/NightEmpty.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+.font-night-empty {
+	font-family: 'Night Empty', sans-serif;
+}
+
 /* Headline font */
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Noto Sans', sans-serif;
