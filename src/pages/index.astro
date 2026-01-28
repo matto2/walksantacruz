@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import TourCard from "../components/TourCard.astro";
 import { tours } from "../data/tours";
-import heroImage from "../assets/townClock.jpg";
+import heroImage from "../assets/downtown_hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
 ---
 
@@ -14,11 +14,10 @@ import mapBg from "../assets/map-bg.jpg";
 >
   <!-- Hero Section - Full Bleed -->
   <section
-    class="full-bleed relative min-h-[360px] md:min-h-[600px] flex items-center justify-center"
+    class="full-bleed relative min-h-[600px] flex items-center justify-center"
   >
     <!-- Hero Video with Image Fallback -->
     <div class="absolute inset-0">
-      <!-- VIDEO TEMPORARILY REPLACED WITH STATIC IMAGE
       <video
         id="hero-video"
         autoplay
@@ -29,6 +28,7 @@ import mapBg from "../assets/map-bg.jpg";
         aria-label="Santa Cruz walking tour background video"
       >
         <source src="/IMG_9072_web.mp4" type="video/mp4" />
+        <!-- Fallback image for browsers that don't support video -->
         <Image
           src={heroImage}
           alt="Downtown Santa Cruz"
@@ -37,14 +37,6 @@ import mapBg from "../assets/map-bg.jpg";
           quality={80}
         />
       </video>
-      -->
-      <Image
-        src={heroImage}
-        alt="Downtown Santa Cruz"
-        class="w-full h-full object-cover object-top"
-        loading="eager"
-        quality={80}
-      />
     </div>
     <!-- Dark gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0">
