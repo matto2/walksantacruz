@@ -42,6 +42,7 @@ export interface MeetingPoint {
   name: string;
   url: string;
   embedUrl?: string;
+  appleUrl?: string;
 }
 
 export interface TourItineraryStop {
@@ -136,7 +137,8 @@ export const tours: Tour[] = [
     meetingPoint: {
       name: 'Abbott Square Market in Downtown Santa Cruz',
       url: 'https://maps.app.goo.gl/M7uF1gUT19KMFiMW8',
-      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.4667898953576!2d-122.02546669999998!3d36.9747896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e4026125f9a71%3A0x8ba1abfab596ea05!2sAbbott%20Square%20Market!5e0!3m2!1sen!2sus!4v1764894658764!5m2!1sen!2sus'
+      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.4667898953576!2d-122.02546669999998!3d36.9747896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e4026125f9a71%3A0x8ba1abfab596ea05!2sAbbott%20Square%20Market!5e0!3m2!1sen!2sus!4v1764894658764!5m2!1sen!2sus',
+      appleUrl: 'https://maps.apple.com/?address=118%20Cooper%20St,%20Santa%20Cruz,%20CA%2095060'
     },
     bookingUrl: 'https://fareharbor.com/embeds/book/walksantacruz/items/673407/calendar/2025/12/?full-items=yes',
 
@@ -177,7 +179,7 @@ export const tours: Tour[] = [
       'Small groups (max 10) make it personal and flexible',
       'Insider tips for local restaurants, coffee, and nearby attractions',
       'Upper Pacific Avenue - Cooper House site, iconic Town Clock, and oldest commercial building',
-      'Old Santa Cruz Mission Site - the county\'s oldest 1822 adobe and California\'s best-preserved Native mission residence',
+      'Old Santa Cruz Mission Site - last remaining adobe from the original mission',
       'Mission Plaza - the first business district and town center',
       'Squid Row - artistic alley with unique architecture and galleries',
       'Santa Cruz City Hall - 1937 building with beautiful surrounding gardens',
@@ -293,7 +295,8 @@ export const tours: Tour[] = [
     meetingPoint: {
       name: 'At the Boardwalk\'s Aloha Terrace Group Picnic Area (next to the Beach Volleyball Courts)',
       url: 'https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9',
-      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus'
+      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus',
+      appleUrl: 'https://maps.apple.com/?address=300%20Beach%20St,%20Santa%20Cruz,%20CA%2095060'
     },
     bookingUrl: 'https://fareharbor.com/embeds/book/walksantacruz/items/686749/calendar/2025/12/?full-items=yes',
 
@@ -334,8 +337,7 @@ export const tours: Tour[] = [
       'Santa Cruz Beach Boardwalk - California\'s oldest surviving amusement park',
       'Downtown Santa Cruz - Victorian, Craftsman, and Art Deco architecture',
       'Mission Hill - elegant homes and panoramic city views',
-      'Mission Santa Cruz & Holy Cross Church - mission replica and spectacular overlook',
-      'Multiple elevation changes providing dramatic coastal perspectives'
+      'Mission Santa Cruz & Holy Cross Church - mission replica and spectacular overlook'
     ],
 
     includes: {
@@ -447,7 +449,8 @@ export const tours: Tour[] = [
     meetingPoint: {
       name: 'At the Boardwalk\'s Aloha Terrace Group Picnic Area (next to the Beach Volleyball Courts)',
       url: 'https://maps.app.goo.gl/5kQSAFFEfZigLaFKA',
-      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d352.97276085142056!2d-122.02167846601544!3d36.963272602578684!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a99cbaf37ed%3A0xd65ed89d6ad5674c!2sSanta%20Cruz%20Main%20Beach%20Volleyball!5e0!3m2!1sen!2sus!4v1764894765720!5m2!1sen!2sus'
+      embedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus',
+      appleUrl: 'https://maps.apple.com/?address=300%20Beach%20St,%20Santa%20Cruz,%20CA%2095060'
     },
     bookingUrl: 'https://fareharbor.com/embeds/book/walksantacruz/items/686192/calendar/2025/12/?full-items=yes',
 
@@ -491,9 +494,9 @@ export const tours: Tour[] = [
       'Santa Cruz Beach Boardwalk - where Duke Kahanamoku demonstrated his legendary water feats',
       'Cowell Beach - premier beginner surf spot and longboarding renaissance birthplace',
       'Steamer Lane - world-famous surf break with multiple peaks (The Point, The Slot, Middle Peak)',
-      'Hear stories about the innovators: Jack O\'Neill, Sam Reid, Dorothy Becker to today\'s aerial heroes and big wave legends',
-      'Lighthouse Point - marine wildlife viewing including sea lions, harbor seals, otters, and migrating whales',
-      'Loop through the small but mighty Surfing Museum to learn more and browse historic surf photos and artifacts (if open)',
+      'Hear stories about surf pioneers: Jack O\'Neill, Sam Reid, Dorothy Becker, and legends of today',
+      'Lighthouse Point - marine wildlife viewing: sea lions, seals, otters, and migrating whales',
+      'Santa Cruz Surfing Museum - historic photos, artifacts, and stories (if open)',
       'West Cliff Drive - scenic tour of various surf breaks and coastal geography',
       'Small group experience (maximum 10 people) for personalized attention'
     ],
