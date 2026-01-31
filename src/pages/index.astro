@@ -394,6 +394,27 @@ import mapBg from "../assets/map-bg.jpg";
       </h3>
       <!-- FareHarbor calendar -->
       <script is:inline src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"></script>
+
+      <!-- Compact Tour Links -->
+      <div class="flex flex-col gap-3 max-w-md mx-auto mt-10 text-left">
+        {tours.map((tour) => (
+          <a
+            href={`/tours/${tour.slug}`}
+            class="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+          >
+            <Image
+              src={tour.cardImage}
+              alt={tour.cardImageAlt}
+              class="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+              loading="lazy"
+              quality={75}
+            />
+            <span class="font-semibold group-hover:text-primary transition-colors">
+              {tour.title}
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 

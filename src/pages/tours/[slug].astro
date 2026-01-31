@@ -91,9 +91,9 @@ const tourStructuredData = {
       <ol
         class="flex items-center justify-center gap-2 text-sm text-muted-foreground"
       >
-        <li><a href="/" class="hover:underline">Home</a></li>
+        <li><a href="/" data-astro-reload class="hover:underline">Home</a></li>
         <Icon name="lucide:chevron-right" class="w-4 h-4" />
-        <li><a href="/#tours" class="hover:underline">Tours</a></li>
+        <li><a href="/#tours" data-astro-reload class="hover:underline">Tours</a></li>
         <Icon name="lucide:chevron-right" class="w-4 h-4" />
         <li aria-current="page" class="text-foreground font-semibold">
           {tour.title}
@@ -113,7 +113,7 @@ const tourStructuredData = {
         <ul class="space-y-2">
           {
             tour.highlights.map((highlight) => (
-              <li class="flex items-center gap-3">
+              <li class="flex items-start gap-3">
                 <span class="text-[#ed672d]">•</span>
                 <span class="text-muted-foreground">{highlight}</span>
               </li>
@@ -212,7 +212,7 @@ const tourStructuredData = {
             We have many other tours to choose from in a variety of topics,
             languages, and group sizes.
           </p>
-          <a href="/#tours" class="btn"> See Other Tours </a>
+          <a href="/#tours" data-astro-reload class="btn"> See Other Tours </a>
         </div>
       </div>
 
@@ -286,7 +286,7 @@ const tourStructuredData = {
             {
               tour.includes.included.map((item) => (
                 <li class="flex items-start gap-3">
-                  <span class="text-[#ed672d] mt-1">•</span>
+                  <span class="text-[#ed672d]">•</span>
                   <span class="text-muted-foreground">{item}</span>
                 </li>
               ))
@@ -308,35 +308,7 @@ const tourStructuredData = {
 
           <div class="prose prose-lg max-w-none text-muted-foreground space-y-4">
             <p>
-              I've spent years studying Santa Cruz surf culture—and I've lived
-              it, too.
-            </p>
-
-            <p>
-              I started boogie boarding at the Wharf and Finger Bowl in the
-              late'70s, then graduated to stand-up surfing at Cowells and
-              Steamer Lane. (My first board was an old beat-up single fin from
-              the long-gone Otto and Jeanne's surf spot.) I competed in the
-              O'Neill Coldwater Classic and a few Bud Tour events. In the early
-              '90s, I co-founded a regional surf magazine called{" "}
-              <a
-                href="https://allsurfmagazines.com/book-list-2/magazines/usa/the-juice/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:underline"
-              >
-                The Juice
-              </a>{" "}
-              with Eric Mitchell—documenting the surf culture I was living. I
-              also wrote a little piece on Medium about{" "}
-              <a
-                href="https://medium.com/@mattosurf/surfing-well-into-middle-age-461d55a173eb"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-primary hover:underline"
-              >
-                surfing well into middle age.
-              </a>
+              I've spent years studying Santa Cruz surf culture—and I've lived it, too.
             </p>
 
             <div class="my-6">
@@ -352,26 +324,27 @@ const tourStructuredData = {
               </p>
             </div>
 
-            {/* <p>
-              I also wrote a little piece on Medium about{" "}
+            <p>
+              I started boogie boarding at the Wharf in the late'70s, then graduated to stand-up surfing at Cowells and Steamer Lane. (My first board was an old beat-up single fin from the long-gone Otto and Jeanne's surf spot.) I competed in the O'Neill Coldwater Classic and in the early '90s, co-founded a regional surf magazine called{" "}
+              <a
+                href="https://allsurfmagazines.com/book-list-2/magazines/usa/the-juice/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-primary hover:underline"
+              >
+                The Juice
+              </a>—documenting the surf culture I was living. I also wrote a little piece on Medium about{" "}
               <a
                 href="https://medium.com/@mattosurf/surfing-well-into-middle-age-461d55a173eb"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-primary hover:underline"
               >
-                surfing well into middle age.
-              </a>
-            </p> */}
-
-            <p>
-              I've taught friends and family to surf, got my sons hooked early,
-              and chased waves across Hawaii, Bali, Maldives, Costa Rica,
-              France, Cook Islands, Nicaragua, California, Oregon, Mexico—even
-              New York...and I'm still surfing today 🏄‍♂️
+                surfing well into middle age
+              </a>. I've taught friends and family to surf, got my sons hooked early, and chased waves all around the world...and I'm still surfing today 🏄‍♂️
             </p>
 
-            <div class="mt-6">
+            <div class="my-6">
               <Image
                 src={mattSurfing2025}
                 alt="Matt surfing up the coast in 2025"
@@ -384,10 +357,8 @@ const tourStructuredData = {
               </p>
             </div>
 
-            <p class="mt-8">
-              I look forward to sharing my deep knowledge of Santa Cruz surf
-              history, culture, and especially the stoke with you! Join me on
-              the{" "}
+            <p>
+              I look forward to sharing my deep knowledge of Santa Cruz surf history, culture, and especially the stoke with you! Join me on the{" "}
               <a
                 href="#book"
                 class="text-primary hover:underline font-semibold"
@@ -420,50 +391,23 @@ const tourStructuredData = {
           Discover more of Santa Cruz with these tours
         </p>
 
-        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="flex flex-col gap-3 max-w-md mx-auto text-left">
           {relatedTours.map((relatedTour) => (
             <a
               href={`/tours/${relatedTour.slug}`}
               data-astro-reload
-              class="card bg-muted/50 hover:border-primary transition-all group block"
+              class="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
             >
-              <div class="p-6">
-                {/* Tour Image */}
-                <div class="mb-4 rounded-lg overflow-hidden">
-                  <Image
-                    src={relatedTour.cardImage}
-                    alt={relatedTour.cardImageAlt}
-                    class="w-full h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                    quality={75}
-                  />
-                </div>
-
-                {/* Tour Title */}
-                <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {relatedTour.title}
-                </h3>
-
-                {/* Tour Pricing */}
-                <div class="text-sm mb-4 space-y-1">
-                  <div class="font-semibold text-foreground">
-                    ADULT (18+): ${relatedTour.adultPrice}
-                  </div>
-                  <div class="font-semibold text-foreground">
-                    CHILD (6-17): ${relatedTour.childPrice}
-                  </div>
-                  <div class="text-xs text-muted-foreground">
-                    Kids 5 and under and Seniors over 72 are FREE with adult
-                    ticket purchased
-                  </div>
-                </div>
-
-                {/* Learn More Link */}
-                <div class="flex items-center gap-2 text-primary font-semibold group-hover:gap-3 transition-all">
-                  <span>Learn More</span>
-                  <Icon name="lucide:arrow-right" class="w-4 h-4" />
-                </div>
-              </div>
+              <Image
+                src={relatedTour.cardImage}
+                alt={relatedTour.cardImageAlt}
+                class="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+                loading="lazy"
+                quality={75}
+              />
+              <span class="font-semibold group-hover:text-primary transition-colors">
+                {relatedTour.title}
+              </span>
             </a>
           ))}
         </div>

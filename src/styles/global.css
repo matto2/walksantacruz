@@ -31,3 +31,8 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary:hover {
 	background-color: color-mix(in oklch, var(--color-secondary) 90%, black);
 }
+
+/* Consistent list item styling */
+li {
+	line-height: 1.5;
+}
