@@ -6,6 +6,8 @@ import TourCard from "../components/TourCard.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
+import airbnbLogo from "../assets/Airbnb_Logo_Over_Gradient.jpg";
+import tripadvisorLogo from "../assets/tripadvisor.svg";
 ---
 
 <Layout
@@ -164,224 +166,223 @@ import mapBg from "../assets/map-bg.jpg";
         What Our Guests Say
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <!-- Karen Willcuts Review -->
-        <div class="card">
-          <div class="p-6">
-            <div class="flex gap-1 mb-4">
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
+      <div class="reviews-carousel mx-auto">
+        <div class="reviews-viewport">
+          <div class="reviews-track">
+          <!-- Tamra A Review (TripAdvisor) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "What an informative and interesting perspective of Santa Cruz! Matt was very personable and it was a lovely walk from the Boardwalk to downtown. As a local, I thought I knew the history of the area, but turns out there is more to learn! Fun tour!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Tamra A.</div>
+                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
+                  <a
+                    href="https://www.tripadvisor.com/AttractionProductReview-g33048-d33961933-Santa_Cruz_Walking_Tour_Discover_Downtown_Mission_Hill-Santa_Cruz_California.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <img src={tripadvisorLogo.src} alt="TripAdvisor" class="tripadvisor-logo" />
+                    <span>TripAdvisor Review</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <p class="text-muted-foreground mb-4">
-              "I went on Matt's tour this morning and loved it! The tour is fun
-              and interesting with a great combination of history, fun facts,
-              and architecture. I would never have noticed on my own the details
-              he pointed out on the buildings. His knowledge is truly impressive
-              and you can tell he really loves telling the history of Santa
-              Cruz. I highly recommend this tour if you are looking for the
-              history of the area, a talk about beautiful architecture, and a
-              nice little walk around downtown Santa Cruz."
-            </p>
-            <div class="font-semibold mb-2">K.W.</div>
-            <a
-              href="https://maps.app.goo.gl/8todiHMqonLssQM46"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  fill="#4285F4"></path>
-                <path
-                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  fill="#34A853"></path>
-                <path
-                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                  fill="#FBBC05"></path>
-                <path
-                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                  fill="#EA4335"></path>
-              </svg>
-              <span>Google Review</span>
-            </a>
           </div>
+
+          <!-- Michelle Review (Airbnb) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "This tour was a fun way to learn about SC while also moving and connecting. Definitely recommend!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Michelle</div>
+                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
+                  <a
+                    href="https://www.airbnb.com/experiences/6800617"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <img src={airbnbLogo.src} alt="Airbnb" class="airbnb-logo" />
+                    <span>Airbnb Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Alex Review (Airbnb) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "My wife, baby, and I had such a great time on this tour with Matthew! We've lived here for 5 years and learned so much about the history of the town. We could ask Matthew anything and he always had an informed answer. It was also the perfect morning walk/workout!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Alex</div>
+                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
+                  <a
+                    href="https://www.airbnb.com/experiences/6800617"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <img src={airbnbLogo.src} alt="Airbnb" class="airbnb-logo" />
+                    <span>Airbnb Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Karen Willcuts Review (Google) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "I went on Matt's tour this morning and loved it! The tour is fun and interesting with a great combination of history, fun facts, and architecture. I would never have noticed on my own the details he pointed out on the buildings. His knowledge is truly impressive and you can tell he really loves telling the history of Santa Cruz. I highly recommend this tour!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Karen</div>
+                  <div class="text-sm text-muted-foreground mb-2">December 2025</div>
+                  <a
+                    href="https://maps.app.goo.gl/8todiHMqonLssQM46"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                    </svg>
+                    <span>Google Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Ling Yang Review (Google) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "It was a really fun tour! Learned a lot of history about Santa Cruz and different styles of architectures!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Ling</div>
+                  <div class="text-sm text-muted-foreground mb-2">December 2025</div>
+                  <a
+                    href="https://share.google/lsrtSrrmHyQISncS5"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                    </svg>
+                    <span>Google Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Annika John Review (Google) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "I took my husband and two toddlers on this tour with Matt and we had a great time! My three year old even enjoyed the fun facts! Matt has a genuine enthusiasm about every fact he shares, and it gave us a deeper appreciation for Santa Cruz!"
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Annika</div>
+                  <div class="text-sm text-muted-foreground mb-2">November 2025</div>
+                  <a
+                    href="https://maps.app.goo.gl/12zDeR9BKdnKyAfZ9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+                    </svg>
+                    <span>Google Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </div>
 
-        <!-- Ling Yang Review -->
-        <div class="card">
-          <div class="p-6">
-            <div class="flex gap-1 mb-4">
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-            </div>
-            <p class="text-muted-foreground mb-4">
-              "It was a really fun tour! Learned a lot of history about Santa
-              Cruz and different styles of architectures!"
-            </p>
-            <div class="font-semibold mb-2">L.Y.</div>
-            <a
-              href="https://share.google/lsrtSrrmHyQISncS5"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  fill="#4285F4"></path>
-                <path
-                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  fill="#34A853"></path>
-                <path
-                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                  fill="#FBBC05"></path>
-                <path
-                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                  fill="#EA4335"></path>
-              </svg>
-              <span>Google Review</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Annika John Review -->
-        <div class="card">
-          <div class="p-6">
-            <div class="flex gap-1 mb-4">
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-              <svg
-                class="w-5 h-5 text-yellow-500 fill-current"
-                viewBox="0 0 24 24"
-                ><path
-                  d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                ></path></svg
-              >
-            </div>
-            <p class="text-muted-foreground mb-4">
-              "I took my husband and two toddlers on this tour with Matt and we
-              had a great time! My three year old even enjoyed the fun facts!
-              Matt has a genuine enthusiasm about every fact he shares, and it
-              gave us a deeper appreciation for Santa Cruz!"
-            </p>
-            <div class="font-semibold mb-2">A.J.</div>
-            <a
-              href="https://maps.app.goo.gl/12zDeR9BKdnKyAfZ9"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-            >
-              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  fill="#4285F4"></path>
-                <path
-                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  fill="#34A853"></path>
-                <path
-                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                  fill="#FBBC05"></path>
-                <path
-                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                  fill="#EA4335"></path>
-              </svg>
-              <span>Google Review</span>
-            </a>
-          </div>
-        </div>
+        <!-- Navigation Arrows -->
+        <button class="carousel-arrow carousel-prev" aria-label="Previous reviews">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="carousel-arrow carousel-next" aria-label="Next reviews">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
       </div>
     </div>
   </section>
@@ -570,4 +571,185 @@ import mapBg from "../assets/map-bg.jpg";
 
   // Re-run after view transitions
   document.addEventListener("astro:page-load", setupMapLink);
+
+  // Reviews Carousel
+  function setupReviewsCarousel() {
+    const carousel = document.querySelector('.reviews-carousel');
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.reviews-track');
+    const slides = carousel.querySelectorAll('.review-slide');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+
+    if (!track || slides.length === 0) return;
+
+    let currentIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    function getVisibleCount() {
+      return window.innerWidth >= 768 ? 3 : 1;
+    }
+
+    function getMaxIndex() {
+      return Math.max(0, slides.length - getVisibleCount());
+    }
+
+    function updateCarousel() {
+      const visibleCount = getVisibleCount();
+      const slideWidth = 100 / visibleCount;
+      track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+
+      // Update arrow visibility
+      if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
+      if (nextBtn) nextBtn.style.opacity = currentIndex >= getMaxIndex() ? '0.5' : '1';
+    }
+
+    function nextSlide() {
+      if (currentIndex < getMaxIndex()) {
+        currentIndex++;
+        updateCarousel();
+      }
+    }
+
+    function prevSlide() {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    }
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+    }
+
+    // Navigation buttons
+    prevBtn?.addEventListener('click', prevSlide);
+    nextBtn?.addEventListener('click', nextSlide);
+
+    // Touch swipe support
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+      currentIndex = Math.min(currentIndex, getMaxIndex());
+      updateCarousel();
+    });
+
+    // Initialize
+    updateCarousel();
+  }
+
+  // Run on initial load
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupReviewsCarousel);
+  } else {
+    setupReviewsCarousel();
+  }
+
+  // Re-run after view transitions
+  document.addEventListener("astro:page-load", setupReviewsCarousel);
 </script>
+
+<style>
+  .reviews-carousel {
+    position: relative;
+    max-width: 72rem;
+    padding: 0 3.5rem;
+  }
+
+  .reviews-viewport {
+    overflow: hidden;
+  }
+
+  .reviews-track {
+    display: flex;
+    transition: transform 0.4s ease-out;
+  }
+
+  .review-slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    .review-slide {
+      flex: 0 0 33.333%;
+      padding: 0 0.75rem;
+    }
+  }
+
+  .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+
+  .carousel-arrow:hover {
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .carousel-prev {
+    left: 0;
+  }
+
+  .carousel-next {
+    right: 0;
+  }
+
+  @media (max-width: 767px) {
+    .reviews-carousel {
+      padding: 0 1rem;
+    }
+    .carousel-arrow {
+      display: none;
+    }
+  }
+
+  .airbnb-logo,
+  .tripadvisor-logo {
+    height: 2rem;
+    width: auto;
+    border-radius: 4px;
+  }
+
+  .review-source-logo {
+    height: 1.5rem;
+    width: 1.5rem;
+    padding: 0.25rem;
+    box-sizing: content-box;
+  }
+</style>
