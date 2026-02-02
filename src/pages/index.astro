@@ -8,6 +8,7 @@ import heroImage from "../assets/downtown_hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
 import airbnbLogo from "../assets/Airbnb_Logo_Over_Gradient.jpg";
 import tripadvisorLogo from "../assets/tripadvisor.svg";
+import viatorLogo from "../assets/viator.webp";
 ---
 
 <Layout
@@ -334,6 +335,37 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
             </div>
           </div>
 
+          <!-- Paul Review (Viator) -->
+          <div class="review-slide">
+            <div class="card h-full">
+              <div class="p-6 flex flex-col h-full">
+                <div class="flex gap-1 mb-4">
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+                </div>
+                <p class="text-muted-foreground mb-4 flex-grow">
+                  "Great knowledge of his hometown history. Enjoyed learning about Santa Cruz from someone very familiar with it. Great downtown and mission choice of route."
+                </p>
+                <div>
+                  <div class="font-semibold mb-1">Paul</div>
+                  <div class="text-sm text-muted-foreground mb-2">November 2025</div>
+                  <a
+                    href="https://www.viator.com/tours/Santa-Cruz/Santa-Cruz-Walking-Tour-Discover-Downtown-and-Mission-Hill/d23518-5610982P1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    <img src={viatorLogo.src} alt="Viator" class="viator-logo" />
+                    <span>Viator Review</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Annika John Review (Google) -->
           <div class="review-slide">
             <div class="card h-full">
@@ -592,14 +624,25 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
       return window.innerWidth >= 768 ? 3 : 1;
     }
 
+    function getSlideWidth() {
+      return window.innerWidth >= 768 ? 33.333 : 92;
+    }
+
+    function getCenterOffset() {
+      // On mobile, center the slide: (100 - slideWidth) / 2
+      // On desktop, no offset needed (3 slides fill the space)
+      return window.innerWidth >= 768 ? 0 : (100 - getSlideWidth()) / 2;
+    }
+
     function getMaxIndex() {
       return Math.max(0, slides.length - getVisibleCount());
     }
 
     function updateCarousel() {
-      const visibleCount = getVisibleCount();
-      const slideWidth = 100 / visibleCount;
-      track.style.transform = `translateX(-${currentIndex * slideWidth}%)`;
+      const slideWidth = getSlideWidth();
+      const centerOffset = getCenterOffset();
+      const translateX = centerOffset - (currentIndex * slideWidth);
+      track.style.transform = `translateX(${translateX}%)`;
 
       // Update arrow visibility
       if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
@@ -685,7 +728,7 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
   }
 
   .review-slide {
-    flex: 0 0 100%;
+    flex: 0 0 92%;
     min-width: 0;
     padding: 0 0.5rem;
     box-sizing: border-box;
@@ -708,18 +751,18 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.95);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    color: #333;
+    background: #ed672d;
+    border: none;
+    color: white;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 10;
   }
 
   .carousel-arrow:hover {
-    background: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #d55a24;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 
   .carousel-prev {
@@ -732,7 +775,7 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
 
   @media (max-width: 767px) {
     .reviews-carousel {
-      padding: 0 1rem;
+      padding: 0;
     }
     .carousel-arrow {
       display: none;
@@ -740,7 +783,8 @@ import tripadvisorLogo from "../assets/tripadvisor.svg";
   }
 
   .airbnb-logo,
-  .tripadvisor-logo {
+  .tripadvisor-logo,
+  .viator-logo {
     height: 2rem;
     width: auto;
     border-radius: 4px;

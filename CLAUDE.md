@@ -5,6 +5,7 @@
 ### Review Source Logos
 - **Airbnb**: `src/assets/Airbnb_Logo_Over_Gradient.jpg` - used for Airbnb review cards
 - **TripAdvisor**: `src/assets/tripadvisor.svg` - available for TripAdvisor review cards
+- **Viator**: `src/assets/viator.webp` - available for Viator review cards
 - **Google**: inline SVG with Google colors (no separate file)
 
 ## Reviews Section
