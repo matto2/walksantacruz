@@ -8,6 +8,14 @@
 - **Viator**: `src/assets/viator.webp` - available for Viator review cards
 - **Google**: inline SVG with Google colors (no separate file)
 
+## Pages
+
+### Signature Experience
+- Premium/luxury tour page at `/signature-experience`
+- Full-screen hero image using `src/assets/signature_hero.jpg`
+- Target audience: high-wealth customers
+- When ready, add to nav as first item under Tours dropdown
+
 ## Reviews Section
 - Located in `src/pages/index.astro`
 - Carousel shows 3 cards on desktop, 1 on mobile

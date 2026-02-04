@@ -1,0 +1,455 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+import Layout from "../layouts/Layout.astro";
+import heroImage from "../assets/signature_hero.jpg";
+import mapBg from "../assets/map-bg.jpg";
+---
+
+<Layout
+  title="The Santa Cruz Immersion | Walk Santa Cruz"
+  description="A fully curated, private journey from redwoods to bay. We pick you up. We handle everything. You simply enjoy."
+>
+  <!-- Hero Section - Full Screen -->
+  <section
+    class="full-bleed relative min-h-screen flex items-center justify-center"
+  >
+    <div class="absolute inset-0">
+      <Image
+        src={heroImage}
+        alt="The Santa Cruz Immersion"
+        class="w-full h-full object-cover"
+        loading="eager"
+        quality={85}
+      />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/50">
+    </div>
+
+    <div class="container relative z-10 text-center py-24">
+      <h1
+        class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-lg"
+      >
+        The Santa Cruz Immersion
+      </h1>
+      <p
+        class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-4 drop-shadow-md font-medium"
+      >
+        A fully curated, private journey from redwoods to bay
+      </p>
+      <p
+        class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 drop-shadow-md"
+      >
+        We pick you up. We handle everything. You simply enjoy.
+      </p>
+      <a
+        href="#contact"
+        class="btn btn-lg"
+      >
+        Schedule Your Experience
+      </a>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 animate-bounce">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Main Description -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-3xl mx-auto">
+      <p class="text-xl text-muted-foreground leading-relaxed mb-6">
+        Your expert guide arrives at your hotel or vacation rental in a private luxury vehicle and orchestrates a seamless full-day experience revealing Santa Cruz's essence. No planning, no logistics, no choices to make.
+      </p>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        From ancient redwood groves to coastal overlooks to the open bay, this isn't a list of stops—it's a carefully orchestrated journey that adapts to the season, the light, and your interests.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-6">You experience:</h2>
+      <ul class="space-y-4 text-lg text-muted-foreground mb-8">
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>Multiple intimate walks through redwood forests, tree-lined Victorian streets, and dramatic coastline</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>Stories spanning 250+ years—from Spanish missions to modern surf culture</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>Private, comfortable transportation throughout</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>Curated food stops at local favorites</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>Hidden perspectives and places most visitors never discover</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-primary mt-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </span>
+          <span>A private sunset finale on Monterey Bay</span>
+        </li>
+      </ul>
+
+      <div class="bg-muted/30 rounded-lg p-6 text-center">
+        <p class="text-lg font-medium mb-2">All arrangements made. All details handled. Door-to-door service.</p>
+        <p class="text-muted-foreground italic">Each journey is uniquely curated for the season and your interests.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          What's Included
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Fully Curated Experience</h3>
+              <p class="text-muted-foreground">
+                Your guide designs each journey around optimal conditions, seasonal highlights, and your interests. No two experiences are exactly alike.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Private Luxury Transportation</h3>
+              <p class="text-muted-foreground">
+                Comfortable, climate-controlled vehicle. We pick you up at your accommodation and return you door-to-door.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Multiple Guided Walks</h3>
+              <p class="text-muted-foreground">
+                Short, intimate walks in distinct environments—each revealing a different dimension of Santa Cruz. Stay fresh and engaged throughout the day.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Curated Food & Refreshments</h3>
+              <p class="text-muted-foreground">
+                Thoughtfully chosen stops at local spots, plus refreshments throughout. No generic tourist traps.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Sunset Boat Experience</h3>
+              <p class="text-muted-foreground">
+                Private charter on Monterey Bay as the perfect finale to your day. Weather-dependent; alternative arranged if needed.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-3">Insider Access & Stories</h3>
+              <p class="text-muted-foreground">
+                Hidden viewpoints, local-only knowledge, and the stories that shaped this town—drawn from decades of research and local connections.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Details & Pricing -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        Details
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="space-y-4">
+          <div class="flex justify-between border-b border-border pb-3">
+            <span class="font-medium">Duration</span>
+            <span class="text-muted-foreground">6-9 hours, door-to-door</span>
+          </div>
+          <div class="flex justify-between border-b border-border pb-3">
+            <span class="font-medium">Group Size</span>
+            <span class="text-muted-foreground">Maximum 4 guests</span>
+          </div>
+          <div class="flex justify-between border-b border-border pb-3">
+            <span class="font-medium">Season</span>
+            <span class="text-muted-foreground">Year-round, weather permitting</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-medium">Physical Level</span>
+            <span class="text-muted-foreground text-right">Moderate. Multiple short walks<br/>on mixed terrain.</span>
+          </div>
+        </div>
+
+        <div class="bg-muted/30 rounded-lg p-8 text-center">
+          <h3 class="text-xl font-bold mb-6">Investment</h3>
+          <p class="text-3xl font-semibold mb-2">$2,400 <span class="text-lg font-normal text-muted-foreground">for 2 guests</span></p>
+          <p class="text-2xl font-semibold mb-6">$2,800 <span class="text-lg font-normal text-muted-foreground">for 3-4 guests</span></p>
+          <p class="text-sm text-muted-foreground">All arrangements, transportation, boat charter, and refreshments included.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+          Who This Is For
+        </h2>
+
+        <ul class="space-y-4 text-lg">
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Discerning travelers seeking depth over checklists</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Special occasions deserving an unforgettable experience</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Visitors who want to truly understand Santa Cruz</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Those who value expertise, curation, and zero hassle</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="text-primary mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            </span>
+            <span>Anyone who appreciates when every detail is handled</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Experience Difference -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+        The Experience Difference
+      </h2>
+      <p class="text-xl text-center text-muted-foreground mb-8">Not a Tour — A Curated Journey</p>
+
+      <div class="prose prose-lg max-w-none text-muted-foreground">
+        <p>
+          You won't find this experience on booking platforms. It's designed for guests who value personalized curation over generic itineraries, who trust their guide's expertise, and who want to experience Santa Cruz the way locals who truly know this place would share it.
+        </p>
+        <p>
+          Each journey flows naturally through the landscape—forest to overlook to coast to bay—revealing layers of history, ecology, and culture that connect to form a complete understanding of what makes Santa Cruz remarkable.
+        </p>
+        <p class="text-foreground font-medium text-xl text-center mt-8">
+          By day's end, you won't just have seen Santa Cruz. You'll understand it.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Guide -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+          Your Guide
+        </h2>
+
+        <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+          Matt O'Leary grew up in Santa Cruz surfing Steamer Lane and exploring every trail and neighborhood. With over two decades researching local history and architecture, he brings the depth of a historian and the insight of a lifelong resident to every experience.
+        </p>
+        <p class="text-lg font-medium mb-8">
+          This is the tour Matt would give a visiting dignitary—or his closest friends.
+        </p>
+        <a href="/about" class="text-primary hover:underline font-medium">
+          Learn more about Matt &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Booking -->
+  <section id="contact" class="container py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Ready to reserve your experience?
+      </h2>
+      <p class="text-lg text-muted-foreground mb-8">
+        The Immersion is offered by appointment only with advance notice required for vehicle and boat arrangements.
+      </p>
+      <p class="text-muted-foreground mb-12">
+        Contact us to discuss your preferred dates, group size, and any specific interests. We'll confirm availability and handle all the details.
+      </p>
+
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mb-8">
+        <a
+          href="tel:8312752566"
+          class="btn btn-lg inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="lucide:phone" class="w-5 h-5" />
+          (831) 275-2566
+        </a>
+        <a
+          href="mailto:hello@walksantacruz.com"
+          class="btn btn-lg btn-secondary inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="lucide:mail" class="w-5 h-5" />
+          hello@walksantacruz.com
+        </a>
+        <a
+          href="https://wa.me/18312752566"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-lg btn-secondary inline-flex items-center justify-center gap-2"
+        >
+          <Icon name="lucide:message-circle" class="w-5 h-5" />
+          WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="space-y-6">
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">How far in advance should I book?</h3>
+              <p class="text-muted-foreground">
+                We recommend 7-14 days advance notice to ensure vehicle and boat availability, though we'll accommodate shorter notice when possible.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">What if weather affects the boat portion?</h3>
+              <p class="text-muted-foreground">
+                We monitor conditions closely and have alternative finale experiences prepared. Your satisfaction is guaranteed regardless of weather.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">Can you accommodate dietary restrictions?</h3>
+              <p class="text-muted-foreground">
+                Absolutely. Let us know any dietary needs when booking and we'll plan accordingly.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">What should we bring?</h3>
+              <p class="text-muted-foreground">
+                Comfortable walking shoes, weather-appropriate layers, sunscreen, and a camera. We provide water and refreshments throughout.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">Is this suitable for children?</h3>
+              <p class="text-muted-foreground">
+                The experience is designed for adults and teens who can comfortably walk 2-3 miles total over the day. Contact us to discuss specific situations.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">Can we customize the experience?</h3>
+              <p class="text-muted-foreground">
+                Within reason, yes. The overall arc and timing are optimized for the best experience, but we can emphasize certain themes or areas based on your interests.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Alternative Experiences -->
+  <section class="container py-16 md:py-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+        Looking for something different?
+      </h2>
+      <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-8">
+        <a href="/#tours" class="text-primary hover:underline font-medium">
+          View our standard walking tours &rarr;
+        </a>
+        <a href="/team-offsites" class="text-primary hover:underline font-medium">
+          Explore team offsite options &rarr;
+        </a>
+        <a href="/private-tours" class="text-primary hover:underline font-medium">
+          Book a private tour &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
