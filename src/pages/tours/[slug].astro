@@ -188,6 +188,7 @@ const tourStructuredData = {
       )}
 
       <!-- Important Information -->
+      {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
       <div class="mb-12">
         <h2
           class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center"
@@ -215,6 +216,7 @@ const tourStructuredData = {
           <a href="/#tours" data-astro-reload class="btn"> See Other Tours </a>
         </div>
       </div>
+      )}
 
       <!-- Gallery -->
       <div class="mb-12">
@@ -249,6 +251,7 @@ const tourStructuredData = {
       </div>
 
       <!-- What Makes This Tour Special -->
+      {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
       <div class="mb-12">
         <h2
           class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center"
@@ -294,6 +297,7 @@ const tourStructuredData = {
           </ul>
         </div>
       </div>
+      )}
     </div>
   </section>
 
@@ -435,6 +439,33 @@ const tourStructuredData = {
       </p>
     </div>
   </section>
+
+  <!-- Important Information (moved below final CTA) -->
+  {["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
+  <section class="container pb-16 md:pb-24">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center">
+        More Ways to Explore
+      </h2>
+      <div class="mb-8 text-center">
+        <h3 class="text-xl font-bold mb-4">Private Tours</h3>
+        <p class="text-muted-foreground mb-4">
+          We're happy to arrange private tours or build custom group tours for
+          schools, corporate teams, non-profits, family reunions, and more.
+        </p>
+        <a href="/private-tours" class="btn"> Make Inquiry </a>
+      </div>
+      <div class="text-center">
+        <h3 class="text-xl font-bold mb-4">Want a different tour?</h3>
+        <p class="text-muted-foreground mb-4">
+          We have many other tours to choose from in a variety of topics,
+          languages, and group sizes.
+        </p>
+        <a href="/#tours" data-astro-reload class="btn"> See Other Tours </a>
+      </div>
+    </div>
+  </section>
+  )}
 
   <Lightbox />
 
