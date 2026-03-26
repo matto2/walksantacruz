@@ -1,14 +1,19 @@
 ---
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import TourCard from "../components/TourCard.astro";
+import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
 import airbnbLogo from "../assets/Airbnb_Logo_Over_Gradient.jpg";
 import tripadvisorLogo from "../assets/tripadvisor.svg";
 import viatorLogo from "../assets/viator.webp";
+
+const allReviews = await getCollection("reviews");
+const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout
@@ -52,10 +57,11 @@ import viatorLogo from "../assets/viator.webp";
         Expert-led<br class="sm:hidden" /> Santa Cruz<br />Walking Tours
       </h1>
       <p
-        class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-8 drop-shadow-md"
+        class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-2 drop-shadow-md"
       >
-        Small-group tours of Santa Cruz history, architecture, and surf culture — led by a lifetime local since the 1970s.
+        Small-group tours of Santa Cruz history, architecture, and surf culture — led by locals.
       </p>
+      <p class="mb-8 text-sm font-semibold text-white text-center">Tours from $45 · Small groups (max 10) · Thu–Sun</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <!-- FareHarbor book button -->
         <a
@@ -64,7 +70,6 @@ import viatorLogo from "../assets/viator.webp";
         >
         <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour Now</a> -->
       </div>
-      <p class="mt-4 text-sm font-semibold text-white text-center">Tours from $45 · Small groups (max 10) · Thu–Sun</p>
     </div>
   </section>
 
@@ -72,16 +77,8 @@ import viatorLogo from "../assets/viator.webp";
   <section id="tours" class="container py-16 md:py-24">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
-        Three Walking Tours to Choose From
+        3 Walking Tours to Choose From
       </h2>
-
-      <blockquote class="text-lg text-muted-foreground mb-8 italic text-center">
-        "I grew up in Santa Cruz and lead small-group walking tours that connect Victorian streets, Monterey Bay overlooks, and surf history through local stories you won't find in guidebooks."
-        <footer class="mt-4 not-italic">
-          <span class="font-semibold">— Matt</span>, Founder & Local Guide
-          <a href="/about" class="block mt-2 text-primary hover:underline text-sm font-medium">Meet your guide →</a>
-        </footer>
-      </blockquote>
 
       <div class="grid md:grid-cols-3 gap-6 mb-12">
         {
@@ -97,6 +94,14 @@ import viatorLogo from "../assets/viator.webp";
           ))
         }
       </div>
+
+      <blockquote class="text-lg text-muted-foreground italic text-center">
+        "I grew up in Santa Cruz and lead small-group walking tours that connect Victorian streets, Monterey Bay overlooks, and surf history through local stories you won't find in guidebooks."
+        <footer class="mt-4 not-italic">
+          <span class="font-semibold">— Matt</span>, Founder & Local Guide
+          <a href="/about" class="block mt-2 text-primary hover:underline text-sm font-medium">Meet your guide →</a>
+        </footer>
+      </blockquote>
     </div>
   </section>
 
@@ -165,259 +170,16 @@ import viatorLogo from "../assets/viator.webp";
         What Our Guests Say
       </h2>
 
-      <div class="reviews-carousel mx-auto">
-        <div class="reviews-viewport">
-          <div class="reviews-track">
-          <!-- Tamra A Review (TripAdvisor) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "What an informative and interesting perspective of Santa Cruz! Matt was very personable and it was a lovely walk from the Boardwalk to downtown. As a local, I thought I knew the history of the area, but turns out there is more to learn! Fun tour!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Tamra A.</div>
-                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
-                  <a
-                    href="https://www.tripadvisor.com/AttractionProductReview-g33048-d33961933-Santa_Cruz_Walking_Tour_Discover_Downtown_Mission_Hill-Santa_Cruz_California.html"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <img src={tripadvisorLogo.src} alt="TripAdvisor" class="tripadvisor-logo" />
-                    <span>TripAdvisor Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Michelle Review (Airbnb) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "This tour was a fun way to learn about SC while also moving and connecting. Definitely recommend!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Michelle</div>
-                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
-                  <a
-                    href="https://www.airbnb.com/experiences/6800617"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <img src={airbnbLogo.src} alt="Airbnb" class="airbnb-logo" />
-                    <span>Airbnb Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Alex Review (Airbnb) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "My wife, baby, and I had such a great time on this tour with Matthew! We've lived here for 5 years and learned so much about the history of the town. We could ask Matthew anything and he always had an informed answer. It was also the perfect morning walk/workout!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Alex</div>
-                  <div class="text-sm text-muted-foreground mb-2">January 2026</div>
-                  <a
-                    href="https://www.airbnb.com/experiences/6800617"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <img src={airbnbLogo.src} alt="Airbnb" class="airbnb-logo" />
-                    <span>Airbnb Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Karen Willcuts Review (Google) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "I went on Matt's tour this morning and loved it! The tour is fun and interesting with a great combination of history, fun facts, and architecture. I would never have noticed on my own the details he pointed out on the buildings. His knowledge is truly impressive and you can tell he really loves telling the history of Santa Cruz. I highly recommend this tour!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Karen</div>
-                  <div class="text-sm text-muted-foreground mb-2">December 2025</div>
-                  <a
-                    href="https://maps.app.goo.gl/8todiHMqonLssQM46"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
-                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
-                    </svg>
-                    <span>Google Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ling Yang Review (Google) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "It was a really fun tour! Learned a lot of history about Santa Cruz and different styles of architectures!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Ling</div>
-                  <div class="text-sm text-muted-foreground mb-2">December 2025</div>
-                  <a
-                    href="https://share.google/lsrtSrrmHyQISncS5"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
-                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
-                    </svg>
-                    <span>Google Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Paul Review (Viator) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "Great knowledge of his hometown history. Enjoyed learning about Santa Cruz from someone very familiar with it. Great downtown and mission choice of route."
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Paul</div>
-                  <div class="text-sm text-muted-foreground mb-2">November 2025</div>
-                  <a
-                    href="https://www.viator.com/tours/Santa-Cruz/Santa-Cruz-Walking-Tour-Discover-Downtown-and-Mission-Hill/d23518-5610982P1"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <img src={viatorLogo.src} alt="Viator" class="viator-logo" />
-                    <span>Viator Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Annika John Review (Google) -->
-          <div class="review-slide">
-            <div class="card h-full">
-              <div class="p-6 flex flex-col h-full">
-                <div class="flex gap-1 mb-4">
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                  <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
-                </div>
-                <p class="text-muted-foreground mb-4 flex-grow">
-                  "I took my husband and two toddlers on this tour with Matt and we had a great time! My three year old even enjoyed the fun facts! Matt has a genuine enthusiasm about every fact he shares, and it gave us a deeper appreciation for Santa Cruz!"
-                </p>
-                <div>
-                  <div class="font-semibold mb-1">Annika</div>
-                  <div class="text-sm text-muted-foreground mb-2">November 2025</div>
-                  <a
-                    href="https://maps.app.goo.gl/12zDeR9BKdnKyAfZ9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    <svg class="review-source-logo" viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
-                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
-                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
-                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
-                    </svg>
-                    <span>Google Review</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        </div>
-
-        <!-- Navigation Arrows -->
-        <button class="carousel-arrow carousel-prev" aria-label="Previous reviews">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <button class="carousel-arrow carousel-next" aria-label="Next reviews">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-      </div>
+      <ReviewsCarousel
+        reviews={reviews}
+        airbnbLogo={airbnbLogo}
+        tripadvisorLogo={tripadvisorLogo}
+        viatorLogo={viatorLogo}
+      />
     </div>
   </section>
 
-  <!-- CTA Section -->
+    <!-- CTA Section -->
   <section id="book" class="container py-16 md:py-24">
     <div class="max-w-2xl mx-auto text-center">
       <h3 class="text-2xl md:text-3xl font-bold mb-8">
@@ -602,196 +364,5 @@ import viatorLogo from "../assets/viator.webp";
   // Re-run after view transitions
   document.addEventListener("astro:page-load", setupMapLink);
 
-  // Reviews Carousel
-  function setupReviewsCarousel() {
-    const carousel = document.querySelector('.reviews-carousel');
-    if (!carousel) return;
-
-    const track = carousel.querySelector('.reviews-track');
-    const slides = carousel.querySelectorAll('.review-slide');
-    const prevBtn = carousel.querySelector('.carousel-prev');
-    const nextBtn = carousel.querySelector('.carousel-next');
-
-    if (!track || slides.length === 0) return;
-
-    let currentIndex = 0;
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    function getVisibleCount() {
-      return window.innerWidth >= 768 ? 3 : 1;
-    }
-
-    function getSlideWidth() {
-      return window.innerWidth >= 768 ? 33.333 : 92;
-    }
-
-    function getCenterOffset() {
-      // On mobile, center the slide: (100 - slideWidth) / 2
-      // On desktop, no offset needed (3 slides fill the space)
-      return window.innerWidth >= 768 ? 0 : (100 - getSlideWidth()) / 2;
-    }
-
-    function getMaxIndex() {
-      return Math.max(0, slides.length - getVisibleCount());
-    }
-
-    function updateCarousel() {
-      const slideWidth = getSlideWidth();
-      const centerOffset = getCenterOffset();
-      const translateX = centerOffset - (currentIndex * slideWidth);
-      track.style.transform = `translateX(${translateX}%)`;
-
-      // Update arrow visibility
-      if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-      if (nextBtn) nextBtn.style.opacity = currentIndex >= getMaxIndex() ? '0.5' : '1';
-    }
-
-    function nextSlide() {
-      if (currentIndex < getMaxIndex()) {
-        currentIndex++;
-        updateCarousel();
-      }
-    }
-
-    function prevSlide() {
-      if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-      }
-    }
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartX - touchEndX;
-
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          nextSlide();
-        } else {
-          prevSlide();
-        }
-      }
-    }
-
-    // Navigation buttons
-    prevBtn?.addEventListener('click', prevSlide);
-    nextBtn?.addEventListener('click', nextSlide);
-
-    // Touch swipe support
-    track.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-
-    track.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }, { passive: true });
-
-    // Handle resize
-    window.addEventListener('resize', () => {
-      currentIndex = Math.min(currentIndex, getMaxIndex());
-      updateCarousel();
-    });
-
-    // Initialize
-    updateCarousel();
-  }
-
-  // Run on initial load
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", setupReviewsCarousel);
-  } else {
-    setupReviewsCarousel();
-  }
-
-  // Re-run after view transitions
-  document.addEventListener("astro:page-load", setupReviewsCarousel);
 </script>
 
-<style>
-  .reviews-carousel {
-    position: relative;
-    max-width: 72rem;
-    padding: 0 3.5rem;
-  }
-
-  .reviews-viewport {
-    overflow: hidden;
-  }
-
-  .reviews-track {
-    display: flex;
-    transition: transform 0.4s ease-out;
-  }
-
-  .review-slide {
-    flex: 0 0 92%;
-    min-width: 0;
-    padding: 0 0.5rem;
-    box-sizing: border-box;
-  }
-
-  @media (min-width: 768px) {
-    .review-slide {
-      flex: 0 0 33.333%;
-      padding: 0 0.75rem;
-    }
-  }
-
-  .carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: #ed672d;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 10;
-  }
-
-  .carousel-arrow:hover {
-    background: #d55a24;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .carousel-prev {
-    left: 0;
-  }
-
-  .carousel-next {
-    right: 0;
-  }
-
-  @media (max-width: 767px) {
-    .reviews-carousel {
-      padding: 0;
-    }
-    .carousel-arrow {
-      display: none;
-    }
-  }
-
-  .airbnb-logo,
-  .tripadvisor-logo,
-  .viator-logo {
-    height: 2rem;
-    width: auto;
-    border-radius: 4px;
-  }
-
-  .review-source-logo {
-    height: 1.5rem;
-    width: 1.5rem;
-    padding: 0.25rem;
-    box-sizing: content-box;
-  }
-</style>
