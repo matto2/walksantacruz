@@ -313,9 +313,12 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
   <!-- Reviews Section -->
   <section class="full-bleed relative py-16 md:py-24">
     <div class="container relative">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
-        What Our Guests Say
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
+        Loved by Visitors and Locals
       </h2>
+      <p class="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
+        Guests consistently mention the local insight, personal feel, and stories they would never have picked up on their own.
+      </p>
 
       <ReviewsCarousel
         reviews={reviews}
@@ -323,6 +326,10 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
         tripadvisorLogo={tripadvisorLogo}
         viatorLogo={viatorLogo}
       />
+
+      <p class="text-center text-sm text-muted-foreground mt-10">
+        Reviewed on Google · Airbnb · TripAdvisor · Viator
+      </p>
     </div>
   </section>
 
