@@ -527,7 +527,7 @@ export const tours: Tour[] = [
 
   {
     slug: "surfing-beach-culture",
-    title: "Santa Cruz Surf Walk - History and Culture Tour",
+    title: "Santa Cruz Surf Walk - History & Culture Tour",
     shortDescription:
       "Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 90-minute guided walk along the waterfront.",
     longDescription:
