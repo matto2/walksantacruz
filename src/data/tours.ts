@@ -529,7 +529,7 @@ export const tours: Tour[] = [
     slug: "surfing-beach-culture",
     title: "Santa Cruz Surf Walk - History and Culture Tour",
     shortDescription:
-      "Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 2-hour guided walk along the waterfront.",
+      "Experience Santa Cruz through its surf history, beach culture, and coastal wildlife on a fun 90-minute guided walk along the waterfront.",
     longDescription:
       "Dive into the heart of surf culture at its West Coast birthplace. This oceanfront tour explores how surfing shaped Santa Cruz's identity and continues to define our coastal community today.",
 
@@ -585,7 +585,7 @@ export const tours: Tour[] = [
       },
     ],
 
-    duration: "2 hours",
+    duration: "90 minutes",
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
@@ -701,7 +701,7 @@ export const tours: Tour[] = [
       {
         question: "What's the terrain like? Is it hilly?",
         answer:
-          "Great news - this is our flattest tour! The route follows paved paths along West Cliff Drive and the beach, with minimal elevation change. It's much easier than our hillside tours and suitable for most fitness levels. The main considerations are distance (about 2 miles over 2 hours) and potential coastal winds. If you can comfortably walk for two hours on flat ground, you'll be fine.",
+          "The route follows paved paths along West Cliff Drive and the beach — you can see the ocean the entire time. There is one notable hill, but the views make it worth it. The main considerations are distance (about 2 miles over 90 minutes) and potential coastal winds. If you can comfortably walk for 90 minutes, you'll be fine.",
       },
       {
         question: "What if there are no surfers out when we visit?",

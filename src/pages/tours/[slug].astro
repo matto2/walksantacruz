@@ -407,28 +407,22 @@ const tourStructuredData = {
   {
     relatedTours.length > 0 && (
       <section class="container pt-8 pb-16 md:pt-12 md:pb-24">
-        <h2 class="text-2xl md:text-3xl font-bold mb-2 text-center">
-          You Might Also Like
-        </h2>
-        <p class="text-center text-muted-foreground mb-8">
-          Discover more of Santa Cruz with these tours
-        </p>
-
-        <div class="flex flex-col gap-3 max-w-md mx-auto text-left">
-          {relatedTours.map((relatedTour) => (
+        <h4 class="text-xl font-bold mb-6 text-center">More Tours</h4>
+        <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
+          {relatedTours.map((relatedTour, i) => (
             <a
               href={`/tours/${relatedTour.slug}`}
               data-astro-reload
-              class="flex items-center gap-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+              class={`flex flex-row md:flex-col items-center gap-4 md:gap-3 py-4 md:py-0 md:flex-1 md:px-6 border-b md:border-b-0 border-foreground/10 last:border-b-0 ${i > 0 ? 'md:border-l md:border-foreground/20' : ''} first:md:pl-0 last:md:pr-0`}
             >
               <Image
                 src={relatedTour.cardImage}
                 alt={relatedTour.cardImageAlt}
-                class="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+                class="w-16 h-16 md:w-full md:h-28 rounded-lg object-cover flex-shrink-0"
                 loading="lazy"
                 quality={75}
               />
-              <span class="font-semibold group-hover:text-primary transition-colors">
+              <span class="font-semibold text-primary underline text-left">
                 {relatedTour.title}
               </span>
             </a>

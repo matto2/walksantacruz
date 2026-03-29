@@ -371,11 +371,11 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 
       <!-- Tour Details -->
       <h4 class="text-xl font-bold mt-12 mb-6">Tour Details</h4>
-      <div class="flex flex-col md:flex-row md:divide-x md:divide-foreground/20 max-w-3xl mx-auto">
-        {tours.map((tour) => (
+      <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
+        {tours.map((tour, i) => (
           <a
             href={`/tours/${tour.slug}`}
-            class="flex flex-row md:flex-col items-center md:items-start gap-4 md:gap-3 px-4 md:px-6 first:pl-0 last:pr-0 py-4 md:py-0 border-b md:border-b-0 border-foreground/10 last:border-b-0 md:flex-1"
+            class={`flex flex-row md:flex-col items-center gap-4 md:gap-3 py-4 md:py-0 md:flex-1 md:px-6 border-b md:border-b-0 border-foreground/10 last:border-b-0 ${i > 0 ? 'md:border-l md:border-foreground/20' : ''} first:md:pl-0 last:md:pr-0`}
           >
             <Image
               src={tour.cardImage}
