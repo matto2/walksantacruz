@@ -14,6 +14,8 @@ import photo6 from "../assets/private-tours/IMG_1766.jpeg";
 import photo7 from "../assets/private-tours/IMG_1775.jpeg";
 import photo8 from "../assets/private-tours/IMG_2591.jpg";
 import heroPhoto from "../assets/private-tours/pantherBeach.jpg";
+import streetTourPhoto from "../assets/IMG_8227.jpeg";
+import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 ---
 
 <Layout
@@ -121,6 +123,27 @@ import heroPhoto from "../assets/private-tours/pantherBeach.jpg";
       </h2>
 
       <!-- EASY IMAGE SWAPS: Change the import filenames at the top of this file -->
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+          <Image
+            src={streetTourPhoto}
+            alt="Tour group exploring a Santa Cruz neighborhood"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            quality={80}
+          />
+        </div>
+        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+          <Image
+            src={outdoorTourPhoto}
+            alt="Guests on a private Santa Cruz walking tour"
+            class="w-full h-full object-cover"
+            loading="lazy"
+            quality={80}
+          />
+        </div>
+      </div>
+
       <div class="grid md:grid-cols-2 gap-6 mb-6">
         <div class="aspect-[4/3] rounded-lg overflow-hidden">
           <Image

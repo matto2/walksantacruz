@@ -5,6 +5,7 @@ import Layout from "../layouts/Layout.astro";
 import mapBg from "../assets/map-bg.jpg";
 import heroPhoto from "../assets/me-talking-on-a-tour2.jpeg";
 import teamPhoto from "../assets/teambuilding/team1.jpg";
+import tourGroupPhoto from "../assets/tour_group_hero.jpg";
 import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
 ---
 
@@ -74,15 +75,26 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
           </p>
         </div>
 
-        <!-- Team Photo -->
-        <div class="rounded-lg overflow-hidden mb-8">
-          <Image
-            src={teamPhoto}
-            alt="Team on a walking tour in Santa Cruz"
-            class="w-full h-auto"
-            loading="lazy"
-            quality={80}
-          />
+        <!-- Team Photos -->
+        <div class="grid md:grid-cols-2 gap-6 mb-8">
+          <div class="rounded-lg overflow-hidden">
+            <Image
+              src={teamPhoto}
+              alt="Team on a walking tour in Santa Cruz"
+              class="w-full h-full object-cover object-right"
+              loading="lazy"
+              quality={80}
+            />
+          </div>
+          <div class="rounded-lg overflow-hidden">
+            <Image
+              src={tourGroupPhoto}
+              alt="Tour group at a Victorian house in Santa Cruz"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              quality={80}
+            />
+          </div>
         </div>
 
         <!-- Placeholder Testimonials -->

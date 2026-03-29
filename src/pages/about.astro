@@ -4,6 +4,8 @@ import Layout from "../layouts/Layout.astro";
 import aboutPhoto from "../assets/me-talking-on-a-tour1.jpeg";
 import heroPhoto from "../assets/Matt-by-moore-creek.jpg";
 import pescaderoPhoto from "../assets/walking-pescadero.jpg";
+import downtownTourPhoto from "../assets/IMG_8220.jpeg";
+import churchTowerTourPhoto from "../assets/IMG_8224.jpeg";
 import mapBg from "../assets/map-bg.jpg";
 ---
 
@@ -90,6 +92,32 @@ import mapBg from "../assets/map-bg.jpg";
               alt="Matt leading a walking tour"
               class="w-full h-full object-cover"
               loading="eager"
+              quality={80}
+            />
+          </div>
+        </div>
+
+        <!-- Downtown tour photo -->
+        <div class="mb-6">
+          <div class="aspect-[3/4] rounded-lg overflow-hidden">
+            <Image
+              src={downtownTourPhoto}
+              alt="Matt guiding a group on a downtown Santa Cruz walking tour"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              quality={80}
+            />
+          </div>
+        </div>
+
+        <!-- Church tower tour photo -->
+        <div class="mb-6">
+          <div class="aspect-[4/3] rounded-lg overflow-hidden">
+            <Image
+              src={churchTowerTourPhoto}
+              alt="Matt with a tour group near the Town Clock in Santa Cruz"
+              class="w-full h-full object-cover"
+              loading="lazy"
               quality={80}
             />
           </div>
