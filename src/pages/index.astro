@@ -7,13 +7,28 @@ import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
+import newHeroImage from "../assets/new-hero.jpg";
 import mapBg from "../assets/map-bg.jpg";
+import logoMyToque from "../assets/partner-logos/my-toque.png";
+import logoMoonKissed from "../assets/partner-logos/MoonKissed.png";
+import logoMythic from "../assets/partner-logos/mythic_logo.png";
+import logoSuperSilver from "../assets/partner-logos/super-silver.webp";
+import logoHiddenPeak from "../assets/partner-logos/hidden-peak.avif";
+import logoArtisans from "../assets/partner-logos/artisans.avif";
+import logoNicely from "../assets/partner-logos/nicely.webp";
+import logoMissionHill from "../assets/partner-logos/mission-hill.webp";
 import airbnbLogo from "../assets/Airbnb_Logo_Over_Gradient.jpg";
 import tripadvisorLogo from "../assets/tripadvisor.svg";
 import viatorLogo from "../assets/viator.webp";
 
+// Set to false to revert to video hero
+const USE_STATIC_HERO = true;
+
 const allReviews = await getCollection("reviews");
 const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
+const surfTour = tours.find(t => t.slug === "surfing-beach-culture")!;
+const downtownTour = tours.find(t => t.slug === "downtown-mission-hill")!;
+const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 ---
 
 <Layout
@@ -22,88 +37,126 @@ const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
 >
   <!-- Hero Section - Full Bleed -->
   <section
-    class="full-bleed relative min-h-[600px] flex items-center justify-center"
+    class="full-bleed relative min-h-[600px] flex items-start md:items-center justify-center"
   >
-    <!-- Hero Video with Image Fallback -->
+    <!-- Hero background: static image or video (toggle USE_STATIC_HERO in frontmatter) -->
     <div class="absolute inset-0">
-      <video
-        id="hero-video"
-        autoplay
-        muted
-        playsinline
-        class="w-full h-full object-cover"
-        poster={heroImage.src}
-        aria-label="Santa Cruz walking tour background video"
-      >
-        <source src="/IMG_9072_web.mp4" type="video/mp4" />
-        <!-- Fallback image for browsers that don't support video -->
+      {USE_STATIC_HERO ? (
         <Image
-          src={heroImage}
-          alt="Downtown Santa Cruz"
-          class="w-full h-full object-cover"
+          src={newHeroImage}
+          alt="Downtown Santa Cruz walking tour"
+          class="w-full h-full object-cover hero-static-img"
           loading="eager"
-          quality={80}
+          quality={85}
         />
-      </video>
+      ) : (
+        <video
+          id="hero-video"
+          autoplay
+          muted
+          playsinline
+          class="w-full h-full object-cover"
+          poster={heroImage.src}
+          aria-label="Santa Cruz walking tour background video"
+        >
+          <source src="/IMG_9072_web.mp4" type="video/mp4" />
+          <Image
+            src={heroImage}
+            alt="Downtown Santa Cruz"
+            class="w-full h-full object-cover"
+            loading="eager"
+            quality={80}
+          />
+        </video>
+      )}
     </div>
     <!-- Dark gradient overlay -->
     <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0">
     </div>
 
-    <div class="container relative z-10 text-center py-24">
+    <div class="container relative z-10 text-center pt-8 pb-4 md:py-24">
       <h1
-        class="text-[2.6rem] md:text-6xl lg:text-7xl font-bold mb-6 text-white drop-shadow-md"
+        class="text-[2.6rem] md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-6 text-white drop-shadow-md"
       >
-        Expert-led<br class="sm:hidden" /> Santa Cruz<br />Walking Tours
+        Discover Santa Cruz Your Way
       </h1>
       <p
-        class="text-lg md:text-xl text-white font-semibold max-w-2xl mx-auto mb-2 drop-shadow-md"
+        class="text-sm md:text-xl text-white font-semibold max-w-2xl mx-auto mb-2 drop-shadow-md"
       >
-        Small-group tours of Santa Cruz history, architecture, and surf culture — led by locals.
+        Choose from small-group walking tours led by a local guide—whether you want surf culture and coastal stories or a deeper look at Santa Cruz history, architecture, and neighborhoods.
       </p>
-      <p class="mb-8 text-sm font-semibold text-white text-center">Tours from $45 · Small groups (max 10) · Thu–Sun</p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <!-- FareHarbor book button -->
-        <a
-          href="#book"
-          class="btn btn-lg">Book a Tour</a
-        >
-        <!-- Stripe (disabled): <a href="https://buy.stripe.com/5kQ00j3Kxa6P3VSgnZ1ck0j" class="btn btn-lg">Book Your Tour Now</a> -->
+      <p class="mb-4 md:mb-8 text-sm font-semibold text-white text-center">Small groups · Max 10 guests · Starting at $45</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="#book" class="btn btn-lg">Book Now</a>
+        <a href="#tours" class="btn btn-lg btn-secondary">View All Tours</a>
       </div>
     </div>
   </section>
 
-  <!-- Tour Section -->
-  <section id="tours" class="container py-16 md:py-24">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-center">
-        3 Walking Tours to Choose From
+  <!-- Choose Your Experience Section -->
+  <section id="tours" class="container pt-10 pb-16 md:pt-14 md:pb-24">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        Choose the Experience That Fits Your Visit
       </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1: Surf & Coastal -->
+        <a href="/tours/surfing-beach-culture" data-astro-reload class="card p-0 flex flex-col overflow-hidden group">
+          <div class="overflow-hidden">
+            <Image src={surfTour.cardImage} alt={surfTour.cardImageAlt} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+          </div>
+          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Surf & Coastal Experience</span>
+            <h3 class="text-xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
+            <p class="text-muted-foreground mb-4 flex-1">Experience Santa Cruz through its surf history, coastal landmarks, local legends, and ocean life. This tour connects iconic breaks, pioneering surfers, and the culture that helped define the town.</p>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
+              <li><strong>Best for:</strong> surfers, ocean lovers, and curious visitors</li>
+              <li><strong>Duration:</strong> 90 minutes</li>
+              <li><strong>Schedule:</strong> Thursdays</li>
+            </ul>
+            <span class="btn w-full text-center">Explore the Surf Tour →</span>
+          </div>
+        </a>
 
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        {
-          tours.map((tour) => (
-            <TourCard
-              slug={tour.slug}
-              title={tour.title}
-              image={tour.cardImage}
-              imageAlt={tour.cardImageAlt}
-              adultPrice={tour.adultPrice}
-              childPrice={tour.childPrice}
-            />
-          ))
-        }
+        <!-- Card 2: History & Neighborhood -->
+        <a href="/tours/downtown-mission-hill" data-astro-reload class="card p-0 flex flex-col overflow-hidden group">
+          <div class="overflow-hidden">
+            <Image src={downtownTour.cardImage} alt={downtownTour.cardImageAlt} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+          </div>
+          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">History & Neighborhood Experience</span>
+            <h3 class="text-xl font-bold mb-3">Heart of Downtown Santa Cruz</h3>
+            <p class="text-muted-foreground mb-4 flex-1">The original Walk Santa Cruz tour. A story-rich journey through downtown streets, local architecture, and the history and character of the city locals love.</p>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
+              <li><strong>Best for:</strong> first-time visitors and shorter outings</li>
+              <li><strong>Duration:</strong> 90 minutes</li>
+              <li><strong>Schedule:</strong> Fri–Sun</li>
+            </ul>
+            <span class="btn w-full text-center">Explore the Downtown Tour →</span>
+          </div>
+        </a>
+
+        <!-- Card 3: Deeper Local -->
+        <a href="/tours/beach-hill-loop" data-astro-reload class="card p-0 flex flex-col overflow-hidden group">
+          <div class="overflow-hidden">
+            <Image src={loopTour.cardImage} alt={loopTour.cardImageAlt} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+          </div>
+          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Deeper Local Experience</span>
+            <h3 class="text-xl font-bold mb-3">Beach Hill to Mission Hill Loop</h3>
+            <p class="text-muted-foreground mb-4 flex-1">A broader, more immersive walk through multiple neighborhoods that ties together history, architecture, landscape, and the evolution of Santa Cruz over time.</p>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
+              <li><strong>Best for:</strong> deeper exploration and history lovers</li>
+              <li><strong>Duration:</strong> 2.5 hours</li>
+              <li><strong>Schedule:</strong> Fri–Sun</li>
+            </ul>
+            <span class="btn w-full text-center">Explore the Loop Tour →</span>
+          </div>
+        </a>
       </div>
-
-      <blockquote class="text-lg text-muted-foreground italic text-center">
-        "I grew up in Santa Cruz and lead small-group walking tours that connect Victorian streets, Monterey Bay overlooks, and surf history through local stories you won't find in guidebooks."
-        <footer class="mt-4 not-italic">
-          <span class="font-semibold">— Matt</span>, Founder & Local Guide
-          <a href="/about" class="block mt-2 text-primary hover:underline text-sm font-medium">Meet your guide →</a>
-        </footer>
-      </blockquote>
     </div>
   </section>
+
 
   <!-- Testimonials Section - HIDDEN FOR NOW -->
   <!-- <section class="full-bleed relative py-16 md:py-24">
@@ -157,6 +210,105 @@ const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
       </div>
     </div>
   </section> -->
+
+  <!-- Local Perks Section -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div class="absolute inset-0 opacity-40" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+    <div class="container relative">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">Your Tour Includes Exclusive Local Perks</h2>
+        <p class="text-lg text-muted-foreground text-center max-w-2xl mx-auto mb-2">
+          Enjoy discounts and special offers from favorite Santa Cruz shops, cafes, and downtown businesses. Each partner sets their own offer and redemption window.
+        </p>
+        <p class="text-xl font-bold text-center mb-12">Show your tour confirmation within the timeframe listed to redeem.</p>
+
+        <div class="space-y-10">
+
+          <!-- Same-Day -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Same-Day Perks</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoMyToque} alt="MyTOQUE" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">MyTOQUE</p>
+                  <p class="text-lg font-bold leading-tight">Free 100 ml olive oil with $25 purchase</p>
+                </div>
+              </div>
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoMoonKissed} alt="Moon Kissed" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Moon Kissed</p>
+                  <p class="text-lg font-bold leading-tight">10% off</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Within 3 Days -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Within 3 Days</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoMythic} alt="Mythic Games" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Mythic Games</p>
+                  <p class="text-lg font-bold leading-tight">Free Magic: The Gathering welcome deck + 10% off</p>
+                </div>
+              </div>
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoSuperSilver} alt="Super Silver" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Super Silver</p>
+                  <p class="text-lg font-bold leading-tight">Free crystal gift with $10+ purchase</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Within 7 Days -->
+          <div>
+            <h3 class="text-xs font-bold uppercase tracking-widest text-primary mb-4">Within 7 Days</h3>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoHiddenPeak} alt="Hidden Peak Teahouse" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Hidden Peak Teahouse</p>
+                  <p class="text-lg font-bold leading-tight">15% off</p>
+                </div>
+              </div>
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoArtisans} alt="Artisans & Agency" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Artisans & Agency</p>
+                  <p class="text-lg font-bold leading-tight">10% off</p>
+                </div>
+              </div>
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoNicely} alt="Nicely" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Nicely</p>
+                  <p class="text-lg font-bold leading-tight">10% off, including existing sales</p>
+                </div>
+              </div>
+              <div class="bg-card rounded-xl border p-4 flex items-center gap-4">
+                <Image src={logoMissionHill} alt="Mission Hill Coffee & Creamery" class="w-28 h-28 object-contain flex-shrink-0 rounded" loading="lazy" quality={80} />
+                <div>
+                  <p class="text-sm text-muted-foreground">Mission Hill Coffee & Creamery</p>
+                  <p class="text-lg font-bold leading-tight">10% off</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="#book" class="btn btn-lg">Book Your Tour and Unlock Local Perks</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Reviews Section -->
   <section class="full-bleed relative py-16 md:py-24">
@@ -257,6 +409,13 @@ const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
     </div>
   </div>
 </Layout>
+
+<style>
+  /* Hero static image: show faces across all screen sizes */
+  .hero-static-img {
+    object-position: center 75%;
+  }
+</style>
 
 <script is:inline>
   function setupVideoPlaylist() {
