@@ -711,7 +711,7 @@ export const tours: Tour[] = [
       {
         question: "When is the best time of year for this tour?",
         answer:
-          "Each season offers something unique! Fall and winter typically bring bigger swells and more dramatic surfing at Steamer Lane, plus migrating gray whales (December-April). Spring and summer offer calmer conditions, warmer weather, and great beginner surfing at Cowell. Marine life is present year-round. Thursday mornings (when this tour runs) are often less crowded than weekends. Really, any time is good!",
+          "Each season offers something unique! Fall and winter typically bring bigger swells and more dramatic surfing at Steamer Lane, plus migrating gray whales (December-April). Spring and summer offer calmer conditions, warmer weather, and great beginner surfing at Cowell. Marine life is present year-round. Weekday departures (Thursday and Friday) are often less crowded than weekends. Really, any time is good!",
       },
       {
         question: "Will we see whales or other marine life?",
