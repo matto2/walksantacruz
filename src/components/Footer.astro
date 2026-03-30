@@ -144,11 +144,12 @@ import { tours } from "../data/tours";
       <!-- Tours -->
       <div>
         <h4 class="font-semibold mb-4">Tours</h4>
-        <nav class="flex flex-col gap-2">
+        <nav class="flex flex-col gap-2 mb-4">
           {tours.map((tour) => (
             <a href={`/tours/${tour.slug}`} data-astro-reload class="opacity-90 hover:opacity-100 transition-opacity">{tour.title}</a>
           ))}
         </nav>
+        <a href="/#book" data-astro-reload class="btn btn-sm">Book Now</a>
       </div>
 
       <!-- Contact Info -->
