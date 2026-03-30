@@ -368,6 +368,8 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
       </h3>
       <!-- FareHarbor calendar -->
       <script is:inline src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"></script>
+      <p class="text-sm mt-3"><strong>Adult (18+):</strong> $45 &nbsp;·&nbsp; <strong>Child (6-17):</strong> $30 &nbsp;·&nbsp; Kids 5 and under are FREE with adult ticket</p>
+      <p class="text-sm font-semibold text-foreground mt-1">Full refund if cancelled 24+ hours before tour start time</p>
 
       <!-- Tour Details -->
       <h4 class="text-xl font-bold mt-12 mb-6">Tour Details</h4>
@@ -375,6 +377,7 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
         {tours.map((tour, i) => (
           <a
             href={`/tours/${tour.slug}`}
+            data-astro-reload
             class={`flex flex-row md:flex-col items-center gap-4 md:gap-3 py-4 md:py-0 md:flex-1 md:px-6 border-b md:border-b-0 border-foreground/10 last:border-b-0 ${i > 0 ? 'md:border-l md:border-foreground/20' : ''} first:md:pl-0 last:md:pr-0`}
           >
             <Image
@@ -552,6 +555,7 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 
   // Re-run after view transitions
   document.addEventListener("astro:page-load", setupMapLink);
+
 
 </script>
 

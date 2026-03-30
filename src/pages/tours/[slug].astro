@@ -180,31 +180,14 @@ const tourStructuredData = {
           <h3 class="text-2xl md:text-3xl font-bold mb-8">
             Ready to Explore? View Availability
           </h3>
-          <div id="fh-calendar-container" data-calendar-id={tour.fareharborCalendarId}></div>
+          <script is:inline data-tour-calendar={tour.fareharborCalendarId} src={`https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${tour.fareharborCalendarId}/?fallback=simple&full-items=yes&flow=1491352`}></script>
+          <p class="text-sm mt-3"><strong>Adult (18+):</strong> ${tour.adultPrice} &nbsp;·&nbsp; <strong>Child (6-17):</strong> ${tour.childPrice} &nbsp;·&nbsp; Kids 5 and under are FREE with adult ticket</p>
+          <p class="text-sm font-semibold text-foreground mt-1">Full refund if cancelled 24+ hours before tour start time</p>
           <a href="/#book" data-astro-reload class="text-primary hover:underline mt-6 inline-block">
             See All Tours Availability
           </a>
         </div>
       )}
-
-      <script>
-        function loadFareHarborCalendar() {
-          const container = document.getElementById('fh-calendar-container');
-          if (!container) return;
-          const calendarId = container.getAttribute('data-calendar-id');
-          if (!calendarId) return;
-
-          // Clear any previously injected calendar
-          container.innerHTML = '';
-
-          const script = document.createElement('script');
-          script.src = `https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${calendarId}/?fallback=simple&full-items=yes&flow=1491352`;
-          container.appendChild(script);
-        }
-
-        // Run on full page load and on every Astro client-side navigation
-        document.addEventListener('astro:page-load', loadFareHarborCalendar);
-      </script>
 
       <!-- Important Information -->
       {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (

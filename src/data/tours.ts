@@ -159,9 +159,9 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Friday, Saturday, and Sunday at 2pm",
+    schedule: "Saturday and Sunday at 1pm",
     meetingPoint: {
-      name: "Abbott Square Market in Downtown Santa Cruz",
+      name: "Abbott Square Market, 118 Cooper St, Santa Cruz",
       url: "https://maps.app.goo.gl/M7uF1gUT19KMFiMW8",
       embedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.4667898953576!2d-122.02546669999998!3d36.9747896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e4026125f9a71%3A0x8ba1abfab596ea05!2sAbbott%20Square%20Market!5e0!3m2!1sen!2sus!4v1764894658764!5m2!1sen!2sus",
@@ -376,9 +376,9 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Friday, Saturday, and Sunday at 10am",
+    schedule: "Thursday and Friday at 1pm",
     meetingPoint: {
-      name: "At the Boardwalk's Aloha Terrace Group Picnic Area (next to the Beach Volleyball Courts)",
+      name: "Aloha Terrace Group Picnic Area, 300 Beach Street — next to the Boardwalk, overlooking the beach volleyball courts",
       url: "https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9",
       embedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus",
@@ -481,7 +481,7 @@ export const tours: Tour[] = [
       {
         question: "What time should I arrive and where exactly do we meet?",
         answer:
-          "Please arrive 10 minutes before the 10am start time at the Aloha Terrace Group Picnic Area. This is located near the beach in the Beach Hill area. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets - we recommend arriving 15-20 minutes early to find parking and walk to the meeting point. The exact location will be provided in your confirmation email.",
+          "Please arrive 10 minutes before the 1pm start time at the Aloha Terrace Group Picnic Area, 300 Beach Street — next to the Boardwalk, overlooking the beach volleyball courts. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets - we recommend arriving 15-20 minutes early to find parking. The exact location will be provided in your confirmation email.",
       },
       {
         question: "What if I need to leave the tour early?",
@@ -589,9 +589,9 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Thursday at 11:30am and 2pm",
+    schedule: "Thursday, Friday, Saturday, and Sunday at 10am",
     meetingPoint: {
-      name: "At the Boardwalk's Aloha Terrace Group Picnic Area (next to the Beach Volleyball Courts)",
+      name: "Aloha Terrace Group Picnic Area, 300 Beach Street, Santa Cruz — next to the Boardwalk, overlooking the beach volleyball courts",
       url: "https://maps.app.goo.gl/5kQSAFFEfZigLaFKA",
       embedUrl:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus",
