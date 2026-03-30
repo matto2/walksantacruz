@@ -3,6 +3,7 @@
 import { Image } from "astro:assets";
 import Logo2 from "./Logo2.astro";
 import LookoutLogo from "../assets/LookoutLogo.png";
+import { tours } from "../data/tours";
 ---
 
 <footer class="text-white mt-auto" style="background-color: #007a99;">
@@ -41,7 +42,7 @@ import LookoutLogo from "../assets/LookoutLogo.png";
       </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8 mb-8">
+    <div class="grid md:grid-cols-4 gap-8 mb-8">
       <!-- About -->
       <div>
         <div class="mb-4">
@@ -130,33 +131,23 @@ import LookoutLogo from "../assets/LookoutLogo.png";
       <div>
         <h4 class="font-semibold mb-4">Quick Links</h4>
         <nav class="flex flex-col gap-2">
-          <a href="/#top" data-astro-reload class="opacity-90 hover:opacity-100 transition-opacity"
-            >Home</a
-          >
-          <a
-            href="/about"
-            class="opacity-90 hover:opacity-100 transition-opacity">About</a
-          >
-          <a
-            href="/gallery"
-            class="opacity-90 hover:opacity-100 transition-opacity">Gallery</a
-          >
-          <a
-            href="/contact"
-            class="opacity-90 hover:opacity-100 transition-opacity">Contact</a
-          >
-          <a
-            href="/private-tours"
-            class="opacity-90 hover:opacity-100 transition-opacity">Private Tours</a
-          >
-          <a
-            href="/team-offsites"
-            class="opacity-90 hover:opacity-100 transition-opacity">Team Offsites</a
-          >
-          <a
-            href="/faq"
-            class="opacity-90 hover:opacity-100 transition-opacity">FAQ</a
-          >
+          <a href="/#top" data-astro-reload class="opacity-90 hover:opacity-100 transition-opacity">Home</a>
+          <a href="/about" class="opacity-90 hover:opacity-100 transition-opacity">About</a>
+          <a href="/contact" class="opacity-90 hover:opacity-100 transition-opacity">Contact</a>
+          <a href="/private-tours" class="opacity-90 hover:opacity-100 transition-opacity">Private Tours</a>
+          <a href="/team-offsites" class="opacity-90 hover:opacity-100 transition-opacity">Team Offsites</a>
+          <a href="/faq" class="opacity-90 hover:opacity-100 transition-opacity">FAQ</a>
+          <a href="/gallery" class="opacity-90 hover:opacity-100 transition-opacity">Gallery</a>
+        </nav>
+      </div>
+
+      <!-- Tours -->
+      <div>
+        <h4 class="font-semibold mb-4">Tours</h4>
+        <nav class="flex flex-col gap-2">
+          {tours.map((tour) => (
+            <a href={`/tours/${tour.slug}`} data-astro-reload class="opacity-90 hover:opacity-100 transition-opacity">{tour.title}</a>
+          ))}
         </nav>
       </div>
 
