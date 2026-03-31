@@ -25,3 +25,9 @@ pnpm-debug.log*
 
 # Claude Code settings
 .claude/
+
+# Project planning docs
+REDESIGN_INSTRUCTIONS.md
+
+# Unused assets
+src/assets/Surfers-Outside-Cowells_1280.jpg

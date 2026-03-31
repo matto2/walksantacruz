@@ -15,7 +15,7 @@ const currentPath = Astro.url.pathname;
 
 			<!-- Mobile: Book Now + Hamburger -->
 			<div class="lg:hidden flex items-center gap-3">
-				<a href="/#book" data-astro-reload class="btn btn-sm">Book Now</a>
+				<a href="/tours/surfing-beach-culture#book" data-astro-reload class="btn btn-sm">Book Now</a>
 				<button id="mobile-menu-button" class="text-white" aria-label="Toggle menu">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 						<line x1="4" x2="20" y1="12" y2="12"></line>
@@ -31,9 +31,13 @@ const currentPath = Astro.url.pathname;
 					Home
 				</a>
 
+				<a href="/tours/surfing-beach-culture" data-astro-reload class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/tours/surfing-beach-culture' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
+					Surf Walk
+				</a>
+
 				<!-- Tours Dropdown -->
 				<div class="relative group">
-					<button class="text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] border-transparent flex items-center gap-1">
+					<button class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] flex items-center gap-1 ${currentPath.startsWith('/tours/') ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
 						Tours
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-hover:rotate-180">
 							<path d="m6 9 6 6 6-6"/>
@@ -41,38 +45,36 @@ const currentPath = Astro.url.pathname;
 					</button>
 					<div class="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
 						<div class="py-2">
-							{tours.map((tour) => (
-								<a
-									href={`/tours/${tour.slug}`}
-									data-astro-reload
-									class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === `/tours/${tour.slug}` ? 'font-bold text-primary' : ''}`}
-								>
-									{tour.title}
-								</a>
-							))}
-							<a
-								href="/private-tours"
-								class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === '/private-tours' ? 'font-bold text-primary' : ''}`}
-							>
+							<a href="/tours/surfing-beach-culture" data-astro-reload class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === '/tours/surfing-beach-culture' ? 'font-bold text-primary' : ''}`}>
+								Santa Cruz Surf Walk
+							</a>
+							<a href="/tours/downtown-mission-hill" data-astro-reload class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === '/tours/downtown-mission-hill' ? 'font-bold text-primary' : ''}`}>
+								Heart of Downtown Santa Cruz Tour
+							</a>
+							<a href="/tours/beach-hill-loop" data-astro-reload class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === '/tours/beach-hill-loop' ? 'font-bold text-primary' : ''}`}>
+								Beach Hill to Mission Hill Loop
+							</a>
+							<div class="border-t border-border my-1"></div>
+							<a href="/private-tours" class={`block px-4 py-2 text-foreground hover:bg-muted hover:text-primary transition-colors ${currentPath === '/private-tours' ? 'font-bold text-primary' : ''}`}>
 								Private Tours
 							</a>
 						</div>
 					</div>
 				</div>
 
-				<a href="/about" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/about' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
-					About
-				</a>
-				<a href="/faq" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/faq' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
-					FAQ
-				</a>
 				<a href="/team-offsites" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/team-offsites' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
 					Team Offsites
 				</a>
-				<a href="/contact" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/contact' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
-					Contact
+
+				<a href="/private-tours" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/private-tours' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
+					Private Tours
 				</a>
-				<a href="/#book" data-astro-reload class="btn">Book Now</a>
+
+				<a href="/about" class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/about' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
+					About
+				</a>
+
+				<a href="/tours/surfing-beach-culture#book" data-astro-reload class="btn">Book Now</a>
 			</div>
 		</div>
 
@@ -83,6 +85,10 @@ const currentPath = Astro.url.pathname;
 					Home
 				</a>
 
+				<a href="/tours/surfing-beach-culture" data-astro-reload class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/tours/surfing-beach-culture' ? 'font-bold' : ''}`}>
+					Surf Walk
+				</a>
+
 				<!-- Tours Dropdown Mobile -->
 				<div>
 					<button id="mobile-tours-toggle" class="text-white hover:opacity-80 transition-opacity font-medium flex items-center gap-1 w-full">
@@ -91,36 +97,32 @@ const currentPath = Astro.url.pathname;
 							<path d="m6 9 6 6 6-6"/>
 						</svg>
 					</button>
-					<div id="mobile-tours-dropdown" class="hidden pl-4 mt-2 flex flex-col gap-5">
-						{tours.map((tour) => (
-							<a
-								href={`/tours/${tour.slug}`}
-								data-astro-reload
-								class={`text-white hover:opacity-80 transition-opacity ${currentPath === `/tours/${tour.slug}` ? 'font-bold' : ''}`}
-							>
-								{tour.title}
-							</a>
-						))}
-						<a
-							href="/private-tours"
-							class={`text-white hover:opacity-80 transition-opacity ${currentPath === '/private-tours' ? 'font-bold' : ''}`}
-						>
+					<div id="mobile-tours-dropdown" class="hidden pl-4 mt-2 flex flex-col gap-3">
+						<a href="/tours/surfing-beach-culture" data-astro-reload class={`text-white hover:opacity-80 transition-opacity ${currentPath === '/tours/surfing-beach-culture' ? 'font-bold' : ''}`}>
+							Santa Cruz Surf Walk
+						</a>
+						<a href="/tours/downtown-mission-hill" data-astro-reload class={`text-white hover:opacity-80 transition-opacity ${currentPath === '/tours/downtown-mission-hill' ? 'font-bold' : ''}`}>
+							Heart of Downtown Santa Cruz Tour
+						</a>
+						<a href="/tours/beach-hill-loop" data-astro-reload class={`text-white hover:opacity-80 transition-opacity ${currentPath === '/tours/beach-hill-loop' ? 'font-bold' : ''}`}>
+							Beach Hill to Mission Hill Loop
+						</a>
+						<a href="/private-tours" class={`text-white hover:opacity-80 transition-opacity ${currentPath === '/private-tours' ? 'font-bold' : ''}`}>
 							Private Tours
 						</a>
 					</div>
 				</div>
 
-				<a href="/about" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/about' ? 'font-bold' : ''}`}>
-					About
-				</a>
-				<a href="/faq" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/faq' ? 'font-bold' : ''}`}>
-					FAQ
-				</a>
 				<a href="/team-offsites" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/team-offsites' ? 'font-bold' : ''}`}>
 					Team Offsites
 				</a>
-				<a href="/contact" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/contact' ? 'font-bold' : ''}`}>
-					Contact
+
+				<a href="/private-tours" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/private-tours' ? 'font-bold' : ''}`}>
+					Private Tours
+				</a>
+
+				<a href="/about" class={`text-white hover:opacity-80 transition-opacity font-medium ${currentPath === '/about' ? 'font-bold' : ''}`}>
+					About
 				</a>
 			</div>
 		</div>

@@ -7,7 +7,7 @@ import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
-import newHeroImage from "../assets/new-hero.jpg";
+import surfersHeroImage from "../assets/Surfers-Outside-Cowells_v5.jpg";
 import mapBg from "../assets/map-bg.jpg";
 import logoMyToque from "../assets/partner-logos/my-toque.png";
 import logoMoonKissed from "../assets/partner-logos/MoonKissed.png";
@@ -37,14 +37,14 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 >
   <!-- Hero Section - Full Bleed -->
   <section
-    class="full-bleed relative min-h-[600px] flex items-start md:items-center justify-center -mt-2 md:mt-0"
+    class="full-bleed relative min-h-[600px] md:min-h-[780px] flex items-start justify-center -mt-2 md:mt-0"
   >
     <!-- Hero background: static image or video (toggle USE_STATIC_HERO in frontmatter) -->
     <div class="absolute inset-0">
       {USE_STATIC_HERO ? (
         <Image
-          src={newHeroImage}
-          alt="Downtown Santa Cruz walking tour"
+          src={surfersHeroImage}
+          alt="Surfers outside Cowell's Beach, Santa Cruz"
           class="w-full h-full object-cover hero-static-img"
           loading="eager"
           quality={85}
@@ -70,53 +70,60 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
         </video>
       )}
     </div>
-    <!-- Dark gradient overlay -->
-    <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/0">
+    <!-- Dark gradient overlay: top fade for text legibility, bottom fade to blend into page -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 45%, rgba(0,0,0,0) 60%, rgba(248,245,238,0.85) 100%);">
     </div>
 
-    <div class="container relative z-10 text-center pt-8 pb-4 md:py-24">
+    <div class="container relative z-10 text-center pt-8 pb-4 md:pt-36 md:pb-8">
       <h1
         class="text-[2.6rem] md:text-6xl lg:text-7xl font-bold leading-tight mb-3 md:mb-6 text-white drop-shadow-md"
       >
-        Discover Your Santa Cruz
+        Where Surfing Came to America
       </h1>
       <p
-        class="text-sm md:text-xl text-white font-semibold max-w-2xl mx-auto mb-2 drop-shadow-md"
+        class="text-sm md:text-xl text-white font-semibold max-w-2xl mx-auto mb-6 md:mb-8 drop-shadow-md"
       >
-        Choose from small-group walking tours led by a local guide—whether you want surf culture and coastal stories or a deeper look at Santa Cruz history, architecture, and neighborhoods.
+        In 1885, Hawaiian princes rode waves here and changed the world. Walk the story with a local guide who knows it inside out.
       </p>
-      <p class="mb-4 md:mb-8 text-sm font-semibold text-white text-center">Small groups · Max 10 guests · Starting at $45</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="#book" class="btn btn-lg">Book Now</a>
+        <a href="/tours/surfing-beach-culture#book" class="btn btn-lg">Book the Surf Walk</a>
         <a href="#tours" class="btn btn-lg btn-secondary">View All Tours</a>
       </div>
+      <p class="mt-4 text-base font-bold text-white text-center drop-shadow whitespace-nowrap"><span class="text-yellow-500">★★★★★</span> 5.0 rating</p>
     </div>
   </section>
 
-  <!-- Choose Your Experience Section -->
-  <section id="tours" class="container pt-10 pb-16 md:pt-14 md:pb-24">
+  <!-- Start Here / Tours Section -->
+  <section id="tours" class="container pt-2 pb-16 md:pt-4 md:pb-24">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
-        Choose Your Experience
+        Our Tours
       </h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1: Surf & Coastal -->
-        <a href="/tours/surfing-beach-culture" data-astro-reload class="card p-0 flex flex-col overflow-hidden group">
-          <div class="overflow-hidden">
-            <Image src={surfTour.cardImage} alt={surfTour.cardImageAlt} class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+
+      <!-- Surf Walk — full-width featured card -->
+      <a href="/tours/surfing-beach-culture#book" data-astro-reload class="card p-0 flex flex-col md:flex-row overflow-hidden group mb-4">
+        <div class="overflow-hidden md:w-2/5 flex-shrink-0">
+          <Image src={surfTour.cardImage} alt={surfTour.cardImageAlt} class="w-full h-56 md:h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+        </div>
+        <div class="px-6 pt-4 pb-6 flex flex-col flex-1 md:justify-center">
+          <div class="mb-3">
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">Surf & Coastal Experience</span>
           </div>
-          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
-            <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Surf & Coastal Experience</span>
-            <h3 class="text-xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
-            <p class="text-muted-foreground mb-4 flex-1">Experience Santa Cruz through its surf history, coastal landmarks, local legends, and ocean life. This tour connects iconic breaks, pioneering surfers, and the culture that helped define the town.</p>
-            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
-              <li><strong>Best for:</strong> surfers, ocean lovers, and curious visitors</li>
-              <li><strong>Duration:</strong> 90 minutes</li>
-              <li><strong>Schedule:</strong> Thu–Sun, 10am</li>
-            </ul>
-            <span class="btn w-full text-center">Explore the Surf Tour →</span>
-          </div>
-        </a>
+          <h3 class="text-2xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
+          <p class="text-muted-foreground mb-4 flex-1">The only tour in America that walks you through the exact spot where mainland surfing began in 1885. Created by a former surf magazine co-founder with 45 years in the water — and designed to be unforgettable.</p>
+          <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
+            <li><strong>Best for:</strong> surfers, ocean lovers, first-time visitors, and anyone who wants a story they'll actually remember</li>
+            <li><strong>Duration:</strong> 90 minutes</li>
+            <li><strong>Schedule:</strong> Thu–Sun, 10am</li>
+            <li><strong>Starting at:</strong> $45 adult · $30 child · Kids 5 &amp; under free</li>
+          </ul>
+          <span class="btn self-start">Book the Surf Walk →</span>
+        </div>
+      </a>
+
+      <!-- Secondary tours -->
+      <p class="text-sm font-bold uppercase tracking-widest text-muted-foreground text-center mt-10 mb-6">More Ways to Explore Santa Cruz</p>
+      <div class="grid md:grid-cols-2 gap-8">
 
         <!-- Card 2: History & Neighborhood -->
         <a href="/tours/downtown-mission-hill" data-astro-reload class="card p-0 flex flex-col overflow-hidden group">
@@ -127,7 +134,7 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
             <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">History & Neighborhood Experience</span>
             <h3 class="text-xl font-bold mb-3">Heart of Downtown Santa Cruz</h3>
             <p class="text-muted-foreground mb-4 flex-1">The original Walk Santa Cruz tour. A story-rich journey through downtown streets, local architecture, and the history and character of the city locals love.</p>
-            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
               <li><strong>Best for:</strong> first-time visitors and shorter outings</li>
               <li><strong>Duration:</strong> 90 minutes</li>
               <li><strong>Schedule:</strong> Sat–Sun, 1pm</li>
@@ -145,7 +152,7 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
             <span class="text-xs font-bold uppercase tracking-widest text-primary mb-3">Deeper Local Experience</span>
             <h3 class="text-xl font-bold mb-3">Beach Hill to Mission Hill Loop</h3>
             <p class="text-muted-foreground mb-4 flex-1">A broader, more immersive walk through multiple neighborhoods that ties together history, architecture, landscape, and the evolution of Santa Cruz over time.</p>
-            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
               <li><strong>Best for:</strong> deeper exploration and history lovers</li>
               <li><strong>Duration:</strong> 2.5 hours</li>
               <li><strong>Schedule:</strong> Thu–Fri, 1pm</li>
@@ -210,6 +217,37 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
       </div>
     </div>
   </section> -->
+
+  <!-- Reviews Section -->
+  <section class="full-bleed relative py-16 md:py-24">
+    <div class="container relative">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+        Don't Take Our Word For It
+      </h2>
+
+      <!-- Featured quote: Sophia Adair -->
+      <figure class="max-w-3xl mx-auto mb-14 text-center">
+        <blockquote class="text-xl md:text-2xl font-semibold leading-snug text-foreground mb-4">
+          "Matt is engaging and informative, but he doesn't pontificate or try to dominate his walks, which is what makes them great. His tours are relaxed, entertaining, enlightening, and highly recommended for anyone seeking a bigger, more flavorful slice of Santa Cruz history."
+        </blockquote>
+        <figcaption class="text-sm text-muted-foreground">
+          — Sophia Adair &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp;
+          <a href="https://share.google/xDtZXgKdz5xZL9Ruj" target="_blank" rel="noopener noreferrer" class="underline">Google Review</a>
+        </figcaption>
+      </figure>
+
+      <ReviewsCarousel
+        reviews={reviews}
+        airbnbLogo={airbnbLogo}
+        tripadvisorLogo={tripadvisorLogo}
+        viatorLogo={viatorLogo}
+      />
+
+      <p class="text-center text-sm text-muted-foreground mt-10">
+        Reviewed on Google · Airbnb · TripAdvisor · Viator
+      </p>
+    </div>
+  </section>
 
   <!-- Local Perks Section -->
   <section class="full-bleed relative py-16 md:py-24">
@@ -311,32 +349,9 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
         <div class="mt-10 bg-primary/10 border border-primary/20 rounded-xl px-6 py-5 text-center max-w-2xl mx-auto">
           <p class="text-sm font-semibold text-foreground mb-1">Do you own a Santa Cruz business interested in getting more foot traffic?</p>
           <p class="text-sm text-muted-foreground mb-3">Join our local partner network — fill out a quick form and we'll be in touch.</p>
-          <a href="https://forms.gle/3ZxoBaQzrXYxfMko8" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-primary underline">Apply to become a partner →</a>
+          <a href="/partners" class="text-sm font-semibold text-primary underline">Apply to become a partner →</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section -->
-  <section class="full-bleed relative py-16 md:py-24">
-    <div class="container relative">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-        Loved by Visitors and Locals
-      </h2>
-      <p class="text-center text-muted-foreground max-w-2xl mx-auto mb-10">
-        Guests consistently mention the local insight, personal feel, and stories they would never have picked up on their own.
-      </p>
-
-      <ReviewsCarousel
-        reviews={reviews}
-        airbnbLogo={airbnbLogo}
-        tripadvisorLogo={tripadvisorLogo}
-        viatorLogo={viatorLogo}
-      />
-
-      <p class="text-center text-sm text-muted-foreground mt-10">
-        Reviewed on Google · Airbnb · TripAdvisor · Viator
-      </p>
     </div>
   </section>
 
@@ -344,24 +359,21 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
   <section class="full-bleed relative py-16 md:py-24">
     <div class="absolute inset-0 opacity-40" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
     <div class="container relative">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">
-        Planning for a Group, Team, or Guests?
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        Planning for a Group or Team?
       </h2>
-      <p class="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-        Walk Santa Cruz also offers private tours and partner-friendly recommendations for groups, company offsites, vacation rentals, and local hospitality businesses.
-      </p>
 
       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
         <div class="bg-card rounded-xl p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold">Private &amp; Group Tours</h3>
-          <p class="text-muted-foreground flex-1">Custom experiences for families, schools, company groups, reunions, and offsites.</p>
-          <a href="/private-tours" class="btn btn-primary self-start">See Our Private Tours</a>
+          <h3 class="text-xl font-bold">Make Your Next Offsite Unforgettable</h3>
+          <p class="text-muted-foreground flex-1">Walk Santa Cruz designs custom tours for startup retreats, corporate offsites, and remote teams meeting in person. No conference rooms. No trust falls. Just genuine exploration that teams actually talk about afterward.</p>
+          <a href="/team-offsites" class="btn self-start">Plan a Team Offsite</a>
         </div>
 
         <div class="bg-card rounded-xl p-8 flex flex-col gap-4">
-          <h3 class="text-xl font-bold">For Airbnb Hosts, Hotels &amp; Local Partners</h3>
-          <p class="text-muted-foreground flex-1">Looking for a memorable experience to recommend to guests? Walk Santa Cruz offers small-group tours, easy booking, and added value through local partner perks.</p>
-          <a href="/contact" class="btn btn-primary self-start">Partner With Walk Santa Cruz</a>
+          <h3 class="text-xl font-bold">Want the Full Experience, Your Way?</h3>
+          <p class="text-muted-foreground flex-1">Private tours for families, couples, and groups. Your schedule, your pace, your interests. Starting from $250 for up to 6 guests.</p>
+          <a href="/private-tours" class="btn self-start">Explore Private Tours</a>
         </div>
       </div>
     </div>
@@ -451,9 +463,14 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 </Layout>
 
 <style>
-  /* Hero static image: show faces across all screen sizes */
+  /* Hero static image: anchor to bottom so surfers + gradient are always visible */
   .hero-static-img {
-    object-position: center 75%;
+    object-position: 30% bottom;
+  }
+  @media (min-width: 768px) {
+    .hero-static-img {
+      object-position: center bottom;
+    }
   }
 </style>
 

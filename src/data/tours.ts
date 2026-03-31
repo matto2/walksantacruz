@@ -172,7 +172,7 @@ export const tours: Tour[] = [
       "https://fareharbor.com/embeds/book/walksantacruz/items/673407/calendar/2025/12/?full-items=yes",
 
     storytelling:
-      "Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This safe, guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
+      "Pair it with the Surf Walk for the complete Santa Cruz experience — or come here first and let the streets tell you the rest of the story. Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
 
     itinerary: [
       {
@@ -307,7 +307,7 @@ export const tours: Tour[] = [
       "victorian architecture santa cruz",
     ],
 
-    relatedTourSlugs: ["beach-hill-loop", "surfing-beach-culture"],
+    relatedTourSlugs: ["surfing-beach-culture", "beach-hill-loop"],
 
     fareharborCalendarId: "673407",
   },
@@ -316,12 +316,12 @@ export const tours: Tour[] = [
     slug: "beach-hill-loop",
     title: "Beach Hill to Mission Hill Loop",
     shortDescription:
-      "Start at the beach, climb through oceanfront estates, descend a hidden staircase into downtown, ascend to Mission Hill's historic adobe, then loop back through Victorian neighborhoods. This extended version of our signature Heart of Santa Cruz tour covers it all in one unforgettable journey.",
+      "Start at the beach, climb through the historic estates of Beach Hill, descend a hidden staircase into downtown, ascend to Mission Hill's historic adobe, then loop back through Victorian neighborhoods. This extended version of our signature Heart of Santa Cruz tour covers it all in one unforgettable journey.",
     longDescription:
-      "Experience Santa Cruz from every angle on this epic loop that takes you from sea level to hilltop and back again. You'll explore elegant mansions with ocean views, discover secret staircases locals love, wander through downtown's architectural gems, climb to the city's historic mission site, and stroll through charming Victorian neighborhoods. It's the complete Santa Cruz story in one unforgettable walk.",
+      "Experience Santa Cruz from every angle on this epic loop that takes you from the beach up through hilltop neighborhoods and back again. You'll explore the grand estates of Beach Hill, discover secret staircases locals love, wander through downtown's architectural gems, climb to the city's historic mission site, and stroll through charming Victorian neighborhoods. It's the complete Santa Cruz story in one unforgettable walk.",
 
     cardImage: beachHillCard,
-    cardImageAlt: "Beach Hill oceanfront view",
+    cardImageAlt: "Beach Hill historic district",
     heroImage: beachHillHero,
     heroImageAlt: "Beach Hill historic district overlooking Monterey Bay",
     galleryImages: [
@@ -342,8 +342,8 @@ export const tours: Tour[] = [
       },
       {
         src: beachImg0083,
-        alt: "Beach Hill oceanfront view",
-        caption: "Beach Hill Oceanfront - Photo by M. O'Leary",
+        alt: "Beach Hill historic estates",
+        caption: "Beach Hill Historic District - Photo by M. O'Leary",
       },
       {
         src: beachImg0472,
@@ -389,18 +389,18 @@ export const tours: Tour[] = [
       "https://fareharbor.com/embeds/book/walksantacruz/items/686749/calendar/2025/12/?full-items=yes",
 
     storytelling:
-      "Experience Santa Cruz from every angle on this epic loop adventure. Start at the beach and walk up through Beach Hill's oceanfront estates, descend via a hidden staircase locals love, explore downtown's vibrant streets and architectural gems, then continue up to Mission Hill to visit the county's oldest adobe. Loop back through charming Victorian neighborhoods to complete the journey. This extended version of our signature Heart of Santa Cruz tour takes you from Beach Hill to Mission Hill and back again. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. It's our most comprehensive tour—perfect for history enthusiasts who want the complete Santa Cruz story.",
+      "The most comprehensive Santa Cruz tour we offer — 2.5 hours through every neighborhood, every era, and every story. Perfect as a follow-up to the Surf Walk, or as your one big deep-dive into the city. Start at the beach and walk up through Beach Hill's historic estates, descend via a hidden staircase locals love, explore downtown's vibrant streets and architectural gems, then continue up to Mission Hill to visit the county's oldest adobe. Loop back through charming Victorian neighborhoods to complete the journey. On some tours, we've been spontaneously invited inside a historic Victorian-era home — that's the kind of thing that only happens in small groups with a local guide. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. It's our most comprehensive tour — perfect for history enthusiasts who want the complete Santa Cruz story.",
 
     itinerary: [
       {
         title: "Beach Hill Historic District",
         description:
-          "Begin among the grand estates and stunning ocean vistas of Beach Hill, where wealthy San Francisco families built elaborate summer retreats starting in the 1870s. Learn about the architectural styles, the notable residents, and how this neighborhood became Santa Cruz's most prestigious address. We'll discuss the 1989 earthquake's impact and the ongoing preservation efforts.",
+          "Begin among the grand estates of Beach Hill, where wealthy San Francisco families built elaborate summer retreats starting in the 1870s. Learn about the architectural styles, the notable residents, and how this hilltop neighborhood became Santa Cruz's most prestigious address. We'll discuss the 1989 earthquake's impact and the ongoing preservation efforts.",
       },
       {
-        title: "Beachfront & Boardwalk History",
+        title: "Beachfront History & the Boardwalk Story",
         description:
-          "Descend toward the beach and Boardwalk area, exploring how Santa Cruz became a beach resort destination. Discover stories of the early pleasure piers, the development of the Beach Boardwalk, and the role tourism has played in shaping the city's economy and identity for over a century.",
+          "With the beach and Boardwalk spread out below us, we explore how Santa Cruz became a beach resort destination. You'll hear the stories of the early pleasure piers, the rise of the Beach Boardwalk, and the role tourism has played in shaping the city's economy and identity for over a century — all from a vantage point that makes the history easy to picture.",
       },
       {
         title: "Downtown Santa Cruz",
@@ -428,8 +428,8 @@ export const tours: Tour[] = [
       "Extended 2.5-hour experience covering three distinct neighborhoods",
       "Small group size (maximum 10 people) for personalized attention",
       "Insider recommendations for restaurants, beaches, and hidden local spots",
-      "Beach Hill Historic District - grand oceanfront estates with stunning views",
-      "Santa Cruz Beach Boardwalk - California's oldest surviving amusement park",
+      "Beach Hill Historic District - grand estates built by San Francisco's wealthy elite in the 1870s",
+      "Views and history of the Santa Cruz Beach Boardwalk — California's oldest surviving amusement park",
       "Downtown Santa Cruz - Victorian, Craftsman, and Art Deco architecture",
       "Mission Hill - elegant homes and panoramic city views",
       "Mission Santa Cruz & Holy Cross Church - mission replica and spectacular overlook",
@@ -448,7 +448,7 @@ export const tours: Tour[] = [
         "Sturdy, comfortable walking shoes (this tour includes significant hills and stairs)",
         "Water bottle - staying hydrated is important on this longer tour",
         "Sunscreen, hat, and layered clothing (weather can vary from beach to hilltop)",
-        "Camera for capturing ocean views, architecture, and panoramic vistas",
+        "Camera for capturing architecture, historic details, and neighborhood character",
         "Snacks if needed (we don't stop for food but you can bring portable snacks)",
         "Good energy and curiosity - this is our longest tour",
       ],
@@ -507,7 +507,7 @@ export const tours: Tour[] = [
 
     seoTitle: "Beach Hill to Mission Hill Loop Walking Tour | Walk Santa Cruz",
     seoDescription:
-      "Comprehensive 2.5-hour Santa Cruz walking tour from Beach Hill mansions through downtown to Mission Hill. Explore oceanfront estates, Victorian architecture, and local history with expert guides.",
+      "Comprehensive 2.5-hour Santa Cruz walking tour from Beach Hill through downtown to Mission Hill. Explore historic estates, Victorian architecture, hidden staircases, and the stories that shaped the city.",
     keywords: [
       "santa cruz walking tour",
       "beach hill santa cruz",
@@ -520,7 +520,7 @@ export const tours: Tour[] = [
       "guided tour santa cruz",
     ],
 
-    relatedTourSlugs: ["downtown-mission-hill", "surfing-beach-culture"],
+    relatedTourSlugs: ["surfing-beach-culture", "downtown-mission-hill"],
 
     fareharborCalendarId: "686749",
   },
@@ -602,7 +602,7 @@ export const tours: Tour[] = [
       "https://fareharbor.com/embeds/book/walksantacruz/items/686192/calendar/2025/12/?full-items=yes",
 
     storytelling:
-      "Santa Cruz isn't just a surf town - it's THE surf town. This is where mainland surfing in America truly began, where wetsuit innovation flourished, and where surf culture evolved from Hawaiian roots into the phenomenon it is today. On this oceanfront journey, you'll walk in the footsteps of legends, from the three Hawaiian princes who rode waves at the San Lorenzo Rivermouth on Main Beach in 1885 to the modern shapers and surfers who continue to push the sport forward. We'll explore iconic surf spots, learn to read the waves and conditions, discover the innovations that flourished in Santa Cruz (like wetsuit and skateboard technology), and understand how surf culture permeates every aspect of this coastal community. Along the way, you'll also encounter sea lions, harbor seals, seabirds, and maybe even dolphins or whales, experiencing the vibrant marine ecosystem that makes Santa Cruz special. This tour isn't just about surfing history - it's about understanding how the ocean shapes everything about life in this unique coastal town.",
+      "In 1885, three Hawaiian princes rode waves at the San Lorenzo Rivermouth — and mainland American surfing was born. This is the only tour that walks you to that exact spot and tells you the full story. Santa Cruz isn't just a surf town — it's THE surf town. This is where mainland surfing in America truly began, where wetsuit innovation flourished, and where surf culture evolved from Hawaiian roots into the phenomenon it is today. On this oceanfront journey, you'll walk in the footsteps of legends — from those three Hawaiian princes to the modern shapers and surfers who continue to push the sport forward. We'll explore iconic surf spots, learn to read the waves and conditions, discover the innovations that flourished in Santa Cruz (like wetsuit and skateboard technology), and understand how surf culture permeates every aspect of this coastal community. Along the way, you'll also encounter sea lions, harbor seals, seabirds, and maybe even dolphins or whales, experiencing the vibrant marine ecosystem that makes Santa Cruz special. This tour isn't just about surfing history — it's about understanding how the ocean shapes everything about life in this unique coastal town.",
 
     itinerary: [
       {
@@ -611,9 +611,9 @@ export const tours: Tour[] = [
           "Begin at Main Beach, where three Hawaiian princes introduced surfing to mainland America in 1885. Learn about the deep Hawaiian roots of surf culture, the significance of these early demonstrations, and how Santa Cruz became the birthplace of mainland surfing. We'll discuss wave patterns, beach geology, and what makes this beach special.",
       },
       {
-        title: "The Boardwalk & Beach Culture Evolution",
+        title: "Beach Culture & the Boardwalk Story",
         description:
-          "Explore how the Santa Cruz Beach Boardwalk (California's oldest surviving amusement park, opened 1907) shaped beach culture and tourism. Discover the connection between leisure, surfing, and the development of Santa Cruz as a beach destination. Learn about the evolution of swimwear, beach activities, and coastal recreation.",
+          "With the Santa Cruz Beach Boardwalk visible along the shore, we cover how California's oldest surviving amusement park (opened 1907) shaped beach culture and tourism. You'll hear the connection between leisure, surfing, and the development of Santa Cruz as a beach destination — including the evolution of swimwear, beach activities, and coastal recreation.",
       },
       {
         title: "Cowell Beach & Beginner Surf Culture",
@@ -646,7 +646,7 @@ export const tours: Tour[] = [
       "See the spot where surfing was introduced to mainland America by Hawaiian princes in 1885",
       "Learn to identify surf breaks and read ocean conditions",
       "Insider tips on surf shops, viewing spots, and local surf traditions",
-      "Santa Cruz Beach Boardwalk - where Duke Kahanamoku demonstrated his legendary water feats",
+      "The story of the Santa Cruz Beach Boardwalk — where Duke Kahanamoku once demonstrated his legendary water feats",
       "Cowell Beach - premier beginner surf spot and longboarding renaissance birthplace",
       "Steamer Lane - world-famous surf break with multiple peaks (The Point, The Slot, Middle Peak)",
       "Hear stories about surf pioneers: Jack O'Neill, Sam Reid, Dorothy Becker, and legends of today",

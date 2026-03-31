@@ -1,0 +1,78 @@
+---
+import Layout from "../layouts/Layout.astro";
+import mapBg from "../assets/map-bg.jpg";
+---
+
+<Layout
+  title="Partner with Walk Santa Cruz | Airbnb Hosts & Hotels"
+  description="Partner with Walk Santa Cruz to offer your guests an unforgettable local experience. Airbnb hosts, hotels, and Santa Cruz businesses welcome."
+>
+  <!-- Hero Section -->
+  <section class="full-bleed relative py-8 md:py-12">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Partner with Walk Santa Cruz</h1>
+        <p class="text-xl text-muted-foreground">
+          Give your guests a memorable Santa Cruz experience they'll rave about.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Content -->
+  <section class="container pt-6 pb-12 md:pt-6 md:pb-16">
+    <div class="max-w-3xl mx-auto">
+
+      <p class="text-lg text-muted-foreground leading-relaxed mb-6">
+        We work with Airbnb hosts, boutique hotels, bed &amp; breakfasts, and local businesses who want to offer their guests something beyond the usual tourist trail. Walk Santa Cruz tours are consistently 5-star rated, locally led, and easy to recommend.
+      </p>
+
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        Whether you'd like to include a tour recommendation in your welcome guide, offer a discount to your guests, or explore a formal referral arrangement — fill out the form below and we'll be in touch.
+      </p>
+
+      <!-- What We Offer -->
+      <div class="space-y-6 mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold mb-6">What Partnership Looks Like</h2>
+
+        <div class="bg-primary/5 border border-primary/20 rounded-xl px-6 py-5">
+          <h3 class="font-bold text-foreground mb-1">For Airbnb Hosts</h3>
+          <p class="text-muted-foreground text-sm">Add Walk Santa Cruz to your welcome guide or house manual. We can provide a personalized recommendation card or discount code for your guests.</p>
+        </div>
+
+        <div class="bg-primary/5 border border-primary/20 rounded-xl px-6 py-5">
+          <h3 class="font-bold text-foreground mb-1">For Hotels &amp; Inns</h3>
+          <p class="text-muted-foreground text-sm">Feature our tours in your concierge recommendations. We're happy to co-create a custom tour experience for your guests.</p>
+        </div>
+
+        <div class="bg-primary/5 border border-primary/20 rounded-xl px-6 py-5">
+          <h3 class="font-bold text-foreground mb-1">For Santa Cruz Businesses</h3>
+          <p class="text-muted-foreground text-sm">Join our Local Perks program and offer tour guests a discount or special offer. We direct foot traffic to partner businesses after every tour.</p>
+        </div>
+      </div>
+
+      <!-- Apply CTA -->
+      <div class="text-center bg-primary/5 border border-primary/20 rounded-xl px-6 py-8">
+        <h2 class="text-2xl font-bold mb-3">Ready to Partner?</h2>
+        <p class="text-muted-foreground mb-6">Fill out a quick form and we'll follow up within a day or two.</p>
+        <a
+          href="https://forms.gle/3ZxoBaQzrXYxfMko8"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-lg"
+        >Apply to Become a Partner</a>
+      </div>
+
+      <!-- Direct contact -->
+      <div class="text-center mt-10 text-muted-foreground">
+        Prefer to reach out directly? Email us at <a href="mailto:hello@walksantacruz.com" class="text-primary underline">hello@walksantacruz.com</a>
+      </div>
+
+    </div>
+  </section>
+</Layout>
