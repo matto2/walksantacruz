@@ -24,6 +24,7 @@ const { relatedTours } = Astro.props;
         {relatedTours.map((tour) => (
           <a
             href={`/tours/${tour.slug}`}
+            data-astro-reload
             class="card bg-muted/50 hover:border-primary transition-all group block"
           >
             <div class="p-6">
