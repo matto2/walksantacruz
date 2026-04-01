@@ -79,6 +79,13 @@ const googleSvgPaths = [
     </div>
   </div>
 
+  <!-- Dot indicators (mobile only) -->
+  <div class="carousel-dots" aria-hidden="true">
+    {reviews.map((_, i) => (
+      <div class={`carousel-dot${i === 0 ? ' active' : ''}`}></div>
+    ))}
+  </div>
+
   <!-- Navigation Arrows -->
   <button class="carousel-arrow carousel-prev" aria-label="Previous reviews">
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -163,6 +170,34 @@ const googleSvgPaths = [
     }
   }
 
+  .carousel-dots {
+    display: none;
+  }
+
+  @media (max-width: 767px) {
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+  }
+
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ed672d;
+    opacity: 0.3;
+    transition: opacity 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .carousel-dot.active {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+
   .airbnb-logo,
   .tripadvisor-logo,
   .viator-logo {
@@ -186,10 +221,18 @@ const googleSvgPaths = [
     const slides = carousel.querySelectorAll('.review-slide');
     const prevBtn = carousel.querySelector('.carousel-prev') as HTMLElement | null;
     const nextBtn = carousel.querySelector('.carousel-next') as HTMLElement | null;
+    const dotsContainer = carousel.querySelector('.carousel-dots') as HTMLElement | null;
 
     if (!track || slides.length === 0) return;
 
     let currentIndex = 0;
+
+    function updateDots() {
+      if (!dotsContainer) return;
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+    }
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -217,6 +260,7 @@ const googleSvgPaths = [
 
       if (prevBtn) prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
       if (nextBtn) nextBtn.style.opacity = currentIndex >= getMaxIndex() ? '0.5' : '1';
+      updateDots();
     }
 
     function nextSlide() {
@@ -262,11 +306,6 @@ const googleSvgPaths = [
     updateCarousel();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', setupReviewsCarousel);
-  } else {
-    setupReviewsCarousel();
-  }
-
   document.addEventListener('astro:page-load', setupReviewsCarousel);
+  setupReviewsCarousel();
 </script>
