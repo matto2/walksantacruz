@@ -160,6 +160,26 @@ const tourStructuredData = {
         </a>
       </div>
 
+      <!-- Featured quote: Mindy (Surf Walk only) -->
+      {tour.slug === "surfing-beach-culture" && (
+        <figure class="max-w-3xl mx-auto mb-14 text-center">
+          <div class="flex justify-center gap-1 mb-4">
+            {[1,2,3,4,5].map(() => (
+              <svg class="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            ))}
+          </div>
+          <blockquote class="text-xl md:text-2xl font-semibold leading-snug text-foreground mb-4">
+            "Whether you're a tourist or a local, take his tour — you'll be glad you did!"
+          </blockquote>
+          <figcaption class="text-sm text-muted-foreground">
+            — Mindy &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp;
+            <a href="https://maps.app.goo.gl/y8Vy45RfYBeFmANd6" target="_blank" rel="noopener noreferrer" class="underline">Google Review</a>
+          </figcaption>
+        </figure>
+      )}
+
       <!-- Description -->
       <div class="mb-12">
         <h2
