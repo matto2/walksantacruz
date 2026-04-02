@@ -5,7 +5,7 @@ import downtownTour from "../assets/downtown-santa-cruz_wikimedia.jpg";
 import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
 import beachHillHero from "../assets/beach-hill-hero.jpg";
 import beachHillCard from "../assets/beach-hill-card_IMG_9631.jpg";
-import surfer from "../assets/surfer.jpg";
+import surfer from "../assets/hardy-photo-nelly.jpg";
 
 // Import surf tour gallery images
 import bigWave from "../assets/surf-tour/bigWave_Brocken-Inaglory_wikimediaCommons.jpg";

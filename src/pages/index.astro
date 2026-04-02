@@ -102,8 +102,9 @@ const loopTour = tours.find(t => t.slug === "beach-hill-loop")!;
 
       <!-- Surf Walk — full-width featured card -->
       <a href="/tours/surfing-beach-culture#book" data-astro-reload class="card p-0 flex flex-col md:flex-row overflow-hidden group mb-4">
-        <div class="overflow-hidden md:w-2/5 flex-shrink-0">
-          <Image src={surfTour.cardImage} alt={surfTour.cardImageAlt} class="w-full h-56 md:h-full object-cover group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+        <div class="overflow-hidden md:w-2/5 flex-shrink-0 relative">
+          <Image src={surfTour.cardImage} alt={surfTour.cardImageAlt} class="w-full h-56 md:h-full object-cover object-top md:object-[center_30%] group-hover:scale-105 transition-transform duration-300" loading="lazy" quality={75} />
+          <p class="absolute bottom-1 right-2 text-white/70 leading-none" style="font-size:10px;">Photo courtesy of Dave Nelson</p>
         </div>
         <div class="px-6 pt-4 pb-6 flex flex-col flex-1 md:justify-center">
           <div class="mb-3">
