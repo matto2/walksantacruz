@@ -20,6 +20,11 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Large design files
+*.psd
+*.ai
+*.sketch
+
 # jetbrains setting folder
 .idea/
 
