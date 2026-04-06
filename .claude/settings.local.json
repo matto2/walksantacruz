@@ -6,7 +6,9 @@
       "WebFetch(domain:www.google.com)",
       "Bash(npm i:*)",
       "Bash(npm run:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(git -C /Users/matthewoleary/Sites/walksantacruz tag --sort=-creatordate)",
+      "Bash(git -C /Users/matthewoleary/Sites/walksantacruz tag pre-redesign-2026-03-31)"
     ],
     "deny": [],
     "ask": []
