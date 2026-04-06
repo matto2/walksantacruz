@@ -20,7 +20,7 @@ const {
 // For 'large' size, use responsive classes (small on mobile, large on lg+)
 const iconSize = size === 'large' ? 32 : 32;
 const iconClass = size === 'large' ? 'logo-icon-responsive' : '';
-const textSize = size === 'large' ? 'text-4xl lg:text-5xl' : 'text-4xl';
+const textSize = size === 'large' ? 'text-4xl lg:text-5xl' : 'logo-text-default';
 
 // Determine text color - use white if textColor prop is text-white, otherwise use brand dark
 const computedTextColor = textColor === 'text-white' ? '#ffffff' : '#333333';
@@ -31,7 +31,7 @@ const Icon = textColor === 'text-white' ? OrangeCircleIcon : FootprintsIcon;
 
 <div class={`flex items-center gap-2 ${className || ''}`}>
 	<Icon width={iconSize} height={iconSize} class={`flex-shrink-0 ${iconClass}`} fill={iconColor} />
-	<span class={`${textSize} ${textColor} ${size === 'large' ? 'logo-text-responsive' : ''}`} style={`color: ${computedTextColor}; font-family: 'Night Empty', sans-serif; transform: translateY(3px);`}>Walk Santa Cruz</span>
+	<span class={`${textSize} ${textColor} ${size === 'large' ? 'logo-text-responsive' : ''}`} style={`color: ${computedTextColor}; font-family: 'Original Surfer', sans-serif; transform: translateY(-2px); font-size: 1.4rem;`}><span style="letter-spacing: -0.08em">W</span>alk Santa Cruz</span>
 </div>
 
 {size === 'large' && (

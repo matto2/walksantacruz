@@ -28,8 +28,8 @@
 
 /* Headline font */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Nunito Variable', Nunito, sans-serif;
-	font-weight: 800;
+	font-family: 'Original Surfer', sans-serif;
+	font-weight: 400;
 }
 
 /* Secondary button styling */
@@ -40,6 +40,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-secondary:hover {
 	background-color: color-mix(in oklch, var(--color-secondary) 90%, black);
+}
+
+/* Header logo text size */
+.logo-text-default {
+	font-size: 0.8rem;
+}
+@media (min-width: 768px) {
+	.logo-text-default {
+		font-size: 0.98rem;
+	}
 }
 
 /* Consistent list item styling */
