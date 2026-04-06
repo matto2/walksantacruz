@@ -31,10 +31,6 @@ const currentPath = Astro.url.pathname;
 					Home
 				</a>
 
-				<a href="/tours/surfing-beach-culture" data-astro-reload class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] ${currentPath === '/tours/surfing-beach-culture' ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
-					Surf Walk
-				</a>
-
 				<!-- Tours Dropdown -->
 				<div class="relative group">
 					<button class={`text-white hover:opacity-80 transition-opacity font-medium pb-1 border-b-[3px] flex items-center gap-1 ${currentPath.startsWith('/tours/') ? 'font-bold border-[#ed672d]' : 'border-transparent'}`}>
