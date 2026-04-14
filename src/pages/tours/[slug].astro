@@ -7,7 +7,6 @@ import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import mapBg from "../../assets/map-bg.jpg";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
 import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
-import mattLocalMag from "../../assets/surf-tour/matt-surfing-1990.jpg";
 
 export async function getStaticPaths() {
   return tours.map((tour) => ({
@@ -237,19 +236,6 @@ const tourStructuredData = {
               </a>{" "}
               in the early '90s — documenting the surf culture from the inside. Teaching friends and family to surf. Getting the next generation hooked early. Chasing waves all around the world. And still surfing today. 🏄‍♂️
             </p>
-
-            <div class="my-6 max-w-xs">
-              <Image
-                src={mattLocalMag}
-                alt="Matt surfing a small cove off West Cliff, 1990"
-                class="w-full rounded-lg"
-                loading="lazy"
-                quality={85}
-              />
-              <p class="text-sm text-center text-muted-foreground mt-2 italic">
-                West Cliff, 1990 - Photo Bud Clark
-              </p>
-            </div>
 
             <p>
               This tour was built on that knowledge — the surf history, the culture, and especially the stoke. Book your spot on the{" "}

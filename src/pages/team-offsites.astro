@@ -3,93 +3,215 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import mapBg from "../assets/map-bg.jpg";
-import heroPhoto from "../assets/me-talking-on-a-tour2.jpeg";
+import aerialPhoto from "../assets/Lane-nelly-Air-photo.jpg";
+import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
+import mattWestCliff from "../assets/surf-tour/matt-surfing-1990.jpg";
 import teamPhoto from "../assets/teambuilding/team1.jpg";
 import tourGroupPhoto from "../assets/tour_group_hero.jpg";
-import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
+import barrelPhoto from "../assets/gooch-barrel-photo by Dave Nelson.png";
 ---
 
 <Layout
-  title="Team Offsite Walking Tours in Santa Cruz | Walk Santa Cruz"
-  description="Engaging walking tours for team offsites and corporate retreats in Santa Cruz. Led by local expert, flexible scheduling, groups 8-50+. Starting at $75/person."
+  title="The Santa Cruz Surf Culture Walk for Teams | Walk Santa Cruz"
+  description="A 60–75 minute coastal walk at Steamer Lane for team offsites. Real surf history, genuine conversation. Book the walk on its own or add lunch at Ideal Bar & Grill."
 >
   <!-- Hero Section -->
   <section class="container pt-10 pb-8 md:pt-16 md:pb-12">
-    <div class="max-w-4xl mx-auto text-center mb-8">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-        Get Your Team Out of the Conference Room
+    <div class="max-w-3xl mx-auto mb-8">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        The Santa Cruz Surf Culture Walk for Teams
       </h1>
-      <p class="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-6">
-        Walking tours designed for startup retreats, corporate offsites, and remote teams. Real exploration. Natural conversation. The part of your offsite people actually remember.
+      <p class="text-lg md:text-xl text-muted-foreground leading-relaxed">
+        A 60–75 minute coastal walk at Steamer Lane, designed for team offsites.
       </p>
     </div>
-    <div class="max-w-4xl mx-auto">
+
+    <div class="max-w-4xl mx-auto mb-10">
       <div class="rounded-lg overflow-hidden">
         <Image
-          src={heroPhoto}
-          alt="Matt leading a walking tour in Santa Cruz"
+          src={barrelPhoto}
+          alt="Surfer getting barrelled at Steamer Lane, Santa Cruz — photo by Dave Nelson"
           class="w-full h-auto"
           loading="eager"
+          quality={90}
+        />
+        <p class="text-xs text-muted-foreground mt-2 text-right pr-1">Photo: Dave Nelson</p>
+      </div>
+    </div>
+
+    <div class="max-w-3xl mx-auto">
+      <p class="text-lg text-muted-foreground leading-relaxed mb-5">
+        You're moving along one of the most consequential stretches of coastline in American surf history with someone who's been in the water here for decades. The stories surface as you walk — anchored to the exact places they happened, including the edge of the Santa Cruz Beach Boardwalk.
+      </p>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-5">
+        Three Hawaiian princes in 1885, shaping redwood boards at a local mill and paddling out where no one had surfed before. A Navy pilot working out of a garage — Jack O'Neill — trying to stay in cold water longer, leading to the wetsuit and the eyepatch he wore for the rest of his life.
+      </p>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-5">
+        Out on the water, a point break formed over millions of years pulls in swell from across the Pacific and turns it into clean, rideable lines. On land, a proposed hotel development that would have covered this bluff — and the group that stopped it.
+      </p>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-5">
+        Some of it is improbable. A man diving through a casino roof on fire. Some of it is foundational. Three local shapers trying to sell surfboards — what became Santa Cruz Skateboards.
+      </p>
+      <p class="text-lg text-muted-foreground leading-relaxed mb-8">
+        The route covers roughly one mile along the coast, moving through Lighthouse Point, West Cliff, and the bluff above Cowell's Beach.
+      </p>
+      <a href="#contact" class="btn btn-lg">Book the Walk</a>
+    </div>
+  </section>
+
+  <!-- Logistics Bar -->
+  <section class="container py-8 md:py-10">
+    <div class="max-w-4xl mx-auto">
+      <div class="bg-card border rounded-xl px-6 py-5">
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
+          <div>
+            <div class="flex justify-center mb-2">
+              <Icon name="lucide:users" class="w-5 h-5 text-primary" />
+            </div>
+            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-1">Group Size</p>
+            <p class="font-semibold text-sm">Up to 12 people</p>
+          </div>
+          <div>
+            <div class="flex justify-center mb-2">
+              <Icon name="lucide:clock" class="w-5 h-5 text-primary" />
+            </div>
+            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-1">Duration</p>
+            <p class="font-semibold text-sm">60–75 minutes</p>
+          </div>
+          <div>
+            <div class="flex justify-center mb-2">
+              <Icon name="lucide:footprints" class="w-5 h-5 text-primary" />
+            </div>
+            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-1">Distance</p>
+            <p class="font-semibold text-sm">~1 mile</p>
+          </div>
+          <div>
+            <div class="flex justify-center mb-2">
+              <Icon name="lucide:sun" class="w-5 h-5 text-primary" />
+            </div>
+            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-1">Start Time</p>
+            <p class="font-semibold text-sm">11:00 AM recommended</p>
+          </div>
+          <div class="col-span-2 md:col-span-1">
+            <div class="flex justify-center mb-2">
+              <Icon name="lucide:map-pin" class="w-5 h-5 text-primary" />
+            </div>
+            <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-1">Start Location</p>
+            <p class="font-semibold text-sm">Steamer Lane / Lighthouse Point</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="container py-12 md:py-16">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-2">Book the Walk</h2>
+      <p class="text-muted-foreground mb-8">Book on its own, or add lunch. Both options include the full guided walk.</p>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-card border rounded-xl p-6">
+          <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-3">Walk Only</p>
+          <p class="text-3xl font-bold mb-1">$450</p>
+          <p class="text-sm text-muted-foreground mb-4">Up to 8 people</p>
+          <ul class="space-y-2 text-sm text-muted-foreground mb-6">
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />60–75 min guided coastal walk</li>
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />Steamer Lane to Cowell's Beach bluff</li>
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />Full surf history, local stories, real context</li>
+          </ul>
+          <a href="#contact" class="btn w-full text-center block">Book the Walk</a>
+        </div>
+        <div class="bg-card border-2 border-primary rounded-xl p-6 relative">
+          <div class="absolute -top-3 left-6">
+            <span class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
+          </div>
+          <p class="text-xs text-muted-foreground uppercase tracking-wide font-medium mb-3">Walk + Lunch</p>
+          <p class="text-3xl font-bold mb-1">$700</p>
+          <p class="text-sm text-muted-foreground mb-4">Up to 8 people</p>
+          <ul class="space-y-2 text-sm text-muted-foreground mb-6">
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />Everything in Walk Only</li>
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />Reserved table at Ideal Bar & Grill</li>
+            <li class="flex items-start gap-2"><Icon name="lucide:check" class="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />Ocean views, 5 min from end of route</li>
+          </ul>
+          <a href="#contact" class="btn btn-lg w-full text-center block">Book Walk + Lunch</a>
+        </div>
+      </div>
+      <p class="text-sm text-muted-foreground text-center">Additional guests $55/person · Groups up to 12 · <a href="#contact" class="text-primary underline">Contact us</a> for larger groups</p>
+    </div>
+  </section>
+
+  <!-- Why This Works -->
+  <section class="full-bleed relative py-12 md:py-16">
+    <div class="absolute inset-0 opacity-30" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+    <div class="container relative">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Why People Ops Teams Book This</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-background/90 rounded-xl p-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Icon name="lucide:check-circle" class="w-6 h-6 text-primary" />
+            </div>
+            <h3 class="font-bold text-lg mb-2">Turnkey</h3>
+            <p class="text-muted-foreground">One inquiry, one confirmation. Show up at Steamer Lane at 11. We handle the rest — including the lunch reservation if you want it.</p>
+          </div>
+          <div class="bg-background/90 rounded-xl p-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Icon name="lucide:star" class="w-6 h-6 text-primary" />
+            </div>
+            <h3 class="font-bold text-lg mb-2">Stories that stick</h3>
+            <p class="text-muted-foreground">Real history, real place, real stories — anchored to the exact locations where they happened. The kind of experience people bring up months later.</p>
+          </div>
+          <div class="bg-background/90 rounded-xl p-6">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+              <Icon name="lucide:message-circle" class="w-6 h-6 text-primary" />
+            </div>
+            <h3 class="font-bold text-lg mb-2">Natural conversation</h3>
+            <p class="text-muted-foreground">Side-by-side walking is where real talk happens. The format opens up genuine conversation naturally.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Section -->
+  <section class="container py-12 md:py-16">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">Led By Someone Who Actually Knows This Coast</h2>
+      <div class="flex flex-col md:flex-row gap-8 items-start">
+        <div class="w-full md:w-1/3 flex-shrink-0">
+          <div class="aspect-square rounded-lg overflow-hidden">
+            <Image
+              src={mattPhoto}
+              alt="Matt O'Leary leading a walking tour in Santa Cruz"
+              class="w-full h-full object-cover"
+              loading="lazy"
+              quality={80}
+            />
+          </div>
+        </div>
+        <div class="text-muted-foreground space-y-4">
+          <p class="text-lg leading-relaxed">
+            Matt O'Leary co-founded <em>The Juice</em> surf magazine in 1994 and has competed in the O'Neill Cold Water Classic. He's surfed Steamer Lane since the late 1970s. His research spans 12,000 years of Santa Cruz coastal history — from the Awaswas-speaking Ohlone people through the Victorian era to the surf culture that put this city on the global map.
+          </p>
+          <p class="text-lg leading-relaxed">
+            Stories you won't find anywhere else, told by someone who lived them.
+          </p>
+        </div>
+      </div>
+      <div class="mt-8">
+        <Image
+          src={mattWestCliff}
+          alt="Matt surfing a small cove off West Cliff, 1990"
+          class="w-full rounded-lg"
+          loading="lazy"
           quality={85}
         />
+        <p class="text-sm text-muted-foreground mt-2 italic">West Cliff, 1990 — Photo: Bud Clark</p>
       </div>
     </div>
   </section>
 
-  <!-- 1. Opening Hook -->
-  <section class="container py-12 md:py-16">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">Ready to Get Your Team Out of the Conference Room?</h2>
-      <div class="text-lg text-muted-foreground leading-relaxed space-y-4">
-        <p>
-          Whether your team is based in Santa Cruz or visiting for a retreat, most offsites end up in conference rooms or doing the same trust falls every company does.
-        </p>
-        <p>
-          What if instead, you got your team moving through the neighborhoods, hearing stories that spark conversation, seeing the hidden corners that locals know? Where connection happens naturally because you're actually discovering something together?
-        </p>
-        <p>
-          That's what we do. And teams love it.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing Summary -->
-  <section class="container pb-4">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-2">Pricing</p>
-      <p class="text-lg font-bold">Groups of 8–15 from $500 &nbsp;·&nbsp; Larger groups custom quoted &nbsp;·&nbsp; Typical range $75–100/person</p>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="container py-12 md:py-16">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">How It Works</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div>
-          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">1</div>
-          <h3 class="font-bold text-lg mb-2">Tell us about your team</h3>
-          <p class="text-muted-foreground">Fill out the short form below — group size, dates, and what matters most to your team.</p>
-        </div>
-        <div>
-          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">2</div>
-          <h3 class="font-bold text-lg mb-2">We design your tour</h3>
-          <p class="text-muted-foreground">Custom route, timing, and themes built around your group — no off-the-shelf itineraries.</p>
-        </div>
-        <div>
-          <div class="w-10 h-10 rounded-full bg-primary text-white font-bold text-lg flex items-center justify-center mx-auto mb-4">3</div>
-          <h3 class="font-bold text-lg mb-2">Walk together</h3>
-          <p class="text-muted-foreground">1.5 to 4 hours of genuine exploration, anywhere in Santa Cruz. No trust falls required.</p>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <a href="#contact" class="btn btn-lg">Plan Your Team Experience</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 2. Case Study: Santa Cruz Hostel Society -->
+  <!-- Case Study: Santa Cruz Hostel Society -->
   <section class="full-bleed relative py-12 md:py-16">
     <div class="absolute inset-0 opacity-30" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
     <div class="container relative">
@@ -97,39 +219,26 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
         <h2 class="text-2xl md:text-3xl font-bold mb-6">How We Did This for Santa Cruz Hostel Society</h2>
         <div class="text-lg text-muted-foreground leading-relaxed space-y-4 mb-8">
           <p>
-            The team at <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:opacity-80 transition-opacity underline">Santa Cruz Hostel Society</a> hosts groups from around the world at their Beach Hill property. They wanted their visiting teams to actually experience what makes Santa Cruz special—not just see it from a window.
+            The team at <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary underline">Santa Cruz Hostel Society</a> hosts groups from around the world at their Beach Hill property. They wanted their visiting teams to actually experience what makes Santa Cruz special — not just see it from a window.
           </p>
           <p>
             We designed a custom walking tour right from their front door: Beach Hill's transformation from industrial waterfront to surf culture hub, the breaks that changed wetsuit technology, Victorian neighborhoods shaped by 150 years of coastal tourism.
           </p>
           <p>
-            Two hours, maximum engagement, zero forced activities. Just genuine exploration that people actually enjoy.
+            Two hours of genuine exploration along the coast, with stories that gave people something to talk about long after.
           </p>
         </div>
 
-        <!-- Team Photos -->
-        <div class="grid md:grid-cols-2 gap-6 mb-8">
-          <div class="rounded-lg overflow-hidden">
-            <Image
-              src={teamPhoto}
-              alt="Team on a walking tour in Santa Cruz"
-              class="w-full h-full object-cover object-right"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
-          <div class="rounded-lg overflow-hidden">
-            <Image
-              src={tourGroupPhoto}
-              alt="Tour group at a Victorian house in Santa Cruz"
-              class="w-full h-full object-cover"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
+        <div class="rounded-lg overflow-hidden mb-8">
+          <Image
+            src={teamPhoto}
+            alt="Team on a walking tour in Santa Cruz"
+            class="w-full h-auto object-cover object-right"
+            loading="lazy"
+            quality={80}
+          />
         </div>
 
-        <!-- Testimonial pull-quote -->
         <div class="bg-card rounded-xl border-l-4 border-primary p-8 mb-8 shadow-sm">
           <svg class="w-8 h-8 text-primary/30 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -145,239 +254,52 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
           </div>
         </div>
 
-        <!-- Hostel Aside Callout -->
         <div class="bg-secondary/30 border border-secondary rounded-lg p-6">
           <h3 class="font-bold text-lg mb-2">Need a Base for Your Multi-Day Offsite?</h3>
           <p class="text-muted-foreground">
-            <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary hover:opacity-80 transition-opacity underline">Santa Cruz Hostel Society</a> offers affordable group accommodations right on Beach Hill—walking distance to the beach, Boardwalk, downtown, and wharf. Perfect for teams that want to stay where the action is without the hotel premium.
+            <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary underline">Santa Cruz Hostel Society</a> offers affordable group accommodations right on Beach Hill — walking distance to the beach, Boardwalk, downtown, and wharf. Perfect for teams that want to stay where the action is without the hotel premium.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. Why This Works -->
-  <section class="container py-12 md:py-16">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">What Makes Walking Tours Better Than Traditional Team Building</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="text-center md:text-left">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto md:mx-0 mb-4">
-            <Icon name="lucide:message-circle" class="w-6 h-6 text-primary" />
-          </div>
-          <h3 class="font-bold text-lg mb-2">Actual Engagement</h3>
-          <p class="text-muted-foreground">No forced bonding exercises. People naturally connect when they're discovering something interesting together—asking questions, sharing observations, walking side-by-side.</p>
-        </div>
-        <div class="text-center md:text-left">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto md:mx-0 mb-4">
-            <Icon name="lucide:calendar" class="w-6 h-6 text-primary" />
-          </div>
-          <h3 class="font-bold text-lg mb-2">Flexible Around Your Agenda</h3>
-          <p class="text-muted-foreground">Morning energizer before strategy sessions? Afternoon break between workshops? Evening exploration? Tours fit your retreat schedule. 1.5 to 4 hours, any pace.</p>
-        </div>
-        <div class="text-center md:text-left">
-          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto md:mx-0 mb-4">
-            <Icon name="lucide:heart" class="w-6 h-6 text-primary" />
-          </div>
-          <h3 class="font-bold text-lg mb-2">Everyone Participates</h3>
-          <p class="text-muted-foreground">Easy-paced walks, optional stairs, accessible for all abilities. No one sits out, no one feels awkward. Inclusive by design.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. Tour Options -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div class="absolute inset-0 opacity-30" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-    <div class="container relative">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4 text-center">Locations Across Santa Cruz</h2>
-        <p class="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-8">
-          The Beach Hill example shows how we work, but we design tours anywhere in Santa Cruz based on your team's interests and venue location.
-        </p>
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="bg-background/90 rounded-lg p-6 shadow-sm">
-            <h3 class="font-bold text-lg text-primary mb-2">Heart of Downtown & Mission Hill</h3>
-            <p class="text-muted-foreground">Victorian architecture, earthquake resilience, early California history, Mission Santa Cruz, neighborhood evolution from lumber town to coastal hub.</p>
-          </div>
-          <div class="bg-background/90 rounded-lg p-6 shadow-sm">
-            <h3 class="font-bold text-lg text-primary mb-2">Santa Cruz Surf Walk - History &amp; Culture Tour</h3>
-            <p class="text-muted-foreground">Legendary breaks, wetsuit innovation, how Santa Cruz became a global surf capital, the culture that shaped modern surfing, coastal neighborhood character.</p>
-          </div>
-          <div class="bg-background/90 rounded-lg p-6 shadow-sm">
-            <h3 class="font-bold text-lg text-primary mb-2">Coastal Trails</h3>
-            <p class="text-muted-foreground">Wilder Ranch historic dairy, cliff-top perspectives, Cotoni-Coast Dairies conservation story, sweeping Pacific views.</p>
-          </div>
-          <div class="bg-background/90 rounded-lg p-6 shadow-sm">
-            <h3 class="font-bold text-lg text-primary mb-2">Custom Design</h3>
-            <p class="text-muted-foreground">Your venue + your team's interests = a tour that fits perfectly. We can explore any Santa Cruz neighborhood or theme.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. Who This Works For -->
+  <!-- FAQ -->
   <section class="container py-12 md:py-16">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Perfect for Teams in Santa Cruz</h2>
-      <ul class="grid sm:grid-cols-2 gap-3">
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Startup retreats and offsites</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Remote teams meeting in person</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Professional development gatherings</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Strategic planning sessions</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Client entertainment events</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Board retreats</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Nonprofit team meetings</span>
-        </li>
-        <li class="flex items-center gap-3">
-          <span class="text-primary">●</span>
-          <span>Creative agency offsites</span>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 6. Practical Details -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div class="absolute inset-0 opacity-30" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-    <div class="container relative">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-8">How It Works</h2>
-
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:users" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">Group Size</span>
-              <p class="text-muted-foreground">8 to 50+ people (multiple guides available for larger groups)</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:clock" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">Duration</span>
-              <p class="text-muted-foreground">1.5 to 4 hours depending on your schedule</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:sun" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">Timing</span>
-              <p class="text-muted-foreground">Morning, afternoon, or evening—fits around your agenda</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3">
-            <Icon name="lucide:map-pin" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">Meeting Points</span>
-              <p class="text-muted-foreground">We come to your venue or meet at convenient locations</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 sm:col-span-2">
-            <Icon name="lucide:credit-card" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">Pricing</span>
-              <p class="text-muted-foreground">Starting at $500 for groups of 8–15 | Typical range: $75–100 per person for 2–3 hour experiences | Custom quotes for larger groups or full-day tours</p>
-            </div>
-          </div>
-          <div class="flex items-start gap-3 sm:col-span-2">
-            <Icon name="lucide:check-circle" class="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-            <div>
-              <span class="font-semibold">What's Included</span>
-              <p class="text-muted-foreground">Expert local guide, interactive storytelling, flexible routing, all abilities accommodated</p>
-            </div>
-          </div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-8">Common Questions</h2>
+      <div class="space-y-6">
+        <div class="border-b pb-6">
+          <h3 class="font-bold text-lg mb-2">How far in advance do I need to book?</h3>
+          <p class="text-muted-foreground">Two weeks ahead is usually plenty for most dates. If you have a specific date in mind, reach out and we'll confirm availability quickly.</p>
+        </div>
+        <div class="border-b pb-6">
+          <h3 class="font-bold text-lg mb-2">Is the walk rain or shine?</h3>
+          <p class="text-muted-foreground">Yes. Santa Cruz coastal weather is mild year-round. Light layers are recommended; the bluff can be breezy. We've never had to cancel for weather.</p>
+        </div>
+        <div class="border-b pb-6">
+          <h3 class="font-bold text-lg mb-2">What about mobility or accessibility?</h3>
+          <p class="text-muted-foreground">The route is a flat, paved coastal path — no stairs, no terrain. It works well for mixed groups. Let us know about any specific needs when you reach out.</p>
+        </div>
+        <div class="border-b pb-6">
+          <h3 class="font-bold text-lg mb-2">What's the payment process?</h3>
+          <p class="text-muted-foreground">We confirm your date and send an invoice. Payment due before the walk. We accept card, ACH, or check — whatever works for your team's process.</p>
+        </div>
+        <div class="pb-2">
+          <h3 class="font-bold text-lg mb-2">Can we customize the walk?</h3>
+          <p class="text-muted-foreground">The core route is consistent — it's built around the physical locations where the stories happened. If you have specific interests (architecture, marine ecology, Boardwalk history), mention it and we'll work it in where it fits.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 7. Your Guide -->
-  <section class="container py-12 md:py-16">
-    <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8">Led by Someone Who Knows Santa Cruz</h2>
-      <div class="flex flex-col md:flex-row gap-8 items-start">
-        <div class="w-full md:w-1/3 flex-shrink-0">
-          <div class="aspect-square rounded-lg overflow-hidden">
-            <Image
-              src={mattPhoto}
-              alt="Matt O'Leary leading a walking tour in Santa Cruz"
-              class="w-full h-full object-cover"
-              loading="lazy"
-              quality={80}
-            />
-          </div>
-        </div>
-        <div class="text-muted-foreground">
-          <p class="text-lg leading-relaxed">
-            Matt O'Leary is a passionate storyteller with deep roots in Santa Cruz culture and history. He's spent decades exploring the neighborhoods, surf culture, and architecture that make this place unique. His research spans Santa Cruz history from the indigenous Awaswas-speaking Ohlone peoples through Victorian development to modern coastal tourism. He enjoys sharing that knowledge and building positive experiences—this isn't generic city tour content, it's genuine local expertise and authentic stories you won't find anywhere else.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8. What Teams Get -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div class="absolute inset-0 opacity-30" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
-    <div class="container relative">
-      <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">What Your Team Actually Experiences</h2>
-        <p class="text-lg text-muted-foreground mb-8">
-          Skip the generic city tour and the forced team-building exercises. Here's what your team walks away with:
-        </p>
-        <ul class="space-y-3 mb-8">
-          <li class="flex items-center gap-3">
-            <span class="text-primary">●</span>
-            <span>Stories that surprise even locals</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-primary">●</span>
-            <span>Natural conversation flowing between team members</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-primary">●</span>
-            <span>Genuine curiosity about what's around the next corner</span>
-          </li>
-          <li class="flex items-center gap-3">
-            <span class="text-primary">●</span>
-            <span>People actually remembering this part of the offsite</span>
-          </li>
-        </ul>
-        <p class="text-lg font-semibold text-center">This is the part of your retreat people talk about afterward.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. CTA / Contact Form -->
+  <!-- Contact Form -->
   <section id="contact" class="container py-12 md:py-16">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-8">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Build Something Great for Your Team</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Book the Walk</h2>
         <p class="text-lg text-muted-foreground">
-          Tell us a bit about your group and we'll take it from there.
+          Tell us your group size, preferred dates, and whether you want lunch included. We'll confirm availability and send you an invoice.
         </p>
       </div>
 
@@ -395,46 +317,42 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
           </label>
         </p>
 
-        <div>
-          <label for="org-name" class="block font-semibold mb-2">Organization Name *</label>
-          <input type="text" id="org-name" name="org-name" required class="w-full" />
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block font-semibold mb-2">Your Name *</label>
+            <input type="text" id="name" name="name" required class="w-full" />
+          </div>
+          <div>
+            <label for="org-name" class="block font-semibold mb-2">Organization</label>
+            <input type="text" id="org-name" name="org-name" class="w-full" />
+          </div>
         </div>
 
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label for="team-size" class="block font-semibold mb-2">Team Size *</label>
-            <input type="text" id="team-size" name="team-size" required class="w-full" />
+            <label for="email" class="block font-semibold mb-2">Email *</label>
+            <input type="email" id="email" name="email" required class="w-full" />
           </div>
           <div>
-            <label for="dates" class="block font-semibold mb-2">Preferred Dates or Timeframe *</label>
-            <input type="text" id="dates" name="dates" required class="w-full" />
+            <label for="phone" class="block font-semibold mb-2">Phone</label>
+            <input type="tel" id="phone" name="phone" class="w-full" />
           </div>
         </div>
 
         <div>
-          <label for="accommodation" class="block font-semibold mb-2">Where are you staying in Santa Cruz?</label>
-          <input type="text" id="accommodation" name="accommodation" class="w-full" />
+          <label for="details" class="block font-semibold mb-2">Group size, preferred dates, walk only or walk + lunch *</label>
+          <textarea
+            id="details"
+            name="details"
+            rows="4"
+            required
+            placeholder="e.g. 9 people, mid-May, walk + lunch"
+            class="w-full"></textarea>
         </div>
 
-        <div>
-          <label for="goals" class="block font-semibold mb-2">What matters most for your team?</label>
-          <input type="text" id="goals" name="goals" class="w-full" />
-        </div>
-
-        <div>
-          <label for="email" class="block font-semibold mb-2">Email *</label>
-          <input type="email" id="email" name="email" required class="w-full" />
-        </div>
-
-        <div>
-          <label for="phone" class="block font-semibold mb-2">Phone</label>
-          <input type="tel" id="phone" name="phone" class="w-full" />
-        </div>
-
-        <button type="submit" class="btn btn-lg w-full">Plan Your Team Experience</button>
+        <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
       </form>
 
-      <!-- Secondary Contact Options -->
       <div class="flex flex-wrap justify-center gap-4 mb-8">
         <a href="tel:8312752566" class="btn btn-secondary inline-flex items-center gap-2">
           <Icon name="lucide:phone" class="w-5 h-5" />
@@ -450,7 +368,6 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
         </a>
       </div>
 
-      <!-- Trust Element -->
       <p class="text-sm text-muted-foreground text-center">
         Worked with teams from startups to nonprofits to creative agencies. References available upon request.
       </p>
