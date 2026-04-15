@@ -39,18 +39,17 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 >
   <!-- Hero Section - Full Bleed -->
   <section
-    class="full-bleed relative min-h-[600px] md:min-h-[780px] flex items-start justify-center -mt-2 md:mt-0"
+    class="full-bleed relative min-h-[600px] md:min-h-[780px] flex items-start justify-center -mt-2"
   >
     <!-- Hero background: static image or video (toggle USE_STATIC_HERO in frontmatter) -->
     <div class="absolute inset-0">
       {
         USE_STATIC_HERO ? (
-          <Image
-            src={newHeroImage}
-            alt="A small group on a guided walking tour in Santa Cruz"
-            class="w-full h-full object-cover hero-static-img"
-            loading="eager"
-            quality={85}
+          <div
+            class="absolute inset-0 bg-cover bg-center"
+            style={`background-image: url(${newHeroImage.src})`}
+            role="img"
+            aria-label="A small group on a guided walking tour in Santa Cruz"
           />
         ) : (
           <video
@@ -83,7 +82,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 
     <div class="container relative z-10 text-center pt-8 pb-4 md:pt-36 md:pb-8">
       <h1
-        class="text-[2rem] md:text-6xl lg:text-7xl font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
+        class="text-[2rem] sm:text-[2.6rem] md:text-6xl lg:text-7xl font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
       >
         The Santa Cruz You<br />Haven't Seen Yet
       </h1>
@@ -771,14 +770,6 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 </Layout>
 
 <style>
-  .hero-static-img {
-    object-position: center center;
-  }
-  @media (min-width: 768px) {
-    .hero-static-img {
-      object-position: center center;
-    }
-  }
 </style>
 
 <script is:inline>
