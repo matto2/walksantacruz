@@ -7,7 +7,7 @@ import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
-import surfersHeroImage from "../assets/Surfers-Outside-Cowells_v5.jpg";
+import newHeroImage from "../assets/new-hero.jpeg";
 import mapBg from "../assets/map-bg.jpg";
 import LookoutLogo from "../assets/LookoutLogo.png";
 import mattBioPic from "../assets/matt-bio-pic_with-HAT.jpg";
@@ -46,8 +46,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
       {
         USE_STATIC_HERO ? (
           <Image
-            src={surfersHeroImage}
-            alt="Surfers outside Cowell's Beach, Santa Cruz"
+            src={newHeroImage}
+            alt="A small group on a guided walking tour in Santa Cruz"
             class="w-full h-full object-cover hero-static-img"
             loading="eager"
             quality={85}
@@ -85,24 +85,17 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
       <h1
         class="text-[2.6rem] md:text-6xl lg:text-7xl font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
       >
-        Where Surfing Came to America
+        The Santa Cruz You<br />Haven't Seen Yet
       </h1>
       <p
         class="text-sm md:text-xl text-white font-semibold max-w-2xl mx-auto mb-6 md:mb-8 drop-shadow-md"
       >
-        In 1885, Hawaiian princes rode waves here and changed the world. Walk
-        the story with a local guide who knows it inside out.
+        Hidden history, surf culture, and local stories—just steps from the Boardwalk.
       </p>
       <div class="flex flex-col items-center gap-3">
         <a
-          href="/tours/surfing-beach-culture#book"
-          data-astro-reload
-          class="btn btn-lg w-full sm:w-auto">Book the Surf Walk</a
-        >
-        <a
           href="#tours"
-          class="text-white underline underline-offset-2 text-sm font-semibold drop-shadow"
-          >View All 3 Tours</a
+          class="btn btn-lg w-full sm:w-auto">Explore Our Tours</a
         >
       </div>
       <a
@@ -297,9 +290,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               Beach Hill to Downtown Santa Cruz Loop
             </h3>
             <p class="text-muted-foreground mb-4 flex-1">
-              A broader, more immersive walk through multiple neighborhoods that
-              ties together history, architecture, landscape, and the evolution
-              of Santa Cruz over time.
+              Beach Hill's grand historic estates plus the Victorian, Craftsman, and Art Deco streets of downtown — neighborhoods worth experiencing in a whole new way.
             </p>
             <ul
               class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
@@ -780,13 +771,12 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 </Layout>
 
 <style>
-  /* Hero static image: anchor to bottom so surfers + gradient are always visible */
   .hero-static-img {
-    object-position: 30% bottom;
+    object-position: center center;
   }
   @media (min-width: 768px) {
     .hero-static-img {
-      object-position: center bottom;
+      object-position: center center;
     }
   }
 </style>
