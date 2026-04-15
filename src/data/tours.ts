@@ -314,11 +314,11 @@ export const tours: Tour[] = [
 
   {
     slug: "beach-hill-loop",
-    title: "Beach Hill to Mission Hill Loop",
+    title: "Beach Hill to Downtown Santa Cruz Loop",
     shortDescription:
-      "Start at the beach, climb through the historic estates of Beach Hill, descend a hidden staircase into downtown, ascend to Mission Hill's historic adobe, then loop back through Victorian neighborhoods. This extended version of our signature Heart of Santa Cruz tour covers it all in one unforgettable journey.",
+      "A 90-minute loop starting at the beach and winding through Beach Hill's historic estates, a hidden staircase locals love, and downtown's Victorian, Craftsman, and Art Deco streets — back to where you started.",
     longDescription:
-      "Experience Santa Cruz from every angle on this epic loop that takes you from the beach up through hilltop neighborhoods and back again. You'll explore the grand estates of Beach Hill, discover secret staircases locals love, wander through downtown's architectural gems, climb to the city's historic mission site, and stroll through charming Victorian neighborhoods. It's the complete Santa Cruz story in one unforgettable walk.",
+      "A 90-minute, roughly 2-mile loop through two of Santa Cruz's most distinctive neighborhoods. You'll explore the grand estates of Beach Hill, discover a hidden staircase locals love, wander through downtown's architectural gems, and stroll through the stately Walnut Avenue Victorian neighborhood to complete the journey.",
 
     cardImage: beachHillCard,
     cardImageAlt: "Beach Hill historic district",
@@ -361,18 +361,13 @@ export const tours: Tour[] = [
         caption: "Downtown Santa Cruz - Photo by Aaron Brick (Wikimedia)",
       },
       {
-        src: beachMission,
-        alt: "Mission Santa Cruz",
-        caption: "Mission Santa Cruz - Photo by MARELBU (Wikimedia)",
-      },
-      {
         src: beachWalnut5,
         alt: "Walnut Avenue Victorian home",
         caption: "Walnut Avenue - Photo by M. O'Leary",
       },
     ],
 
-    duration: "2.5 hours",
+    duration: "90 minutes",
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
@@ -389,7 +384,7 @@ export const tours: Tour[] = [
       "https://fareharbor.com/embeds/book/walksantacruz/items/686749/calendar/2025/12/?full-items=yes",
 
     storytelling:
-      "The most comprehensive Santa Cruz tour we offer — 2.5 hours through every neighborhood, every era, and every story. Perfect as a follow-up to the Surf Walk, or as your one big deep-dive into the city. Start at the beach and walk up through Beach Hill's historic estates, descend via a hidden staircase locals love, explore downtown's vibrant streets and architectural gems, then continue up to Mission Hill to visit the county's oldest adobe. Loop back through charming Victorian neighborhoods to complete the journey. On some tours, we've been spontaneously invited inside a historic Victorian-era home — that's the kind of thing that only happens in small groups with a local guide. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. It's our most comprehensive tour — perfect for history enthusiasts who want the complete Santa Cruz story.",
+      "A 90-minute, roughly 2-mile loop through two of Santa Cruz's most distinctive neighborhoods — starting at the beach and winding your way back through downtown. Start at the beach and walk up through Beach Hill's historic estates, descend via a hidden staircase locals love, then explore downtown's vibrant streets and architectural gems — Victorian, Craftsman, and Art Deco buildings that survived earthquake and fire. Loop back through the stately Walnut Avenue Victorian neighborhood to complete the journey. On some tours, we've been spontaneously invited inside a historic Victorian-era home — that's the kind of thing that only happens in small groups with a local guide. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. Perfect for history enthusiasts who want a focused deep-dive into two of the city's most storied neighborhoods.",
 
     itinerary: [
       {
@@ -408,16 +403,6 @@ export const tours: Tour[] = [
           "Move inland to downtown Santa Cruz, where we'll explore Pacific Avenue's architectural diversity, from Victorian-era buildings to modern post-earthquake reconstruction. Learn about the challenges and triumphs of downtown's evolution and the community spirit that rebuilt this area after 1989.",
       },
       {
-        title: "Mission Hill Climb",
-        description:
-          "Ascend to Mission Hill, discovering the elegant homes and panoramic views that characterize this historic neighborhood. Hear about the early settlers, the mission history, and the families who established Santa Cruz's cultural and economic foundations.",
-      },
-      {
-        title: "Mission Santa Cruz & Holy Cross Church",
-        description:
-          "Visit the mission replica and Holy Cross Church, understanding how Spanish colonization shaped the region and learning about the indigenous Ohlone people whose presence predates the mission by thousands of years. Take in the spectacular views while discussing the complex layers of local history.",
-      },
-      {
         title: "Return Journey",
         description:
           "As we make our way back to the starting point, we'll tie together the themes of the tour and discuss modern Santa Cruz - its challenges, its character, and its future. You'll finish with a comprehensive understanding of this unique coastal city and plenty of recommendations for further exploration.",
@@ -425,32 +410,29 @@ export const tours: Tour[] = [
     ],
 
     highlights: [
-      "Extended 2.5-hour experience covering three distinct neighborhoods",
+      "90-minute loop covering two of Santa Cruz's most distinctive neighborhoods",
       "Small group size (maximum 10 people) for personalized attention",
       "Insider recommendations for restaurants, beaches, and hidden local spots",
       "Beach Hill Historic District - grand estates built by San Francisco's wealthy elite in the 1870s",
       "Views and history of the Santa Cruz Beach Boardwalk — California's oldest surviving amusement park",
+      "The historic train depot site and rail routes that connected multiple industrial wharves — delivering lime, lumber, leather, produce, and tourists to the booming beach district",
       "Downtown Santa Cruz - Victorian, Craftsman, and Art Deco architecture",
-      "Mission Hill - elegant homes and panoramic city views",
-      "Mission Santa Cruz & Holy Cross Church - mission replica and spectacular overlook",
     ],
 
     includes: {
       included: [
         "Expert local guide with comprehensive knowledge of Santa Cruz history and architecture",
-        "Extended 2.5-hour experience covering three distinct neighborhoods",
+        "90-minute loop covering two of Santa Cruz's most distinctive neighborhoods",
         "Small group size (maximum 10 people) ensuring personalized attention",
-        "Multiple elevation changes providing dramatic views and perspectives",
-        "Stories connecting Beach Hill, downtown, and Mission Hill",
+        "Elevation changes providing dramatic views and perspectives",
+        "Stories connecting Beach Hill, downtown, and the Walnut Avenue Victorian neighborhood",
         "Insider tips on local restaurants, beaches, trails, and attractions",
       ],
       toBring: [
-        "Sturdy, comfortable walking shoes (this tour includes significant hills and stairs)",
-        "Water bottle - staying hydrated is important on this longer tour",
+        "Sturdy, comfortable walking shoes (this tour includes hills and stairs)",
+        "Water bottle",
         "Sunscreen, hat, and layered clothing (weather can vary from beach to hilltop)",
         "Camera for capturing architecture, historic details, and neighborhood character",
-        "Snacks if needed (we don't stop for food but you can bring portable snacks)",
-        "Good energy and curiosity - this is our longest tour",
       ],
       notIncluded: [
         "Food and beverages (though we'll point out excellent options)",
@@ -462,21 +444,20 @@ export const tours: Tour[] = [
 
     faqs: [
       {
-        question:
-          "This tour is longer than your others - what fitness level do I need?",
+        question: "What fitness level do I need?",
         answer:
-          "This 2.5-hour tour involves approximately 2.5-3 miles of walking with significant elevation changes, including hills and stairs throughout. You should be comfortable with sustained walking and climbing. We take regular breaks for stories and photos, and maintain a moderate pace. This tour is best suited for people who enjoy active exploration and are in good general health. If you're unsure whether this tour is right for you, consider starting with our shorter Downtown & Mission Hill tour.",
+          "This 90-minute tour covers approximately 2 miles with some elevation change — hills and a staircase or two. We keep a relaxed pace with regular stops for storytelling and photos. Most people in reasonable health handle it comfortably. If you have mobility concerns, feel free to reach out before booking.",
       },
       {
         question:
           "How is this different from your Downtown & Mission Hill tour?",
         answer:
-          "This extended tour includes everything from our Downtown & Mission Hill tour PLUS the entire Beach Hill neighborhood and beachfront areas. You'll get the complete Santa Cruz story - from oceanfront estates to downtown architecture to hilltop views. It's ideal for visitors with more time who want a comprehensive understanding of the city, or for locals who want the deepest dive into Santa Cruz history and architecture. The Downtown & Mission Hill tour is 1.5 hours; this one is 2.5 hours.",
+          "The Beach Hill Loop adds the Beach Hill Historic District and beachfront history to the downtown experience. Instead of heading up to Mission Hill, we start at the beach, climb through Beach Hill's grand estates, descend via a hidden staircase, and explore downtown before looping back through the Walnut Avenue Victorian neighborhood. Both tours are 90 minutes — this one trades Mission Hill for Beach Hill and a longer stretch of downtown.",
       },
       {
         question: "Is this tour family-friendly?",
         answer:
-          "Yes, children are welcome and receive discounted pricing! However, please consider that this is our longest and most physically demanding tour. It's best suited for children age 8 and up who are comfortable with extended walking and hills. Our guides are skilled at engaging younger participants, but the length and hills can be challenging for small children. For families with younger kids, we recommend our shorter tours or a private tour that we can customize to your needs.",
+          "Yes, children are welcome and receive discounted pricing! It's best suited for children age 8 and up who are comfortable with walking and a few hills. Our guides are skilled at engaging younger participants. For families with younger kids, we recommend a private tour that we can customize to your needs.",
       },
       {
         question: "What time should I arrive and where exactly do we meet?",
@@ -494,9 +475,9 @@ export const tours: Tour[] = [
           "We love dogs, but for the comfort and safety of all participants, we ask that you leave pets at home for our public group tours. However, dogs are welcome on private tours if all participants agree! Contact us to arrange a private dog-friendly tour experience.",
       },
       {
-        question: "Do you take breaks during the 2.5 hours?",
+        question: "Do you take breaks during the tour?",
         answer:
-          "Yes! We build in several natural break points where you can rest, take photos, use restrooms (when available), and hydrate. We stop for storytelling at each major location, giving you time to catch your breath. The tour is designed to be enjoyable, not exhausting. That said, there are limited public restrooms along the route, so we recommend using facilities before the tour begins.",
+          "Yes — we stop at each major location for storytelling, photos, and a chance to catch your breath. The tour is designed to be enjoyable, not exhausting. There are limited public restrooms along the route, so we recommend using facilities before the tour begins.",
       },
       {
         question: "Is this tour good for visitors or better for locals?",
@@ -505,18 +486,16 @@ export const tours: Tour[] = [
       },
     ],
 
-    seoTitle: "Beach Hill to Mission Hill Loop Walking Tour | Walk Santa Cruz",
+    seoTitle: "Beach Hill to Downtown Santa Cruz Loop Walking Tour | Walk Santa Cruz",
     seoDescription:
-      "Comprehensive 2.5-hour Santa Cruz walking tour from Beach Hill through downtown to Mission Hill. Explore historic estates, Victorian architecture, hidden staircases, and the stories that shaped the city.",
+      "90-minute Santa Cruz walking tour from Beach Hill through downtown. Explore historic estates, Victorian architecture, hidden staircases, and the stories that shaped the city.",
     keywords: [
       "santa cruz walking tour",
       "beach hill santa cruz",
-      "mission hill tour",
       "santa cruz architecture tour",
-      "extended walking tour",
+      "downtown santa cruz tour",
       "santa cruz history",
       "beach hill mansions",
-      "comprehensive santa cruz tour",
       "guided tour santa cruz",
     ],
 
@@ -668,7 +647,7 @@ export const tours: Tour[] = [
         "Photo opportunities at iconic Santa Cruz coastal landmarks",
       ],
       toBring: [
-        "Comfortable walking shoes suitable for paved paths (mostly flat terrain)",
+        "Comfortable walking shoes suitable for paved paths — there is one hill",
         "Water bottle to stay hydrated",
         "Layered clothing - it can be cool and windy along the coast even on warm days",
         "Windbreaker or light jacket recommended",
@@ -721,7 +700,7 @@ export const tours: Tour[] = [
       {
         question: "Is this tour appropriate for children?",
         answer:
-          "Yes! Kids often love this tour because there's so much to see - surfers, sea lions, waves, and more. The flat terrain makes it accessible for children who can walk 2 miles. We offer discounted pricing for kids under 12. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
+          "Yes! Kids often love this tour because there's so much to see — surfers, sea lions, waves, and more. There is one hill along the route, but no stairs, and we keep a relaxed pace. We offer discounted pricing for kids under 12. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
       },
       {
         question: "Can we stop at the Surfing Museum?",
