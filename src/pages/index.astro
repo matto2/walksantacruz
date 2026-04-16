@@ -39,14 +39,14 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 >
   <!-- Hero Section - Full Bleed -->
   <section
-    class="full-bleed relative min-h-[600px] md:min-h-[780px] flex items-start justify-center -mt-2"
+    class="full-bleed relative min-h-[520px] md:min-h-[780px] flex items-start justify-center -mt-2"
   >
     <!-- Hero background: static image or video (toggle USE_STATIC_HERO in frontmatter) -->
     <div class="absolute inset-0">
       {
         USE_STATIC_HERO ? (
           <div
-            class="absolute inset-0 bg-cover bg-center"
+            class="absolute inset-0 bg-cover bg-[position:25%_60%] md:bg-center"
             style={`background-image: url(${newHeroImage.src})`}
             role="img"
             aria-label="A small group on a guided walking tour in Santa Cruz"
