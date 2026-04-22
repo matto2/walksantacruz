@@ -104,7 +104,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </div>
 
     <!-- Trust badges anchored to bottom of hero -->
-    <a href="#reviews" class="absolute bottom-0 left-0 right-0 z-10 pb-5 md:pb-8 block">
+    <a href="#reviews" class="absolute bottom-0 left-0 right-0 z-10 pb-5 md:pb-8 block" style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
       <div class="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-3">
         <Image src={tripadvisorBadge} alt="TripAdvisor 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
         <Image src={googleBadge} alt="Google 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
@@ -373,7 +373,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section> -->
 
   <!-- Reviews Section -->
-  <section id="reviews" class="full-bleed relative py-16 md:py-24">
+  <section id="reviews" class="full-bleed relative pt-2 pb-16 md:pt-3 md:pb-24">
     <div class="container relative">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
         Guests Love It
@@ -421,6 +421,53 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
       <p class="text-center text-sm text-muted-foreground mt-10">
         Reviewed on Google · Airbnb · TripAdvisor · Viator
       </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="book" class="container pt-2 pb-16 md:pt-3 md:pb-24">
+    <div class="max-w-2xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-bold mb-8">
+        Ready to Book? View All Tours & Availability
+      </h3>
+      <!-- FareHarbor calendar -->
+      <script
+        is:inline
+        src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"
+      ></script>
+      <p class="text-sm mt-3">
+        <strong>Adult (18+):</strong> $45 &nbsp;·&nbsp; <strong
+          >Child (6-17):</strong
+        > $30 &nbsp;·&nbsp; Kids 5 and under are FREE with adult ticket
+      </p>
+      <p class="text-sm font-semibold text-foreground mt-1">
+        Full refund if cancelled 24+ hours before tour start time
+      </p>
+
+      <!-- Tour Details -->
+      <h4 class="text-xl font-bold mt-12 mb-6">Tour Details</h4>
+      <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
+        {
+          tours.map((tour, i) => (
+            <a
+              href={`/tours/${tour.slug}`}
+              data-astro-reload
+              class={`flex flex-row md:flex-col items-center gap-4 md:gap-3 py-4 md:py-0 md:flex-1 md:px-6 border-b md:border-b-0 border-foreground/10 last:border-b-0 ${i > 0 ? "md:border-l md:border-foreground/20" : ""} first:md:pl-0 last:md:pr-0`}
+            >
+              <Image
+                src={tour.cardImage}
+                alt={tour.cardImageAlt}
+                class="w-16 h-16 md:w-full md:h-28 rounded-lg object-cover flex-shrink-0"
+                loading="lazy"
+                quality={75}
+              />
+              <span class="font-semibold text-primary underline text-left">
+                {tour.title}
+              </span>
+            </a>
+          ))
+        }
+      </div>
     </div>
   </section>
 
@@ -679,53 +726,6 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
             >Explore Private Tours</a
           >
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section id="book" class="container py-16 md:py-24">
-    <div class="max-w-2xl mx-auto text-center">
-      <h3 class="text-2xl md:text-3xl font-bold mb-8">
-        Ready to Book? View All Tours & Availability
-      </h3>
-      <!-- FareHarbor calendar -->
-      <script
-        is:inline
-        src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"
-      ></script>
-      <p class="text-sm mt-3">
-        <strong>Adult (18+):</strong> $45 &nbsp;·&nbsp; <strong
-          >Child (6-17):</strong
-        > $30 &nbsp;·&nbsp; Kids 5 and under are FREE with adult ticket
-      </p>
-      <p class="text-sm font-semibold text-foreground mt-1">
-        Full refund if cancelled 24+ hours before tour start time
-      </p>
-
-      <!-- Tour Details -->
-      <h4 class="text-xl font-bold mt-12 mb-6">Tour Details</h4>
-      <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
-        {
-          tours.map((tour, i) => (
-            <a
-              href={`/tours/${tour.slug}`}
-              data-astro-reload
-              class={`flex flex-row md:flex-col items-center gap-4 md:gap-3 py-4 md:py-0 md:flex-1 md:px-6 border-b md:border-b-0 border-foreground/10 last:border-b-0 ${i > 0 ? "md:border-l md:border-foreground/20" : ""} first:md:pl-0 last:md:pr-0`}
-            >
-              <Image
-                src={tour.cardImage}
-                alt={tour.cardImageAlt}
-                class="w-16 h-16 md:w-full md:h-28 rounded-lg object-cover flex-shrink-0"
-                loading="lazy"
-                quality={75}
-              />
-              <span class="font-semibold text-primary underline text-left">
-                {tour.title}
-              </span>
-            </a>
-          ))
-        }
       </div>
     </div>
   </section>
