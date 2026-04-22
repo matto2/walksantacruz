@@ -101,16 +101,14 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
           class="btn btn-lg xl:h-[60px] xl:px-9 xl:text-[1.3rem]">Book Your Tour Now</a
         >
       </div>
+      <a href="#reviews" class="mt-6 block" style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
+        <div class="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-3">
+          <Image src={tripadvisorBadge} alt="TripAdvisor 5-star rating" class="h-[58px] md:h-[108px] w-auto drop-shadow" loading="eager" />
+          <Image src={googleBadge} alt="Google 5-star rating" class="h-[58px] md:h-[108px] w-auto drop-shadow" loading="eager" />
+        </div>
+        <p class="text-sm md:text-xl text-white text-center drop-shadow font-medium">Trusted by travelers with 12+ five-star reviews</p>
+      </a>
     </div>
-
-    <!-- Trust badges anchored to bottom of hero -->
-    <a href="#reviews" class="absolute bottom-0 left-0 right-0 z-10 pb-5 md:pb-8 block" style="filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));">
-      <div class="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-3">
-        <Image src={tripadvisorBadge} alt="TripAdvisor 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
-        <Image src={googleBadge} alt="Google 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
-      </div>
-      <p class="text-sm md:text-xl text-white text-center drop-shadow font-medium">Trusted by travelers with 12+ five-star reviews</p>
-    </a>
   </section>
 
   <!-- Featured In Bar -->
@@ -376,7 +374,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   <section id="reviews" class="full-bleed relative pt-2 pb-16 md:pt-3 md:pb-24">
     <div class="container relative">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Guests Love It
+        Guests Love Our Tours!
       </h2>
 
       <!-- Featured quote: Sophia Adair -->
