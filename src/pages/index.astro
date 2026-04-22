@@ -75,8 +75,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
         )
       }
     </div>
-    <!-- Solid scrim for baseline readability -->
-    <div class="absolute inset-0 bg-black/20"></div>
+    <!-- Scrim: light at top, darker at bottom for trust badge readability -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.35) 100%);"></div>
     <!-- Dark gradient overlay: top fade for text legibility, bottom fade to blend into page -->
     <div
       class="absolute inset-0"
