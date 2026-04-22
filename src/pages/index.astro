@@ -7,7 +7,7 @@ import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
-import newHeroImage from "../assets/townClock.jpg";
+import newHeroImage from "../assets/Hero_IMG_0299.jpg";
 import mapBg from "../assets/map-bg.jpg";
 import LookoutLogo from "../assets/LookoutLogo.png";
 import mattBioPic from "../assets/matt-bio-pic_with-HAT.jpg";
@@ -44,10 +44,11 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     class="full-bleed relative min-h-[520px] md:min-h-[780px] flex items-center md:items-start justify-center -mt-2"
   >
     <!-- Hero background: static image or video (toggle USE_STATIC_HERO in frontmatter) -->
-    <div class="absolute inset-0">
+    <div class="absolute inset-0 overflow-hidden">
       {
         USE_STATIC_HERO ? (
           <div
+            id="hero-bg"
             class="absolute inset-0 bg-cover bg-[position:25%_60%] md:bg-center"
             style={`background-image: url(${newHeroImage.src})`}
             role="img"
@@ -75,20 +76,14 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
         )
       }
     </div>
-    <!-- Scrim: light at top, darker at bottom for trust badge readability -->
-    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0.35) 100%);"></div>
-    <!-- Dark gradient overlay: top fade for text legibility, bottom fade to blend into page -->
-    <div
-      class="absolute inset-0"
-      style="background: linear-gradient(to bottom, rgba(30,15,0,0.4) 0%, rgba(30,15,0,0.25) 50%, rgba(30,15,0,0.08) 72%, rgba(30,15,0,0) 100%);"
-    >
-    </div>
+    <!-- Scrim: transparent at top, dark at bottom -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.25) 75%, rgba(0,0,0,0.40) 100%);"></div>
 
     <div class="container relative z-10 text-center py-4 md:pt-36 md:pb-8">
       <h1
         class="text-[2rem] sm:text-[2.6rem] md:text-6xl lg:text-7xl xl:text-[6rem] font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
       >
-        Explore Santa Cruz<br />with a Local Guide
+        Discover Santa Cruz<br />with a Local Guide
       </h1>
       <p
         class="text-[0.975rem] md:text-[1.4rem] xl:text-[2rem] leading-tight text-white font-semibold max-w-2xl mx-auto mb-6 md:mb-8 drop-shadow-md"
@@ -166,7 +161,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   <!-- Start Here / Tours Section -->
   <section id="tours" class="container pt-2 pb-16 md:pt-4 md:pb-24">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Our Tours</h2>
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Choose Your Tour</h2>
 
       <!-- Surf Walk — full-width featured card -->
       <a
@@ -776,6 +771,12 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 </Layout>
 
 <style>
+  @media (max-width: 767px) {
+    #hero-bg {
+      transform: scale(1.3);
+      transform-origin: center center;
+    }
+  }
 </style>
 
 <script is:inline>
