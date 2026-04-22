@@ -22,6 +22,8 @@ import logoMissionHill from "../assets/partner-logos/mission-hill.webp";
 import airbnbLogo from "../assets/Airbnb_Logo_Over_Gradient.jpg";
 import tripadvisorLogo from "../assets/tripadvisor.svg";
 import viatorLogo from "../assets/viator.webp";
+import tripadvisorBadge from "../assets/tripadvisor-5-star1.avif";
+import googleBadge from "../assets/5-star-google-white-min.avif";
 
 // Set to false to revert to video hero
 const USE_STATIC_HERO = true;
@@ -73,6 +75,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
         )
       }
     </div>
+    <!-- Solid scrim for baseline readability -->
+    <div class="absolute inset-0 bg-black/20"></div>
     <!-- Dark gradient overlay: top fade for text legibility, bottom fade to blend into page -->
     <div
       class="absolute inset-0"
@@ -82,27 +86,31 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
 
     <div class="container relative z-10 text-center pt-8 pb-4 md:pt-36 md:pb-8">
       <h1
-        class="text-[2rem] sm:text-[2.6rem] md:text-6xl lg:text-7xl font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
+        class="text-[2rem] sm:text-[2.6rem] md:text-6xl lg:text-7xl xl:text-[6rem] font-bold leading-none mb-3 md:mb-6 text-white drop-shadow-md"
       >
         Explore Santa Cruz<br />with a Local Guide
       </h1>
       <p
-        class="text-sm md:text-xl text-white font-semibold max-w-2xl mx-auto mb-6 md:mb-8 drop-shadow-md"
+        class="text-sm md:text-xl xl:text-[1.75rem] text-white font-semibold max-w-2xl mx-auto mb-6 md:mb-8 drop-shadow-md"
       >
         Hidden history, surf culture, and local stories—just steps from the Boardwalk.
       </p>
       <div class="flex flex-col items-center gap-3">
         <a
           href="#tours"
-          class="btn btn-lg w-full sm:w-auto">Explore Our Tours</a
+          class="btn btn-lg xl:h-[60px] xl:px-9 xl:text-[1.3rem] w-full sm:w-auto">Explore Our Tours</a
         >
       </div>
-      <a
-        href="#reviews"
-        class="mt-4 text-base font-bold text-white text-center drop-shadow whitespace-nowrap block"
-        ><span class="text-yellow-500">★★★★★</span> 5.0 rating</a
-      >
     </div>
+
+    <!-- Trust badges anchored to bottom of hero -->
+    <a href="#reviews" class="absolute bottom-0 left-0 right-0 z-10 pb-5 md:pb-8 block">
+      <div class="flex items-center justify-center gap-4 md:gap-6 mb-2 md:mb-3">
+        <Image src={tripadvisorBadge} alt="TripAdvisor 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
+        <Image src={googleBadge} alt="Google 5-star rating" class="h-16 md:h-[120px] w-auto drop-shadow" loading="eager" />
+      </div>
+      <p class="text-sm md:text-xl text-white text-center drop-shadow font-medium">Trusted by travelers with 12+ five-star reviews</p>
+    </a>
   </section>
 
   <!-- Featured In Bar -->
