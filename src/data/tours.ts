@@ -1,10 +1,10 @@
 import type { ImageMetadata } from "astro";
 
 // Import all tour images
-import downtownTour from "../assets/downtown-santa-cruz_wikimedia.jpg";
+import downtownTour from "../assets/tour_group_hero.jpg";
 import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
-import beachHillHero from "../assets/beach-hill-hero.jpg";
-import beachHillCard from "../assets/beach-hill-card_IMG_9631.jpg";
+import beachHillHero from "../assets/me-talking-on-a-tour2.jpeg";
+import beachHillCard from "../assets/me-talking-on-a-tour2.jpeg";
 import surfer from "../assets/hardy-photo-nelly.jpg";
 
 // Import surf tour gallery images
