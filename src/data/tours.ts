@@ -373,12 +373,12 @@ export const tours: Tour[] = [
     childPrice: 30,
     schedule: "Thursday and Friday at 1pm",
     meetingPoint: {
-      name: "Aloha Terrace Group Picnic Area, 300 Beach Street — next to the Boardwalk, overlooking the beach volleyball courts",
-      url: "https://maps.app.goo.gl/BmwQe8d7kGhP5fjv9",
+      name: "Outdoor deck outside Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
+      url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
       embedUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.972539412074!2d-122.02585502375406!3d36.96271267220125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a9a6826b637%3A0x4ee382bbecb26cc7!2sIdeal%20Bar%20%26%20Grill!5e0!3m2!1sen!2sus!4v1777779736225!5m2!1sen!2sus",
       appleUrl:
-        "https://maps.apple.com/?address=300%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
+        "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
       "https://fareharbor.com/embeds/book/walksantacruz/items/686749/calendar/2025/12/?full-items=yes",
@@ -462,7 +462,7 @@ export const tours: Tour[] = [
       {
         question: "What time should I arrive and where exactly do we meet?",
         answer:
-          "Please arrive 10 minutes before the 1pm start time at the Aloha Terrace Group Picnic Area, 300 Beach Street — next to the Boardwalk, overlooking the beach volleyball courts. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets - we recommend arriving 15-20 minutes early to find parking. The exact location will be provided in your confirmation email.",
+          "Please arrive 10 minutes before the 1pm start time at the outdoor deck outside Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets - we recommend arriving 15-20 minutes early to find parking. The exact location will be provided in your confirmation email.",
       },
       {
         question: "What if I need to leave the tour early?",
@@ -570,12 +570,12 @@ export const tours: Tour[] = [
     childPrice: 30,
     schedule: "Thursday, Friday, Saturday, and Sunday at 10am",
     meetingPoint: {
-      name: "Aloha Terrace Group Picnic Area, 300 Beach Street, Santa Cruz — next to the Boardwalk, overlooking the beach volleyball courts",
-      url: "https://maps.app.goo.gl/5kQSAFFEfZigLaFKA",
+      name: "Outdoor deck outside Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
+      url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
       embedUrl:
-        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d488.90335691358507!2d-122.02059430240925!3d36.963662730594805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a998d43eeb3%3A0x75d32b092ac8f17d!2sAloha%20Terrace%20Group%20Picnic%20Area!5e0!3m2!1sen!2sus!4v1764894698969!5m2!1sen!2sus",
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3187.972539412074!2d-122.02585502375406!3d36.96271267220125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e6a9a6826b637%3A0x4ee382bbecb26cc7!2sIdeal%20Bar%20%26%20Grill!5e0!3m2!1sen!2sus!4v1777779736225!5m2!1sen!2sus",
       appleUrl:
-        "https://maps.apple.com/?address=300%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
+        "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
       "https://fareharbor.com/embeds/book/walksantacruz/items/686192/calendar/2025/12/?full-items=yes",
