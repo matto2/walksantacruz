@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import "../styles/global.css";
 
-import surfWalk1 from "../assets/guide/SurfWalk1.jpg";
+import surfWalk1 from "../assets/guide2.png";
 import surfWalk2Statue from "../assets/guide/SurfWalk2_surferStatue.jpeg";
 import surfWalk2 from "../assets/guide/SurfWalk2.png";
 import bikingUpCoast from "../assets/guide/Biking-upTheCoast.jpg";
@@ -21,6 +21,7 @@ import idealFish from "../assets/guide/IdealFish.jpeg";
 import boardwalk from "../assets/guide/boardwalk.jpg";
 import zacharys from "../assets/guide/zacharys.png";
 import abbottSquare from "../assets/guide/AbbottSquare-MAH.avif";
+import hookAndLine from "../assets/hook-and-line.png";
 ---
 
 <!doctype html>
@@ -257,6 +258,9 @@ import abbottSquare from "../assets/guide/AbbottSquare-MAH.avif";
         <div class="guide-block">
           <p class="guide-time-label">Dinner</p>
           <p><strong>Hook & Line</strong> is the anchor pick — sustainably sourced local seafood done simply and well, right downtown. If you want something more intimate, <strong>Oswald</strong> on Pacific is the special-occasion choice with a seasonal menu that's consistently excellent. Or try <strong>Laili</strong> for Afghan-inspired Mediterranean that surprises everyone who orders it.</p>
+        </div>
+        <Image src={hookAndLine} alt="Hook & Line restaurant in downtown Santa Cruz" class="guide-img-full" loading="lazy" quality={85} />
+        <div class="guide-block">
           <p>After dinner, walk to <strong>Mission Hill Coffee & Creamery</strong> on Pacific Avenue for ice cream. Simple, perfect, non-negotiable end to a downtown day.</p>
         </div>
 
@@ -388,7 +392,7 @@ import abbottSquare from "../assets/guide/AbbottSquare-MAH.avif";
     }
   }
   .guide-eyebrow {
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -520,7 +524,7 @@ import abbottSquare from "../assets/guide/AbbottSquare-MAH.avif";
     }
   }
   .guide-time-label {
-    font-size: 0.7rem !important;
+    font-size: 0.93rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
@@ -627,7 +631,7 @@ import abbottSquare from "../assets/guide/AbbottSquare-MAH.avif";
     gap: 0.4rem;
   }
   .guide-book-label {
-    font-size: 0.7rem;
+    font-size: 0.93rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;

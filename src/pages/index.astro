@@ -108,11 +108,13 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section>
 
   <!-- Featured In Bar -->
-  <div
-    class="full-bleed py-4 md:py-6"
-    style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-  >
-    <div class="flex items-center justify-center gap-4">
+  <div class="full-bleed relative py-4 md:py-6">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="flex items-center justify-center gap-4 relative">
       <span class="text-xl md:text-[1.75rem] font-bold" style="color: #ed672d;">Featured in</span>
       <a
         href="https://lookout.co/new-downtown-walking-tour-aspires-to-tell-santa-cruzs-hidden-stories/story"
@@ -389,6 +391,50 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </div>
   </section>
 
+  <!-- Email Signup Section -->
+  <section class="full-bleed relative py-16 md:py-20">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="container relative">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="flex flex-col md:flex-row md:items-center gap-8">
+          <div style="flex: 0 0 auto; width: 100%;" class="md:max-w-xs">
+            <Image
+              src={wharfPhoto}
+              alt="Santa Cruz Wharf"
+              width={400}
+              height={300}
+              class="w-full rounded-xl object-cover"
+              style="height: 220px;"
+              loading="lazy"
+            />
+          </div>
+          <div style="min-width: 0; flex: 1;">
+            <h2 class="text-2xl md:text-3xl font-bold leading-tight mb-2">3 Perfect Days in Santa Cruz</h2>
+            <p class="text-sm md:text-base leading-snug mb-5" style="color: #666;">A free local's guide for visitors and teams — yours instantly when you sign up.</p>
+            <form action="https://app.kit.com/forms/9380967/subscriptions" method="post" style="width: 100%;">
+              <div style="display: flex; flex-direction: row; gap: 8px; align-items: flex-start;" class="guide-form-fields">
+                <input
+                  name="email_address"
+                  type="email"
+                  placeholder="Email Address"
+                  required
+                  aria-label="Email Address"
+                  style="flex: 1; min-width: 0; padding: 12px; border: 1px solid #dde0e4; border-radius: 4px; font-size: 15px; color: #555; background: #fff;"
+                />
+                <button type="submit" style="padding: 12px 20px; background-color: #ed672d; color: #fff; border: none; border-radius: 4px; font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0;">Get the guide</button>
+              </div>
+              <p style="color: #999; font-size: 13px; margin-top: 8px;">We respect your privacy. Unsubscribe at anytime.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA Section -->
   <section id="book" class="container pt-2 pb-16 md:pt-3 md:pb-24">
     <div class="max-w-2xl mx-auto text-center">
@@ -440,7 +486,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   <!-- Meet Your Guide Section -->
   <section class="full-bleed relative py-16 md:py-20">
     <div
-      class="absolute inset-0 opacity-40"
+      class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
     >
     </div>
@@ -468,43 +514,6 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
             "Matt has extensive local history to share and also invites hearing stories from other locals and visitors." — Alison, Google Review
           </blockquote>
           <a href="/about" class="text-primary font-semibold">More About Matt →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Email Signup Section -->
-  <section style="background-color: #F8F5EE; padding: 2.5rem 1rem;">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="flex flex-col md:flex-row md:items-center gap-8">
-        <div style="flex: 0 0 auto; width: 100%;" class="md:max-w-xs">
-          <Image
-            src={wharfPhoto}
-            alt="Santa Cruz Wharf"
-            width={400}
-            height={300}
-            class="w-full rounded-xl object-cover"
-            style="height: 220px;"
-            loading="lazy"
-          />
-        </div>
-        <div style="min-width: 0; flex: 1;">
-          <h2 class="text-2xl md:text-3xl font-bold leading-tight mb-2">3 Perfect Days in Santa Cruz</h2>
-          <p class="text-sm md:text-base leading-snug mb-5" style="color: #666;">A free local's guide for visitors and teams — yours instantly when you sign up.</p>
-          <form action="https://app.kit.com/forms/9380967/subscriptions" method="post" style="width: 100%;">
-            <div style="display: flex; flex-direction: row; gap: 8px; align-items: flex-start;" class="guide-form-fields">
-              <input
-                name="email_address"
-                type="email"
-                placeholder="Email Address"
-                required
-                aria-label="Email Address"
-                style="flex: 1; min-width: 0; padding: 12px; border: 1px solid #dde0e4; border-radius: 4px; font-size: 15px; color: #555; background: #fff;"
-              />
-              <button type="submit" style="padding: 12px 20px; background-color: #ed672d; color: #fff; border: none; border-radius: 4px; font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0;">Get the guide</button>
-            </div>
-            <p style="color: #999; font-size: 13px; margin-top: 8px;">We respect your privacy. Unsubscribe at anytime.</p>
-          </form>
         </div>
       </div>
     </div>
@@ -740,7 +749,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   <!-- B2B / Groups Section -->
   <section class="full-bleed relative py-16 md:py-24">
     <div
-      class="absolute inset-0 opacity-40"
+      class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
     >
     </div>
