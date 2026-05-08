@@ -6,6 +6,7 @@ import Layout from "../layouts/Layout.astro";
 import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import LeadMagnet from "../components/LeadMagnet.astro";
+import LeadMagnetKit from "../components/LeadMagnetKit.astro";
 import { tours } from "../data/tours";
 import heroImage from "../assets/downtown_hero.jpg";
 import newHeroImage from "../assets/Hero_IMG_0299.jpg";
@@ -617,7 +618,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </div>
   </section>
 
-  <LeadMagnet />
+  {/* <LeadMagnet /> */}
+  <LeadMagnetKit />
 
   <!-- Map Modal (desktop only) -->
   <div
