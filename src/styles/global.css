@@ -61,3 +61,10 @@ li {
 li.flex {
 	align-items: center;
 }
+
+/* Email signup form — stack on mobile */
+@media (max-width: 480px) {
+	.guide-form-fields { flex-direction: column !important; }
+	.guide-form-fields input { width: 100% !important; }
+	.guide-form-fields button { width: 100% !important; }
+}
