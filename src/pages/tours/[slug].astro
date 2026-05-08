@@ -3,7 +3,7 @@ import { Image, getImage } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../../layouts/Layout.astro";
 import Lightbox from "../../components/Lightbox.astro";
-import LeadMagnet from "../../components/LeadMagnet.astro";
+import LeadMagnetKit from "../../components/LeadMagnetKit.astro";
 import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
 import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
@@ -158,7 +158,7 @@ const tourStructuredData = {
         </div>
 
         <a href={tour.bookingUrl} class="btn btn-lg w-full md:w-auto">
-          Reserve Your Spot
+          Book Now
         </a>
       </div>
 
@@ -410,7 +410,7 @@ const tourStructuredData = {
   <!-- Book Online CTA -->
   <section class="container pt-2 pb-8 md:pt-2 md:pb-12">
     <div class="max-w-2xl mx-auto text-center">
-      <a href={tour.bookingUrl} class="btn btn-lg">Reserve Your Spot</a>
+      <a href={tour.bookingUrl} class="btn btn-lg">Book Now</a>
     </div>
   </section>
 
@@ -451,7 +451,7 @@ const tourStructuredData = {
   <p class="text-center text-sm text-muted-foreground pt-6 pb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews</p>
   <p class="text-center text-sm text-muted-foreground pb-6">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
 
-  <LeadMagnet />
+  <LeadMagnetKit />
 
   <!-- Important Information (moved below final CTA) -->
   {["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
