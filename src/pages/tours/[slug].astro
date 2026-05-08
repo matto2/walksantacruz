@@ -418,7 +418,7 @@ const tourStructuredData = {
   <!-- Related Tours -->
   {
     relatedTours.length > 0 && (
-      <section class="container pt-8 pb-16 md:pt-12 md:pb-24">
+      <section class="container pt-8 pb-6 md:pt-12 md:pb-8">
         <h4 class="text-xl font-bold mb-6 text-center">More Tours</h4>
         <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
           {relatedTours.map((relatedTour, i) => (
@@ -442,9 +442,6 @@ const tourStructuredData = {
               <span class="font-semibold text-primary underline text-left">
                 {relatedTour.title}
               </span>
-              {relatedTour.slug === "surfing-beach-culture" && (
-                <span class="text-xs text-muted-foreground text-left md:text-center">The tour that started it all — walk where surfing began.</span>
-              )}
             </a>
           ))}
         </div>
@@ -452,14 +449,16 @@ const tourStructuredData = {
     )
   }
 
+  <p class="text-center text-sm text-muted-foreground pt-6 pb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews</p>
+  <p class="text-center text-sm text-muted-foreground pb-6">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
+
   <!-- Email Signup Section -->
-  <section class="full-bleed relative pt-8 pb-20 md:pt-10 md:pb-24">
+  <section class="full-bleed relative py-16 md:py-20">
     <div
       class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
     ></div>
     <div class="container relative">
-      <p class="text-center text-sm text-muted-foreground mb-6">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
       <div style="max-width: 900px; margin: 0 auto;">
         <div class="flex flex-col md:flex-row md:items-center gap-8">
           <div style="flex: 0 0 auto; width: 100%;" class="md:max-w-xs">
@@ -488,7 +487,7 @@ const tourStructuredData = {
                 />
                 <button type="submit" style="padding: 12px 20px; background-color: #ed672d; color: #fff; border: none; border-radius: 4px; font-size: 15px; font-weight: 700; cursor: pointer; white-space: nowrap; flex-shrink: 0;">Get the guide</button>
               </div>
-              <p style="color: #666; font-size: 14px; margin-top: 8px;">⭐⭐⭐⭐⭐ 12+ five-star reviews · We respect your privacy · Unsubscribe anytime</p>
+              <p style="color: #666; font-size: 14px; margin-top: 8px;">We respect your privacy · Unsubscribe anytime</p>
             </form>
           </div>
         </div>
@@ -498,7 +497,7 @@ const tourStructuredData = {
 
   <!-- Important Information (moved below final CTA) -->
   {["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
-  <section class="container pb-16 md:pb-24">
+  <section class="container pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-3xl mx-auto">
       <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center">
         More Ways to Explore
@@ -519,6 +518,8 @@ const tourStructuredData = {
         </p>
         <a href="/#tours" data-astro-reload class="btn"> See Other Tours </a>
       </div>
+      <p class="text-center text-sm text-muted-foreground mt-10 mb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews</p>
+      <p class="text-center text-sm text-muted-foreground">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
     </div>
   </section>
   )}
