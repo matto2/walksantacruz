@@ -6,7 +6,7 @@ import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
 import beachHillHero from "../assets/me-talking-on-a-tour2.jpeg";
 import beachHillCard from "../assets/me-talking-on-a-tour2.jpeg";
 import surfer from "../assets/hardy-photo-nelly.jpg";
-import newSurfHero from "../assets/new-surf-hero.jpg";
+import newSurfHero from "../assets/new-surf-hero2.avif";
 
 // Import surf tour gallery images
 import bigWave from "../assets/surf-tour/bigWave_Brocken-Inaglory_wikimediaCommons.jpg";
