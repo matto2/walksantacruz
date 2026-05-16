@@ -6,6 +6,7 @@ import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
 import beachHillHero from "../assets/me-talking-on-a-tour2.jpeg";
 import beachHillCard from "../assets/me-talking-on-a-tour2.jpeg";
 import surfer from "../assets/hardy-photo-nelly.jpg";
+import newSurfHero from "../assets/new-surf-hero.jpg";
 
 // Import surf tour gallery images
 import bigWave from "../assets/surf-tour/bigWave_Brocken-Inaglory_wikimediaCommons.jpg";
@@ -512,9 +513,9 @@ export const tours: Tour[] = [
     longDescription:
       "Dive into the heart of surf culture at its West Coast birthplace. This oceanfront tour explores how surfing shaped Santa Cruz's identity and continues to define our coastal community today.",
 
-    cardImage: surfer,
+    cardImage: newSurfHero,
     cardImageAlt: "Surfer at Santa Cruz beach",
-    heroImage: surfer,
+    heroImage: newSurfHero,
     heroImageAlt: "Surfing culture in Santa Cruz",
     galleryImages: [
       {
@@ -523,9 +524,9 @@ export const tours: Tour[] = [
         caption: "Cowell Beach - Photo by M. O'Leary",
       },
       {
-        src: itsBeach,
-        alt: "Its Beach",
-        caption: "Its Beach - Photo by M. O'Leary",
+        src: surfer,
+        alt: "Surfer at Santa Cruz",
+        caption: "Santa Cruz Surfer - Photo by Dave Nelson",
       },
       {
         src: bigWave,
