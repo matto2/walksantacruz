@@ -1,7 +1,7 @@
 import type { ImageMetadata } from "astro";
 
 // Import all tour images
-import downtownTour from "../assets/downtown-santa-cruz_wikimedia.jpg";
+import downtownTour from "../assets/new-downtown-test.jpg";
 import goldenGateVilla from "../assets/GoldenGate_Villa.jpg";
 import beachHillHero from "../assets/me-talking-on-a-tour2.jpeg";
 import beachHillCard from "../assets/me-talking-on-a-tour2.jpeg";
@@ -173,7 +173,7 @@ export const tours: Tour[] = [
       "https://fareharbor.com/embeds/book/walksantacruz/items/673407/calendar/2025/12/?full-items=yes",
 
     storytelling:
-      "Pair it with the Surf Walk for the complete Santa Cruz experience — or come here first and let the streets tell you the rest of the story. Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
+      "Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
 
     itinerary: [
       {
