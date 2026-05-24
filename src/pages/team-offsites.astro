@@ -6,17 +6,20 @@ import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
 import mattWestCliff from "../assets/surf-tour/matt-surfing-1990.jpg";
 import teamPhoto from "../assets/teambuilding/team1.jpg";
 import barrelPhoto from "../assets/gooch-barrel-photo by Dave Nelson.png";
+import downtownTour from "../assets/new-downtown-test.jpg";
+import beachHillHero from "../assets/me-talking-on-a-tour2.jpeg";
+import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
 ---
 
 <Layout
-  title="Team Offsites & Group Experiences in Santa Cruz | Walk Santa Cruz"
+  title="Team Activities in Santa Cruz | Walk Santa Cruz"
   description="Customized walking tours and group experiences for team offsites in Santa Cruz. Choose from three signature tours or design something entirely your own."
 >
   <!-- Hero Section -->
   <section class="container pt-10 pb-8 md:pt-16 md:pb-12">
     <div class="max-w-3xl mx-auto mb-8">
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-        Team Offsites &amp; Group Experiences
+        Team Activities
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
         Santa Cruz is one of the most story-rich places on the California coast. A guided walk here gives your team something most offsites don't — genuine curiosity, real conversation, and a place that stays with people.
@@ -63,51 +66,77 @@ import barrelPhoto from "../assets/gooch-barrel-photo by Dave Nelson.png";
         </p>
 
         <div class="space-y-6">
-          <div class="bg-background/90 rounded-xl p-6">
-            <h3 class="font-bold text-lg mb-1">
-              <a href="/tours/surfing-beach-culture" class="text-foreground">Santa Cruz Surf Walk &rarr;</a>
-            </h3>
-            <p class="text-muted-foreground">The origin story of West Coast surfing, told at the exact spots where it happened. From Hawaiian princes at the rivermouth in 1885 to Jack O'Neill's first Santa Cruz surf shop in an old real estate office, out along West Cliff Drive to Steamer Lane. About 90 minutes, coastal path the entire way.</p>
+          <div class="bg-background/90 rounded-xl overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-48 md:flex-shrink-0 aspect-square md:aspect-auto">
+              <Image
+                src={barrelPhoto}
+                alt="Surfer getting barrelled at Steamer Lane, Santa Cruz — photo by Dave Nelson"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                quality={85}
+              />
+            </div>
+            <div class="p-6 flex flex-col justify-center">
+              <h3 class="font-bold text-lg mb-1">
+                <a href="/tours/surfing-beach-culture" class="text-foreground">Santa Cruz Surf Walk &rarr;</a>
+              </h3>
+              <p class="text-muted-foreground">The origin story of West Coast surfing, told at the exact spots where it happened. From Hawaiian princes at the rivermouth in 1885 to Jack O'Neill's first Santa Cruz surf shop in an old real estate office, out along West Cliff Drive to Steamer Lane. About 90 minutes, coastal path the entire way.</p>
+            </div>
           </div>
 
-          <div class="bg-background/90 rounded-xl p-6">
-            <h3 class="font-bold text-lg mb-1">
-              <a href="/tours/downtown-mission-hill" class="text-foreground">Heart of Downtown Santa Cruz &rarr;</a>
-            </h3>
-            <p class="text-muted-foreground">A relaxed 90-minute walk through the historic core — the Mission, the 1989 earthquake rebuild, Victorian architecture, the creative district that came after. Good for groups who want to understand the city itself.</p>
+          <div class="bg-background/90 rounded-xl overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-48 md:flex-shrink-0 aspect-square md:aspect-auto">
+              <Image
+                src={downtownTour}
+                alt="Historic downtown Santa Cruz architecture"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                quality={85}
+              />
+            </div>
+            <div class="p-6 flex flex-col justify-center">
+              <h3 class="font-bold text-lg mb-1">
+                <a href="/tours/downtown-mission-hill" class="text-foreground">Heart of Downtown Santa Cruz &rarr;</a>
+              </h3>
+              <p class="text-muted-foreground">A relaxed 90-minute walk through the historic core — the Mission, the 1989 earthquake rebuild, Victorian architecture, the creative district that came after. Good for groups who want to understand the city itself.</p>
+            </div>
           </div>
 
-          <div class="bg-background/90 rounded-xl p-6">
-            <h3 class="font-bold text-lg mb-1">
-              <a href="/tours/beach-hill-loop" class="text-foreground">Beach Hill to Downtown Loop &rarr;</a>
-            </h3>
-            <p class="text-muted-foreground">Starts at the beach and winds through Beach Hill's grand Victorian estates before descending into downtown via a hidden staircase locals love. A 90-minute loop that covers two of the city's most distinctive neighborhoods.</p>
+          <div class="bg-background/90 rounded-xl overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-48 md:flex-shrink-0 aspect-square md:aspect-auto">
+              <Image
+                src={beachHillHero}
+                alt="Beach Hill historic district overlooking Monterey Bay"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                quality={85}
+              />
+            </div>
+            <div class="p-6 flex flex-col justify-center">
+              <h3 class="font-bold text-lg mb-1">
+                <a href="/tours/beach-hill-loop" class="text-foreground">Beach Hill to Downtown Loop &rarr;</a>
+              </h3>
+              <p class="text-muted-foreground">Starts at the beach and winds through Beach Hill's grand Victorian estates before descending into downtown via a hidden staircase locals love. A 90-minute loop that covers two of the city's most distinctive neighborhoods.</p>
+            </div>
           </div>
 
-          <div class="bg-background/90 rounded-xl p-6 border-l-4 border-primary">
-            <h3 class="font-bold text-lg mb-1">Completely Custom</h3>
-            <p class="text-muted-foreground">Tell us where your group is staying, what they're interested in, and how much time you have. We'll design a route and a story arc around that — starting from your hotel or rental if you're in the downtown or beach area, or connecting multiple neighborhoods for a longer half-day experience.</p>
+          <div class="bg-background/90 rounded-xl overflow-hidden flex flex-col md:flex-row border-l-4 border-primary">
+            <div class="md:w-48 md:flex-shrink-0 aspect-square md:aspect-auto">
+              <Image
+                src={pantherBeach}
+                alt="Panther Beach, Santa Cruz coast"
+                class="w-full h-full object-cover"
+                loading="lazy"
+                quality={85}
+              />
+            </div>
+            <div class="p-6 flex flex-col justify-center">
+              <h3 class="font-bold text-lg mb-1">Completely Custom</h3>
+              <p class="text-muted-foreground">Tell us where your group is staying, what they're interested in, and how much time you have. We'll design a route and a story arc around that — starting from your hotel or rental if you're in the downtown or beach area, or connecting multiple neighborhoods for a longer half-day experience.</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Surf Photo with Caption -->
-  <section class="container py-12 md:py-16">
-    <div class="max-w-3xl mx-auto">
-      <div class="rounded-lg overflow-hidden mb-3">
-        <Image
-          src={barrelPhoto}
-          alt="Surfer getting barrelled at Steamer Lane, Santa Cruz — photo by Dave Nelson"
-          class="w-full h-auto"
-          loading="lazy"
-          quality={85}
-        />
-      </div>
-      <p class="text-sm text-muted-foreground italic">
-        The Surf Walk brings your team into the stoke — the history, the culture, the aloha spirit that runs through this coast. &nbsp;·&nbsp; Photo: Dave Nelson
-      </p>
     </div>
   </section>
 
@@ -135,16 +164,6 @@ import barrelPhoto from "../assets/gooch-barrel-photo by Dave Nelson.png";
             Stories you won't find anywhere else, told by someone who lived them.
           </p>
         </div>
-      </div>
-      <div class="mt-8">
-        <Image
-          src={mattWestCliff}
-          alt="Matt surfing a small cove off West Cliff, 1990"
-          class="w-full rounded-lg"
-          loading="lazy"
-          quality={85}
-        />
-        <p class="text-sm text-muted-foreground mt-2 italic">West Cliff, 1990 — Photo: Bud Clark</p>
       </div>
     </div>
   </section>

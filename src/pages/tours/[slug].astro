@@ -7,6 +7,7 @@ import LeadMagnetKit from "../../components/LeadMagnetKit.astro";
 import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
 import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
+import mattSurfing1990 from "../../assets/surf-tour/matt-surfing-1990.jpg";
 
 export async function getStaticPaths() {
   return tours.map((tour) => ({
@@ -351,6 +352,17 @@ const tourStructuredData = {
               </a>{" "}
               and discover what makes Santa Cruz such an amazing place.
             </p>
+
+            <div class="mt-6">
+              <Image
+                src={mattSurfing1990}
+                alt="Matt surfing a small cove off West Cliff, 1990"
+                class="w-full rounded-lg"
+                loading="lazy"
+                quality={85}
+              />
+              <p class="text-sm text-center text-muted-foreground mt-2 italic">West Cliff, 1990 — Photo: Bud Clark</p>
+            </div>
           </div>
         </div>
       )}
