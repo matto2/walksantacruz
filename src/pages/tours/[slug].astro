@@ -118,7 +118,7 @@ const tourStructuredData = {
             tour.highlights.map((highlight) => (
               <li class="flex items-start gap-3">
                 <span class="text-[#ed672d]">•</span>
-                <span class="text-muted-foreground">{highlight}</span>
+                <span class="text-muted-foreground [&_a]:text-[#ed672d] [&_a]:underline [&_a]:font-semibold [&_a:hover]:text-[#b84d1e]" set:html={highlight} />
               </li>
             ))
           }

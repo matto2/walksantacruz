@@ -632,7 +632,7 @@ export const tours: Tour[] = [
       "Hear stories about surf pioneers: Jack O'Neill, Sam Reid, Dorothy Becker, and legends of today",
       "Lighthouse Point - marine wildlife viewing: sea lions, seals, otters, and migrating whales",
       "Santa Cruz Surfing Museum - historic photos, artifacts, and stories (if open)",
-      "West Cliff Drive - scenic tour of various surf breaks and coastal geography",
+      `West Cliff Drive — scenic tour of various surf breaks and coastal geography; opening scene location for <a href="https://www.santacruz.org/lostboys/" target="_blank" rel="noopener noreferrer">The Lost Boys (1987)</a>`,
       "Small group experience (maximum 10 people) for personalized attention",
     ],
 
