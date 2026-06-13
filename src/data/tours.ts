@@ -160,7 +160,7 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Saturday and Sunday at 1pm",
+    schedule: "Wednesday and Thursday at 1pm",
     meetingPoint: {
       name: "Abbott Square Market, 118 Cooper St, Santa Cruz",
       url: "https://maps.app.goo.gl/M7uF1gUT19KMFiMW8",
@@ -372,7 +372,7 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Thursday and Friday at 1pm",
+    schedule: "Monday and Tuesday at 1pm",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
@@ -569,7 +569,7 @@ export const tours: Tour[] = [
     price: "Adult $45 / Child $30",
     adultPrice: 45,
     childPrice: 30,
-    schedule: "Thursday, Friday, Saturday, and Sunday at 10am",
+    schedule: "Monday, Tuesday, Wednesday, and Thursday at 10am",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
@@ -691,7 +691,7 @@ export const tours: Tour[] = [
       {
         question: "When is the best time of year for this tour?",
         answer:
-          "Each season offers something unique! Fall and winter typically bring bigger swells and more dramatic surfing at Steamer Lane, plus migrating gray whales (December-April). Spring and summer offer calmer conditions, warmer weather, and great beginner surfing at Cowell. Marine life is present year-round. Weekday departures (Thursday and Friday) are often less crowded than weekends. Really, any time is good!",
+          "Each season offers something unique! Fall and winter typically bring bigger swells and more dramatic surfing at Steamer Lane, plus migrating gray whales (December-April). Spring and summer offer calmer conditions, warmer weather, and great beginner surfing at Cowell. Marine life is present year-round. Really, any time is good!",
       },
       {
         question: "Will we see whales or other marine life?",
