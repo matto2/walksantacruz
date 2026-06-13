@@ -8,7 +8,11 @@
       "Bash(npm run:*)",
       "Bash(git push:*)",
       "Bash(git -C /Users/matthewoleary/Sites/walksantacruz tag --sort=-creatordate)",
-      "Bash(git -C /Users/matthewoleary/Sites/walksantacruz tag pre-redesign-2026-03-31)"
+      "Bash(git -C /Users/matthewoleary/Sites/walksantacruz tag pre-redesign-2026-03-31)",
+      "Bash(git commit -m ' *)",
+      "Bash(claude mcp *)",
+      "Read(//Users/matthewoleary/.claude/**)",
+      "Bash(security find-generic-password *)"
     ],
     "deny": [],
     "ask": []
