@@ -32,6 +32,18 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 400;
 }
 
+/* Primary button hover — darken instead of fade */
+.btn:hover,
+.btn-primary:hover,
+.btn-sm:hover,
+.btn-sm-primary:hover,
+.btn-lg:hover,
+.btn-lg-primary:hover,
+.btn-icon:hover,
+.btn-icon-primary:hover {
+	background-color: color-mix(in oklch, var(--color-primary) 82%, black);
+}
+
 /* Secondary button styling */
 .btn-secondary {
 	background-color: var(--color-secondary);
