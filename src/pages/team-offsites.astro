@@ -211,8 +211,8 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
     </div>
   </section>
 
-  <!-- Contact Form -->
-  <section id="contact" class="container py-12 md:py-16">
+  <!-- Contact Section -->
+  <section class="container py-12 md:py-16" id="contact">
     <div class="max-w-2xl mx-auto">
 
       <!-- Pull Quote -->
@@ -234,77 +234,31 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
       </figure>
 
       <div class="text-center mb-8">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Plan Your Group Experience</h2>
-        <p class="text-lg text-muted-foreground">
-          Tell us about your group — size, dates, where you're staying, and what you're hoping for. We'll take it from there.
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+        <p class="text-xl text-muted-foreground">
+          Tell us about your group — we'll put together an experience worth talking about.
         </p>
       </div>
 
-      <form
-        name="team-offsite"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-        class="form space-y-6 mb-8"
-      >
-        <input type="hidden" name="form-name" value="team-offsite" />
-        <p class="hidden">
-          <label>
-            Don't fill this out if you're human: <input name="bot-field" />
-          </label>
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center mb-8">
+        <p class="text-muted-foreground mb-6">
+          Email us with your company/group name, group size, preferred date, and goals.
         </p>
-
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label for="name" class="block font-semibold mb-2">Your Name *</label>
-            <input type="text" id="name" name="name" required class="w-full" />
-          </div>
-          <div>
-            <label for="org-name" class="block font-semibold mb-2">Organization</label>
-            <input type="text" id="org-name" name="org-name" class="w-full" />
-          </div>
-        </div>
-
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label for="email" class="block font-semibold mb-2">Email *</label>
-            <input type="email" id="email" name="email" required class="w-full" />
-          </div>
-          <div>
-            <label for="phone" class="block font-semibold mb-2">Phone</label>
-            <input type="tel" id="phone" name="phone" class="w-full" />
-          </div>
-        </div>
-
-        <div>
-          <label for="details" class="block font-semibold mb-2">Group size, preferred dates, and anything else we should know *</label>
-          <textarea
-            id="details"
-            name="details"
-            rows="4"
-            required
-            placeholder="e.g. 12 people, late May, staying near the Boardwalk, interested in surf history"
-            class="w-full"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
-      </form>
-
-      <div class="flex flex-wrap justify-center gap-4 mb-8">
-        <a href="tel:8312752566" class="btn btn-secondary inline-flex items-center gap-2">
-          831-275-2566
+        <a
+          href="mailto:hello@walksantacruz.com?subject=Team%20Tour%20Inquiry"
+          class="btn btn-lg mb-4 inline-block"
+        >
+          Email to Get Started &rarr;
         </a>
-        <a href="mailto:hello@walksantacruz.com" class="btn btn-secondary inline-flex items-center gap-2">
-          hello@walksantacruz.com
-        </a>
-        <a href="https://wa.me/18312752566" target="_blank" rel="noopener noreferrer" class="btn btn-secondary inline-flex items-center gap-2">
-          WhatsApp
-        </a>
+        <p class="text-sm text-muted-foreground">
+          Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
+        </p>
       </div>
 
-      <p class="text-sm text-muted-foreground text-center">
-        Worked with teams from startups to nonprofits to creative agencies. References available upon request.
-      </p>
+      <div class="bg-muted/50 rounded-xl p-6 text-sm text-muted-foreground">
+        <p class="font-semibold text-foreground mb-1">Payment for corporate bookings</p>
+        <p>After we confirm your booking, we'll send a custom Stripe invoice — easy for team expense submissions. We also accept Venmo, Zelle, and other common payment methods.</p>
+      </div>
     </div>
   </section>
 </Layout>
