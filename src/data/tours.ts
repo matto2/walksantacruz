@@ -155,7 +155,7 @@ export const tours: Tour[] = [
     duration: "1.5 hours",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Wednesday and Thursday at 1pm",
+    schedule: "Email hello@walksantacruz.com for availability",
     meetingPoint: {
       name: "Abbott Square Market, 118 Cooper St, Santa Cruz",
       url: "https://maps.app.goo.gl/M7uF1gUT19KMFiMW8",
@@ -364,7 +364,7 @@ export const tours: Tour[] = [
     duration: "90 minutes",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Monday and Tuesday at 1pm",
+    schedule: "Email hello@walksantacruz.com for availability",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
@@ -455,7 +455,7 @@ export const tours: Tour[] = [
       {
         question: "What time should I arrive and where exactly do we meet?",
         answer:
-          "Please arrive 10 minutes before the 1pm start time at the patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets - we recommend arriving 15-20 minutes early to find parking. The exact location will be provided in your confirmation email.",
+          "We'll confirm the exact meeting time and location when you book. We meet at the patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf. Look for your guide with a Walk Santa Cruz sign. Parking is available along nearby streets — we recommend arriving 15-20 minutes early.",
       },
       {
         question: "What if I need to leave the tour early?",
@@ -558,7 +558,7 @@ export const tours: Tour[] = [
     duration: "90 minutes",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Monday, Tuesday, Wednesday, and Thursday at 10am",
+    schedule: "Email hello@walksantacruz.com for availability",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
