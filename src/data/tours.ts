@@ -263,7 +263,7 @@ export const tours: Tour[] = [
       {
         question: "Can I book a private tour for my group?",
         answer:
-          "Absolutely! We love hosting private tours for families, friend groups, corporate teams, or special occasions. Private tours can be customized to your interests and schedule. Contact us at hello@walksantacruz.com or call 831-275-2566 to arrange your personalized experience. Check out our Custom Tours page for more ideas and inspiration.",
+          "Absolutely! We love hosting custom tours for solo travelers, couples, families, friend groups, corporate teams, or special occasions. Tours can be customized to your interests and vision. Contact us at hello@walksantacruz.com or call 831-275-2566 to arrange your experience. Check out our Custom Tours page for more ideas and inspiration.",
       },
       {
         question: "Is the tour wheelchair or stroller accessible?",
