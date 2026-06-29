@@ -1,0 +1,97 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../../layouts/Layout.astro";
+import PricingBlock from "../../components/PricingBlock.astro";
+import BookingCTA from "../../components/BookingCTA.astro";
+import { tours } from "../../data/tours";
+import mapBg from "../../assets/map-bg.jpg";
+---
+
+<Layout
+  title="Walking Tours in Santa Cruz | Walk Santa Cruz"
+  description="Four custom walking tours in Santa Cruz — Surf Walk, Heart of Downtown, Beach Hill Loop, and Custom. $45/person, kids 12 & under free. Email to reserve."
+>
+  <!-- Hero -->
+  <section class="container pt-10 pb-8 md:pt-16 md:pb-12">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Tours</h1>
+      <p class="text-xl text-muted-foreground leading-relaxed">
+        Four custom walking experiences in Santa Cruz. Email us with your preferred tour, date, and group size — we'll confirm availability and get you set up.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="container pb-8">
+    <div class="max-w-2xl mx-auto">
+      <PricingBlock />
+    </div>
+  </section>
+
+  <!-- Tour Cards -->
+  <section class="container pb-12 md:pb-20">
+    <div class="max-w-5xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-6">
+        {tours.map((tour) => (
+          <a
+            href={`/tours/${tour.slug}`}
+            data-astro-reload
+            class="card p-0 flex flex-col overflow-hidden group"
+          >
+            <div class="overflow-hidden">
+              <Image
+                src={tour.cardImage}
+                alt={tour.cardImageAlt}
+                class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+                quality={75}
+              />
+            </div>
+            <div class="px-6 pt-4 pb-6 flex flex-col flex-1">
+              <h2 class="text-xl font-bold mb-2">{tour.title}</h2>
+              <p class="text-muted-foreground mb-4 flex-1">{tour.shortDescription}</p>
+              <ul class="text-sm text-muted-foreground space-y-1 mb-5 [&_strong]:text-foreground">
+                <li><strong>Duration:</strong> {tour.duration}</li>
+                <li><strong>Schedule:</strong> {tour.schedule}</li>
+                <li><strong>Price:</strong> {tour.price}</li>
+              </ul>
+              <span class="btn w-full text-center">Explore this tour →</span>
+            </div>
+          </a>
+        ))}
+
+        <!-- Custom Tours card -->
+        <a
+          href="/private-tours"
+          class="card p-0 flex flex-col overflow-hidden group"
+        >
+          <div class="overflow-hidden bg-primary/10 flex items-center justify-center h-56">
+            <div class="text-center p-8">
+              <p class="text-5xl mb-3">🗺️</p>
+              <p class="text-lg font-semibold text-primary">Build Your Own Tour</p>
+            </div>
+          </div>
+          <div class="px-6 pt-4 pb-6 flex flex-col flex-1">
+            <h2 class="text-xl font-bold mb-2">Custom Tours</h2>
+            <p class="text-muted-foreground mb-4 flex-1">
+              Not seeing exactly what you want? Tell us your vision — we'll design a route around your group's interests, timeline, and pace.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-5 [&_strong]:text-foreground">
+              <li><strong>Duration:</strong> Flexible</li>
+              <li><strong>Schedule:</strong> On request</li>
+              <li><strong>Price:</strong> Custom quote</li>
+            </ul>
+            <span class="btn w-full text-center">Design your tour →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="container pb-16 md:pb-24">
+    <div class="max-w-2xl mx-auto">
+      <BookingCTA subject="Tour Booking" />
+    </div>
+  </section>
+</Layout>
