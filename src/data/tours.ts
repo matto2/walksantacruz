@@ -83,12 +83,11 @@ export interface Tour {
 
   // Logistics
   duration: string;
-  price: string;
+  price: string; // display string e.g. "$45/person · Kids 12 & under free"
   adultPrice: number;
-  childPrice: number;
   schedule: string;
   meetingPoint: MeetingPoint;
-  bookingUrl: string;
+  bookingUrl: string; // mailto: URL
 
   // Detailed Content
   storytelling: string;
@@ -104,9 +103,6 @@ export interface Tour {
 
   // Related
   relatedTourSlugs: string[];
-
-  // FareHarbor
-  fareharborCalendarId?: string;
 }
 
 // Tour Data
@@ -157,9 +153,8 @@ export const tours: Tour[] = [
     ],
 
     duration: "1.5 hours",
-    price: "Adult $45 / Child $30",
+    price: "$45/person · Kids 12 & under free",
     adultPrice: 45,
-    childPrice: 30,
     schedule: "Wednesday and Thursday at 1pm",
     meetingPoint: {
       name: "Abbott Square Market, 118 Cooper St, Santa Cruz",
@@ -170,7 +165,7 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?address=118%20Cooper%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "https://fareharbor.com/embeds/book/walksantacruz/items/673407/calendar/2025/12/?full-items=yes",
+      "mailto:hello@walksantacruz.com?subject=Heart%20of%20Downtown%20Booking",
 
     storytelling:
       "Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
@@ -258,7 +253,7 @@ export const tours: Tour[] = [
       {
         question: "Is the tour suitable for children?",
         answer:
-          "Yes! Children are welcome and we offer discounted pricing for kids under 12 and seniors. Our guides are experienced at engaging younger visitors with interesting stories, fun facts, and interactive elements. However, please note that the tour involves about 90 minutes of walking and some stairs. We recommend this tour for children ages 6 and up who are comfortable walking for extended periods.",
+          "Yes! Children are welcome and kids 12 and under are free with a paying adult. Our guides are experienced at engaging younger visitors with interesting stories, fun facts, and interactive elements. However, please note that the tour involves about 90 minutes of walking and some stairs. We recommend this tour for children ages 6 and up who are comfortable walking for extended periods.",
       },
       {
         question: "What happens if it rains or the weather is bad?",
@@ -268,7 +263,7 @@ export const tours: Tour[] = [
       {
         question: "Can I book a private tour for my group?",
         answer:
-          "Absolutely! We love hosting private tours for families, friend groups, corporate teams, or special occasions. Private tours can be customized to your interests and schedule. Contact us at hello@walksantacruz.com or call 831-275-2566 to arrange your personalized experience. Check out our Private Tours page for more ideas and inspiration.",
+          "Absolutely! We love hosting private tours for families, friend groups, corporate teams, or special occasions. Private tours can be customized to your interests and schedule. Contact us at hello@walksantacruz.com or call 831-275-2566 to arrange your personalized experience. Check out our Custom Tours page for more ideas and inspiration.",
       },
       {
         question: "Is the tour wheelchair or stroller accessible?",
@@ -309,8 +304,6 @@ export const tours: Tour[] = [
     ],
 
     relatedTourSlugs: ["surfing-beach-culture", "beach-hill-loop"],
-
-    fareharborCalendarId: "673407",
   },
 
   {
@@ -369,9 +362,8 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "Adult $45 / Child $30",
+    price: "$45/person · Kids 12 & under free",
     adultPrice: 45,
-    childPrice: 30,
     schedule: "Monday and Tuesday at 1pm",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
@@ -382,7 +374,7 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "https://fareharbor.com/embeds/book/walksantacruz/items/686749/calendar/2025/12/?full-items=yes",
+      "mailto:hello@walksantacruz.com?subject=Beach%20Hill%20Booking",
 
     storytelling:
       "A 90-minute, roughly 2-mile loop through two of Santa Cruz's most distinctive neighborhoods — starting at the beach and winding your way back through downtown. Start at the beach and walk up through Beach Hill's historic estates, descend via a hidden staircase locals love, then explore downtown's vibrant streets and architectural gems — Victorian, Craftsman, and Art Deco buildings that survived earthquake and fire. Loop back through the stately Walnut Avenue Victorian neighborhood to complete the journey. On some tours, we've been spontaneously invited inside a historic Victorian-era home — that's the kind of thing that only happens in small groups with a local guide. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. Perfect for history enthusiasts who want a focused deep-dive into two of the city's most storied neighborhoods.",
@@ -458,7 +450,7 @@ export const tours: Tour[] = [
       {
         question: "Is this tour family-friendly?",
         answer:
-          "Yes, children are welcome and receive discounted pricing! It's best suited for children age 8 and up who are comfortable with walking and a few hills. Our guides are skilled at engaging younger participants. For families with younger kids, we recommend a private tour that we can customize to your needs.",
+          "Yes, children are welcome and kids 12 and under are free with a paying adult! It's best suited for children age 8 and up who are comfortable with walking and a few hills. Our guides are skilled at engaging younger participants. For families with younger kids, we recommend a private tour that we can customize to your needs.",
       },
       {
         question: "What time should I arrive and where exactly do we meet?",
@@ -501,8 +493,6 @@ export const tours: Tour[] = [
     ],
 
     relatedTourSlugs: ["surfing-beach-culture", "downtown-mission-hill"],
-
-    fareharborCalendarId: "686749",
   },
 
   {
@@ -566,9 +556,8 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "Adult $45 / Child $30",
+    price: "$45/person · Kids 12 & under free",
     adultPrice: 45,
-    childPrice: 30,
     schedule: "Monday, Tuesday, Wednesday, and Thursday at 10am",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
@@ -579,7 +568,7 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "https://fareharbor.com/embeds/book/walksantacruz/items/686192/calendar/2025/12/?full-items=yes",
+      "mailto:hello@walksantacruz.com?subject=Surf%20Walk%20Booking",
 
     storytelling:
       "In 1885, three Hawaiian princes rode waves at the San Lorenzo Rivermouth — and mainland American surfing was born. This is the only tour that walks you to that exact spot and tells you the full story. Santa Cruz isn't just a surf town — it's THE surf town. This is where mainland surfing in America truly began, where wetsuit innovation flourished, and where surf culture evolved from Hawaiian roots into the phenomenon it is today. On this oceanfront journey, you'll walk in the footsteps of legends — from those three Hawaiian princes to the modern shapers and surfers who continue to push the sport forward. We'll explore iconic surf spots, learn to read the waves and conditions, discover the innovations that flourished in Santa Cruz (like wetsuit and skateboard technology), and understand how surf culture permeates every aspect of this coastal community. Along the way, you'll also encounter sea lions, harbor seals, seabirds, and maybe even dolphins or whales, experiencing the vibrant marine ecosystem that makes Santa Cruz special. This tour isn't just about surfing history — it's about understanding how the ocean shapes everything about life in this unique coastal town.",
@@ -701,7 +690,7 @@ export const tours: Tour[] = [
       {
         question: "Is this tour appropriate for children?",
         answer:
-          "Yes! Kids often love this tour because there's so much to see — surfers, sea lions, waves, and more. There is one hill along the route, but no stairs, and we keep a relaxed pace. We offer discounted pricing for kids under 12. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
+          "Yes! Kids often love this tour because there's so much to see — surfers, sea lions, waves, and more. There is one hill along the route, but no stairs, and we keep a relaxed pace. Kids 12 and under are free with a paying adult. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
       },
       {
         question: "Can we stop at the Surfing Museum?",
@@ -734,8 +723,6 @@ export const tours: Tour[] = [
     ],
 
     relatedTourSlugs: ["downtown-mission-hill", "beach-hill-loop"],
-
-    fareharborCalendarId: "686192",
   },
 ];
 

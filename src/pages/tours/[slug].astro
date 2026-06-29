@@ -133,13 +133,7 @@ const tourStructuredData = {
 
         <div class="space-y-1 mb-4">
           <div>
-            <span class="font-bold">ADULT (18+):</span> ${tour.adultPrice}
-          </div>
-          <div>
-            <span class="font-bold">CHILD (6-17):</span> ${tour.childPrice}
-          </div>
-          <div class="text-sm text-muted-foreground">
-            Kids 5 and under are FREE with adult ticket purchased
+            <span class="font-bold">Price:</span> $45/person · Kids 12 &amp; under free
           </div>
         </div>
 
@@ -244,31 +238,16 @@ const tourStructuredData = {
             </div>
             <div>
               <p class="font-semibold mb-1">Is this OK for kids?</p>
-              <p class="text-muted-foreground">Yes! Kids 6–17 are $30 and kids 5 and under are free with a paid adult. The stories are engaging enough to hold most kids' attention, and the ocean views help.</p>
+              <p class="text-muted-foreground">Yes! Kids 12 and under are free with a paying adult. The stories are engaging enough to hold most kids' attention, and the ocean views help.</p>
             </div>
             <div>
               <p class="font-semibold mb-1">How far in advance do I need to book?</p>
-              <p class="text-muted-foreground">We recommend booking at least a few days ahead — spots go fast on weekends. Full refund if you cancel 24+ hours before the tour.</p>
+              <p class="text-muted-foreground">We recommend booking at least a few days ahead — spots go fast. If you need to cancel or reschedule, email us as early as possible and we'll do our best to accommodate.</p>
             </div>
           </div>
         </div>
       )}
 
-      <!-- FareHarbor Calendar -->
-      {tour.fareharborCalendarId && (
-        <div class="mb-12 text-center">
-          <h3 class="text-2xl md:text-3xl font-bold mb-8">
-            Ready to Book? View Availability
-          </h3>
-          <p class="text-base font-bold mb-4" style="color: #007a99;">Pick a date, then choose from available tour times.</p>
-          <script is:inline data-tour-calendar={tour.fareharborCalendarId} src={`https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${tour.fareharborCalendarId}/?fallback=simple&full-items=yes&flow=1491352`}></script>
-          <p class="text-sm mt-3"><strong>Adult (18+):</strong> ${tour.adultPrice} &nbsp;·&nbsp; <strong>Child (6-17):</strong> ${tour.childPrice} &nbsp;·&nbsp; Kids 5 and under are FREE with adult ticket</p>
-          <p class="text-sm font-semibold text-foreground mt-1">Full refund if cancelled 24+ hours before tour start time</p>
-          <a href="/#book" data-astro-reload class="text-primary hover:underline mt-6 inline-block">
-            See All Tours Availability
-          </a>
-        </div>
-      )}
 
       <!-- Important Information -->
       {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
