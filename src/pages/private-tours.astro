@@ -235,53 +235,48 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
         </p>
       </div>
 
-      <!-- Secondary: optional inquiry form -->
-      <details class="group">
-        <summary class="cursor-pointer text-center text-primary font-semibold mb-6 list-none flex items-center justify-center gap-2">
-          <span>Or fill out a quick form and we'll reach out to you</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
-        </summary>
+      <!-- Optional inquiry form -->
+      <p class="text-center text-primary font-semibold mb-6">Or fill out a quick form and we'll reach out to you</p>
 
-        <form
-          name="custom-tour"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="form space-y-5 pt-4"
-        >
-          <input type="hidden" name="form-name" value="custom-tour" />
-          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+      <form
+        name="custom-tour"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="form space-y-5"
+      >
+        <input type="hidden" name="form-name" value="custom-tour" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
-          <div>
-            <label for="name" class="block font-semibold mb-2">Name *</label>
-            <input type="text" id="name" name="name" required class="w-full" />
-          </div>
-          <div>
-            <label for="email" class="block font-semibold mb-2">Email *</label>
-            <input type="email" id="email" name="email" required class="w-full" />
-          </div>
-          <div>
-            <label for="groupsize" class="block font-semibold mb-2">Group size</label>
-            <input type="text" id="groupsize" name="group-size" placeholder="e.g. 2 adults, 1 child" class="w-full" />
-          </div>
-          <div>
-            <label for="date" class="block font-semibold mb-2">Preferred date</label>
-            <input type="text" id="date" name="preferred-date" placeholder="e.g. July 15 or any Tuesday in August" class="w-full" />
-          </div>
-          <div>
-            <label for="interests" class="block font-semibold mb-2">What would you like to explore? *</label>
-            <textarea
-              id="interests"
-              name="interests"
-              rows="4"
-              required
-              placeholder="Surf history, Victorian architecture, filming locations, food tour, UCSC campus, nature walk..."
-              class="w-full"
-            ></textarea>
-          </div>
-          <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
-        </form>
-      </details>
+        <div>
+          <label for="name" class="block font-semibold mb-2">Name *</label>
+          <input type="text" id="name" name="name" required class="w-full" />
+        </div>
+        <div>
+          <label for="email" class="block font-semibold mb-2">Email *</label>
+          <input type="email" id="email" name="email" required class="w-full" />
+        </div>
+        <div>
+          <label for="groupsize" class="block font-semibold mb-2">Group size</label>
+          <input type="text" id="groupsize" name="group-size" placeholder="e.g. 2 adults, 1 child" class="w-full" />
+        </div>
+        <div>
+          <label for="date" class="block font-semibold mb-2">Preferred date</label>
+          <input type="text" id="date" name="preferred-date" placeholder="e.g. July 15 or any Tuesday in August" class="w-full" />
+        </div>
+        <div>
+          <label for="interests" class="block font-semibold mb-2">What would you like to explore? *</label>
+          <textarea
+            id="interests"
+            name="interests"
+            rows="4"
+            required
+            placeholder="Surf history, Victorian architecture, filming locations, food tour, UCSC campus, nature walk..."
+            class="w-full"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
+      </form>
 
     </div>
   </section>

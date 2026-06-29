@@ -255,10 +255,56 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
         </p>
       </div>
 
-      <div class="bg-muted/50 rounded-xl p-6 text-sm text-muted-foreground">
+      <div class="bg-muted/50 rounded-xl p-6 text-sm text-muted-foreground mb-10">
         <p class="font-semibold text-foreground mb-1">Payment for corporate bookings</p>
         <p>After we confirm your booking, we'll send a custom Stripe invoice — easy for team expense submissions. We also accept Venmo, Zelle, and other common payment methods.</p>
       </div>
+
+      <!-- Optional inquiry form -->
+      <p class="text-center text-primary font-semibold mb-6">Or fill out a quick form and we'll reach out to you</p>
+
+      <form
+        name="corporate-tour"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="form space-y-5"
+      >
+        <input type="hidden" name="form-name" value="corporate-tour" />
+        <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <div>
+          <label for="corp-name" class="block font-semibold mb-2">Name *</label>
+          <input type="text" id="corp-name" name="name" required class="w-full" />
+        </div>
+        <div>
+          <label for="corp-email" class="block font-semibold mb-2">Email *</label>
+          <input type="email" id="corp-email" name="email" required class="w-full" />
+        </div>
+        <div>
+          <label for="corp-company" class="block font-semibold mb-2">Company or group name</label>
+          <input type="text" id="corp-company" name="company" placeholder="e.g. Acme Co, Engineering Team" class="w-full" />
+        </div>
+        <div>
+          <label for="corp-groupsize" class="block font-semibold mb-2">Group size</label>
+          <input type="text" id="corp-groupsize" name="group-size" placeholder="e.g. 12 people" class="w-full" />
+        </div>
+        <div>
+          <label for="corp-date" class="block font-semibold mb-2">Preferred date</label>
+          <input type="text" id="corp-date" name="preferred-date" placeholder="e.g. August 20 or the week of Sept 8" class="w-full" />
+        </div>
+        <div>
+          <label for="corp-goals" class="block font-semibold mb-2">What are you hoping to get out of it?</label>
+          <textarea
+            id="corp-goals"
+            name="goals"
+            rows="4"
+            placeholder="Team bonding, a fun offsite activity, learning about Santa Cruz history, celebrating a milestone..."
+            class="w-full"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
+      </form>
     </div>
   </section>
 </Layout>
