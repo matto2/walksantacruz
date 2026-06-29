@@ -153,7 +153,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "1.5 hours",
-    price: "$45/person · Kids 12 & under free",
+    price: "$180 for up to 4 guests · $45/person for groups of 5–10 · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
     schedule: "Wednesday and Thursday at 1pm",
     meetingPoint: {
@@ -362,7 +362,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$45/person · Kids 12 & under free",
+    price: "$180 for up to 4 guests · $45/person for groups of 5–10 · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
     schedule: "Monday and Tuesday at 1pm",
     meetingPoint: {
@@ -556,7 +556,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$45/person · Kids 12 & under free",
+    price: "$180 for up to 4 guests · $45/person for groups of 5–10 · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
     schedule: "Monday, Tuesday, Wednesday, and Thursday at 10am",
     meetingPoint: {
