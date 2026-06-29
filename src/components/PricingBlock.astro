@@ -1,0 +1,29 @@
+---
+interface Props {
+  customNote?: string;
+}
+const { customNote } = Astro.props;
+---
+
+<div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8">
+  <h3 class="text-xl font-bold mb-4">Pricing</h3>
+  <div class="space-y-3">
+    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
+      <span class="text-muted-foreground">Adults (group of 4+)</span>
+      <span class="font-semibold">$45 <span class="font-normal text-muted-foreground text-sm">per person</span></span>
+    </div>
+    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
+      <span class="text-muted-foreground">Solo, couple, or trio</span>
+      <span class="font-semibold">$180 <span class="font-normal text-muted-foreground text-sm">flat — full private-group experience</span></span>
+    </div>
+    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
+      <span class="text-muted-foreground">Children 12 & under</span>
+      <span class="font-semibold" style="color: #ed672d;">Free</span>
+    </div>
+    <div class="flex justify-between items-baseline gap-4">
+      <span class="text-muted-foreground">Groups 8+ & corporate</span>
+      <span class="font-semibold">Custom — <a href="mailto:hello@walksantacruz.com?subject=Tour%20Booking" class="text-primary underline">email for quote</a></span>
+    </div>
+  </div>
+  {customNote && <p class="mt-4 text-sm text-muted-foreground italic">{customNote}</p>}
+</div>
