@@ -4,7 +4,6 @@ import Layout from "../../layouts/Layout.astro";
 import PricingBlock from "../../components/PricingBlock.astro";
 import BookingCTA from "../../components/BookingCTA.astro";
 import { tours } from "../../data/tours";
-import mapBg from "../../assets/map-bg.jpg";
 ---
 
 <Layout
@@ -63,6 +62,7 @@ import mapBg from "../../assets/map-bg.jpg";
         <!-- Custom Tours card -->
         <a
           href="/private-tours"
+          data-astro-reload
           class="card p-0 flex flex-col overflow-hidden group"
         >
           <div class="overflow-hidden bg-primary/10 flex items-center justify-center h-56">
