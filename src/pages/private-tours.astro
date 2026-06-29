@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import mapBg from "../assets/map-bg.jpg";
 
@@ -19,8 +18,8 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 ---
 
 <Layout
-  title="Private Tours - Customized Santa Cruz Experiences | Walk Santa Cruz"
-  description="Create your perfect Santa Cruz adventure with our private tours. From coastal walks to surf history, UCSC tours to hidden gems - we'll customize an experience just for you."
+  title="Custom Tours - Design Your Own Santa Cruz Experience | Walk Santa Cruz"
+  description="Design a custom walking tour in Santa Cruz. Tell us your vision — surf history, architecture, food, filming locations, or anything in between. We'll build it around your group."
 >
   <!-- Hero Section -->
   <section class="full-bleed relative py-8 md:py-12">
@@ -31,10 +30,8 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
     </div>
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Your Santa Cruz. Your Schedule. Your Story.</h1>
-        <p class="text-xl text-muted-foreground">
-          Private tours for families, couples, and groups — built around you.
-        </p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Custom Tours</h1>
+        <p class="text-2xl text-muted-foreground font-medium mb-2">Design your own Santa Cruz experience.</p>
       </div>
     </div>
   </section>
@@ -54,7 +51,10 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       <!-- Pricing -->
       <div class="bg-primary/5 border border-primary/20 rounded-xl px-6 py-5 mb-8">
         <p class="font-bold text-foreground mb-1">Pricing</p>
-        <p class="text-muted-foreground">Starts at <strong>$250 for up to 6 guests</strong> · Up to <strong>$600 for up to 12 guests</strong> · Additional guests $35 each. <a href="#contact" class="text-primary underline">Contact us</a> for a custom quote.</p>
+        <p class="text-muted-foreground">
+          Custom pricing based on your group, interests, and vision. Solo travelers, couples, and small groups welcome — we'll provide a quote based on your needs.
+          <a href="mailto:hello@walksantacruz.com?subject=Custom%20Tour%20Inquiry" class="text-primary underline ml-1">Email us to get started.</a>
+        </p>
       </div>
 
       <!-- Hero photo -->
@@ -213,97 +213,76 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
   <!-- Contact/Booking Section -->
   <section class="container py-12 md:py-16">
     <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-12">
+      <div class="text-center mb-10">
         <h2 class="text-3xl md:text-4xl font-bold mb-4" id="contact">
-          Ready to Plan Your Private Tour?
+          Tell Us Your Vision
         </h2>
         <p class="text-xl text-muted-foreground">
-          Tell us about your group and what you'd like to explore — we'll take it from there.
+          Email us with your group size, preferred date, and what you'd like to explore.
         </p>
       </div>
 
-      <!-- Contact Options -->
-      <div class="flex flex-wrap justify-center gap-4 mb-8">
+      <!-- Primary: email CTA -->
+      <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center mb-10">
         <a
-          href="tel:8312752566"
-          class="btn btn-secondary inline-flex items-center gap-2"
+          href="mailto:hello@walksantacruz.com?subject=Custom%20Tour%20Inquiry"
+          class="btn btn-lg mb-4 inline-block"
         >
-          <Icon name="lucide:phone" class="w-5 h-5" />
-          831-275-2566
+          Email to Get Started →
         </a>
-        <a
-          href="mailto:hello@walksantacruz.com"
-          class="btn btn-secondary inline-flex items-center gap-2"
-        >
-          <Icon name="lucide:mail" class="w-5 h-5" />
-          hello@walksantacruz.com
-        </a>
-        <a
-          href="https://wa.me/18312752566"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn-secondary inline-flex items-center gap-2"
-        >
-          <Icon name="lucide:message-circle" class="w-5 h-5" />
-          WhatsApp
-        </a>
+        <p class="text-sm text-muted-foreground">
+          Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
+        </p>
       </div>
 
-      <!-- Private Tour Request Form -->
-      <div>
+      <!-- Secondary: optional inquiry form -->
+      <details class="group">
+        <summary class="cursor-pointer text-center text-primary font-semibold mb-6 list-none flex items-center justify-center gap-2">
+          <span>Or fill out a quick form and we'll reach out to you</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform group-open:rotate-180"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+
         <form
-          name="private-tour"
+          name="custom-tour"
           method="POST"
           data-netlify="true"
           netlify-honeypot="bot-field"
-          class="form space-y-6"
+          class="form space-y-5 pt-4"
         >
-          <input type="hidden" name="form-name" value="private-tour" />
-          <p class="hidden">
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
+          <input type="hidden" name="form-name" value="custom-tour" />
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
 
           <div>
             <label for="name" class="block font-semibold mb-2">Name *</label>
             <input type="text" id="name" name="name" required class="w-full" />
           </div>
-
           <div>
             <label for="email" class="block font-semibold mb-2">Email *</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              class="w-full"
-            />
+            <input type="email" id="email" name="email" required class="w-full" />
           </div>
-
           <div>
-            <label for="phone" class="block font-semibold mb-2">Phone</label>
-            <input type="tel" id="phone" name="phone" class="w-full" />
+            <label for="groupsize" class="block font-semibold mb-2">Group size</label>
+            <input type="text" id="groupsize" name="group-size" placeholder="e.g. 2 adults, 1 child" class="w-full" />
           </div>
-
           <div>
-            <label for="message" class="block font-semibold mb-2"
-              >Tell us about your ideal tour *</label
-            >
+            <label for="date" class="block font-semibold mb-2">Preferred date</label>
+            <input type="text" id="date" name="preferred-date" placeholder="e.g. July 15 or any Tuesday in August" class="w-full" />
+          </div>
+          <div>
+            <label for="interests" class="block font-semibold mb-2">What would you like to explore? *</label>
             <textarea
-              id="message"
-              name="message"
-              rows="6"
+              id="interests"
+              name="interests"
+              rows="4"
               required
-              placeholder="Share any specific interests, accessibility needs, or special requests..."
-              class="w-full"></textarea>
+              placeholder="Surf history, Victorian architecture, filming locations, food tour, UCSC campus, nature walk..."
+              class="w-full"
+            ></textarea>
           </div>
-
-          <button type="submit" class="btn btn-lg w-full"
-            >Book a Private Tour</button
-          >
+          <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
         </form>
-      </div>
+      </details>
+
     </div>
   </section>
 </Layout>
