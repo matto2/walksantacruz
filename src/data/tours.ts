@@ -155,7 +155,7 @@ export const tours: Tour[] = [
     duration: "1.5 hours",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Email hello@walksantacruz.com for availability",
+    schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
       name: "Abbott Square Market, 118 Cooper St, Santa Cruz",
       url: "https://maps.app.goo.gl/M7uF1gUT19KMFiMW8",
@@ -364,7 +364,7 @@ export const tours: Tour[] = [
     duration: "90 minutes",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Email hello@walksantacruz.com for availability",
+    schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",
@@ -558,7 +558,7 @@ export const tours: Tour[] = [
     duration: "90 minutes",
     price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
     adultPrice: 45,
-    schedule: "Email hello@walksantacruz.com for availability",
+    schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
       name: "Patio outside of the Ideal Bar & Grill, 106 Beach St — at the foot of the Santa Cruz Wharf",
       url: "https://www.google.com/maps/search/?api=1&query=Ideal+Bar+%26+Grill,+106+Beach+St,+Santa+Cruz,+CA+95060",

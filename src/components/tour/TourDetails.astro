@@ -55,7 +55,7 @@ const { duration, price, schedule, meetingPoint, bookingUrl } = Astro.props;
         />
         <div class="flex-1">
           <div class="font-semibold text-sm mb-1">Availability</div>
-          <div class="text-sm text-muted-foreground">{schedule}</div>
+          <div class="text-sm text-muted-foreground" set:html={schedule} />
         </div>
       </div>
 

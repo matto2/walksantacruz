@@ -51,7 +51,7 @@ import { tours } from "../../data/tours";
               <p class="text-muted-foreground mb-4 flex-1">{tour.shortDescription}</p>
               <ul class="text-sm text-muted-foreground space-y-1 mb-5 [&_strong]:text-foreground">
                 <li><strong>Duration:</strong> {tour.duration}</li>
-                <li><strong>Availability:</strong> {tour.schedule}</li>
+                <li><strong>Availability:</strong> <span set:html={tour.schedule} /></li>
                 <li><strong>Price:</strong> {tour.price}</li>
               </ul>
               <span class="btn w-full text-center">Explore this tour →</span>
@@ -78,7 +78,7 @@ import { tours } from "../../data/tours";
             </p>
             <ul class="text-sm text-muted-foreground space-y-1 mb-5 [&_strong]:text-foreground">
               <li><strong>Duration:</strong> Flexible</li>
-              <li><strong>Availability:</strong> Email hello@walksantacruz.com for availability</li>
+              <li><strong>Availability:</strong> Email <a href="mailto:hello@walksantacruz.com" class="underline">hello@walksantacruz.com</a> for availability</li>
               <li><strong>Price:</strong> Custom quote</li>
             </ul>
             <span class="btn w-full text-center">Design your tour →</span>
