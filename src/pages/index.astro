@@ -140,56 +140,41 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Choose Your Tour</h2>
 
-      <!-- Surf Walk — full-width featured card -->
-      <a
-        href="/tours/surfing-beach-culture"
-        data-astro-reload
-        class="card p-0 flex flex-col md:flex-row overflow-hidden group mb-4"
-      >
-        <div class="overflow-hidden md:w-2/5 flex-shrink-0 relative">
-          <Image
-            src={surfTour.cardImage}
-            alt={surfTour.cardImageAlt}
-            class="w-full h-64 md:h-full object-cover object-top md:object-[center_30%] group-hover:scale-105 transition-transform duration-300"
-            loading="lazy"
-            quality={75}
-          />
-          <p
-            class="absolute bottom-1 right-2 text-white/70 leading-none"
-            style="font-size:10px;"
-          >
-            UCSC Digital Archives / Herry Mayo Collection
-          </p>
-        </div>
-        <div class="px-6 pt-4 pb-6 flex flex-col flex-1 md:justify-center">
-          <div class="mb-3">
-            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1" style="background-color: #d0eef5; color: #007a99;">Surf & Coastal Experience</span>
+      <!-- Tour cards -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1: Surf Walk -->
+        <a
+          href="/tours/surfing-beach-culture"
+          data-astro-reload
+          class="card p-0 flex flex-col overflow-hidden group"
+        >
+          <div class="overflow-hidden relative">
+            <Image
+              src={surfTour.cardImage}
+              alt={surfTour.cardImageAlt}
+              class="w-full h-56 object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-300"
+              loading="lazy"
+              quality={75}
+            />
           </div>
-          <h3 class="text-2xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
-          <p class="text-muted-foreground mb-4 flex-1">
-            Discover the exact spot where mainland surfing began in 1885. Led by
-            a surf magazine co-founder with 45 years in the water — and designed
-            to be unforgettable.
-          </p>
-          <ul
-            class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
-          >
-            <li>
-              <strong>Best for:</strong> surfers, ocean lovers, first-time visitors,
-              and anyone who wants a story they'll always remember
-            </li>
-            <li><strong>Duration:</strong> 90 minutes</li>
-            <li><strong>Schedule:</strong> Mon–Thu, 10am</li>
-            <li>
-              <strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat
-            </li>
-          </ul>
-          <span class="btn w-full md:w-auto text-center">Explore this tour →</span>
-        </div>
-      </a>
+          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
+            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">Surf & Coastal Experience</span>
+            <h3 class="text-xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
+            <p class="text-muted-foreground mb-4 flex-1">
+              Discover the exact spot where mainland surfing began in 1885. Led by
+              a surf magazine co-founder with 45 years in the water — and designed
+              to be unforgettable.
+            </p>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
+              <li><strong>Best for:</strong> surfers, ocean lovers, first-time visitors</li>
+              <li><strong>Duration:</strong> 90 minutes</li>
+              <li><strong>Schedule:</strong> Mon–Thu, 10am</li>
+              <li><strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat</li>
+            </ul>
+            <span class="btn w-full text-center">Explore this tour →</span>
+          </div>
+        </a>
 
-      <!-- Secondary tours -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
         <!-- Card 2: History & Neighborhood -->
         <a
           href="/tours/downtown-mission-hill"
@@ -213,19 +198,13 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               downtown streets, local architecture, and the history and
               character of the city locals love.
             </p>
-            <ul
-              class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
-            >
-              <li>
-                <strong>Best for:</strong> first-time visitors and shorter outings
-              </li>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
+              <li><strong>Best for:</strong> first-time visitors and shorter outings</li>
               <li><strong>Duration:</strong> 90 minutes</li>
               <li><strong>Schedule:</strong> Wed–Thu, 1pm</li>
-              <li>
-                <strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat
-              </li>
+              <li><strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat</li>
             </ul>
-            <span class="btn w-full md:w-auto text-center">Explore this tour →</span>
+            <span class="btn w-full text-center">Explore this tour →</span>
           </div>
         </a>
 
@@ -246,52 +225,17 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
           </div>
           <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
             <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">Old waterfront &amp; downtown stories</span>
-            <h3 class="text-xl font-bold mb-3">
-              Beach Hill to Downtown Santa Cruz Loop
-            </h3>
+            <h3 class="text-xl font-bold mb-3">Beach Hill to Downtown Santa Cruz Loop</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               Beach Hill's grand historic estates plus the Victorian, Craftsman, and Art Deco streets of downtown — neighborhoods worth experiencing in a whole new way.
             </p>
-            <ul
-              class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground"
-            >
-              <li>
-                <strong>Best for:</strong> deeper exploration and history lovers
-              </li>
+            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
+              <li><strong>Best for:</strong> deeper exploration and history lovers</li>
               <li><strong>Duration:</strong> 90 minutes</li>
               <li><strong>Schedule:</strong> Mon–Tue, 1pm</li>
-              <li>
-                <strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat
-              </li>
+              <li><strong>Price:</strong> $45/person · Kids 12 &amp; under free · Solo/couple/trio: $180 flat</li>
             </ul>
-            <span class="btn w-full md:w-auto text-center">Explore this tour →</span>
-          </div>
-        </a>
-
-        <!-- Card 4: Custom Tours -->
-        <a
-          href="/private-tours"
-          data-astro-reload
-          class="card p-0 flex flex-col overflow-hidden group"
-        >
-          <div class="overflow-hidden bg-primary/10 flex items-center justify-center h-56">
-            <div class="text-center p-6">
-              <p class="text-5xl mb-2">🗺️</p>
-              <p class="font-semibold text-primary">Build Your Own</p>
-            </div>
-          </div>
-          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
-            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">Your vision, your route</span>
-            <h3 class="text-xl font-bold mb-3">Custom Tours</h3>
-            <p class="text-muted-foreground mb-4 flex-1">
-              Design your own walk — surf history, architecture, food, filming locations, or anything in between.
-            </p>
-            <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
-              <li><strong>Best for:</strong> groups with a specific vision</li>
-              <li><strong>Duration:</strong> Flexible</li>
-              <li><strong>Price:</strong> Custom quote</li>
-            </ul>
-            <span class="btn w-full md:w-auto text-center">Design your tour →</span>
+            <span class="btn w-full text-center">Explore this tour →</span>
           </div>
         </a>
       </div>
