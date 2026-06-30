@@ -153,7 +153,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "1.5 hours",
-    price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
+    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
@@ -362,7 +362,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
+    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
@@ -556,7 +556,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$180 for up to 4 guests · +$45 for each additional guest · Kids 12 & under free · Contact us for groups over 10",
+    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
