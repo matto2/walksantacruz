@@ -156,7 +156,51 @@ const tourStructuredData = {
         </div>
 
         <PricingBlock />
-        <BookingCTA subject={bookingSubject} />
+
+        <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center mb-8">
+          <a href={`mailto:hello@walksantacruz.com?subject=${encodeURIComponent(bookingSubject)}`} class="btn btn-lg mb-4">
+            Reserve Your Tour
+          </a>
+          <p class="text-sm text-muted-foreground">
+            Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
+          </p>
+        </div>
+
+        <p class="text-center text-primary font-semibold mb-6">Or fill out a quick form and we'll reach out to you</p>
+
+        <form
+          name="tour-inquiry"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="form space-y-5 mb-8"
+        >
+          <input type="hidden" name="form-name" value="tour-inquiry" />
+          <input type="hidden" name="tour" value={tour.title} />
+          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <div>
+            <label for="inq-name" class="block font-semibold mb-2">Name *</label>
+            <input type="text" id="inq-name" name="name" required class="w-full" />
+          </div>
+          <div>
+            <label for="inq-email" class="block font-semibold mb-2">Email *</label>
+            <input type="email" id="inq-email" name="email" required class="w-full" />
+          </div>
+          <div>
+            <label for="inq-groupsize" class="block font-semibold mb-2">Group size</label>
+            <input type="text" id="inq-groupsize" name="group-size" placeholder="e.g. 2 adults, 1 child" class="w-full" />
+          </div>
+          <div>
+            <label for="inq-date" class="block font-semibold mb-2">Preferred date</label>
+            <input type="text" id="inq-date" name="preferred-date" placeholder="e.g. July 15 or any Tuesday in August" class="w-full" />
+          </div>
+          <div>
+            <label for="inq-message" class="block font-semibold mb-2">Anything else? (optional)</label>
+            <textarea id="inq-message" name="message" rows="3" class="w-full"></textarea>
+          </div>
+          <button type="submit" class="btn btn-lg w-full">Request this tour</button>
+        </form>
       </div>
 
       <!-- Featured quote: Mindy (Surf Walk only) -->
