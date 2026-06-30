@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import PricingBlock from "../components/PricingBlock.astro";
 import mapBg from "../assets/map-bg.jpg";
 
 // Import private tour photos - EASILY SWAP THESE by changing the filenames below
@@ -18,8 +19,8 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 ---
 
 <Layout
-  title="Private Tours - Design Your Own Santa Cruz Experience | Walk Santa Cruz"
-  description="Design a custom walking tour in Santa Cruz. Tell us your vision — surf history, architecture, food, filming locations, or anything in between. We'll build it around your group."
+  title="Custom Tours - Design Your Santa Cruz Experience | Walk Santa Cruz"
+  description="Design a walking tour tailored to your interests, pace, and schedule. Choose your topic, your route, your timing — surf history, architecture, nature, filming locations, and more."
 >
   <!-- Hero Section -->
   <section class="full-bleed relative py-8 md:py-12">
@@ -30,8 +31,8 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
     </div>
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Private Tours</h1>
-        <p class="text-2xl text-muted-foreground font-medium mb-2">Design your own Santa Cruz experience.</p>
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Custom Tours</h1>
+        <p class="text-2xl text-muted-foreground font-medium mb-2">Design a tour tailored to your interests, pace, and schedule.</p>
       </div>
     </div>
   </section>
@@ -42,20 +43,14 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 
       <!-- Intro Text -->
       <p class="text-lg text-muted-foreground leading-relaxed mb-6">
-        Private tours give you the full attention of a local expert with no strangers, no fixed schedule, and no topics you don't care about. You choose what to explore — surf history, architecture, hidden nature spots, filming locations, the university campus — and we build the walk around your group.
+        Choose your topic, your route, your timing. Whether you want to explore surf history, Victorian architecture, hidden nature spots, filming locations, or the university campus — we'll build the walk around your group's interests and pace.
       </p>
       <p class="text-lg text-muted-foreground leading-relaxed mb-8">
-        Perfect for families, couples, visiting groups, and anyone who wants a deeper experience than a public tour can offer.
+        Great for solo travelers, couples, families, visiting groups, and anyone who wants a tour shaped entirely around what they care about.
       </p>
 
       <!-- Pricing -->
-      <div class="bg-primary/5 border border-primary/20 rounded-xl px-6 py-5 mb-8">
-        <p class="font-bold text-foreground mb-1">Pricing</p>
-        <p class="text-muted-foreground">
-          Custom pricing based on your group, interests, and vision. Solo travelers, couples, and small groups welcome — we'll provide a quote based on your needs.
-          <a href="mailto:hello@walksantacruz.com?subject=Custom%20Tour%20Inquiry" class="text-primary underline ml-1">Email us to get started.</a>
-        </p>
-      </div>
+      <PricingBlock />
 
       <!-- Hero photo -->
       <div class="mb-12">
@@ -93,7 +88,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       </div>
 
       <!-- Testimonial placeholder -->
-      <!-- ADD PRIVATE TOUR TESTIMONIAL HERE -->
+      <!-- ADD CUSTOM TOUR TESTIMONIAL HERE -->
 
     </div>
   </section>
@@ -119,7 +114,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
         <div class="aspect-[4/3] rounded-lg overflow-hidden">
           <Image
             src={outdoorTourPhoto}
-            alt="Guests on a private Santa Cruz walking tour"
+            alt="Guests on a custom Santa Cruz walking tour"
             class="w-full h-full object-cover"
             loading="lazy"
             quality={80}
@@ -131,7 +126,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
         <div class="aspect-[4/3] rounded-lg overflow-hidden">
           <Image
             src={photo1}
-            alt="Private tour location in Santa Cruz"
+            alt="Custom tour location in Santa Cruz"
             class="w-full h-full object-cover"
             loading="lazy"
             quality={80}
@@ -228,7 +223,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
           href="mailto:hello@walksantacruz.com?subject=Custom%20Tour%20Inquiry"
           class="btn btn-lg mb-4"
         >
-          Reserve Your Tour
+          Request a custom tour
         </a>
         <p class="text-sm text-muted-foreground">
           Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
@@ -247,6 +242,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       >
         <input type="hidden" name="form-name" value="custom-tour" />
         <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <input type="hidden" name="tour" value="Custom" />
 
         <div>
           <label for="name" class="block font-semibold mb-2">Name *</label>
@@ -275,7 +271,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
             class="w-full"
           ></textarea>
         </div>
-        <button type="submit" class="btn btn-lg w-full">Send Inquiry</button>
+        <button type="submit" class="btn btn-lg w-full">Request a custom tour</button>
       </form>
 
     </div>
