@@ -110,6 +110,31 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </div>
   </section>
 
+  <!-- Reviews Section -->
+  <section id="reviews" class="full-bleed relative pt-16 pb-4 md:pt-20 md:pb-6">
+    <div class="container relative">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+        Guests Love Our Tours!
+      </h2>
+
+      <ReviewsCarousel
+        reviews={reviews}
+        airbnbLogo={airbnbLogo}
+        tripadvisorLogo={tripadvisorLogo}
+        viatorLogo={viatorLogo}
+      />
+
+      <p class="text-center text-sm text-muted-foreground mt-10">
+        Reviewed on Google · Airbnb · TripAdvisor · Viator
+      </p>
+      <div class="text-center mt-8 mb-6">
+        <a href="mailto:hello@walksantacruz.com?subject=Tour%20Booking" class="btn btn-lg">Book Now</a>
+      </div>
+      <p class="text-center text-sm text-muted-foreground mt-6 mb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews</p>
+      <p class="text-center text-sm text-muted-foreground">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
+    </div>
+  </section>
+
   <!-- Featured In Bar -->
   <div class="full-bleed relative py-4 md:py-6">
     <div
@@ -534,31 +559,6 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
           <a href="/private-tours" class="btn self-start">Design your tour →</a>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Reviews Section -->
-  <section id="reviews" class="full-bleed relative pt-16 pb-4 md:pt-20 md:pb-6">
-    <div class="container relative">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Guests Love Our Tours!
-      </h2>
-
-      <ReviewsCarousel
-        reviews={reviews}
-        airbnbLogo={airbnbLogo}
-        tripadvisorLogo={tripadvisorLogo}
-        viatorLogo={viatorLogo}
-      />
-
-      <p class="text-center text-sm text-muted-foreground mt-10">
-        Reviewed on Google · Airbnb · TripAdvisor · Viator
-      </p>
-      <div class="text-center mt-8 mb-6">
-        <a href="mailto:hello@walksantacruz.com?subject=Tour%20Booking" class="btn btn-lg">Book Now</a>
-      </div>
-      <p class="text-center text-sm text-muted-foreground mt-6 mb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews</p>
-      <p class="text-center text-sm text-muted-foreground">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
     </div>
   </section>
 
