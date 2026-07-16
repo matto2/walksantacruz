@@ -248,17 +248,19 @@ const tourStructuredData = {
         </div>
       )}
 
-      <script>
-        function initTourCalendar() {
-          const container = document.getElementById('fareharbor-tour-calendar');
+      <script is:inline>
+        function initFHTourCalendar() {
+          var container = document.getElementById('fareharbor-tour-calendar');
           if (!container) return;
           container.innerHTML = '';
-          const script = document.createElement('script');
-          script.dataset.tourCalendar = container.dataset.calendarId;
-          script.src = `https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${container.dataset.calendarId}/?fallback=simple&full-items=yes&flow=1491352`;
+          var id = container.getAttribute('data-calendar-id');
+          var script = document.createElement('script');
+          script.setAttribute('data-tour-calendar', id);
+          script.src = 'https://fareharbor.com/embeds/script/calendar/walksantacruz/items/' + id + '/?fallback=simple&full-items=yes&flow=1491352';
           container.appendChild(script);
         }
-        document.addEventListener('astro:page-load', initTourCalendar);
+        initFHTourCalendar();
+        document.addEventListener('astro:page-load', initFHTourCalendar);
       </script>
 
       <!-- Important Information -->
