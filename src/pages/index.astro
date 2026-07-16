@@ -384,18 +384,11 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
         Ready to Book? View All Tours &amp; Availability
       </h3>
       <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tours and times.</p>
-      <div id="fareharbor-all-calendar"></div>
+      <script is:inline src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"></script>
       <script is:inline>
-        function initFHAllCalendar() {
-          var container = document.getElementById('fareharbor-all-calendar');
-          if (!container) return;
-          container.innerHTML = '';
-          var script = document.createElement('script');
-          script.src = 'https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes';
-          container.appendChild(script);
-        }
-        initFHAllCalendar();
-        document.addEventListener('astro:page-load', initFHAllCalendar);
+        window.addEventListener('pageshow', function(event) {
+          if (event.persisted) { window.location.reload(); }
+        });
       </script>
       <p class="text-sm font-semibold text-foreground mt-4">Full refund if cancelled 24+ hours before tour start time</p>
     </div>

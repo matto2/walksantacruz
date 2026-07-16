@@ -243,24 +243,15 @@ const tourStructuredData = {
             Ready to Book? View Availability
           </h2>
           <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tour times.</p>
-          <div id="fareharbor-tour-calendar" data-calendar-id={tour.fareharborCalendarId}></div>
+          <script is:inline data-tour-calendar={tour.fareharborCalendarId} src={`https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${tour.fareharborCalendarId}/?fallback=simple&full-items=yes&flow=1491352`}></script>
           <p class="text-sm font-semibold text-foreground mt-4">Full refund if cancelled 24+ hours before tour start time</p>
         </div>
       )}
 
       <script is:inline>
-        function initFHTourCalendar() {
-          var container = document.getElementById('fareharbor-tour-calendar');
-          if (!container) return;
-          container.innerHTML = '';
-          var id = container.getAttribute('data-calendar-id');
-          var script = document.createElement('script');
-          script.setAttribute('data-tour-calendar', id);
-          script.src = 'https://fareharbor.com/embeds/script/calendar/walksantacruz/items/' + id + '/?fallback=simple&full-items=yes&flow=1491352';
-          container.appendChild(script);
-        }
-        initFHTourCalendar();
-        document.addEventListener('astro:page-load', initFHTourCalendar);
+        window.addEventListener('pageshow', function(event) {
+          if (event.persisted) { window.location.reload(); }
+        });
       </script>
 
       <!-- Important Information -->
