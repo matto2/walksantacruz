@@ -87,7 +87,8 @@ export interface Tour {
   adultPrice: number;
   schedule: string;
   meetingPoint: MeetingPoint;
-  bookingUrl: string; // mailto: URL
+  bookingUrl: string;
+  fareharborCalendarId?: string;
 
   // Detailed Content
   storytelling: string;
@@ -153,7 +154,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "1.5 hours",
-    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
+    price: "$45 adults · $30 children · Kids 5 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
@@ -165,7 +166,8 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?address=118%20Cooper%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "mailto:hello@walksantacruz.com?subject=Heart%20of%20Downtown%20Booking",
+      "https://fareharbor.com/embeds/book/walksantacruz/items/673407/?full-items=yes",
+    fareharborCalendarId: "673407",
 
     storytelling:
       "Discover Santa Cruz the way locals love it — on foot, at a relaxed pace, with stories that bring the streets to life. This guided walking tour connects the city's past and present, from its early mission-era beginnings to its welcoming and creative culture today. Along the way, you'll hear how natural beauty, resilience, and community spirit have shaped Santa Cruz through centuries of change — from the original Ohlone inhabitants to the rebirth that followed the 1989 earthquake. Each stop adds a new layer to the city's unique character. You'll learn in a fun, conversational way as you walk shaded streets, peek into hidden courtyards, and see historic buildings through the eyes of a local who's passionate about this place. Small groups make it personal and flexible — there's time for questions, photos, and a few good stories you won't find in a guidebook. By the end, you'll not only know Santa Cruz — you'll feel it.",
@@ -362,7 +364,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
+    price: "$45 adults · $30 children · Kids 5 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
@@ -374,7 +376,8 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "mailto:hello@walksantacruz.com?subject=Beach%20Hill%20Booking",
+      "https://fareharbor.com/embeds/book/walksantacruz/items/686749/?full-items=yes",
+    fareharborCalendarId: "686749",
 
     storytelling:
       "A 90-minute, roughly 2-mile loop through two of Santa Cruz's most distinctive neighborhoods — starting at the beach and winding your way back through downtown. Start at the beach and walk up through Beach Hill's historic estates, descend via a hidden staircase locals love, then explore downtown's vibrant streets and architectural gems — Victorian, Craftsman, and Art Deco buildings that survived earthquake and fire. Loop back through the stately Walnut Avenue Victorian neighborhood to complete the journey. On some tours, we've been spontaneously invited inside a historic Victorian-era home — that's the kind of thing that only happens in small groups with a local guide. You'll discover stories of wealthy families who built summer retreats here, how the Beach Boardwalk shaped the city, and how earthquakes and economic shifts transformed Santa Cruz. Perfect for history enthusiasts who want a focused deep-dive into two of the city's most storied neighborhoods.",
@@ -556,7 +559,7 @@ export const tours: Tour[] = [
     ],
 
     duration: "90 minutes",
-    price: "$150 solo · $180 for 2–4 guests · $45/person for 5+ guests · Kids 12 & under free",
+    price: "$45 adults · $30 children · Kids 5 & under free",
     adultPrice: 45,
     schedule: "Email <a href=\"mailto:hello@walksantacruz.com\" class=\"underline text-primary\">hello@walksantacruz.com</a> for availability",
     meetingPoint: {
@@ -568,7 +571,8 @@ export const tours: Tour[] = [
         "https://maps.apple.com/?q=Ideal+Bar+%26+Grill&address=106%20Beach%20St,%20Santa%20Cruz,%20CA%2095060",
     },
     bookingUrl:
-      "mailto:hello@walksantacruz.com?subject=Surf%20Walk%20Booking",
+      "https://fareharbor.com/embeds/book/walksantacruz/items/686192/?full-items=yes",
+    fareharborCalendarId: "686192",
 
     storytelling:
       "In 1885, three Hawaiian princes rode waves at the San Lorenzo Rivermouth — and mainland American surfing was born. This is the only tour that walks you to that exact spot and tells you the full story. Santa Cruz isn't just a surf town — it's THE surf town. This is where mainland surfing in America truly began, where wetsuit innovation flourished, and where surf culture evolved from Hawaiian roots into the phenomenon it is today. On this oceanfront journey, you'll walk in the footsteps of legends — from those three Hawaiian princes to the modern shapers and surfers who continue to push the sport forward. We'll explore iconic surf spots, learn to read the waves and conditions, discover the innovations that flourished in Santa Cruz (like wetsuit and skateboard technology), and understand how surf culture permeates every aspect of this coastal community. Along the way, you'll also encounter sea lions, harbor seals, seabirds, and maybe even dolphins or whales, experiencing the vibrant marine ecosystem that makes Santa Cruz special. This tour isn't just about surfing history — it's about understanding how the ocean shapes everything about life in this unique coastal town.",
@@ -690,7 +694,7 @@ export const tours: Tour[] = [
       {
         question: "Is this tour appropriate for children?",
         answer:
-          "Yes! Kids often love this tour because there's so much to see — surfers, sea lions, waves, and more. There is one hill along the route, but no stairs, and we keep a relaxed pace. Kids 12 and under are free with a paying adult. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
+          "Yes! Kids often love this tour because there's so much to see — surfers, sea lions, waves, and more. There is one hill along the route, but no stairs, and we keep a relaxed pace. Children are $30 per ticket; kids 5 and under are free with a paying adult. Children who are interested in the ocean, animals, or surfing will be especially engaged. Our guides are great at pointing out exciting sights and explaining things in kid-friendly ways.",
       },
       {
         question: "Can we stop at the Surfing Museum?",

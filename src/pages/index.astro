@@ -182,8 +182,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
-            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">Surf & Coastal Experience</span>
+          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
             <h3 class="text-xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               Discover the exact spot where mainland surfing began in 1885. Led by
@@ -193,8 +192,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
             <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
               <li><strong>Best for:</strong> surf culture and history aficionados, ocean lovers, first-time visitors</li>
               <li><strong>Duration:</strong> 90 minutes</li>
-
-              <li><strong>Pricing:</strong> Solo $150 · 2–4 guests $180 · 5+ guests $45/person · Kids 12 &amp; under free</li>
+              <li><strong>Meeting location:</strong> Ideal Bar &amp; Grill patio at the base of the Santa Cruz Wharf</li>
+              <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
             <span class="btn w-full text-center">Explore this tour →</span>
           </div>
@@ -215,8 +214,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
-            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">History & Neighborhood Experience</span>
+          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
             <h3 class="text-xl font-bold mb-3">Heart of Downtown Santa Cruz</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               The original Walk Santa Cruz tour. A story-rich journey through
@@ -226,8 +224,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
             <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
               <li><strong>Best for:</strong> first-time visitors, history and architecture fans</li>
               <li><strong>Duration:</strong> 90 minutes</li>
-
-              <li><strong>Pricing:</strong> Solo $150 · 2–4 guests $180 · 5+ guests $45/person · Kids 12 &amp; under free</li>
+              <li><strong>Meeting location:</strong> Abbott Square in downtown Santa Cruz</li>
+              <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
             <span class="btn w-full text-center">Explore this tour →</span>
           </div>
@@ -248,8 +246,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-3 pb-6 flex flex-col flex-1">
-            <span class="self-start text-xs font-bold uppercase tracking-widest rounded-full px-3 py-1 mb-3" style="background-color: #d0eef5; color: #007a99;">Old waterfront &amp; downtown stories</span>
+          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
             <h3 class="text-xl font-bold mb-3">Beach Hill to Downtown Santa Cruz Loop</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               Beach Hill's grand historic estates plus the Victorian, Craftsman, and Art Deco streets of downtown — neighborhoods worth experiencing in a whole new way.
@@ -257,8 +254,8 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
             <ul class="text-sm text-muted-foreground space-y-1 mb-6 [&_strong]:text-foreground">
               <li><strong>Best for:</strong> waterfront history and spooky story lovers</li>
               <li><strong>Duration:</strong> 90 minutes</li>
-
-              <li><strong>Pricing:</strong> Solo $150 · 2–4 guests $180 · 5+ guests $45/person · Kids 12 &amp; under free</li>
+              <li><strong>Meeting location:</strong> Ideal Bar &amp; Grill patio at the base of the Santa Cruz Wharf</li>
+              <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
             <span class="btn w-full text-center">Explore this tour →</span>
           </div>
@@ -381,21 +378,25 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section>
 
   <!-- CTA Section -->
-  <section class="container pt-4 pb-16 md:pt-4 md:pb-24">
+  <section id="book" class="container pt-12 pb-16 md:pt-16 md:pb-24">
     <div class="max-w-2xl mx-auto text-center">
-      <h3 class="text-2xl md:text-3xl font-bold mb-4">Ready to book your tour?</h3>
-      <p class="text-muted-foreground mb-6">
-        Email us with your preferred tour, date, and group size — we'll confirm availability and get you set up.
-      </p>
-      <a
-        href="mailto:hello@walksantacruz.com?subject=Tour%20Booking"
-        class="btn btn-lg"
-      >
-        Email to Reserve →
-      </a>
-      <p class="text-sm text-muted-foreground mt-4">
-        Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
-      </p>
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">
+        Ready to Book? View All Tours &amp; Availability
+      </h3>
+      <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tours and times.</p>
+      <div id="fareharbor-all-calendar"></div>
+      <script>
+        function initAllCalendar() {
+          const container = document.getElementById('fareharbor-all-calendar');
+          if (!container) return;
+          container.innerHTML = '';
+          const script = document.createElement('script');
+          script.src = 'https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes';
+          container.appendChild(script);
+        }
+        document.addEventListener('astro:page-load', initAllCalendar);
+      </script>
+      <p class="text-sm font-semibold text-foreground mt-4">Full refund if cancelled 24+ hours before tour start time</p>
     </div>
   </section>
 

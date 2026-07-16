@@ -4,8 +4,6 @@ import { Icon } from "astro-icon/components";
 import Layout from "../../layouts/Layout.astro";
 import Lightbox from "../../components/Lightbox.astro";
 import LeadMagnetKit from "../../components/LeadMagnetKit.astro";
-import BookingCTA from "../../components/BookingCTA.astro";
-import PricingBlock from "../../components/PricingBlock.astro";
 import { tours, getTourBySlug, getRelatedTours } from "../../data/tours";
 import surferDavidYao from "../../assets/surfer_david-yao_unsplash.jpg";
 import mattSurfing2025 from "../../assets/surf-tour/matt-surfing-2025.jpg";
@@ -20,13 +18,6 @@ export async function getStaticPaths() {
 
 const { tour } = Astro.props;
 const relatedTours = getRelatedTours(tour.slug);
-
-const subjectMap: Record<string, string> = {
-  "surfing-beach-culture": "Surf Walk Booking",
-  "downtown-mission-hill": "Heart of Downtown Booking",
-  "beach-hill-loop": "Beach Hill Booking",
-};
-const bookingSubject = subjectMap[tour.slug] ?? "Tour Booking";
 
 // Pre-process gallery images for lightbox
 const processedGalleryImages = await Promise.all(
@@ -145,9 +136,6 @@ const tourStructuredData = {
             <span class="font-bold">Duration:</span> <span class="text-muted-foreground">{tour.duration}</span>
           </div>
           <div>
-            <span class="font-bold">Availability:</span> <span class="text-muted-foreground" set:html={tour.schedule} />
-          </div>
-          <div>
             <span class="font-bold">Meeting Point:</span> <span class="text-muted-foreground">{tour.meetingPoint.name}</span>
             <button type="button" class="text-primary hover:underline ml-1" data-map-modal-trigger data-map-url={tour.meetingPoint.url}>
               (View on map)
@@ -155,52 +143,9 @@ const tourStructuredData = {
           </div>
         </div>
 
-        <PricingBlock />
-
-        <div class="bg-primary/5 border border-primary/20 rounded-xl p-8 text-center mb-8">
-          <a href={`mailto:hello@walksantacruz.com?subject=${encodeURIComponent(bookingSubject)}`} class="btn btn-lg mb-4">
-            Reserve Your Tour
-          </a>
-          <p class="text-sm text-muted-foreground">
-            Or call <a href="tel:8312752566" class="font-semibold text-foreground">(831) 275-2566</a>
-          </p>
-        </div>
-
-        <p class="text-center text-primary font-semibold mb-6">Or fill out a quick form and we'll reach out to you</p>
-
-        <form
-          name="tour-inquiry"
-          method="POST"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
-          class="form space-y-5 mb-8"
-        >
-          <input type="hidden" name="form-name" value="tour-inquiry" />
-          <input type="hidden" name="tour" value={tour.title} />
-          <p class="hidden"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
-          <div>
-            <label for="inq-name" class="block font-semibold mb-2">Name *</label>
-            <input type="text" id="inq-name" name="name" required class="w-full" />
-          </div>
-          <div>
-            <label for="inq-email" class="block font-semibold mb-2">Email *</label>
-            <input type="email" id="inq-email" name="email" required class="w-full" />
-          </div>
-          <div>
-            <label for="inq-groupsize" class="block font-semibold mb-2">Group size</label>
-            <input type="text" id="inq-groupsize" name="group-size" class="w-full" />
-          </div>
-          <div>
-            <label for="inq-date" class="block font-semibold mb-2">Preferred date</label>
-            <input type="text" id="inq-date" name="preferred-date" class="w-full" />
-          </div>
-          <div>
-            <label for="inq-message" class="block font-semibold mb-2">Anything else? (optional)</label>
-            <textarea id="inq-message" name="message" rows="3" class="w-full"></textarea>
-          </div>
-          <button type="submit" class="btn btn-lg w-full">Request this tour</button>
-        </form>
+        <a href="#calendar" class="btn btn-lg w-full md:w-auto">
+          Book Now
+        </a>
       </div>
 
       <!-- Featured quote: Mindy (Surf Walk only) -->
@@ -284,12 +229,37 @@ const tourStructuredData = {
             </div>
             <div>
               <p class="font-semibold mb-1">Is this OK for kids?</p>
-              <p class="text-muted-foreground">Yes! Kids 12 and under are free with a paying adult. The stories are engaging enough to hold most kids' attention, and the ocean views help.</p>
+              <p class="text-muted-foreground">Yes! Children are $30 and kids 5 and under are free with a paying adult. The stories are engaging enough to hold most kids' attention, and the ocean views help.</p>
             </div>
           </div>
         </div>
       )}
 
+
+      <!-- FareHarbor Calendar -->
+      {tour.fareharborCalendarId && (
+        <div id="calendar" class="mb-12 text-center" style="scroll-margin-top: 80px;">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#ed672d]">
+            Ready to Book? View Availability
+          </h2>
+          <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tour times.</p>
+          <div id="fareharbor-tour-calendar" data-calendar-id={tour.fareharborCalendarId}></div>
+          <p class="text-sm font-semibold text-foreground mt-4">Full refund if cancelled 24+ hours before tour start time</p>
+        </div>
+      )}
+
+      <script>
+        function initTourCalendar() {
+          const container = document.getElementById('fareharbor-tour-calendar');
+          if (!container) return;
+          container.innerHTML = '';
+          const script = document.createElement('script');
+          script.dataset.tourCalendar = container.dataset.calendarId;
+          script.src = `https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${container.dataset.calendarId}/?fallback=simple&full-items=yes&flow=1491352`;
+          container.appendChild(script);
+        }
+        document.addEventListener('astro:page-load', initTourCalendar);
+      </script>
 
       <!-- Important Information -->
       {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
@@ -440,11 +410,11 @@ const tourStructuredData = {
 
 
   <!-- Book Online CTA -->
-  <section class="container pt-2 pb-8 md:pt-2 md:pb-12">
-    <div class="max-w-2xl mx-auto">
-      <BookingCTA subject={bookingSubject} />
-    </div>
-  </section>
+  {tour.fareharborCalendarId && (
+    <section class="container pt-2 pb-8 md:pt-2 md:pb-12 text-center">
+      <a href="#calendar" class="btn btn-lg">Book Now</a>
+    </section>
+  )}
 
   <!-- Related Tours -->
   {
