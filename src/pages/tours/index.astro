@@ -11,7 +11,7 @@ import { tours } from "../../data/tours";
   description="Walking tours in Santa Cruz — Surf Walk, Heart of Downtown, and Beach Hill Loop. $45 adults · $30 children · Kids 5 &amp; under free. Book online."
 >
   <!-- Hero -->
-  <section class="container pt-10 pb-8 md:pt-16 md:pb-12">
+  <section class="container pt-10 pb-8 md:pt-12 md:pb-12">
     <div class="max-w-3xl mx-auto text-center">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Tours</h1>
       <p class="text-xl text-muted-foreground leading-relaxed">
@@ -28,7 +28,7 @@ import { tours } from "../../data/tours";
   </section>
 
   <!-- Tour Cards -->
-  <section class="container pb-12 md:pb-20">
+  <section class="container pb-12 md:pb-14">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-6">
         {tours.map((tour) => (
@@ -88,7 +88,7 @@ import { tours } from "../../data/tours";
   </section>
 
   <!-- CTA -->
-  <section class="container pb-16 md:pb-24">
+  <section class="container pb-12 md:pb-16">
     <div class="max-w-2xl mx-auto">
       <BookingCTA subject="Tour Booking" />
     </div>

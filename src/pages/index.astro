@@ -7,7 +7,8 @@ import TourCard from "../components/TourCard.astro";
 import ReviewsCarousel from "../components/ReviewsCarousel.astro";
 import LeadMagnet from "../components/LeadMagnet.astro";
 import LeadMagnetKit from "../components/LeadMagnetKit.astro";
-import { tours } from "../data/tours";
+import { tours, type Tour } from "../data/tours";
+import { DIRECT_BOOKING_EXPERIMENT } from "../config";
 import heroImage from "../assets/downtown_hero.jpg";
 import newHeroImage from "../assets/Hero_IMG_0299.jpg";
 import mapBg from "../assets/map-bg.jpg";
@@ -35,6 +36,19 @@ const reviews = allReviews.sort((a, b) => a.data.order - b.data.order);
 const surfTour = tours.find((t) => t.slug === "surfing-beach-culture")!;
 const downtownTour = tours.find((t) => t.slug === "downtown-mission-hill")!;
 const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
+
+// Direct booking experiment: cards open the FareHarbor overlay (see src/config.ts)
+const directBooking = (tour: Tour) =>
+  DIRECT_BOOKING_EXPERIMENT && !!tour.fareharborCalendarId;
+const tourCardLink = (tour: Tour) =>
+  directBooking(tour)
+    ? {
+        href: `https://fareharbor.com/embeds/book/walksantacruz/items/${tour.fareharborCalendarId}/?full-items=yes&flow=no`,
+        onclick: "return window.wscOpenBooking ? wscOpenBooking(this) : true;",
+        "data-fh-item": tour.fareharborCalendarId,
+        "data-tour-name": tour.title,
+      }
+    : { href: `/tours/${tour.slug}`, "data-astro-reload": true };
 ---
 
 <Layout
@@ -110,63 +124,16 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </div>
   </section>
 
-  <!-- Reviews Section -->
-  <section id="reviews" class="full-bleed relative pt-16 pb-4 md:pt-20 md:pb-6">
-    <div class="container relative">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
-        Guests Love Our Tours!
-      </h2>
-
-      <ReviewsCarousel
-        reviews={reviews}
-        airbnbLogo={airbnbLogo}
-        tripadvisorLogo={tripadvisorLogo}
-        viatorLogo={viatorLogo}
-      />
-
-      <p class="text-center text-sm text-muted-foreground mt-10 mb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews on Google, Airbnb, TripAdvisor &amp; Viator</p>
-      <p class="text-center text-sm text-muted-foreground">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
-    </div>
-  </section>
-
-  <!-- Featured In Bar -->
-  <div class="full-bleed relative py-4 md:py-6">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
-    <div class="flex items-center justify-center gap-4 relative">
-      <span class="text-xl md:text-[1.75rem] font-bold" style="color: #ed672d;">Featured in</span>
-      <a
-        href="https://lookout.co/new-downtown-walking-tour-aspires-to-tell-santa-cruzs-hidden-stories/story"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Image
-          src={LookoutLogo}
-          alt="Lookout Santa Cruz"
-          width={1179}
-          height={327}
-          class="h-8 md:h-12 w-auto object-contain"
-        />
-      </a>
-    </div>
-  </div>
-
   <!-- Start Here / Tours Section -->
-  <section id="tours" class="container pt-2 pb-16 md:pt-4 md:pb-24">
+  <section id="tours" class="container pt-12 pb-12 md:pt-14 md:pb-16">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Choose Your Tour</h2>
 
       <!-- Tour cards -->
       <div class="grid md:grid-cols-3 gap-8">
         <!-- Card 1: Surf Walk -->
-        <a
-          href="/tours/surfing-beach-culture"
-          data-astro-reload
-          class="card p-0 flex flex-col overflow-hidden group"
-        >
+        <div class="card p-0 gap-0 overflow-hidden group">
+        <a {...tourCardLink(surfTour)} class="flex flex-col gap-6 flex-1">
           <div class="overflow-hidden relative">
             <Image
               src={surfTour.cardImage}
@@ -176,7 +143,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
+          <div class={`px-6 pt-0 ${directBooking(surfTour) ? "pb-3" : "pb-6"} flex flex-col flex-1`}>
             <h3 class="text-xl font-bold mb-3">Surfing & Beach Culture Walk</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               Discover the exact spot where mainland surfing began in 1885. Led by
@@ -189,16 +156,25 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               <li><strong>Meeting location:</strong> Ideal Bar &amp; Grill patio at the base of the Santa Cruz Wharf</li>
               <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
-            <span class="btn w-full text-center">See this tour →</span>
+            <span class="btn w-full text-center">Book Now</span>
           </div>
         </a>
+        {directBooking(surfTour) && (
+          <div class="px-6 pb-5 text-center">
+            <a
+              href={`/tours/${surfTour.slug}`}
+              data-astro-reload
+              data-tour-name={surfTour.title}
+              onclick="window.wscTrackTourDetails && wscTrackTourDetails(this);"
+              class="text-sm text-muted-foreground underline"
+            >Tour details</a>
+          </div>
+        )}
+        </div>
 
         <!-- Card 2: History & Neighborhood -->
-        <a
-          href="/tours/downtown-mission-hill"
-          data-astro-reload
-          class="card p-0 flex flex-col overflow-hidden group"
-        >
+        <div class="card p-0 gap-0 overflow-hidden group">
+        <a {...tourCardLink(downtownTour)} class="flex flex-col gap-6 flex-1">
           <div class="overflow-hidden">
             <Image
               src={downtownTour.cardImage}
@@ -208,7 +184,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
+          <div class={`px-6 pt-0 ${directBooking(downtownTour) ? "pb-3" : "pb-6"} flex flex-col flex-1`}>
             <h3 class="text-xl font-bold mb-3">Heart of Downtown Santa Cruz</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               The original Walk Santa Cruz tour. A story-rich journey through
@@ -221,16 +197,25 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               <li><strong>Meeting location:</strong> Abbott Square in downtown Santa Cruz</li>
               <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
-            <span class="btn w-full text-center">See this tour →</span>
+            <span class="btn w-full text-center">Book Now</span>
           </div>
         </a>
+        {directBooking(downtownTour) && (
+          <div class="px-6 pb-5 text-center">
+            <a
+              href={`/tours/${downtownTour.slug}`}
+              data-astro-reload
+              data-tour-name={downtownTour.title}
+              onclick="window.wscTrackTourDetails && wscTrackTourDetails(this);"
+              class="text-sm text-muted-foreground underline"
+            >Tour details</a>
+          </div>
+        )}
+        </div>
 
         <!-- Card 3: Deeper Local -->
-        <a
-          href="/tours/beach-hill-loop"
-          data-astro-reload
-          class="card p-0 flex flex-col overflow-hidden group"
-        >
+        <div class="card p-0 gap-0 overflow-hidden group">
+        <a {...tourCardLink(loopTour)} class="flex flex-col gap-6 flex-1">
           <div class="overflow-hidden">
             <Image
               src={loopTour.cardImage}
@@ -240,7 +225,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               quality={75}
             />
           </div>
-          <div class="px-6 pt-0 pb-6 flex flex-col flex-1">
+          <div class={`px-6 pt-0 ${directBooking(loopTour) ? "pb-3" : "pb-6"} flex flex-col flex-1`}>
             <h3 class="text-xl font-bold mb-3">Beach Hill to Downtown Santa Cruz Loop</h3>
             <p class="text-muted-foreground mb-4 flex-1">
               Beach Hill's grand historic estates plus the Victorian, Craftsman, and Art Deco streets of downtown — neighborhoods worth experiencing in a whole new way.
@@ -251,15 +236,62 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
               <li><strong>Meeting location:</strong> Ideal Bar &amp; Grill patio at the base of the Santa Cruz Wharf</li>
               <li><strong>Pricing:</strong> $45 adults · $30 children · Kids 5 &amp; under free</li>
             </ul>
-            <span class="btn w-full text-center">See this tour →</span>
+            <span class="btn w-full text-center">Book Now</span>
           </div>
         </a>
+        {directBooking(loopTour) && (
+          <div class="px-6 pb-5 text-center">
+            <a
+              href={`/tours/${loopTour.slug}`}
+              data-astro-reload
+              data-tour-name={loopTour.title}
+              onclick="window.wscTrackTourDetails && wscTrackTourDetails(this);"
+              class="text-sm text-muted-foreground underline"
+            >Tour details</a>
+          </div>
+        )}
+        </div>
       </div>
     </div>
+    {DIRECT_BOOKING_EXPERIMENT && (
+      <script is:inline>
+        window.wscOpenBooking = function (el) {
+          var itemId = Number(el.dataset.fhItem);
+          if (window.gtag) {
+            try {
+              gtag("event", "book_overlay_open", {
+                tour_name: el.dataset.tourName,
+                item_id: itemId,
+                location: "homepage_card",
+                transport_type: "beacon",
+              });
+            } catch (e) {}
+          }
+          return !(window.FH && FH.open({
+            shortname: "walksantacruz",
+            fallback: "simple",
+            fullItems: "yes",
+            flow: "no",
+            view: { item: itemId },
+          }));
+        };
+        window.wscTrackTourDetails = function (el) {
+          if (window.gtag) {
+            try {
+              gtag("event", "tour_details_click", {
+                tour_name: el.dataset.tourName,
+                location: "homepage_card",
+                transport_type: "beacon",
+              });
+            } catch (e) {}
+          }
+        };
+      </script>
+    )}
   </section>
 
   <!-- Testimonials Section - HIDDEN FOR NOW -->
-  <!-- <section class="full-bleed relative py-16 md:py-24">
+  <!-- <section class="full-bleed relative py-12 md:py-16">
     <div
       class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
@@ -312,7 +344,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section> -->
 
   <!-- Sophia Block -->
-  <section class="container pt-8 pb-16 md:pt-10 md:pb-20">
+  <section class="container pt-8 pb-12 md:pt-10 md:pb-14">
     <figure class="max-w-3xl mx-auto text-center">
       <div class="flex justify-center gap-1 mb-4">
         {
@@ -335,8 +367,52 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
     </figure>
   </section>
 
+  <!-- Featured In Bar -->
+  <div class="full-bleed relative py-4 md:py-6">
+    <div
+      class="absolute inset-0 opacity-50"
+      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
+    >
+    </div>
+    <div class="flex items-center justify-center gap-4 relative">
+      <span class="text-xl md:text-[1.75rem] font-bold" style="color: #ed672d;">Featured in</span>
+      <a
+        href="https://lookout.co/new-downtown-walking-tour-aspires-to-tell-santa-cruzs-hidden-stories/story"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <Image
+          src={LookoutLogo}
+          alt="Lookout Santa Cruz"
+          width={1179}
+          height={327}
+          class="h-8 md:h-12 w-auto object-contain"
+        />
+      </a>
+    </div>
+  </div>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="full-bleed relative pt-12 pb-12 md:pt-14 md:pb-14">
+    <div class="container relative">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">
+        Guests Love Our Tours!
+      </h2>
+
+      <ReviewsCarousel
+        reviews={reviews}
+        airbnbLogo={airbnbLogo}
+        tripadvisorLogo={tripadvisorLogo}
+        viatorLogo={viatorLogo}
+      />
+
+      <p class="text-center text-sm text-muted-foreground mt-10 mb-1">⭐⭐⭐⭐⭐ 12+ five-star reviews on Google, Airbnb, TripAdvisor &amp; Viator</p>
+      <p class="text-center text-sm text-muted-foreground">Questions? Call or text us at <a href="tel:8312752566" class="font-semibold text-foreground">831-275-2566</a></p>
+    </div>
+  </section>
+
   <!-- Meet Your Guide Section -->
-  <section class="full-bleed relative py-16 md:py-20">
+  <section class="full-bleed relative py-12 md:py-14">
     <div
       class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
@@ -372,12 +448,12 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section>
 
   <!-- CTA Section -->
-  <section id="book" class="container pt-12 pb-16 md:pt-16 md:pb-24">
+  <section id="book" class="container pt-12 pb-12 md:pt-12 md:pb-16">
     <div class="max-w-2xl mx-auto text-center">
       <h3 class="text-2xl md:text-3xl font-bold mb-4">
-        Ready to Book? View All Tours &amp; Availability
+        Ready to Book?
       </h3>
-      <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tours and times.</p>
+      <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date to see available tours &amp; times</p>
       <script is:inline src="https://fareharbor.com/embeds/script/calendar/walksantacruz/?fallback=simple&full-items=yes"></script>
       <script is:inline>
         window.addEventListener('unload', function() {});
@@ -391,7 +467,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section>
 
   <!-- GIFT CARDS HIDDEN — restore by removing these comment tags
-  <section class="full-bleed py-16 md:py-20" style="background-color: #007a99;">
+  <section class="full-bleed py-12 md:py-14" style="background-color: #007a99;">
     <div class="container text-center text-white">
       <h2 class="text-4xl md:text-6xl font-bold mb-3">🎁 Gift Cards</h2>
       <p class="text-xl md:text-2xl mb-8 font-medium">The perfect Santa Cruz gift</p>
@@ -406,7 +482,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   -->
 
   <!-- Local Perks Section -->
-  <section class="full-bleed py-16 md:py-24">
+  <section class="full-bleed py-12 md:py-16">
     <div class="container">
       <div class="max-w-4xl mx-auto">
         <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
@@ -519,7 +595,7 @@ const loopTour = tours.find((t) => t.slug === "beach-hill-loop")!;
   </section>
 
   <!-- B2B / Groups Section -->
-  <section class="full-bleed relative py-16 md:py-24">
+  <section class="full-bleed relative py-12 md:py-16">
     <div
       class="absolute inset-0 opacity-50"
       style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}

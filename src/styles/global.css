@@ -28,8 +28,24 @@
 
 /* Headline font */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Original Surfer', sans-serif;
+	font-family: 'Calistoga', serif;
 	font-weight: 400;
+}
+
+/* Bold button text */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-sm,
+.btn-sm-primary,
+.btn-sm-secondary,
+.btn-sm-outline,
+.btn-lg,
+.btn-lg-primary,
+.btn-lg-secondary,
+.btn-lg-outline {
+	font-weight: 700;
 }
 
 /* Primary button hover — darken instead of fade */

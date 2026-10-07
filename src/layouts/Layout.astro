@@ -192,14 +192,14 @@ const imageURL = new URL(image, Astro.site);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://www.googletagmanager.com" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Original+Surfer&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Calistoga&display=swap"
       rel="stylesheet"
     />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6B827QW9KC"
     ></script>
-    <script>
+    <script is:inline>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
@@ -207,6 +207,9 @@ const imageURL = new URL(image, Astro.site);
       gtag("js", new Date());
       gtag("config", "G-6B827QW9KC");
     </script>
+
+    <!-- FareHarbor API (provides FH.open for booking overlays) -->
+    <script is:inline async src="https://fareharbor.com/embeds/api/v1/"></script>
 
     <!-- Microsoft Clarity -->
     <script type="text/javascript" is:inline>
