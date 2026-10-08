@@ -78,14 +78,14 @@ const tourStructuredData = {
         quality={85}
       />
       {tour.slug === "surfing-beach-culture" && (
-        <p class="absolute bottom-1 right-2 text-white/70 leading-none" style="font-size:10px;">UCSC Digital Archives / Herry Mayo Collection</p>
+        <p class="absolute bottom-1 right-2 text-white/70 leading-none caption">UCSC Digital Archives / Herry Mayo Collection</p>
       )}
     </div>
   </section>
 
   <!-- Title and Breadcrumbs -->
-  <section class="container py-8">
-    <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">
+  <section class="container page-header">
+    <h1 class="title-page text-center">
       {tour.title}
     </h1>
 
@@ -106,19 +106,19 @@ const tourStructuredData = {
   </section>
 
   <!-- Main Content -->
-  <section class="container pb-8">
+  <section class="container section-flush-top">
     <div class="max-w-3xl mx-auto">
       <!-- Trip Highlights -->
       <div class="mb-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-[#ed672d]">
+        <h2 class="title-subsection text-primary">
           Trip Highlights:
         </h2>
         <ul class="space-y-2">
           {
             tour.highlights.map((highlight) => (
               <li class="flex items-start gap-3">
-                <span class="text-[#ed672d]">•</span>
-                <span class="text-muted-foreground [&_a]:text-[#ed672d] [&_a]:underline [&_a]:font-semibold [&_a:hover]:text-[#b84d1e]" set:html={highlight} />
+                <span class="text-primary">•</span>
+                <span class="text-muted-foreground [&_a]:text-primary [&_a]:underline [&_a]:font-semibold [&_a:hover]:text-primary-hover" set:html={highlight} />
               </li>
             ))
           }
@@ -127,7 +127,7 @@ const tourStructuredData = {
 
       <!-- Book Your Tour -->
       <div class="mb-12 pb-8 border-b border-border">
-        <h2 id="book" class="text-2xl md:text-3xl font-bold mb-4 text-[#ed672d]" style="scroll-margin-top: 80px;">
+        <h2 id="book" class="title-subsection text-primary scroll-mt-20">
           Book Your Tour
         </h2>
 
@@ -171,7 +171,7 @@ const tourStructuredData = {
       <!-- Description -->
       <div class="mb-12">
         <h2
-          class="text-2xl md:text-3xl font-bold mb-6 text-[#ed672d] text-center"
+          class="title-subsection text-primary text-center"
         >
           Description
         </h2>
@@ -185,7 +185,7 @@ const tourStructuredData = {
       <!-- Gallery -->
       <div class="mb-12">
         <h2
-          class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center"
+          class="title-subsection text-primary text-center"
         >
           Gallery
         </h2>
@@ -217,7 +217,7 @@ const tourStructuredData = {
       <!-- Pre-Booking FAQ (Surf Walk only) -->
       {tour.slug === "surfing-beach-culture" && (
         <div class="mb-12">
-          <h3 class="text-xl font-bold mb-6">Quick Questions</h3>
+          <h3 class="title-card">Quick Questions</h3>
           <div class="space-y-5">
             <div>
               <p class="font-semibold mb-1">Do I need to surf to enjoy this tour?</p>
@@ -238,11 +238,11 @@ const tourStructuredData = {
 
       <!-- FareHarbor Calendar -->
       {tour.fareharborCalendarId && (
-        <div id="calendar" class="mb-12 text-center" style="scroll-margin-top: 80px;">
-          <h2 class="text-2xl md:text-3xl font-bold mb-4 text-[#ed672d]">
+        <div id="calendar" class="mb-12 text-center scroll-mt-20">
+          <h2 class="title-subsection text-primary">
             Ready to Book? View Availability
           </h2>
-          <p class="text-base font-bold mb-6" style="color: #007a99;">Pick a date, then choose from available tour times.</p>
+          <p class="tagline">Pick a date, then choose from available tour times.</p>
           <script is:inline data-tour-calendar={tour.fareharborCalendarId} src={`https://fareharbor.com/embeds/script/calendar/walksantacruz/items/${tour.fareharborCalendarId}/?fallback=simple&full-items=yes&flow=1491352`}></script>
           <p class="text-sm font-semibold text-foreground mt-4">Full refund if cancelled 24+ hours before tour start time</p>
           <p class="text-sm text-muted-foreground mt-3">Calendar not loading? <a href={tour.bookingUrl} target="_blank" rel="noopener noreferrer" class="text-primary underline">Book directly on FareHarbor →</a></p>
@@ -260,14 +260,14 @@ const tourStructuredData = {
       {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
       <div class="mb-12">
         <h2
-          class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center"
+          class="title-subsection text-primary text-center"
         >
           Important Information
         </h2>
 
         <!-- Custom Tours -->
         <div class="mb-8 text-center">
-          <h3 class="text-xl font-bold mb-4">Custom Tours</h3>
+          <h3 class="title-card">Custom Tours</h3>
           <p class="text-muted-foreground mb-4">
             We're happy to design custom tours for schools, corporate teams, non-profits, family reunions, and more.
           </p>
@@ -276,7 +276,7 @@ const tourStructuredData = {
 
         <!-- Want a different tour? -->
         <div class="text-center">
-          <h3 class="text-xl font-bold mb-4">Want a different tour?</h3>
+          <h3 class="title-card">Want a different tour?</h3>
           <p class="text-muted-foreground mb-4">
             We have many other tours to choose from in a variety of topics,
             languages, and group sizes.
@@ -289,7 +289,7 @@ const tourStructuredData = {
       <!-- Matt Knows His Surf (Surf Walk only) -->
       {tour.slug === "surfing-beach-culture" && (
         <div class="mb-12 card p-8 md:p-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-2 text-center">
+          <h2 class="title-section text-center">
             Matt Knows His Surf
           </h2>
           <p class="text-center text-sm font-semibold text-muted-foreground mb-8">
@@ -356,7 +356,7 @@ const tourStructuredData = {
       {!["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
       <div class="mb-12">
         <h2
-          class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center"
+          class="title-subsection text-primary text-center"
         >
           What Makes This Tour Special
         </h2>
@@ -376,7 +376,7 @@ const tourStructuredData = {
               quality={80}
             />
           </div>
-          <h3 class="text-xl font-bold mb-4 text-center">
+          <h3 class="title-card text-center">
             Why take this tour?
           </h3>
           <p class="text-muted-foreground leading-relaxed text-center">
@@ -386,12 +386,12 @@ const tourStructuredData = {
 
         <!-- Included -->
         <div class="text-center">
-          <h3 class="text-xl font-bold mb-4">Included</h3>
+          <h3 class="title-card">Included</h3>
           <ul class="space-y-2 text-left max-w-xl mx-auto">
             {
               tour.includes.included.map((item) => (
                 <li class="flex items-start gap-3">
-                  <span class="text-[#ed672d]">•</span>
+                  <span class="text-primary">•</span>
                   <span class="text-muted-foreground">{item}</span>
                 </li>
               ))
@@ -407,8 +407,8 @@ const tourStructuredData = {
   <!-- Related Tours -->
   {
     relatedTours.length > 0 && (
-      <section class="container pt-8 pb-6 md:pt-12 md:pb-8">
-        <h4 class="text-xl font-bold mb-6 text-center">More Tours</h4>
+      <section class="container section">
+        <h4 class="title-card text-center">More Tours</h4>
         <div class="flex flex-col md:flex-row max-w-3xl mx-auto">
           {relatedTours.map((relatedTour, i) => (
             <a
@@ -442,20 +442,20 @@ const tourStructuredData = {
 
   <!-- Important Information (moved below final CTA) -->
   {["downtown-mission-hill", "beach-hill-loop", "surfing-beach-culture"].includes(tour.slug) && (
-  <section class="container pt-12 pb-12 md:pt-12 md:pb-16">
+  <section class="container section">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8 text-[#ed672d] text-center">
+      <h2 class="title-subsection text-primary text-center">
         More Ways to Explore
       </h2>
       <div class="mb-8 text-center">
-        <h3 class="text-xl font-bold mb-4">Custom Tours</h3>
+        <h3 class="title-card">Custom Tours</h3>
         <p class="text-muted-foreground mb-4">
           We're happy to design custom tours for schools, corporate teams, non-profits, family reunions, and more.
         </p>
         <a href="/custom" class="btn"> Make Inquiry </a>
       </div>
       <div class="text-center">
-        <h3 class="text-xl font-bold mb-4">Want a different tour?</h3>
+        <h3 class="title-card">Want a different tour?</h3>
         <p class="text-muted-foreground mb-4">
           We have many other tours to choose from in a variety of topics,
           languages, and group sizes.
@@ -482,17 +482,16 @@ const tourStructuredData = {
         <Icon name="lucide:x" class="w-6 h-6" />
       </button>
       <div class="p-4">
-        <h3 class="text-xl font-bold mb-4">Meeting Point</h3>
+        <h3 class="title-card">Meeting Point</h3>
         <p class="text-muted-foreground mb-4">{tour.meetingPoint.name}</p>
         <iframe
           src={tour.meetingPoint.embedUrl}
           width="100%"
           height="400"
-          style="border:0;"
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="rounded-lg"
+          class="rounded-lg border-0"
         ></iframe>
         <div class="flex flex-wrap gap-3 mt-4">
           <a

@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import PricingBlock from "../components/PricingBlock.astro";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 
 // Import private tour photos - EASILY SWAP THESE by changing the filenames below
 import photo1 from "../assets/private-tours/IMG_0036.jpeg";
@@ -23,22 +23,18 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
   description="Design a walking tour tailored to your interests, pace, and schedule. Choose your topic, your route, your timing — surf history, architecture, nature, filming locations, and more."
 >
   <!-- Hero Section -->
-  <section class="full-bleed relative py-8 md:py-12">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative page-header">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Custom Tours</h1>
+        <h1 class="title-page">Custom Tours</h1>
         <p class="text-2xl text-muted-foreground font-medium mb-2">Design a tour tailored to your interests, pace, and schedule.</p>
       </div>
     </div>
   </section>
 
   <!-- Intro Content -->
-  <section class="container pt-6 pb-12 md:pt-6 md:pb-12">
+  <section class="container section-flush-top">
     <div class="max-w-3xl mx-auto">
 
       <!-- Intro Text -->
@@ -54,7 +50,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 
       <!-- Hero photo -->
       <div class="mb-12">
-        <div class="aspect-[3/2] rounded-lg overflow-hidden">
+        <div class="aspect-3/2 rounded-lg overflow-hidden">
           <Image
             src={heroPhoto}
             alt="Panther Beach, Santa Cruz"
@@ -66,23 +62,23 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       </div>
 
       <!-- Themed sections -->
-      <h2 class="text-2xl md:text-3xl font-bold mb-8">What We Can Build for You</h2>
+      <h2 class="title-subsection">What We Can Build for You</h2>
 
       <div class="space-y-8">
         <div>
-          <h3 class="text-lg font-bold text-primary mb-2">For History & Architecture Lovers</h3>
+          <h3 class="title-item text-primary">For History & Architecture Lovers</h3>
           <p class="text-muted-foreground">Downtown Santa Cruz, Mission Hill, Beach Hill estates, Victorian neighborhoods, earthquake history, early California mission sites.</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-primary mb-2">For Surf & Coastal Enthusiasts</h3>
+          <h3 class="title-item text-primary">For Surf & Coastal Enthusiasts</h3>
           <p class="text-muted-foreground">The full surf history walk, wetsuit innovation story, Steamer Lane, West Cliff Drive, Lighthouse Point, marine wildlife.</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-primary mb-2">For Nature & Outdoor Explorers</h3>
+          <h3 class="title-item text-primary">For Nature & Outdoor Explorers</h3>
           <p class="text-muted-foreground">Wilder Ranch historic dairy, Cotoni-Coast Dairies conservation lands, Shark Fin Cove, Henry Cowell Ranch & Limekilns, coastal trail walks.</p>
         </div>
         <div>
-          <h3 class="text-lg font-bold text-primary mb-2">Fully Custom</h3>
+          <h3 class="title-item text-primary">Fully Custom</h3>
           <p class="text-muted-foreground">UCSC campus tours, movie filming locations, neighborhood deep-dives, family reunion walks, anniversary or special occasion experiences. If you have an idea, we'll build it.</p>
         </div>
       </div>
@@ -94,15 +90,15 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
   </section>
 
   <!-- Image Gallery Section -->
-  <section class="container pb-12 md:pb-12">
+  <section class="container section-flush-top">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+      <h2 class="title-section text-center">
         Experience the Beauty of Santa Cruz
       </h2>
 
       <!-- EASY IMAGE SWAPS: Change the import filenames at the top of this file -->
       <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+        <div class="aspect-4/3 rounded-lg overflow-hidden">
           <Image
             src={streetTourPhoto}
             alt="Tour group exploring a Santa Cruz neighborhood"
@@ -111,7 +107,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
             quality={80}
           />
         </div>
-        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+        <div class="aspect-4/3 rounded-lg overflow-hidden">
           <Image
             src={outdoorTourPhoto}
             alt="Guests on a custom Santa Cruz walking tour"
@@ -123,7 +119,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       </div>
 
       <div class="grid md:grid-cols-2 gap-6 mb-6">
-        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+        <div class="aspect-4/3 rounded-lg overflow-hidden">
           <Image
             src={photo1}
             alt="Custom tour location in Santa Cruz"
@@ -132,7 +128,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
             quality={80}
           />
         </div>
-        <div class="aspect-[4/3] rounded-lg overflow-hidden">
+        <div class="aspect-4/3 rounded-lg overflow-hidden">
           <Image
             src={photo2}
             alt="Beautiful Santa Cruz scenery"
@@ -206,10 +202,10 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
   </section>
 
   <!-- Contact/Booking Section -->
-  <section class="container py-12 md:py-12">
+  <section class="container section">
     <div class="max-w-2xl mx-auto">
       <div class="text-center mb-10">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4" id="contact">
+        <h2 class="title-section" id="contact">
           Tell Us Your Vision
         </h2>
         <p class="text-xl text-muted-foreground">

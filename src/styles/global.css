@@ -28,8 +28,72 @@
 
 /* Headline font */
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Calistoga', serif;
+	font-family: var(--font-display);
 	font-weight: 400;
+}
+
+/* ──────────────────────────────────────────────────────────
+   Design system
+   Use these classes instead of one-off sizes, spacing or colors.
+   Colors: text-primary / bg-primary (orange), text-teal / bg-teal,
+   hover:text-primary-hover. Tokens live in theme.css.
+   ────────────────────────────────────────────────────────── */
+@layer components {
+	/* Section spacing */
+	.section {
+		@apply py-10 md:py-12;
+	}
+	.section-flush-top {
+		@apply pt-0 pb-10 md:pb-12;
+	}
+	.page-header {
+		@apply pt-8 pb-6 md:pt-10 md:pb-8;
+	}
+	.band {
+		@apply py-4 md:py-6;
+	}
+
+	/* Type scale (margins included; override with mb-0 when needed) */
+	.title-page {
+		@apply text-4xl md:text-5xl leading-tight mb-4;
+	}
+	.title-section {
+		@apply text-3xl md:text-4xl leading-tight mb-6;
+	}
+	.title-subsection {
+		@apply text-2xl md:text-3xl leading-tight mb-4;
+	}
+	.title-card {
+		@apply text-xl leading-snug mb-3;
+	}
+	.title-item {
+		@apply text-lg leading-snug mb-2;
+	}
+	.eyebrow {
+		@apply text-xs font-bold uppercase tracking-widest text-primary mb-4;
+	}
+	.tagline {
+		@apply text-base font-bold text-teal mb-6;
+	}
+	.lead {
+		@apply text-lg md:text-xl text-muted-foreground leading-relaxed;
+	}
+	.caption {
+		@apply text-2xs leading-none;
+	}
+
+	/* Header navigation */
+	.nav-link {
+		@apply text-white font-medium pb-1 border-b-3 border-transparent;
+	}
+	.nav-link-active {
+		@apply font-bold border-primary;
+	}
+
+	/* Inline text link in body copy */
+	.link {
+		@apply font-semibold text-primary underline hover:text-primary-hover;
+	}
 }
 
 /* Bold button text */
@@ -57,7 +121,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-lg-primary:hover,
 .btn-icon:hover,
 .btn-icon-primary:hover {
-	background-color: color-mix(in oklch, var(--color-primary) 82%, black);
+	background-color: var(--color-primary-hover);
 }
 
 /* Secondary button styling */
@@ -70,14 +134,14 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: color-mix(in oklch, var(--color-secondary) 90%, black);
 }
 
-/* Header logo text size */
-.logo-text-default {
-	font-size: 0.8rem;
+/* Logo wordmark */
+.logo-text {
+	font-family: var(--font-display);
+	font-size: 1.4rem;
+	transform: translateY(-2px);
 }
-@media (min-width: 768px) {
-	.logo-text-default {
-		font-size: 0.98rem;
-	}
+.logo-initial {
+	letter-spacing: -0.08em;
 }
 
 /* Consistent list item styling */
@@ -88,11 +152,4 @@ li {
 /* Vertically center bullet dots with text in flex list items */
 li.flex {
 	align-items: center;
-}
-
-/* Email signup form — stack on mobile */
-@media (max-width: 480px) {
-	.guide-form-fields { flex-direction: column !important; }
-	.guide-form-fields input { width: 100% !important; }
-	.guide-form-fields button { width: 100% !important; }
 }

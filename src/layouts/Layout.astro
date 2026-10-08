@@ -231,7 +231,7 @@ const imageURL = new URL(image, Astro.site);
 
     <Header />
 
-    <main id="main" class="flex-1 pt-[56px] md:pt-[68px]">
+    <main id="main" class="flex-1 pt-14 md:pt-17">
       <slot />
     </main>
 
@@ -292,8 +292,8 @@ const imageURL = new URL(image, Astro.site);
   .skip-link:focus {
     left: 0;
     top: 0;
-    background: #000;
-    color: #fff;
+    background: var(--color-foreground);
+    color: var(--color-background);
     padding: 1rem;
   }
 </style>

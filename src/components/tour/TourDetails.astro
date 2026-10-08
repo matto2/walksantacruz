@@ -18,7 +18,7 @@ const { duration, price, schedule, meetingPoint, bookingUrl } = Astro.props;
   class="hidden md:block card bg-background border-2 border-primary/20 sticky top-4"
 >
   <div class="p-6">
-    <h3 class="text-2xl font-bold mb-6 text-center">Tour Details</h3>
+    <h3 class="title-subsection text-center">Tour Details</h3>
 
     <!-- Price (most prominent) -->
     <div class="mb-6 text-center">
@@ -111,8 +111,7 @@ const { duration, price, schedule, meetingPoint, bookingUrl } = Astro.props;
       </div>
       <a
         href={bookingUrl}
-        class="btn flex-1 text-center"
-        style="min-width: 150px;"
+        class="btn flex-1 text-center min-w-36"
       >
         Book Tour
       </a>

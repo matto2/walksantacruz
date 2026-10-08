@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import Lightbox from "../components/Lightbox.astro";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 
 // Import gallery images
 import downtownSantaCruz from "../assets/downtown-santa-cruz_wikimedia.jpg";
@@ -105,15 +105,11 @@ const galleryImages = [
   description="Preview the beauty and charm of Santa Cruz through our gallery. See the sights you'll experience on our guided walking tours."
 >
   <!-- Hero Section -->
-  <section class="full-bleed relative py-8 md:py-12">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative page-header">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        <h1 class="title-page">
           Experience Santa Cruz
         </h1>
         <p class="text-xl text-muted-foreground">
@@ -124,7 +120,7 @@ const galleryImages = [
   </section>
 
   <!-- Gallery Grid -->
-  <section class="container pt-6 pb-12 md:pt-6 md:pb-12">
+  <section class="container section-flush-top">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {
         galleryImages.map((image) => (
@@ -154,15 +150,11 @@ const galleryImages = [
   </section>
 
   <!-- CTA Section -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        <h2 class="title-section">
           Experience These Sights and More
         </h2>
         <p class="text-lg text-muted-foreground mb-8">

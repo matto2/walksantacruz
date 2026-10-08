@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
 import heroImage from "../assets/signature_hero.jpg";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 ---
 
 <Layout
@@ -58,7 +58,7 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Main Description -->
-  <section class="container py-12 md:py-16">
+  <section class="container section">
     <div class="max-w-3xl mx-auto">
       <p class="text-xl text-muted-foreground leading-relaxed mb-6">
         Your expert guide arrives at your hotel or vacation rental in a private luxury vehicle and orchestrates a seamless full-day experience revealing Santa Cruz's essence. No planning, no logistics, no choices to make.
@@ -67,7 +67,7 @@ import mapBg from "../assets/map-bg.jpg";
         From ancient redwood groves to coastal overlooks to the open bay, a carefully orchestrated journey that adapts to the season, the light, and your interests.
       </p>
 
-      <h2 class="text-2xl font-bold mb-6">You experience:</h2>
+      <h2 class="title-subsection">You experience:</h2>
       <ul class="space-y-4 text-lg text-muted-foreground mb-8">
         <li class="flex items-start gap-3">
           <span class="text-primary mt-1">
@@ -115,22 +115,18 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- What's Included -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 class="title-section text-center">
           What's Included
         </h2>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Fully Curated Experience</h3>
+              <h3 class="title-item">Fully Curated Experience</h3>
               <p class="text-muted-foreground">
                 Your guide designs each journey around optimal conditions, seasonal highlights, and your interests. No two experiences are exactly alike.
               </p>
@@ -139,7 +135,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Private Luxury Transportation</h3>
+              <h3 class="title-item">Private Luxury Transportation</h3>
               <p class="text-muted-foreground">
                 Comfortable, climate-controlled vehicle. We pick you up at your accommodation and return you door-to-door.
               </p>
@@ -148,7 +144,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Multiple Guided Walks</h3>
+              <h3 class="title-item">Multiple Guided Walks</h3>
               <p class="text-muted-foreground">
                 Short, intimate walks in distinct environments—each revealing a different dimension of Santa Cruz. Stay fresh and engaged throughout the day.
               </p>
@@ -157,7 +153,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Curated Food & Refreshments</h3>
+              <h3 class="title-item">Curated Food & Refreshments</h3>
               <p class="text-muted-foreground">
                 Thoughtfully chosen stops at local spots, plus refreshments throughout.
               </p>
@@ -166,7 +162,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Sunset Boat Experience</h3>
+              <h3 class="title-item">Sunset Boat Experience</h3>
               <p class="text-muted-foreground">
                 Private charter on Monterey Bay as the perfect finale to your day. Weather-dependent; alternative arranged if needed.
               </p>
@@ -175,7 +171,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Insider Access & Stories</h3>
+              <h3 class="title-item">Insider Access & Stories</h3>
               <p class="text-muted-foreground">
                 Hidden viewpoints, local-only knowledge, and the stories that shaped this town—drawn from decades of research and local connections.
               </p>
@@ -187,9 +183,9 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Details & Pricing -->
-  <section class="container py-12 md:py-16">
+  <section class="container section">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+      <h2 class="title-section text-center">
         Details
       </h2>
 
@@ -214,7 +210,7 @@ import mapBg from "../assets/map-bg.jpg";
         </div>
 
         <div class="bg-muted/30 rounded-lg p-8 text-center">
-          <h3 class="text-xl font-bold mb-6">Investment</h3>
+          <h3 class="title-card">Investment</h3>
           <p class="text-3xl font-semibold mb-2">$2,400 <span class="text-lg font-normal text-muted-foreground">for 2 guests</span></p>
           <p class="text-2xl font-semibold mb-6">$2,800 <span class="text-lg font-normal text-muted-foreground">for 3-4 guests</span></p>
           <p class="text-sm text-muted-foreground">All arrangements, transportation, boat charter, and refreshments included.</p>
@@ -224,15 +220,11 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Who This Is For -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">
+        <h2 class="title-section text-center">
           Who This Is For
         </h2>
 
@@ -273,9 +265,9 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- The Experience Difference -->
-  <section class="container py-12 md:py-16">
+  <section class="container section">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center">
+      <h2 class="title-section text-center">
         The Experience Difference
       </h2>
       <p class="text-xl text-center text-muted-foreground mb-8">A Curated Journey</p>
@@ -295,15 +287,11 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Your Guide -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">
+        <h2 class="title-section">
           Your Guide
         </h2>
 
@@ -321,9 +309,9 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Contact / Booking -->
-  <section id="contact" class="container py-12 md:py-16">
+  <section id="contact" class="container section">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+      <h2 class="title-section">
         Ready to reserve your experience?
       </h2>
       <p class="text-lg text-muted-foreground mb-8">
@@ -362,22 +350,18 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- FAQ -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 class="title-section text-center">
           Frequently Asked Questions
         </h2>
 
         <div class="space-y-6">
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">How far in advance should I book?</h3>
+              <h3 class="title-item">How far in advance should I book?</h3>
               <p class="text-muted-foreground">
                 We recommend 7-14 days advance notice to ensure vehicle and boat availability, though we'll accommodate shorter notice when possible.
               </p>
@@ -386,7 +370,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">What if weather affects the boat portion?</h3>
+              <h3 class="title-item">What if weather affects the boat portion?</h3>
               <p class="text-muted-foreground">
                 We monitor conditions closely and have alternative finale experiences prepared. Your satisfaction is guaranteed regardless of weather.
               </p>
@@ -395,7 +379,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">Can you accommodate dietary restrictions?</h3>
+              <h3 class="title-item">Can you accommodate dietary restrictions?</h3>
               <p class="text-muted-foreground">
                 Absolutely. Let us know any dietary needs when booking and we'll plan accordingly.
               </p>
@@ -404,7 +388,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">What should we bring?</h3>
+              <h3 class="title-item">What should we bring?</h3>
               <p class="text-muted-foreground">
                 Comfortable walking shoes, weather-appropriate layers, sunscreen, and a camera. We provide water and refreshments throughout.
               </p>
@@ -413,7 +397,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">Is this suitable for children?</h3>
+              <h3 class="title-item">Is this suitable for children?</h3>
               <p class="text-muted-foreground">
                 The experience is designed for adults and teens who can comfortably walk 2-3 miles total over the day. Contact us to discuss specific situations.
               </p>
@@ -422,7 +406,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-2">Can we customize the experience?</h3>
+              <h3 class="title-item">Can we customize the experience?</h3>
               <p class="text-muted-foreground">
                 Within reason, yes. The overall arc and timing are optimized for the best experience, but we can emphasize certain themes or areas based on your interests.
               </p>
@@ -434,9 +418,9 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Alternative Experiences -->
-  <section class="container py-12 md:py-16">
+  <section class="container section">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="text-2xl md:text-3xl font-bold mb-4">
+      <h2 class="title-subsection">
         Looking for something different?
       </h2>
       <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-8">

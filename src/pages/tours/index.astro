@@ -11,9 +11,9 @@ import { tours } from "../../data/tours";
   description="Walking tours in Santa Cruz — Surf Walk, Heart of Downtown, and Beach Hill Loop. $45 adults · $30 children · Kids 5 &amp; under free. Book online."
 >
   <!-- Hero -->
-  <section class="container pt-10 pb-8 md:pt-12 md:pb-12">
+  <section class="container page-header">
     <div class="max-w-3xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Tours</h1>
+      <h1 class="title-page">Our Tours</h1>
       <p class="text-xl text-muted-foreground leading-relaxed">
         Three guided tours plus fully custom options. Email us with your preferred tour, date, and group size — we'll confirm availability and get you set up.
       </p>
@@ -21,14 +21,14 @@ import { tours } from "../../data/tours";
   </section>
 
   <!-- Pricing -->
-  <section class="container pb-8">
+  <section class="container section-flush-top">
     <div class="max-w-2xl mx-auto">
       <PricingBlock />
     </div>
   </section>
 
   <!-- Tour Cards -->
-  <section class="container pb-12 md:pb-14">
+  <section class="container section-flush-top">
     <div class="max-w-5xl mx-auto">
       <div class="grid md:grid-cols-2 gap-6">
         {tours.map((tour) => (
@@ -47,7 +47,7 @@ import { tours } from "../../data/tours";
               />
             </div>
             <div class="px-6 pt-4 pb-6 flex flex-col flex-1">
-              <h2 class="text-xl font-bold mb-2">{tour.title}</h2>
+              <h2 class="title-card">{tour.title}</h2>
               <p class="text-muted-foreground mb-4 flex-1">{tour.shortDescription}</p>
               <ul class="text-sm text-muted-foreground space-y-1 mb-5 [&_strong]:text-foreground">
                 <li><strong>Duration:</strong> {tour.duration}</li>
@@ -72,7 +72,7 @@ import { tours } from "../../data/tours";
             </div>
           </div>
           <div class="px-6 pt-4 pb-6 flex flex-col flex-1">
-            <h2 class="text-xl font-bold mb-2">Custom Tours</h2>
+            <h2 class="title-card">Custom Tours</h2>
             <p class="text-muted-foreground mb-4 flex-1">
               Not seeing exactly what you want? Tell us your vision — we'll design a route around your group's interests, timeline, and pace.
             </p>
@@ -88,7 +88,7 @@ import { tours } from "../../data/tours";
   </section>
 
   <!-- CTA -->
-  <section class="container pb-12 md:pb-16">
+  <section class="container section-flush-top">
     <div class="max-w-2xl mx-auto">
       <BookingCTA subject="Tour Booking" />
     </div>

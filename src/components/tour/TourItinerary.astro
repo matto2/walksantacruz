@@ -13,7 +13,7 @@ const { itinerary, highlights } = Astro.props;
 <div class="space-y-8">
   <!-- What You'll Experience Section -->
   <div>
-    <h2 class="text-2xl md:text-3xl font-bold mb-6">What You'll Experience</h2>
+    <h2 class="title-subsection">What You'll Experience</h2>
 
     <!-- Itinerary Timeline -->
     <div class="space-y-6">
@@ -33,7 +33,7 @@ const { itinerary, highlights } = Astro.props;
             <!-- Stop Content -->
             <div class="flex-1 pb-6">
               <div class="flex items-start justify-between gap-4 mb-2">
-                <h3 class="text-xl font-semibold">{stop.title}</h3>
+                <h3 class="title-card mb-0">{stop.title}</h3>
                 {stop.duration && (
                   <div class="flex items-center gap-1 text-sm text-muted-foreground whitespace-nowrap">
                     <Icon name="lucide:clock" class="w-4 h-4" />
@@ -55,7 +55,7 @@ const { itinerary, highlights } = Astro.props;
   {
     highlights && highlights.length > 0 && (
       <div>
-        <h3 class="text-xl font-semibold mb-4">Tour Highlights</h3>
+        <h3 class="title-card">Tour Highlights</h3>
         <ul class="grid sm:grid-cols-2 gap-3">
           {highlights.map((highlight) => (
             <li class="flex items-start gap-2">

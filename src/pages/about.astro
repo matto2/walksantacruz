@@ -6,7 +6,7 @@ import heroPhoto from "../assets/Matt-by-moore-creek.jpg";
 import pescaderoPhoto from "../assets/walking-pescadero.jpg";
 import downtownTourPhoto from "../assets/IMG_8220.jpeg";
 import churchTowerTourPhoto from "../assets/IMG_8224.jpeg";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 ---
 
 <Layout
@@ -14,15 +14,11 @@ import mapBg from "../assets/map-bg.jpg";
   description="Meet Matt O'Leary, your local Santa Cruz guide. A native with a passion for sharing the rich history and vibrant culture of our coastal community."
 >
   <!-- Hero Section -->
-  <section class="full-bleed relative py-8 md:py-12">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative page-header">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">About Your Guide</h1>
+        <h1 class="title-page">About Your Guide</h1>
         <p class="text-xl text-muted-foreground">
           Local expertise, passionate storytelling
         </p>
@@ -31,7 +27,7 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- About Content -->
-  <section class="container pt-6 pb-12 md:pt-6 md:pb-12">
+  <section class="container section-flush-top">
     <div class="max-w-3xl mx-auto">
       <!-- Hero photo at top -->
       <div class="mb-12">
@@ -64,7 +60,7 @@ import mapBg from "../assets/map-bg.jpg";
 
         <!-- Hiking photo (Pescadero) -->
         <div class="mb-6">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden">
+          <div class="aspect-4/3 rounded-lg overflow-hidden">
             <Image
               src={pescaderoPhoto}
               alt="Walking in Pescadero"
@@ -82,7 +78,7 @@ import mapBg from "../assets/map-bg.jpg";
 
         <!-- Cave/Beach photo -->
         <div class="mb-6">
-          <div class="aspect-[3/2] rounded-lg overflow-hidden">
+          <div class="aspect-3/2 rounded-lg overflow-hidden">
             <Image
               src={aboutPhoto}
               alt="Matt leading a walking tour"
@@ -95,7 +91,7 @@ import mapBg from "../assets/map-bg.jpg";
 
         <!-- Downtown tour photo -->
         <div class="mb-6">
-          <div class="aspect-[3/4] rounded-lg overflow-hidden">
+          <div class="aspect-3/4 rounded-lg overflow-hidden">
             <Image
               src={downtownTourPhoto}
               alt="Matt guiding a group on a downtown Santa Cruz walking tour"
@@ -108,7 +104,7 @@ import mapBg from "../assets/map-bg.jpg";
 
         <!-- Church tower tour photo -->
         <div class="mb-6">
-          <div class="aspect-[4/3] rounded-lg overflow-hidden">
+          <div class="aspect-4/3 rounded-lg overflow-hidden">
             <Image
               src={churchTowerTourPhoto}
               alt="Matt with a tour group near the Town Clock in Santa Cruz"
@@ -141,7 +137,7 @@ import mapBg from "../assets/map-bg.jpg";
 
       <!-- Walk With Matt CTA -->
       <div class="text-center mt-12">
-        <h2 class="text-2xl md:text-3xl font-bold mb-3">Walk With Matt</h2>
+        <h2 class="title-subsection">Walk With Matt</h2>
         <p class="text-lg text-muted-foreground mb-6">Small groups, personal attention, stories you won't find in any guidebook.</p>
         <a href="/#tours" class="btn btn-lg">See Available Tours</a>
       </div>
@@ -149,22 +145,18 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Why Walk With Us -->
-  <section class="full-bleed relative py-12 md:py-16">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+        <h2 class="title-section text-center">
           Why Walk With Us
         </h2>
 
         <div class="grid md:grid-cols-2 gap-8">
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Local Expertise</h3>
+              <h3 class="title-item">Local Expertise</h3>
               <p class="text-muted-foreground">
                 Our guides are Santa Cruz have deep knowledge and passion for
                 our community's history and culture.
@@ -174,7 +166,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Small Groups</h3>
+              <h3 class="title-item">Small Groups</h3>
               <p class="text-muted-foreground">
                 Enjoy personalized attention with our small group sizes or opt
                 for a private tour or team offsite experience.
@@ -184,7 +176,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Hidden Gems</h3>
+              <h3 class="title-item">Hidden Gems</h3>
               <p class="text-muted-foreground">
                 Discover secret spots and fascinating stories that even locals
                 might not know about.
@@ -194,7 +186,7 @@ import mapBg from "../assets/map-bg.jpg";
 
           <div class="card">
             <div class="p-6">
-              <h3 class="font-semibold text-lg mb-3">Easy & Accessible</h3>
+              <h3 class="title-item">Easy & Accessible</h3>
               <p class="text-muted-foreground">
                 Our tours are designed to be comfortable for most fitness levels
                 with plenty of stops along the way.

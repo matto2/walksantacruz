@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 import mattPhoto from "../assets/me-talking-on-a-tour1.jpeg";
 import mattWestCliff from "../assets/surf-tour/matt-surfing-1990.jpg";
 import teamPhoto from "../assets/teambuilding/team1.jpg";
@@ -16,9 +16,9 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   description="Customized walking tours and group experiences for team offsites in Santa Cruz. Choose from three signature tours or design something entirely your own."
 >
   <!-- Hero Section -->
-  <section class="container pt-10 pb-8 md:pt-12 md:pb-12">
+  <section class="container page-header">
     <div class="max-w-3xl mx-auto mb-8">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+      <h1 class="title-page">
         Give Your Team a Day to Remember
       </h1>
       <p class="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
@@ -46,7 +46,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Body Copy -->
-  <section class="container py-12 md:py-12">
+  <section class="container section">
     <div class="max-w-3xl mx-auto space-y-5 text-lg text-muted-foreground leading-relaxed">
       <p>
         No two groups are the same, so the experience doesn't have to be either. Whether you have four people or forty, whether you want a focused hour or a half-day adventure, we'll build something around your group's interests, your schedule, and where you're staying.
@@ -61,9 +61,9 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Corporate Pricing -->
-  <section class="container pb-12 md:pb-12">
+  <section class="container section-flush-top">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-6">Pricing</h2>
+      <h2 class="title-subsection">Pricing</h2>
       <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-4">
         <div class="space-y-3">
           <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
@@ -87,11 +87,11 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Choose Your Adventure -->
-  <section class="full-bleed relative py-12 md:py-12">
-    <div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-4">Start with a Tour — or Build Something New</h2>
+        <h2 class="title-subsection">Start with a Tour — or Build Something New</h2>
         <p class="text-lg text-muted-foreground leading-relaxed mb-10">
           Each of the three signature tours works well for private groups and can be adapted to your needs. Or skip the menu entirely and we'll design something from scratch.
         </p>
@@ -108,7 +108,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
               />
             </div>
             <div class="p-6 flex flex-col justify-center">
-              <h3 class="font-bold text-lg mb-1">
+              <h3 class="title-item">
                 <a href="/tours/surfing-beach-culture" class="text-foreground">Santa Cruz Surf Walk &rarr;</a>
               </h3>
               <p class="text-muted-foreground">The origin story of West Coast surfing, told at the exact spots where it happened. From Hawaiian princes at the rivermouth in 1885 to Jack O'Neill's first Santa Cruz surf shop in an old real estate office, out along West Cliff Drive to Steamer Lane. About 90 minutes, coastal path the entire way.</p>
@@ -126,7 +126,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
               />
             </div>
             <div class="p-6 flex flex-col justify-center">
-              <h3 class="font-bold text-lg mb-1">
+              <h3 class="title-item">
                 <a href="/tours/downtown-mission-hill" class="text-foreground">Heart of Downtown Santa Cruz &rarr;</a>
               </h3>
               <p class="text-muted-foreground">A relaxed 90-minute walk through the historic core — the Mission, the 1989 earthquake rebuild, Victorian architecture, the creative district that came after. Good for groups who want to understand the city itself.</p>
@@ -144,7 +144,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
               />
             </div>
             <div class="p-6 flex flex-col justify-center">
-              <h3 class="font-bold text-lg mb-1">
+              <h3 class="title-item">
                 <a href="/tours/beach-hill-loop" class="text-foreground">Beach Hill to Downtown Loop &rarr;</a>
               </h3>
               <p class="text-muted-foreground">Starts at the beach and winds through Beach Hill's grand Victorian estates before descending into downtown via a hidden staircase locals love. A 90-minute loop that covers two of the city's most distinctive neighborhoods.</p>
@@ -162,7 +162,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
               />
             </div>
             <div class="p-6 flex flex-col justify-center">
-              <h3 class="font-bold text-lg mb-1">Completely Custom</h3>
+              <h3 class="title-item">Completely Custom</h3>
               <p class="text-muted-foreground">Tell us where your group is staying, what they're interested in, and how much time you have. We'll design a route and a story arc around that — starting from your hotel or rental if you're in the downtown or beach area, or connecting multiple neighborhoods for a longer half-day experience.</p>
             </div>
           </div>
@@ -172,9 +172,9 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Guide Section -->
-  <section class="container py-12 md:py-12">
+  <section class="container section">
     <div class="max-w-3xl mx-auto">
-      <h2 class="text-2xl md:text-3xl font-bold mb-8">A Guide Who's Passionate About Local History &amp; Culture</h2>
+      <h2 class="title-subsection">A Guide Who's Passionate About Local History &amp; Culture</h2>
       <div class="flex flex-col md:flex-row gap-8 items-start">
         <div class="w-full md:w-1/3 flex-shrink-0">
           <div class="aspect-square rounded-lg overflow-hidden">
@@ -200,11 +200,11 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Case Study: Santa Cruz Hostel Society -->
-  <section class="full-bleed relative py-12 md:py-12">
-    <div class="absolute inset-0 opacity-50" style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}></div>
+  <section class="full-bleed relative section">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold mb-6">How We Did This for Santa Cruz Hostel Society</h2>
+        <h2 class="title-subsection">How We Did This for Santa Cruz Hostel Society</h2>
         <div class="text-lg text-muted-foreground leading-relaxed space-y-4 mb-8">
           <p>
             The team at <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary underline">Santa Cruz Hostel Society</a> hosts groups from around the world at their Beach Hill property. They wanted their visiting teams to actually experience what makes Santa Cruz special — not just see it from a window.
@@ -233,7 +233,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
         </div>
 
         <div class="bg-secondary/30 border border-secondary rounded-lg p-6">
-          <h3 class="font-bold text-lg mb-2">Need a Base for Your Multi-Day Offsite?</h3>
+          <h3 class="title-item">Need a Base for Your Multi-Day Offsite?</h3>
           <p class="text-muted-foreground">
             <a href="https://santacruzhostel.org/" target="_blank" rel="noopener noreferrer" class="text-primary underline">Santa Cruz Hostel Society</a> offers affordable group accommodations right on Beach Hill — walking distance to the beach, Boardwalk, downtown, and wharf. Perfect for teams that want to stay where the action is without the hotel premium.
           </p>
@@ -243,7 +243,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
   </section>
 
   <!-- Contact Section -->
-  <section class="container py-12 md:py-12" id="contact">
+  <section class="container section" id="contact">
     <div class="max-w-2xl mx-auto">
 
       <!-- Pull Quote -->
@@ -265,7 +265,7 @@ import pantherBeach from "../assets/Panther_Beach,_CA_Birdies.jpg";
       </figure>
 
       <div class="text-center mb-8">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+        <h2 class="title-section">Get in Touch</h2>
         <p class="text-xl text-muted-foreground">
           Tell us about your group — we'll put together an experience worth talking about.
         </p>

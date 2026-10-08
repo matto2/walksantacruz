@@ -107,7 +107,7 @@ const { reviews } = Astro.props;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.9);
     border: 2px solid rgba(0, 0, 0, 0.1);
-    color: #333;
+    color: var(--color-foreground);
     cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -120,14 +120,14 @@ const { reviews } = Astro.props;
   }
 
   .slider-next {
-    background: #ed672d;
-    border-color: #ed672d;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
     color: white;
   }
 
   .slider-next:hover {
-    background: #c86003;
-    border-color: #c86003;
+    background: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
   }
 
   @media (max-width: 768px) {

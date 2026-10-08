@@ -7,6 +7,10 @@
   --popover-foreground: oklch(0.2795 0.0368 260.0310);
   --primary: #ed672d;
   --primary-foreground: #ffffff;
+  --primary-hover: color-mix(in oklch, #ed672d 82%, black);
+  --teal: #007a99;
+  --teal-foreground: #ffffff;
+  --sand: #f0ece2;
   --secondary: oklch(0.9587 0.0382 90.6506);
   --secondary-foreground: oklch(0.3729 0.0306 259.7328);
   --muted: oklch(0.9670 0.0029 264.5419);
@@ -62,6 +66,10 @@
   --popover-foreground: oklch(0.9288 0.0126 255.5078);
   --primary: #ed672d;
   --primary-foreground: #ffffff;
+  --primary-hover: color-mix(in oklch, #ed672d 82%, black);
+  --teal: #007a99;
+  --teal-foreground: #ffffff;
+  --sand: #f0ece2;
   --secondary: oklch(0.3351 0.0331 260.9120);
   --secondary-foreground: oklch(0.8717 0.0093 258.3382);
   --muted: oklch(0.2427 0.0381 259.9437);
@@ -115,6 +123,10 @@
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-teal: var(--teal);
+  --color-teal-foreground: var(--teal-foreground);
+  --color-sand: var(--sand);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
@@ -143,6 +155,9 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
+  --font-display: 'Calistoga', serif;
+
+  --text-2xs: 0.625rem;
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);

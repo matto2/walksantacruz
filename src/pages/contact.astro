@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import Layout from "../layouts/Layout.astro";
-import mapBg from "../assets/map-bg.jpg";
+import MapBackground from "../components/MapBackground.astro";
 ---
 
 <Layout
@@ -22,15 +22,11 @@ import mapBg from "../assets/map-bg.jpg";
   </script>
   <!-- End Tawk.to Live Chat -->
   <!-- Hero Section -->
-  <section class="full-bleed relative py-8 md:py-12">
-    <div
-      class="absolute inset-0 opacity-50"
-      style={`background-image: url(${mapBg.src}); background-size: cover; background-position: center;`}
-    >
-    </div>
+  <section class="full-bleed relative page-header">
+    <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+        <h1 class="title-page">Contact Us</h1>
         <p class="text-xl text-muted-foreground">
           To book a tour, email us with your tour choice, preferred date, and group size — we'll confirm availability and get you set up. For general questions, press inquiries, or partnerships, use the form below.
         </p>
@@ -39,7 +35,7 @@ import mapBg from "../assets/map-bg.jpg";
   </section>
 
   <!-- Contact Content -->
-  <section class="container pt-6 pb-12 md:pt-6 md:pb-12">
+  <section class="container section-flush-top">
     <div class="max-w-2xl mx-auto">
       <!-- Contact Options -->
       <div class="flex flex-wrap justify-center gap-4 mb-8">

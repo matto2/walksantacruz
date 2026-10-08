@@ -398,18 +398,18 @@ import hookAndLine from "../assets/hook-and-line.png";
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #ed672d;
+    color: var(--color-primary);
     margin-bottom: 1rem;
   }
   .guide-cover-headline {
-    font-family: 'Calistoga', serif;
+    font-family: var(--font-display);
     font-size: clamp(2.5rem, 10vw, 5rem);
     line-height: 1.0;
     color: var(--foreground);
     margin-bottom: 0;
   }
   .guide-cover-subhead {
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-serif);
     font-size: clamp(1rem, 2.5vw, 1.2rem);
     line-height: 1.6;
     color: var(--foreground);
@@ -440,7 +440,7 @@ import hookAndLine from "../assets/hook-and-line.png";
     background: var(--background);
   }
   .guide-section-title {
-    font-family: 'Calistoga', serif;
+    font-family: var(--font-display);
     font-size: clamp(1.75rem, 5vw, 2.5rem);
     line-height: 1.15;
     margin-bottom: 1.75rem;
@@ -458,7 +458,7 @@ import hookAndLine from "../assets/hook-and-line.png";
     }
   }
   .guide-signature {
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-serif);
     font-style: italic;
     text-align: right;
     color: var(--muted-foreground) !important;
@@ -468,16 +468,16 @@ import hookAndLine from "../assets/hook-and-line.png";
 
   /* ── Day sections ──────────────────────────────── */
   .guide-section--day1 {
-    background: #ffffff;
-    border-top: 4px solid #ed672d;
+    background: var(--color-card);
+    border-top: 4px solid var(--color-primary);
   }
   .guide-section--day2 {
-    background: #f0ece2;
-    border-top: 4px solid #007a99;
+    background: var(--color-sand);
+    border-top: 4px solid var(--color-teal);
   }
   .guide-section--day3 {
-    background: #ffffff;
-    border-top: 4px solid #ed672d;
+    background: var(--color-card);
+    border-top: 4px solid var(--color-primary);
   }
 
   .guide-day-header {
@@ -493,17 +493,17 @@ import hookAndLine from "../assets/hook-and-line.png";
     margin-bottom: 0.4rem;
   }
   .guide-section--day2 .guide-day-label {
-    color: #007a99;
+    color: var(--color-teal);
   }
   .guide-day-title {
-    font-family: 'Calistoga', serif;
+    font-family: var(--font-display);
     font-size: clamp(2.75rem, 9vw, 4.5rem);
     line-height: 1.0;
     color: var(--foreground);
     margin-bottom: 0.75rem;
   }
   .guide-day-subhead {
-    font-family: 'Merriweather', serif;
+    font-family: var(--font-serif);
     font-style: italic;
     font-size: 1rem;
     line-height: 1.7;
@@ -530,11 +530,11 @@ import hookAndLine from "../assets/hook-and-line.png";
     font-weight: 700 !important;
     letter-spacing: 0.15em !important;
     text-transform: uppercase !important;
-    color: #ed672d !important;
+    color: var(--color-primary) !important;
     margin-bottom: 0.5rem !important;
   }
   .guide-section--day2 .guide-time-label {
-    color: #007a99 !important;
+    color: var(--color-teal) !important;
   }
 
   /* ── Images ────────────────────────────────────── */
@@ -575,8 +575,8 @@ import hookAndLine from "../assets/hook-and-line.png";
     margin-top: 2.5rem;
     padding: 1.75rem;
     border-radius: 0.75rem;
-    background: #f5f1e8;
-    border-left: 4px solid #ed672d;
+    background: var(--color-sand);
+    border-left: 4px solid var(--color-primary);
   }
   .guide-recs-list {
     margin: 1rem 0 1.25rem;
@@ -608,7 +608,7 @@ import hookAndLine from "../assets/hook-and-line.png";
     gap: 0.4rem;
     font-size: 0.9375rem;
     font-weight: 600;
-    color: #ed672d;
+    color: var(--color-primary);
     text-decoration: none;
   }
   .guide-recs-link:hover {
@@ -624,7 +624,7 @@ import hookAndLine from "../assets/hook-and-line.png";
     overflow: hidden;
   }
   .guide-section--day2 .guide-book-card {
-    background: #fff;
+    background: var(--color-card);
   }
   .guide-book-card-inner {
     padding: 1.5rem;
@@ -637,10 +637,10 @@ import hookAndLine from "../assets/hook-and-line.png";
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #ed672d;
+    color: var(--color-primary);
   }
   .guide-book-title {
-    font-family: 'Calistoga', serif;
+    font-family: var(--font-display);
     font-size: 1.25rem;
     color: var(--foreground);
     line-height: 1.2;
@@ -656,15 +656,15 @@ import hookAndLine from "../assets/hook-and-line.png";
 
   /* ── Closing ───────────────────────────────────── */
   .guide-section--closing {
-    background: #007a99;
+    background: var(--color-teal);
     border-top: none;
-    color: #ffffff;
+    color: var(--color-teal-foreground);
   }
   .guide-closing-title {
-    font-family: 'Calistoga', serif;
+    font-family: var(--font-display);
     font-size: clamp(2rem, 7vw, 3.5rem);
     line-height: 1.1;
-    color: #ffffff;
+    color: var(--color-teal-foreground);
     margin-bottom: 1.5rem;
   }
   .guide-closing-body {
@@ -692,7 +692,7 @@ import hookAndLine from "../assets/hook-and-line.png";
     gap: 0.625rem;
   }
   .guide-closing-link {
-    color: #ffffff;
+    color: var(--color-teal-foreground);
     text-decoration: underline;
     text-underline-offset: 3px;
   }
