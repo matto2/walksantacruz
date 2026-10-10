@@ -1,33 +1,38 @@
 ---
+interface PricingRow {
+  label: string;
+  price: string;
+  note?: string;
+  highlight?: boolean;
+}
+
 interface Props {
+  rows?: PricingRow[];
   customNote?: string;
 }
-const { customNote } = Astro.props;
+
+const defaultRows: PricingRow[] = [
+  { label: "Solo traveler", price: "$150" },
+  { label: "2–4 guests", price: "$180", note: "flat" },
+  { label: "5+ guests", price: "$45", note: "per person" },
+  { label: "Kids 12 & under", price: "Free", highlight: true },
+  { label: "Corporate (10+ guests)", price: "$600", note: "base · +$60/additional" },
+];
+
+const { rows = defaultRows, customNote } = Astro.props;
 ---
 
 <div class="bg-primary/5 border border-primary/20 rounded-xl p-6 mb-8">
   <h3 class="title-card">Pricing</h3>
   <div class="space-y-3">
-    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
-      <span class="text-muted-foreground">Solo traveler</span>
-      <span class="font-semibold">$150</span>
-    </div>
-    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
-      <span class="text-muted-foreground">2–4 guests</span>
-      <span class="font-semibold">$180 <span class="font-normal text-muted-foreground text-sm">flat</span></span>
-    </div>
-    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
-      <span class="text-muted-foreground">5+ guests</span>
-      <span class="font-semibold">$45 <span class="font-normal text-muted-foreground text-sm">per person</span></span>
-    </div>
-    <div class="flex justify-between items-baseline gap-4 border-b border-primary/10 pb-3">
-      <span class="text-muted-foreground">Kids 12 & under</span>
-      <span class="font-semibold text-primary">Free</span>
-    </div>
-    <div class="flex justify-between items-baseline gap-4">
-      <span class="text-muted-foreground">Corporate (10+ guests)</span>
-      <span class="font-semibold">$600 <span class="font-normal text-muted-foreground text-sm">base · +$60/additional</span></span>
-    </div>
+    {rows.map((row, i) => (
+      <div class:list={["flex justify-between items-baseline gap-4", i < rows.length - 1 && "border-b border-primary/10 pb-3"]}>
+        <span class="text-muted-foreground">{row.label}</span>
+        <span class:list={["font-semibold", row.highlight && "text-primary"]}>
+          {row.price}{row.note && " "}{row.note && <span class="font-normal text-muted-foreground text-sm">{row.note}</span>}
+        </span>
+      </div>
+    ))}
   </div>
   {customNote && <p class="mt-4 text-sm text-muted-foreground italic">{customNote}</p>}
 </div>

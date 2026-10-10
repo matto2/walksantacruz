@@ -19,7 +19,7 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
 ---
 
 <Layout
-  title="Custom Tours - Design Your Santa Cruz Experience | Walk Santa Cruz"
+  title="Private Tours - Design Your Santa Cruz Experience | Walk Santa Cruz"
   description="Design a walking tour tailored to your interests, pace, and schedule. Choose your topic, your route, your timing — surf history, architecture, nature, filming locations, and more."
 >
   <!-- Hero Section -->
@@ -27,14 +27,14 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
     <MapBackground />
     <div class="container relative">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="title-page">Custom Tours</h1>
-        <p class="text-2xl text-muted-foreground font-medium mb-2">Design a tour tailored to your interests, pace, and schedule.</p>
+        <h1 class="title-page">Private Tours</h1>
+        <p class="text-2xl text-muted-foreground font-medium mb-2">Your group, your pace, your Santa Cruz.</p>
       </div>
     </div>
   </section>
 
   <!-- Intro Content -->
-  <section class="container section-flush-top">
+  <section class="container section">
     <div class="max-w-3xl mx-auto">
 
       <!-- Intro Text -->
@@ -46,7 +46,14 @@ import outdoorTourPhoto from "../assets/IMG_8255.jpeg";
       </p>
 
       <!-- Pricing -->
-      <PricingBlock />
+      <PricingBlock
+        rows={[
+          { label: "Up to 4 guests", price: "$250" },
+          { label: "5–10 guests", price: "$450" },
+          { label: "11–20 guests", price: "$600" },
+          { label: "Corporate & large groups (20+)", price: "from $600", note: "custom quote" },
+        ]}
+      />
 
       <!-- Hero photo -->
       <div class="mb-12">
